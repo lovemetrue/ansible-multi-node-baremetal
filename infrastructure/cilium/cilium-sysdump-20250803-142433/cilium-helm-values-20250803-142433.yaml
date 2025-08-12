@@ -1,0 +1,21 @@
+cni:
+  exclusive: true
+hubble:
+  enabled: true
+  relay:
+    enabled: true
+  ui:
+    enabled: true
+installIptablesRules: true
+ipam:
+  mode: kubernetes
+ipv4NativeRoutingCIDR: 10.0.0.0/16
+kubeProxyReplacement: true
+localRedirectPolicies:
+  enabled: true
+netfilterCompatibleMode: true
+nodePortBindProtection: true
+operator:
+  replicas: 2
+routingMode: tunnel
+tunnelProtocol: vxlan

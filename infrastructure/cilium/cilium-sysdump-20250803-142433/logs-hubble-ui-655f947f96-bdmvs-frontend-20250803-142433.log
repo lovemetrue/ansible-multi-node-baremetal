@@ -1,0 +1,24 @@
+2025-08-03T13:50:36.483546442Z /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+2025-08-03T13:50:36.483995898Z /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+2025-08-03T13:50:36.485003134Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+2025-08-03T13:50:36.487934626Z 10-listen-on-ipv6-by-default.sh: info: can not modify /etc/nginx/conf.d/default.conf (read-only file system?)
+2025-08-03T13:50:36.488141248Z /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+2025-08-03T13:50:36.488383328Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+2025-08-03T13:50:36.493083122Z /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+2025-08-03T13:50:36.495249060Z /docker-entrypoint.sh: Configuration complete; ready for start up
+2025-08-03T13:50:36.505712221Z 2025/08/03 13:50:36 [notice] 1#1: using the "epoll" event method
+2025-08-03T13:50:36.505738145Z 2025/08/03 13:50:36 [notice] 1#1: nginx/1.27.3
+2025-08-03T13:50:36.505743926Z 2025/08/03 13:50:36 [notice] 1#1: built by gcc 13.2.1 20240309 (Alpine 13.2.1_git20240309) 
+2025-08-03T13:50:36.505749300Z 2025/08/03 13:50:36 [notice] 1#1: OS: Linux 5.15.0-151-generic
+2025-08-03T13:50:36.505754586Z 2025/08/03 13:50:36 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025-08-03T13:50:36.505759323Z 2025/08/03 13:50:36 [notice] 1#1: start worker processes
+2025-08-03T13:50:36.505957364Z 2025/08/03 13:50:36 [notice] 1#1: start worker process 21
+2025-08-03T13:50:36.506210950Z 2025/08/03 13:50:36 [notice] 1#1: start worker process 22
+2025-08-03T13:50:36.506362142Z 2025/08/03 13:50:36 [notice] 1#1: start worker process 23
+2025-08-03T13:50:36.506570176Z 2025/08/03 13:50:36 [notice] 1#1: start worker process 24
+2025-08-03T13:50:36.506721439Z 2025/08/03 13:50:36 [notice] 1#1: start worker process 25
+2025-08-03T13:50:36.507126697Z 2025/08/03 13:50:36 [notice] 1#1: start worker process 26
+2025-08-03T13:50:36.507490903Z 2025/08/03 13:50:36 [notice] 1#1: start worker process 27
+2025-08-03T13:50:36.507763722Z 2025/08/03 13:50:36 [notice] 1#1: start worker process 28
+2025-08-03T13:50:36.508189909Z 2025/08/03 13:50:36 [notice] 1#1: start worker process 29
+2025-08-03T13:50:36.508505115Z 2025/08/03 13:50:36 [notice] 1#1: start worker process 30

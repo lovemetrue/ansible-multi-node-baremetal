@@ -1,0 +1,658 @@
+# HELP certwatcher_read_certificate_errors_total Total number of certificate read errors
+# TYPE certwatcher_read_certificate_errors_total counter
+certwatcher_read_certificate_errors_total 0
+# HELP certwatcher_read_certificate_total Total number of certificate reads
+# TYPE certwatcher_read_certificate_total counter
+certwatcher_read_certificate_total 0
+# HELP cilium_hive_status Counts of health status levels of Hive components
+# TYPE cilium_hive_status gauge
+cilium_hive_status{status="ok"} 7
+cilium_hive_status{status="stopped"} 1
+# HELP cilium_operator_doublewrite_crd_identities The total number of CRD identities (Requires the Double-Write Identity allocation mode to be enabled)
+# TYPE cilium_operator_doublewrite_crd_identities gauge
+cilium_operator_doublewrite_crd_identities 0
+# HELP cilium_operator_doublewrite_crd_only_identities The number of CRD identities not present in the KVStore (Requires the Double-Write Identity allocation mode to be enabled)
+# TYPE cilium_operator_doublewrite_crd_only_identities gauge
+cilium_operator_doublewrite_crd_only_identities 0
+# HELP cilium_operator_doublewrite_kvstore_identities The total number of identities in the KVStore (Requires the Double-Write Identity allocation mode to be enabled)
+# TYPE cilium_operator_doublewrite_kvstore_identities gauge
+cilium_operator_doublewrite_kvstore_identities 0
+# HELP cilium_operator_doublewrite_kvstore_only_identities The number of identities in the KVStore not present as a CRD (Requires the Double-Write Identity allocation mode to be enabled)
+# TYPE cilium_operator_doublewrite_kvstore_only_identities gauge
+cilium_operator_doublewrite_kvstore_only_identities 0
+# HELP cilium_operator_errors_warnings_total Number of total errors in cilium-agent instances
+# TYPE cilium_operator_errors_warnings_total counter
+cilium_operator_errors_warnings_total{level="ERROR",subsystem="init"} 0
+cilium_operator_errors_warnings_total{level="INFO",subsystem="watchers"} 21
+cilium_operator_errors_warnings_total{level="WARN",subsystem="init"} 0
+# HELP cilium_operator_feature_adv_connect_and_lb_gateway_api_enabled GatewayAPI enabled on the operator
+# TYPE cilium_operator_feature_adv_connect_and_lb_gateway_api_enabled gauge
+cilium_operator_feature_adv_connect_and_lb_gateway_api_enabled 0
+# HELP cilium_operator_feature_adv_connect_and_lb_ingress_controller_enabled IngressController enabled on the operator
+# TYPE cilium_operator_feature_adv_connect_and_lb_ingress_controller_enabled gauge
+cilium_operator_feature_adv_connect_and_lb_ingress_controller_enabled 0
+# HELP cilium_operator_feature_adv_connect_and_lb_l7_aware_traffic_management_enabled L7 Aware Traffic Management enabled on the operator
+# TYPE cilium_operator_feature_adv_connect_and_lb_l7_aware_traffic_management_enabled gauge
+cilium_operator_feature_adv_connect_and_lb_l7_aware_traffic_management_enabled 0
+# HELP cilium_operator_feature_adv_connect_and_lb_lb_ipam_enabled LB IPAM enabled on the operator
+# TYPE cilium_operator_feature_adv_connect_and_lb_lb_ipam_enabled gauge
+cilium_operator_feature_adv_connect_and_lb_lb_ipam_enabled 1
+# HELP cilium_operator_feature_adv_connect_and_lb_node_ipam_enabled Node IPAM enabled on the operator
+# TYPE cilium_operator_feature_adv_connect_and_lb_node_ipam_enabled gauge
+cilium_operator_feature_adv_connect_and_lb_node_ipam_enabled 0
+# HELP cilium_operator_identity_gc_entries The number of alive and deleted identities at the end of a garbage collector run
+# TYPE cilium_operator_identity_gc_entries gauge
+cilium_operator_identity_gc_entries{identity_type="crd",status="alive"} 5
+cilium_operator_identity_gc_entries{identity_type="crd",status="deleted"} 0
+# HELP cilium_operator_identity_gc_latency The duration of the last successful identity GC run
+# TYPE cilium_operator_identity_gc_latency gauge
+cilium_operator_identity_gc_latency{identity_type="crd",outcome="success"} 4.2878e-05
+# HELP cilium_operator_identity_gc_runs The number of times identity garbage collector has run
+# TYPE cilium_operator_identity_gc_runs gauge
+cilium_operator_identity_gc_runs{identity_type="crd",outcome="success"} 3
+# HELP cilium_operator_lbipam_conflicting_pools The number of conflicting pools
+# TYPE cilium_operator_lbipam_conflicting_pools gauge
+cilium_operator_lbipam_conflicting_pools 0
+# HELP cilium_operator_lbipam_services_matching The number of services matching pools
+# TYPE cilium_operator_lbipam_services_matching gauge
+cilium_operator_lbipam_services_matching 0
+# HELP cilium_operator_lbipam_services_unsatisfied The number of services which did not receive all requested IPs
+# TYPE cilium_operator_lbipam_services_unsatisfied gauge
+cilium_operator_lbipam_services_unsatisfied 0
+# HELP cilium_operator_number_of_ceps_per_ces The number of CEPs batched in a CES
+# TYPE cilium_operator_number_of_ceps_per_ces histogram
+cilium_operator_number_of_ceps_per_ces_bucket{le="1"} 0
+cilium_operator_number_of_ceps_per_ces_bucket{le="10"} 0
+cilium_operator_number_of_ceps_per_ces_bucket{le="25"} 0
+cilium_operator_number_of_ceps_per_ces_bucket{le="50"} 0
+cilium_operator_number_of_ceps_per_ces_bucket{le="100"} 0
+cilium_operator_number_of_ceps_per_ces_bucket{le="200"} 0
+cilium_operator_number_of_ceps_per_ces_bucket{le="500"} 0
+cilium_operator_number_of_ceps_per_ces_bucket{le="1000"} 0
+cilium_operator_number_of_ceps_per_ces_bucket{le="+Inf"} 0
+cilium_operator_number_of_ceps_per_ces_sum 0
+cilium_operator_number_of_ceps_per_ces_count 0
+# HELP cilium_operator_process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE cilium_operator_process_cpu_seconds_total counter
+cilium_operator_process_cpu_seconds_total 10.69
+# HELP cilium_operator_process_max_fds Maximum number of open file descriptors.
+# TYPE cilium_operator_process_max_fds gauge
+cilium_operator_process_max_fds 1.048576e+06
+# HELP cilium_operator_process_network_receive_bytes_total Number of bytes received by the process over the network.
+# TYPE cilium_operator_process_network_receive_bytes_total counter
+cilium_operator_process_network_receive_bytes_total 6.21302732e+08
+# HELP cilium_operator_process_network_transmit_bytes_total Number of bytes sent by the process over the network.
+# TYPE cilium_operator_process_network_transmit_bytes_total counter
+cilium_operator_process_network_transmit_bytes_total 1.54290767e+08
+# HELP cilium_operator_process_open_fds Number of open file descriptors.
+# TYPE cilium_operator_process_open_fds gauge
+cilium_operator_process_open_fds 15
+# HELP cilium_operator_process_resident_memory_bytes Resident memory size in bytes.
+# TYPE cilium_operator_process_resident_memory_bytes gauge
+cilium_operator_process_resident_memory_bytes 1.09449216e+08
+# HELP cilium_operator_process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE cilium_operator_process_start_time_seconds gauge
+cilium_operator_process_start_time_seconds 1.75422898595e+09
+# HELP cilium_operator_process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE cilium_operator_process_virtual_memory_bytes gauge
+cilium_operator_process_virtual_memory_bytes 1.375350784e+09
+# HELP cilium_operator_process_virtual_memory_max_bytes Maximum amount of virtual memory available in bytes.
+# TYPE cilium_operator_process_virtual_memory_max_bytes gauge
+cilium_operator_process_virtual_memory_max_bytes 1.8446744073709552e+19
+# HELP cilium_operator_statedb_table_contention_seconds How long writers were blocked while waiting to acquire a write transaction for a specific table.
+# TYPE cilium_operator_statedb_table_contention_seconds histogram
+cilium_operator_statedb_table_contention_seconds_bucket{handle="health",table="health",le="0.0005"} 0
+cilium_operator_statedb_table_contention_seconds_bucket{handle="health",table="health",le="0.001"} 0
+cilium_operator_statedb_table_contention_seconds_bucket{handle="health",table="health",le="0.0025"} 0
+cilium_operator_statedb_table_contention_seconds_bucket{handle="health",table="health",le="0.005"} 0
+cilium_operator_statedb_table_contention_seconds_bucket{handle="health",table="health",le="0.01"} 0
+cilium_operator_statedb_table_contention_seconds_bucket{handle="health",table="health",le="0.025"} 0
+cilium_operator_statedb_table_contention_seconds_bucket{handle="health",table="health",le="0.05"} 0
+cilium_operator_statedb_table_contention_seconds_bucket{handle="health",table="health",le="0.1"} 0
+cilium_operator_statedb_table_contention_seconds_bucket{handle="health",table="health",le="0.25"} 0
+cilium_operator_statedb_table_contention_seconds_bucket{handle="health",table="health",le="0.5"} 0
+cilium_operator_statedb_table_contention_seconds_bucket{handle="health",table="health",le="1"} 0
+cilium_operator_statedb_table_contention_seconds_bucket{handle="health",table="health",le="+Inf"} 0
+cilium_operator_statedb_table_contention_seconds_sum{handle="health",table="health"} 0
+cilium_operator_statedb_table_contention_seconds_count{handle="health",table="health"} 0
+# HELP cilium_operator_statedb_table_graveyard_objects The amount of objects in the graveyard for a given table.
+# TYPE cilium_operator_statedb_table_graveyard_objects gauge
+cilium_operator_statedb_table_graveyard_objects{table="health"} 0
+# HELP cilium_operator_statedb_table_objects The amount of objects in a given table.
+# TYPE cilium_operator_statedb_table_objects gauge
+cilium_operator_statedb_table_objects{table="health"} 8
+# HELP cilium_operator_statedb_table_revision The current revision of a given table.
+# TYPE cilium_operator_statedb_table_revision gauge
+cilium_operator_statedb_table_revision{table="health"} 11
+# HELP cilium_operator_statedb_write_txn_duration_seconds How long a write transaction was held.
+# TYPE cilium_operator_statedb_write_txn_duration_seconds histogram
+cilium_operator_statedb_write_txn_duration_seconds_bucket{handle="health",le="0.0005"} 11
+cilium_operator_statedb_write_txn_duration_seconds_bucket{handle="health",le="0.001"} 11
+cilium_operator_statedb_write_txn_duration_seconds_bucket{handle="health",le="0.0025"} 11
+cilium_operator_statedb_write_txn_duration_seconds_bucket{handle="health",le="0.005"} 11
+cilium_operator_statedb_write_txn_duration_seconds_bucket{handle="health",le="0.01"} 11
+cilium_operator_statedb_write_txn_duration_seconds_bucket{handle="health",le="0.025"} 11
+cilium_operator_statedb_write_txn_duration_seconds_bucket{handle="health",le="0.05"} 11
+cilium_operator_statedb_write_txn_duration_seconds_bucket{handle="health",le="0.1"} 11
+cilium_operator_statedb_write_txn_duration_seconds_bucket{handle="health",le="0.25"} 11
+cilium_operator_statedb_write_txn_duration_seconds_bucket{handle="health",le="0.5"} 11
+cilium_operator_statedb_write_txn_duration_seconds_bucket{handle="health",le="1"} 11
+cilium_operator_statedb_write_txn_duration_seconds_bucket{handle="health",le="+Inf"} 11
+cilium_operator_statedb_write_txn_duration_seconds_sum{handle="health"} 0.0008754279999999999
+cilium_operator_statedb_write_txn_duration_seconds_count{handle="health"} 11
+# HELP cilium_operator_unmanaged_pods The total number of pods observed to be unmanaged by Cilium operator
+# TYPE cilium_operator_unmanaged_pods gauge
+cilium_operator_unmanaged_pods 0
+# HELP cilium_operator_version Cilium version
+# TYPE cilium_operator_version gauge
+cilium_operator_version{arch="linux/amd64",revision="274205f0",version="1.18.0"} 0
+# HELP cilium_operator_workqueue_adds_total Total number of adds handled by the workqueue
+# TYPE cilium_operator_workqueue_adds_total counter
+cilium_operator_workqueue_adds_total{queue_name="kvstore"} 0
+cilium_operator_workqueue_adds_total{queue_name="node_manager"} 1
+# HELP cilium_operator_workqueue_depth Current depth of the workqueue
+# TYPE cilium_operator_workqueue_depth gauge
+cilium_operator_workqueue_depth{queue_name="kvstore"} 0
+cilium_operator_workqueue_depth{queue_name="node_manager"} 1
+# HELP cilium_operator_workqueue_latency How long in seconds an item stays in workqueue before being requested
+# TYPE cilium_operator_workqueue_latency histogram
+cilium_operator_workqueue_latency_bucket{queue_name="kvstore",le="1e-08"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="kvstore",le="1e-07"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="kvstore",le="1e-06"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="kvstore",le="9.999999999999999e-06"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="kvstore",le="9.999999999999999e-05"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="kvstore",le="0.001"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="kvstore",le="0.01"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="kvstore",le="0.1"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="kvstore",le="1"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="kvstore",le="10"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="kvstore",le="+Inf"} 0
+cilium_operator_workqueue_latency_sum{queue_name="kvstore"} 0
+cilium_operator_workqueue_latency_count{queue_name="kvstore"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="node_manager",le="1e-08"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="node_manager",le="1e-07"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="node_manager",le="1e-06"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="node_manager",le="9.999999999999999e-06"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="node_manager",le="9.999999999999999e-05"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="node_manager",le="0.001"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="node_manager",le="0.01"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="node_manager",le="0.1"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="node_manager",le="1"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="node_manager",le="10"} 0
+cilium_operator_workqueue_latency_bucket{queue_name="node_manager",le="+Inf"} 0
+cilium_operator_workqueue_latency_sum{queue_name="node_manager"} 0
+cilium_operator_workqueue_latency_count{queue_name="node_manager"} 0
+# HELP cilium_operator_workqueue_longest_running_processor_seconds How many seconds has the longest running processor for workqueue been running
+# TYPE cilium_operator_workqueue_longest_running_processor_seconds gauge
+cilium_operator_workqueue_longest_running_processor_seconds{queue_name="kvstore"} 0
+cilium_operator_workqueue_longest_running_processor_seconds{queue_name="node_manager"} 0
+# HELP cilium_operator_workqueue_retries_total Total number of retries handled by workqueue
+# TYPE cilium_operator_workqueue_retries_total counter
+cilium_operator_workqueue_retries_total{queue_name="kvstore"} 0
+cilium_operator_workqueue_retries_total{queue_name="node_manager"} 0
+# HELP cilium_operator_workqueue_unfinished_work_seconds How many seconds of work has been done that is in progress and hasn't been observed by work_duration. Large values indicate stuck threads. One can deduce the number of stuck threads by observing the rate at which this increases.
+# TYPE cilium_operator_workqueue_unfinished_work_seconds gauge
+cilium_operator_workqueue_unfinished_work_seconds{queue_name="kvstore"} 0
+cilium_operator_workqueue_unfinished_work_seconds{queue_name="node_manager"} 0
+# HELP cilium_operator_workqueue_work_duration How long in seconds processing an item from workqueue takes
+# TYPE cilium_operator_workqueue_work_duration histogram
+cilium_operator_workqueue_work_duration_bucket{queue_name="kvstore",le="1e-08"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="kvstore",le="1e-07"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="kvstore",le="1e-06"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="kvstore",le="9.999999999999999e-06"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="kvstore",le="9.999999999999999e-05"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="kvstore",le="0.001"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="kvstore",le="0.01"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="kvstore",le="0.1"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="kvstore",le="1"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="kvstore",le="10"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="kvstore",le="+Inf"} 0
+cilium_operator_workqueue_work_duration_sum{queue_name="kvstore"} 0
+cilium_operator_workqueue_work_duration_count{queue_name="kvstore"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="node_manager",le="1e-08"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="node_manager",le="1e-07"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="node_manager",le="1e-06"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="node_manager",le="9.999999999999999e-06"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="node_manager",le="9.999999999999999e-05"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="node_manager",le="0.001"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="node_manager",le="0.01"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="node_manager",le="0.1"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="node_manager",le="1"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="node_manager",le="10"} 0
+cilium_operator_workqueue_work_duration_bucket{queue_name="node_manager",le="+Inf"} 0
+cilium_operator_workqueue_work_duration_sum{queue_name="node_manager"} 0
+cilium_operator_workqueue_work_duration_count{queue_name="node_manager"} 0
+# HELP controller_runtime_active_workers Number of currently used workers per controller
+# TYPE controller_runtime_active_workers gauge
+controller_runtime_active_workers{controller="secret"} 0
+# HELP controller_runtime_max_concurrent_reconciles Maximum number of concurrent reconciles per controller
+# TYPE controller_runtime_max_concurrent_reconciles gauge
+controller_runtime_max_concurrent_reconciles{controller="secret"} 1
+# HELP controller_runtime_reconcile_errors_total Total number of reconciliation errors per controller
+# TYPE controller_runtime_reconcile_errors_total counter
+controller_runtime_reconcile_errors_total{controller="secret"} 0
+# HELP controller_runtime_reconcile_panics_total Total number of reconciliation panics per controller
+# TYPE controller_runtime_reconcile_panics_total counter
+controller_runtime_reconcile_panics_total{controller="secret"} 0
+# HELP controller_runtime_reconcile_time_seconds Length of time per reconciliation per controller
+# TYPE controller_runtime_reconcile_time_seconds histogram
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="0.005"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="0.01"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="0.025"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="0.05"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="0.1"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="0.15"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="0.2"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="0.25"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="0.3"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="0.35"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="0.4"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="0.45"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="0.5"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="0.6"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="0.7"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="0.8"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="0.9"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="1"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="1.25"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="1.5"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="1.75"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="2"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="2.5"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="3"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="3.5"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="4"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="4.5"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="5"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="6"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="7"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="8"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="9"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="10"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="15"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="20"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="25"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="30"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="40"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="50"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="60"} 4
+controller_runtime_reconcile_time_seconds_bucket{controller="secret",le="+Inf"} 4
+controller_runtime_reconcile_time_seconds_sum{controller="secret"} 0.0007816470000000001
+controller_runtime_reconcile_time_seconds_count{controller="secret"} 4
+# HELP controller_runtime_reconcile_total Total number of reconciliations per controller
+# TYPE controller_runtime_reconcile_total counter
+controller_runtime_reconcile_total{controller="secret",result="error"} 0
+controller_runtime_reconcile_total{controller="secret",result="requeue"} 0
+controller_runtime_reconcile_total{controller="secret",result="requeue_after"} 0
+controller_runtime_reconcile_total{controller="secret",result="success"} 4
+# HELP controller_runtime_terminal_reconcile_errors_total Total number of terminal reconciliation errors per controller
+# TYPE controller_runtime_terminal_reconcile_errors_total counter
+controller_runtime_terminal_reconcile_errors_total{controller="secret"} 0
+# HELP controller_runtime_webhook_panics_total Total number of webhook panics
+# TYPE controller_runtime_webhook_panics_total counter
+controller_runtime_webhook_panics_total 0
+# HELP go_gc_duration_seconds A summary of the wall-time pause (stop-the-world) duration in garbage collection cycles.
+# TYPE go_gc_duration_seconds summary
+go_gc_duration_seconds{quantile="0"} 9.3948e-05
+go_gc_duration_seconds{quantile="0.25"} 0.000134058
+go_gc_duration_seconds{quantile="0.5"} 0.000202337
+go_gc_duration_seconds{quantile="0.75"} 0.000292607
+go_gc_duration_seconds{quantile="1"} 0.001414366
+go_gc_duration_seconds_sum 0.006192078
+go_gc_duration_seconds_count 24
+# HELP go_gc_gogc_percent Heap size target percentage configured by the user, otherwise 100. This value is set by the GOGC environment variable, and the runtime/debug.SetGCPercent function. Sourced from /gc/gogc:percent.
+# TYPE go_gc_gogc_percent gauge
+go_gc_gogc_percent 100
+# HELP go_gc_gomemlimit_bytes Go runtime memory limit configured by the user, otherwise math.MaxInt64. This value is set by the GOMEMLIMIT environment variable, and the runtime/debug.SetMemoryLimit function. Sourced from /gc/gomemlimit:bytes.
+# TYPE go_gc_gomemlimit_bytes gauge
+go_gc_gomemlimit_bytes 9.223372036854776e+18
+# HELP go_goroutines Number of goroutines that currently exist.
+# TYPE go_goroutines gauge
+go_goroutines 223
+# HELP go_info Information about the Go environment.
+# TYPE go_info gauge
+go_info{version="go1.24.5"} 1
+# HELP go_memstats_alloc_bytes Number of bytes allocated in heap and currently in use. Equals to /memory/classes/heap/objects:bytes.
+# TYPE go_memstats_alloc_bytes gauge
+go_memstats_alloc_bytes 1.42348e+07
+# HELP go_memstats_alloc_bytes_total Total number of bytes allocated in heap until now, even if released already. Equals to /gc/heap/allocs:bytes.
+# TYPE go_memstats_alloc_bytes_total counter
+go_memstats_alloc_bytes_total 1.40896232e+08
+# HELP go_memstats_buck_hash_sys_bytes Number of bytes used by the profiling bucket hash table. Equals to /memory/classes/profiling/buckets:bytes.
+# TYPE go_memstats_buck_hash_sys_bytes gauge
+go_memstats_buck_hash_sys_bytes 1.620513e+06
+# HELP go_memstats_frees_total Total number of heap objects frees. Equals to /gc/heap/frees:objects + /gc/heap/tiny/allocs:objects.
+# TYPE go_memstats_frees_total counter
+go_memstats_frees_total 1.212117e+06
+# HELP go_memstats_gc_sys_bytes Number of bytes used for garbage collection system metadata. Equals to /memory/classes/metadata/other:bytes.
+# TYPE go_memstats_gc_sys_bytes gauge
+go_memstats_gc_sys_bytes 4.188936e+06
+# HELP go_memstats_heap_alloc_bytes Number of heap bytes allocated and currently in use, same as go_memstats_alloc_bytes. Equals to /memory/classes/heap/objects:bytes.
+# TYPE go_memstats_heap_alloc_bytes gauge
+go_memstats_heap_alloc_bytes 1.42348e+07
+# HELP go_memstats_heap_idle_bytes Number of heap bytes waiting to be used. Equals to /memory/classes/heap/released:bytes + /memory/classes/heap/free:bytes.
+# TYPE go_memstats_heap_idle_bytes gauge
+go_memstats_heap_idle_bytes 2.4969216e+07
+# HELP go_memstats_heap_inuse_bytes Number of heap bytes that are in use. Equals to /memory/classes/heap/objects:bytes + /memory/classes/heap/unused:bytes
+# TYPE go_memstats_heap_inuse_bytes gauge
+go_memstats_heap_inuse_bytes 2.3330816e+07
+# HELP go_memstats_heap_objects Number of currently allocated objects. Equals to /gc/heap/objects:objects.
+# TYPE go_memstats_heap_objects gauge
+go_memstats_heap_objects 74092
+# HELP go_memstats_heap_released_bytes Number of heap bytes released to OS. Equals to /memory/classes/heap/released:bytes.
+# TYPE go_memstats_heap_released_bytes gauge
+go_memstats_heap_released_bytes 2.1553152e+07
+# HELP go_memstats_heap_sys_bytes Number of heap bytes obtained from system. Equals to /memory/classes/heap/objects:bytes + /memory/classes/heap/unused:bytes + /memory/classes/heap/released:bytes + /memory/classes/heap/free:bytes.
+# TYPE go_memstats_heap_sys_bytes gauge
+go_memstats_heap_sys_bytes 4.8300032e+07
+# HELP go_memstats_last_gc_time_seconds Number of seconds since 1970 of last garbage collection.
+# TYPE go_memstats_last_gc_time_seconds gauge
+go_memstats_last_gc_time_seconds 1.7542310466227362e+09
+# HELP go_memstats_mallocs_total Total number of heap objects allocated, both live and gc-ed. Semantically a counter version for go_memstats_heap_objects gauge. Equals to /gc/heap/allocs:objects + /gc/heap/tiny/allocs:objects.
+# TYPE go_memstats_mallocs_total counter
+go_memstats_mallocs_total 1.286209e+06
+# HELP go_memstats_mcache_inuse_bytes Number of bytes in use by mcache structures. Equals to /memory/classes/metadata/mcache/inuse:bytes.
+# TYPE go_memstats_mcache_inuse_bytes gauge
+go_memstats_mcache_inuse_bytes 12080
+# HELP go_memstats_mcache_sys_bytes Number of bytes used for mcache structures obtained from system. Equals to /memory/classes/metadata/mcache/inuse:bytes + /memory/classes/metadata/mcache/free:bytes.
+# TYPE go_memstats_mcache_sys_bytes gauge
+go_memstats_mcache_sys_bytes 15704
+# HELP go_memstats_mspan_inuse_bytes Number of bytes in use by mspan structures. Equals to /memory/classes/metadata/mspan/inuse:bytes.
+# TYPE go_memstats_mspan_inuse_bytes gauge
+go_memstats_mspan_inuse_bytes 424960
+# HELP go_memstats_mspan_sys_bytes Number of bytes used for mspan structures obtained from system. Equals to /memory/classes/metadata/mspan/inuse:bytes + /memory/classes/metadata/mspan/free:bytes.
+# TYPE go_memstats_mspan_sys_bytes gauge
+go_memstats_mspan_sys_bytes 685440
+# HELP go_memstats_next_gc_bytes Number of heap bytes when next garbage collection will take place. Equals to /gc/heap/goal:bytes.
+# TYPE go_memstats_next_gc_bytes gauge
+go_memstats_next_gc_bytes 3.345329e+07
+# HELP go_memstats_other_sys_bytes Number of bytes used for other system allocations. Equals to /memory/classes/other:bytes.
+# TYPE go_memstats_other_sys_bytes gauge
+go_memstats_other_sys_bytes 2.185232e+06
+# HELP go_memstats_stack_inuse_bytes Number of bytes obtained from system for stack allocator in non-CGO environments. Equals to /memory/classes/heap/stacks:bytes.
+# TYPE go_memstats_stack_inuse_bytes gauge
+go_memstats_stack_inuse_bytes 2.031616e+06
+# HELP go_memstats_stack_sys_bytes Number of bytes obtained from system for stack allocator. Equals to /memory/classes/heap/stacks:bytes + /memory/classes/os-stacks:bytes.
+# TYPE go_memstats_stack_sys_bytes gauge
+go_memstats_stack_sys_bytes 2.031616e+06
+# HELP go_memstats_sys_bytes Number of bytes obtained from system. Equals to /memory/classes/total:byte.
+# TYPE go_memstats_sys_bytes gauge
+go_memstats_sys_bytes 5.9027473e+07
+# HELP go_sched_gomaxprocs_threads The current runtime.GOMAXPROCS setting, or the number of operating system threads that can execute user-level Go code simultaneously. Sourced from /sched/gomaxprocs:threads.
+# TYPE go_sched_gomaxprocs_threads gauge
+go_sched_gomaxprocs_threads 10
+# HELP go_sched_latencies_seconds Distribution of the time goroutines have spent in the scheduler in a runnable state before actually running. Bucket counts increase monotonically. Sourced from /sched/latencies:seconds.
+# TYPE go_sched_latencies_seconds histogram
+go_sched_latencies_seconds_bucket{le="6.399999999999999e-08"} 3556
+go_sched_latencies_seconds_bucket{le="6.399999999999999e-07"} 3777
+go_sched_latencies_seconds_bucket{le="7.167999999999999e-06"} 4660
+go_sched_latencies_seconds_bucket{le="8.191999999999999e-05"} 10571
+go_sched_latencies_seconds_bucket{le="0.0009175039999999999"} 11140
+go_sched_latencies_seconds_bucket{le="0.010485759999999998"} 11140
+go_sched_latencies_seconds_bucket{le="0.11744051199999998"} 11140
+go_sched_latencies_seconds_bucket{le="+Inf"} 11140
+go_sched_latencies_seconds_sum 0.089561792
+go_sched_latencies_seconds_count 11140
+# HELP go_threads Number of OS threads created.
+# TYPE go_threads gauge
+go_threads 15
+# HELP leader_election_master_status Gauge of if the reporting system is master of the relevant lease, 0 indicates backup, 1 indicates master. 'name' is the string used to identify the lease. Please make sure to group by name.
+# TYPE leader_election_master_status gauge
+leader_election_master_status{name="cilium-operator-resource-lock"} 1
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 10.69
+# HELP process_max_fds Maximum number of open file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1.048576e+06
+# HELP process_network_receive_bytes_total Number of bytes received by the process over the network.
+# TYPE process_network_receive_bytes_total counter
+process_network_receive_bytes_total 6.21302732e+08
+# HELP process_network_transmit_bytes_total Number of bytes sent by the process over the network.
+# TYPE process_network_transmit_bytes_total counter
+process_network_transmit_bytes_total 1.54290767e+08
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 15
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 1.09449216e+08
+# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1.75422898595e+09
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 1.375350784e+09
+# HELP process_virtual_memory_max_bytes Maximum amount of virtual memory available in bytes.
+# TYPE process_virtual_memory_max_bytes gauge
+process_virtual_memory_max_bytes 1.8446744073709552e+19
+# HELP rest_client_requests_total Number of HTTP requests, partitioned by status code, method, and host.
+# TYPE rest_client_requests_total counter
+rest_client_requests_total{code="200",host="10.96.0.1:443",method="GET"} 910
+rest_client_requests_total{code="200",host="10.96.0.1:443",method="PATCH"} 20
+rest_client_requests_total{code="200",host="10.96.0.1:443",method="PUT"} 1060
+rest_client_requests_total{code="404",host="10.96.0.1:443",method="GET"} 7
+# HELP workqueue_adds_total Total number of adds handled by workqueue
+# TYPE workqueue_adds_total counter
+workqueue_adds_total{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy"} 1
+workqueue_adds_total{controller="ciliumidentity",name="ciliumidentity"} 6
+workqueue_adds_total{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool"} 1
+workqueue_adds_total{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy"} 1
+workqueue_adds_total{controller="node-queue",name="node-queue"} 133
+workqueue_adds_total{controller="secret",name="secret"} 4
+# HELP workqueue_depth Current depth of workqueue
+# TYPE workqueue_depth gauge
+workqueue_depth{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy"} 0
+workqueue_depth{controller="ciliumidentity",name="ciliumidentity"} 0
+workqueue_depth{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool"} 0
+workqueue_depth{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy"} 0
+workqueue_depth{controller="node-queue",name="node-queue"} 0
+workqueue_depth{controller="secret",name="secret"} 0
+# HELP workqueue_longest_running_processor_seconds How many seconds has the longest running processor for workqueue been running.
+# TYPE workqueue_longest_running_processor_seconds gauge
+workqueue_longest_running_processor_seconds{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy"} 0
+workqueue_longest_running_processor_seconds{controller="ciliumidentity",name="ciliumidentity"} 0
+workqueue_longest_running_processor_seconds{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool"} 0
+workqueue_longest_running_processor_seconds{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy"} 0
+workqueue_longest_running_processor_seconds{controller="node-queue",name="node-queue"} 0
+workqueue_longest_running_processor_seconds{controller="secret",name="secret"} 0
+# HELP workqueue_queue_duration_seconds How long in seconds an item stays in workqueue before being requested
+# TYPE workqueue_queue_duration_seconds histogram
+workqueue_queue_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="1e-08"} 0
+workqueue_queue_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="1e-07"} 0
+workqueue_queue_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="1e-06"} 0
+workqueue_queue_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="9.999999999999999e-06"} 0
+workqueue_queue_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="9.999999999999999e-05"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="0.001"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="0.01"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="0.1"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="1"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="10"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="100"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="1000"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="+Inf"} 1
+workqueue_queue_duration_seconds_sum{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy"} 3.4883e-05
+workqueue_queue_duration_seconds_count{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="1e-08"} 0
+workqueue_queue_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="1e-07"} 0
+workqueue_queue_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="1e-06"} 0
+workqueue_queue_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="9.999999999999999e-06"} 0
+workqueue_queue_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="9.999999999999999e-05"} 6
+workqueue_queue_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="0.001"} 6
+workqueue_queue_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="0.01"} 6
+workqueue_queue_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="0.1"} 6
+workqueue_queue_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="1"} 6
+workqueue_queue_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="10"} 6
+workqueue_queue_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="100"} 6
+workqueue_queue_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="1000"} 6
+workqueue_queue_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="+Inf"} 6
+workqueue_queue_duration_seconds_sum{controller="ciliumidentity",name="ciliumidentity"} 0.000244338
+workqueue_queue_duration_seconds_count{controller="ciliumidentity",name="ciliumidentity"} 6
+workqueue_queue_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="1e-08"} 0
+workqueue_queue_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="1e-07"} 0
+workqueue_queue_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="1e-06"} 0
+workqueue_queue_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="9.999999999999999e-06"} 0
+workqueue_queue_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="9.999999999999999e-05"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="0.001"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="0.01"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="0.1"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="1"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="10"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="100"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="1000"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="+Inf"} 1
+workqueue_queue_duration_seconds_sum{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool"} 4.6252e-05
+workqueue_queue_duration_seconds_count{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="1e-08"} 0
+workqueue_queue_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="1e-07"} 0
+workqueue_queue_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="1e-06"} 0
+workqueue_queue_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="9.999999999999999e-06"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="9.999999999999999e-05"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="0.001"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="0.01"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="0.1"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="1"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="10"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="100"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="1000"} 1
+workqueue_queue_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="+Inf"} 1
+workqueue_queue_duration_seconds_sum{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy"} 8.254e-06
+workqueue_queue_duration_seconds_count{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy"} 1
+workqueue_queue_duration_seconds_bucket{controller="node-queue",name="node-queue",le="1e-08"} 0
+workqueue_queue_duration_seconds_bucket{controller="node-queue",name="node-queue",le="1e-07"} 0
+workqueue_queue_duration_seconds_bucket{controller="node-queue",name="node-queue",le="1e-06"} 0
+workqueue_queue_duration_seconds_bucket{controller="node-queue",name="node-queue",le="9.999999999999999e-06"} 59
+workqueue_queue_duration_seconds_bucket{controller="node-queue",name="node-queue",le="9.999999999999999e-05"} 119
+workqueue_queue_duration_seconds_bucket{controller="node-queue",name="node-queue",le="0.001"} 131
+workqueue_queue_duration_seconds_bucket{controller="node-queue",name="node-queue",le="0.01"} 131
+workqueue_queue_duration_seconds_bucket{controller="node-queue",name="node-queue",le="0.1"} 131
+workqueue_queue_duration_seconds_bucket{controller="node-queue",name="node-queue",le="1"} 133
+workqueue_queue_duration_seconds_bucket{controller="node-queue",name="node-queue",le="10"} 133
+workqueue_queue_duration_seconds_bucket{controller="node-queue",name="node-queue",le="100"} 133
+workqueue_queue_duration_seconds_bucket{controller="node-queue",name="node-queue",le="1000"} 133
+workqueue_queue_duration_seconds_bucket{controller="node-queue",name="node-queue",le="+Inf"} 133
+workqueue_queue_duration_seconds_sum{controller="node-queue",name="node-queue"} 0.3974343100000004
+workqueue_queue_duration_seconds_count{controller="node-queue",name="node-queue"} 133
+workqueue_queue_duration_seconds_bucket{controller="secret",name="secret",le="1e-08"} 0
+workqueue_queue_duration_seconds_bucket{controller="secret",name="secret",le="1e-07"} 0
+workqueue_queue_duration_seconds_bucket{controller="secret",name="secret",le="1e-06"} 0
+workqueue_queue_duration_seconds_bucket{controller="secret",name="secret",le="9.999999999999999e-06"} 0
+workqueue_queue_duration_seconds_bucket{controller="secret",name="secret",le="9.999999999999999e-05"} 0
+workqueue_queue_duration_seconds_bucket{controller="secret",name="secret",le="0.001"} 4
+workqueue_queue_duration_seconds_bucket{controller="secret",name="secret",le="0.01"} 4
+workqueue_queue_duration_seconds_bucket{controller="secret",name="secret",le="0.1"} 4
+workqueue_queue_duration_seconds_bucket{controller="secret",name="secret",le="1"} 4
+workqueue_queue_duration_seconds_bucket{controller="secret",name="secret",le="10"} 4
+workqueue_queue_duration_seconds_bucket{controller="secret",name="secret",le="100"} 4
+workqueue_queue_duration_seconds_bucket{controller="secret",name="secret",le="1000"} 4
+workqueue_queue_duration_seconds_bucket{controller="secret",name="secret",le="+Inf"} 4
+workqueue_queue_duration_seconds_sum{controller="secret",name="secret"} 0.003051168
+workqueue_queue_duration_seconds_count{controller="secret",name="secret"} 4
+# HELP workqueue_retries_total Total number of retries handled by workqueue
+# TYPE workqueue_retries_total counter
+workqueue_retries_total{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy"} 0
+workqueue_retries_total{controller="ciliumidentity",name="ciliumidentity"} 0
+workqueue_retries_total{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool"} 0
+workqueue_retries_total{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy"} 0
+workqueue_retries_total{controller="node-queue",name="node-queue"} 0
+workqueue_retries_total{controller="secret",name="secret"} 0
+# HELP workqueue_unfinished_work_seconds How many seconds of work has been done that is in progress and hasn't been observed by work_duration. Large values indicate stuck threads. One can deduce the number of stuck threads by observing the rate at which this increases.
+# TYPE workqueue_unfinished_work_seconds gauge
+workqueue_unfinished_work_seconds{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy"} 0
+workqueue_unfinished_work_seconds{controller="ciliumidentity",name="ciliumidentity"} 0
+workqueue_unfinished_work_seconds{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool"} 0
+workqueue_unfinished_work_seconds{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy"} 0
+workqueue_unfinished_work_seconds{controller="node-queue",name="node-queue"} 0
+workqueue_unfinished_work_seconds{controller="secret",name="secret"} 0
+# HELP workqueue_work_duration_seconds How long in seconds processing an item from workqueue takes.
+# TYPE workqueue_work_duration_seconds histogram
+workqueue_work_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="1e-08"} 0
+workqueue_work_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="1e-07"} 0
+workqueue_work_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="1e-06"} 0
+workqueue_work_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="9.999999999999999e-06"} 0
+workqueue_work_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="9.999999999999999e-05"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="0.001"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="0.01"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="0.1"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="1"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="10"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="100"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="1000"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy",le="+Inf"} 1
+workqueue_work_duration_seconds_sum{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy"} 3.7944e-05
+workqueue_work_duration_seconds_count{controller="ciliumclusterwidenetworkpolicy",name="ciliumclusterwidenetworkpolicy"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="1e-08"} 0
+workqueue_work_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="1e-07"} 0
+workqueue_work_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="1e-06"} 0
+workqueue_work_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="9.999999999999999e-06"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="9.999999999999999e-05"} 6
+workqueue_work_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="0.001"} 6
+workqueue_work_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="0.01"} 6
+workqueue_work_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="0.1"} 6
+workqueue_work_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="1"} 6
+workqueue_work_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="10"} 6
+workqueue_work_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="100"} 6
+workqueue_work_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="1000"} 6
+workqueue_work_duration_seconds_bucket{controller="ciliumidentity",name="ciliumidentity",le="+Inf"} 6
+workqueue_work_duration_seconds_sum{controller="ciliumidentity",name="ciliumidentity"} 0.000137301
+workqueue_work_duration_seconds_count{controller="ciliumidentity",name="ciliumidentity"} 6
+workqueue_work_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="1e-08"} 0
+workqueue_work_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="1e-07"} 0
+workqueue_work_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="1e-06"} 0
+workqueue_work_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="9.999999999999999e-06"} 0
+workqueue_work_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="9.999999999999999e-05"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="0.001"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="0.01"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="0.1"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="1"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="10"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="100"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="1000"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool",le="+Inf"} 1
+workqueue_work_duration_seconds_sum{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool"} 6.3481e-05
+workqueue_work_duration_seconds_count{controller="ciliumloadbalancerippool",name="ciliumloadbalancerippool"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="1e-08"} 0
+workqueue_work_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="1e-07"} 0
+workqueue_work_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="1e-06"} 0
+workqueue_work_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="9.999999999999999e-06"} 0
+workqueue_work_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="9.999999999999999e-05"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="0.001"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="0.01"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="0.1"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="1"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="10"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="100"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="1000"} 1
+workqueue_work_duration_seconds_bucket{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy",le="+Inf"} 1
+workqueue_work_duration_seconds_sum{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy"} 2.6001e-05
+workqueue_work_duration_seconds_count{controller="ciliumnetworkpolicy",name="ciliumnetworkpolicy"} 1
+workqueue_work_duration_seconds_bucket{controller="node-queue",name="node-queue",le="1e-08"} 0
+workqueue_work_duration_seconds_bucket{controller="node-queue",name="node-queue",le="1e-07"} 0
+workqueue_work_duration_seconds_bucket{controller="node-queue",name="node-queue",le="1e-06"} 0
+workqueue_work_duration_seconds_bucket{controller="node-queue",name="node-queue",le="9.999999999999999e-06"} 0
+workqueue_work_duration_seconds_bucket{controller="node-queue",name="node-queue",le="9.999999999999999e-05"} 113
+workqueue_work_duration_seconds_bucket{controller="node-queue",name="node-queue",le="0.001"} 113
+workqueue_work_duration_seconds_bucket{controller="node-queue",name="node-queue",le="0.01"} 117
+workqueue_work_duration_seconds_bucket{controller="node-queue",name="node-queue",le="0.1"} 133
+workqueue_work_duration_seconds_bucket{controller="node-queue",name="node-queue",le="1"} 133
+workqueue_work_duration_seconds_bucket{controller="node-queue",name="node-queue",le="10"} 133
+workqueue_work_duration_seconds_bucket{controller="node-queue",name="node-queue",le="100"} 133
+workqueue_work_duration_seconds_bucket{controller="node-queue",name="node-queue",le="1000"} 133
+workqueue_work_duration_seconds_bucket{controller="node-queue",name="node-queue",le="+Inf"} 133
+workqueue_work_duration_seconds_sum{controller="node-queue",name="node-queue"} 0.22510127
+workqueue_work_duration_seconds_count{controller="node-queue",name="node-queue"} 133
+workqueue_work_duration_seconds_bucket{controller="secret",name="secret",le="1e-08"} 0
+workqueue_work_duration_seconds_bucket{controller="secret",name="secret",le="1e-07"} 0
+workqueue_work_duration_seconds_bucket{controller="secret",name="secret",le="1e-06"} 0
+workqueue_work_duration_seconds_bucket{controller="secret",name="secret",le="9.999999999999999e-06"} 0
+workqueue_work_duration_seconds_bucket{controller="secret",name="secret",le="9.999999999999999e-05"} 0
+workqueue_work_duration_seconds_bucket{controller="secret",name="secret",le="0.001"} 4
+workqueue_work_duration_seconds_bucket{controller="secret",name="secret",le="0.01"} 4
+workqueue_work_duration_seconds_bucket{controller="secret",name="secret",le="0.1"} 4
+workqueue_work_duration_seconds_bucket{controller="secret",name="secret",le="1"} 4
+workqueue_work_duration_seconds_bucket{controller="secret",name="secret",le="10"} 4
+workqueue_work_duration_seconds_bucket{controller="secret",name="secret",le="100"} 4
+workqueue_work_duration_seconds_bucket{controller="secret",name="secret",le="1000"} 4
+workqueue_work_duration_seconds_bucket{controller="secret",name="secret",le="+Inf"} 4
+workqueue_work_duration_seconds_sum{controller="secret",name="secret"} 0.0008565249999999999
+workqueue_work_duration_seconds_count{controller="secret",name="secret"} 4

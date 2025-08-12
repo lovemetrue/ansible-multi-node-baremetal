@@ -1,0 +1,29 @@
+---
+- name: Apply kernel tuning settings on all nodes
+  hosts: master  # Работает на всех нодах (master и workers)
+  become: true  # Выполняет команды с sudo
+  gather_facts: false  # Ускоряет выполнение, если факты не нужны
+
+  tasks:
+    # 1. Копируем bash-скрипт на все ноды
+    - name: Copy tuned-sysctl.sh to nodes
+      ansible.builtin.copy:
+        src: "tuned-sysctl.sh"
+        dest: "/usr/local/bin/tuned-sysctl.sh"
+        mode: "0755"  # Устанавливаем права на выполнение
+        owner: root
+        group: root
+      register: script_copied
+
+    # 2. Запускаем скрипт сразу после копирования
+    - name: Execute tuned-sysctl.sh
+      ansible.builtin.command: "/usr/local/bin/tuned-sysctl.sh"
+      when: script_copied.changed  # Запускаем только если скрипт был скопирован/изменён
+
+    # 3. Настраиваем crontab для запуска при перезагрузке
+    - name: Add reboot job to root's crontab
+      ansible.builtin.cron:
+        name: "Apply kernel tuning after reboot"
+        user: root
+        job: "sleep 180 && /usr/local/bin/tuned-sysctl.sh"
+        special_time: reboot

@@ -1,0 +1,4 @@
+goroutines: 24
+OS threads: 12
+GOMAXPROCS: 8
+num CPU: 8

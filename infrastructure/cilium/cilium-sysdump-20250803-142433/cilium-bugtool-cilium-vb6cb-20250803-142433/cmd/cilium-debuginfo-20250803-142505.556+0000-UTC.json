@@ -1,0 +1,2784 @@
+{
+  "cilium-memory-map": "00400000-0399e000 r-xp 00000000 00:49 2362815                            /usr/bin/cilium-agent\n0399e000-07c62000 r--p 0359e000 00:49 2362815                            /usr/bin/cilium-agent\n07c62000-07e1a000 rw-p 07862000 00:49 2362815                            /usr/bin/cilium-agent\n07e1a000-083a0000 rw-p 00000000 00:00 0 \nc000000000-c005400000 rw-p 00000000 00:00 0 \nc005400000-c008000000 ---p 00000000 00:00 0 \n7f460a42e000-7f460a47f000 rw-p 00000000 00:00 0 \n7f460a47f000-7f460a4c0000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a4c0000-7f460a501000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a501000-7f460a542000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a542000-7f460a583000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a583000-7f460a5c4000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a5c4000-7f460a605000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a605000-7f460a646000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a646000-7f460a687000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a687000-7f460a6c8000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a6c8000-7f460a709000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a709000-7f460a70b000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a70b000-7f460a70d000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a70d000-7f460a70f000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a70f000-7f460a711000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a711000-7f460a713000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a713000-7f460a715000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a715000-7f460a717000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a717000-7f460a719000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a719000-7f460a71b000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a71b000-7f460a71d000 rw-s 00000000 00:0e 12559                      anon_inode:[perf_event]\n7f460a71d000-7f460ae13000 rw-p 00000000 00:00 0 \n7f460ae13000-7f460af13000 rw-p 00000000 00:00 0 \n7f460af13000-7f460af24000 rw-p 00000000 00:00 0 \n7f460af24000-7f460cf24000 rw-p 00000000 00:00 0 \n7f460cf24000-7f461d0a4000 ---p 00000000 00:00 0 \n7f461d0a4000-7f461d0a5000 rw-p 00000000 00:00 0 \n7f461d0a5000-7f463d0a4000 ---p 00000000 00:00 0 \n7f463d0a4000-7f463d0a5000 rw-p 00000000 00:00 0 \n7f463d0a5000-7f464ef54000 ---p 00000000 00:00 0 \n7f464ef54000-7f464ef55000 rw-p 00000000 00:00 0 \n7f464ef55000-7f465132a000 ---p 00000000 00:00 0 \n7f465132a000-7f465132b000 rw-p 00000000 00:00 0 \n7f465132b000-7f46517a4000 ---p 00000000 00:00 0 \n7f46517a4000-7f46517a5000 rw-p 00000000 00:00 0 \n7f46517a5000-7f4651824000 ---p 00000000 00:00 0 \n7f4651824000-7f4651884000 rw-p 00000000 00:00 0 \n7ffd3aa9a000-7ffd3aabb000 rw-p 00000000 00:00 0                          [stack]\n7ffd3abb3000-7ffd3abb7000 r--p 00000000 00:00 0                          [vvar]\n7ffd3abb7000-7ffd3abb9000 r-xp 00000000 00:00 0                          [vdso]\nffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]\n",
+  "cilium-status": {
+    "attach-mode": "tc",
+    "auth-certificate-provider": {
+      "state": "Disabled"
+    },
+    "bandwidth-manager": {
+      "devices": null
+    },
+    "bpf-maps": {
+      "dynamic-size-ratio": 0.0025,
+      "maps": [
+        {
+          "name": "Auth",
+          "size": 524288
+        },
+        {
+          "name": "Non-TCP connection tracking",
+          "size": 73528
+        },
+        {
+          "name": "TCP connection tracking",
+          "size": 147056
+        },
+        {
+          "name": "Endpoints",
+          "size": 65535
+        },
+        {
+          "name": "IP cache",
+          "size": 512000
+        },
+        {
+          "name": "IPv4 masquerading agent",
+          "size": 16384
+        },
+        {
+          "name": "IPv6 masquerading agent",
+          "size": 16384
+        },
+        {
+          "name": "IPv4 fragmentation",
+          "size": 8192
+        },
+        {
+          "name": "IPv4 service",
+          "size": 65536
+        },
+        {
+          "name": "IPv6 service",
+          "size": 65536
+        },
+        {
+          "name": "IPv4 service backend",
+          "size": 65536
+        },
+        {
+          "name": "IPv6 service backend",
+          "size": 65536
+        },
+        {
+          "name": "IPv4 service reverse NAT",
+          "size": 65536
+        },
+        {
+          "name": "IPv6 service reverse NAT",
+          "size": 65536
+        },
+        {
+          "name": "Metrics",
+          "size": 1024
+        },
+        {
+          "name": "Ratelimit metrics",
+          "size": 64
+        },
+        {
+          "name": "NAT",
+          "size": 147056
+        },
+        {
+          "name": "Neighbor table",
+          "size": 147056
+        },
+        {
+          "name": "Endpoint policy",
+          "size": 16384
+        },
+        {
+          "name": "Policy stats",
+          "size": 65530
+        },
+        {
+          "name": "Session affinity",
+          "size": 65536
+        },
+        {
+          "name": "Sock reverse NAT",
+          "size": 73528
+        }
+      ]
+    },
+    "cilium": {
+      "msg": "1.18.0 (v1.18.0-274205f0)",
+      "state": "Ok"
+    },
+    "clock-source": {
+      "mode": "ktime"
+    },
+    "cluster": {
+      "ciliumHealth": {
+        "state": "Ok"
+      },
+      "nodes": null,
+      "self": "k8s-worker-n1"
+    },
+    "cni-chaining": {
+      "mode": "none"
+    },
+    "cni-file": {
+      "msg": "successfully wrote CNI configuration file to /host/etc/cni/net.d/05-cilium.conflist",
+      "state": "Ok"
+    },
+    "controllers": [
+      {
+        "configuration": {
+          "error-retry": true
+        },
+        "name": "resolve-labels-kube-system/coredns-54558b56c7-tsmph",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:15.795Z",
+          "success-count": 2
+        },
+        "uuid": "5248236d-d740-4377-ac73-64e4fa1c1980"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "error-retry-base": "2s",
+          "interval": "1s"
+        },
+        "name": "endpoint-1178-regeneration-recovery",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "0001-01-01T00:00:00.000Z"
+        },
+        "uuid": "cd32e06c-7513-4788-a05a-635fa8004437"
+      },
+      {
+        "configuration": {
+          "error-retry": true
+        },
+        "name": "ipcache-inject-labels",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:24:07.037Z",
+          "success-count": 6
+        },
+        "uuid": "afc1b362-3e67-4c6a-b5b1-936ea2791496"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "interval": "10s"
+        },
+        "name": "sync-to-k8s-ciliumendpoint (482)",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:24:57.183Z",
+          "success-count": 18
+        },
+        "uuid": "6cff4d1a-eeb7-4a88-bad0-ce7c34b6b0bd"
+      },
+      {
+        "configuration": {
+          "error-retry": true
+        },
+        "name": "resolve-labels-kube-system/metrics-server-7f4c46496-hwgxn",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:15.919Z",
+          "success-count": 2
+        },
+        "uuid": "da7bb3d7-30d8-4282-91a4-0f64047b03a5"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "error-retry-base": "2s",
+          "interval": "1s"
+        },
+        "name": "endpoint-3911-regeneration-recovery",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "0001-01-01T00:00:00.000Z"
+        },
+        "uuid": "1f7dbe4c-a54f-4b31-8e2b-ddd29ea4f7a1"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "error-retry-base": "10s"
+        },
+        "name": "write-cni-file",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:05.392Z",
+          "success-count": 1
+        },
+        "uuid": "57dcde23-f493-4083-bc32-32b8e95f1f0e"
+      },
+      {
+        "configuration": {
+          "error-retry": true
+        },
+        "name": "restoring-ep-identity (482)",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:07.164Z",
+          "success-count": 1
+        },
+        "uuid": "b87619bc-a179-4707-88a6-fad07d57e7fd"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "interval": "5m0s"
+        },
+        "name": "resolve-identity-3911",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:08.288Z",
+          "success-count": 1
+        },
+        "uuid": "a5b74f12-e5b0-4f60-a21f-c8ce3683c2ca"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "error-retry-base": "2s",
+          "interval": "1s"
+        },
+        "name": "endpoint-3788-regeneration-recovery",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "0001-01-01T00:00:00.000Z"
+        },
+        "uuid": "aa70ce8e-a3fb-4cf6-8fcc-ae5ae0aa393f"
+      },
+      {
+        "configuration": {
+          "error-retry": true
+        },
+        "name": "waiting-initial-global-identities-ep (482)",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:07.164Z",
+          "success-count": 1
+        },
+        "uuid": "f5fc6d39-2b27-4e13-91ab-ef3042c3b78d"
+      },
+      {
+        "configuration": {
+          "error-retry": true
+        },
+        "name": "waiting-initial-global-identities-ep (3132)",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:07.164Z",
+          "success-count": 1
+        },
+        "uuid": "9f8619ba-e740-4c69-9376-2a99ca22f784"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "interval": "15m0s"
+        },
+        "name": "sync-policymap-3132",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:15.795Z",
+          "success-count": 1
+        },
+        "uuid": "7f9f4935-c741-491b-9c18-d153f98549fc"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "interval": "10s"
+        },
+        "name": "sync-to-k8s-ciliumendpoint (3132)",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:24:57.183Z",
+          "success-count": 18
+        },
+        "uuid": "72876174-0de6-44ee-815c-d4d4deceda84"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "interval": "1m0s"
+        },
+        "name": "cilium-health-ep",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:24:08.291Z",
+          "success-count": 3
+        },
+        "uuid": "b6b17076-c448-4971-bf79-001e95211167"
+      },
+      {
+        "configuration": {
+          "error-retry": true
+        },
+        "name": "resolve-labels-kube-system/hubble-ui-655f947f96-bdmvs",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:15.919Z",
+          "success-count": 2
+        },
+        "uuid": "301c286b-f8de-4398-83a1-826ce0ae6098"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "interval": "1m1s"
+        },
+        "name": "daemon-validate-config",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:24:09.169Z",
+          "success-count": 3
+        },
+        "uuid": "1d35605c-0d4e-4734-adf6-ef5747ec374f"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "interval": "15m0s"
+        },
+        "name": "sync-policymap-1178",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:15.796Z",
+          "success-count": 1
+        },
+        "uuid": "6f5a87b4-f96d-4d77-8631-f4f330be956c"
+      },
+      {
+        "configuration": {
+          "error-retry": true
+        },
+        "name": "waiting-initial-global-identities-ep (1178)",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:07.164Z",
+          "success-count": 1
+        },
+        "uuid": "3e408d7a-69b1-4c55-908b-8a825af083f8"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "interval": "1m0s"
+        },
+        "name": "sync-utime",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:24:07.080Z",
+          "success-count": 3
+        },
+        "uuid": "30b9d8b8-c2a8-4c15-ba47-b858c06a0271"
+      },
+      {
+        "configuration": {
+          "error-retry": true
+        },
+        "name": "proxy-ports-checkpoint",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:07.009Z",
+          "success-count": 1
+        },
+        "uuid": "a0ab8bfe-7b02-416b-9500-169889eec412"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "interval": "10s"
+        },
+        "name": "sync-to-k8s-ciliumendpoint (1178)",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:24:57.183Z",
+          "success-count": 18
+        },
+        "uuid": "fa20d595-a337-4868-a4ae-65b806a3ae09"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "interval": "15m0s"
+        },
+        "name": "sync-policymap-3788",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:19.307Z",
+          "success-count": 1
+        },
+        "uuid": "3a39de81-f790-4e23-b6bc-4d60d118573e"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "interval": "15m0s"
+        },
+        "name": "sync-policymap-3911",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:15.795Z",
+          "success-count": 1
+        },
+        "uuid": "583f55f1-6343-4b48-a3cc-d3c0b3c7e530"
+      },
+      {
+        "configuration": {
+          "error-retry": true
+        },
+        "name": "restoring-ep-identity (3132)",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:07.164Z",
+          "success-count": 1
+        },
+        "uuid": "7c38999a-02cd-45f0-8d1b-37f715009cf2"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "interval": "30s"
+        },
+        "name": "k8s-heartbeat",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:24:35.339Z",
+          "success-count": 6
+        },
+        "uuid": "602572aa-c163-482d-93a0-225c61f25391"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "interval": "2m0s"
+        },
+        "name": "endpoint-periodic-regeneration",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:24:05.384Z",
+          "success-count": 2
+        },
+        "uuid": "52638fb9-01f0-46c1-a192-cd7f3bd70bb2"
+      },
+      {
+        "configuration": {
+          "error-retry": true
+        },
+        "name": "restoring-ep-identity (3788)",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:07.163Z",
+          "success-count": 1
+        },
+        "uuid": "b5a981b8-7d66-4725-b312-32c2244e2c27"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "error-retry-base": "2s",
+          "interval": "1s"
+        },
+        "name": "endpoint-3132-regeneration-recovery",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "0001-01-01T00:00:00.000Z"
+        },
+        "uuid": "944407b0-5cb9-47d8-bab6-45c67c23c249"
+      },
+      {
+        "configuration": {
+          "error-retry": true
+        },
+        "name": "restoring-ep-identity (1178)",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:07.164Z",
+          "success-count": 1
+        },
+        "uuid": "b6809102-50a8-4410-a465-c257d3e9dd0b"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "interval": "15m0s"
+        },
+        "name": "sync-policymap-482",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:15.661Z",
+          "success-count": 1
+        },
+        "uuid": "68a4f8cf-1b1f-4a4e-a1b0-5bfbc2288d3b"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "error-retry-base": "2s",
+          "interval": "1s"
+        },
+        "name": "endpoint-482-regeneration-recovery",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "0001-01-01T00:00:00.000Z"
+        },
+        "uuid": "696e201d-4d4f-4a72-be9d-a234e884f2e6"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "interval": "5m0s"
+        },
+        "name": "endpoint-gc",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:05.382Z",
+          "success-count": 1
+        },
+        "uuid": "5e59d441-cdd9-4771-b744-9a769931f0e0"
+      },
+      {
+        "configuration": {
+          "error-retry": true,
+          "interval": "30s"
+        },
+        "name": "ct-map-pressure",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:24:37.182Z",
+          "success-count": 6
+        },
+        "uuid": "73fdcc3d-fe3e-4780-8f9c-fa569494599e"
+      },
+      {
+        "configuration": {
+          "error-retry": true
+        },
+        "name": "resolve-labels-/",
+        "status": {
+          "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+          "last-success-timestamp": "2025-08-03T14:22:07.551Z",
+          "success-count": 1
+        },
+        "uuid": "1825a19a-888e-4271-8c21-fc096bf94510"
+      }
+    ],
+    "datapath-mode": "veth",
+    "encryption": {
+      "mode": "Disabled"
+    },
+    "host-firewall": {
+      "devices": [
+        "ens18"
+      ],
+      "mode": "Disabled"
+    },
+    "hubble": {
+      "observer": {
+        "current-flows": 1611,
+        "max-flows": 4095,
+        "seen-flows": 1586,
+        "uptime": "2m55.021493241s"
+      },
+      "state": "Ok"
+    },
+    "hubble-metrics": {
+      "state": "Disabled"
+    },
+    "identity-range": {
+      "max-identity": 65535,
+      "min-identity": 256
+    },
+    "ipam": {
+      "allocations": {
+        "10.0.1.138": "router",
+        "10.0.1.156": "kube-system/metrics-server-7f4c46496-hwgxn [restored]",
+        "10.0.1.184": "kube-system/coredns-54558b56c7-tsmph [restored]",
+        "10.0.1.237": "health",
+        "10.0.1.78": "kube-system/hubble-ui-655f947f96-bdmvs [restored]"
+      },
+      "ipv4": [
+        "10.0.1.138",
+        "10.0.1.156",
+        "10.0.1.184",
+        "10.0.1.237",
+        "10.0.1.78"
+      ],
+      "ipv6": null,
+      "status": "IPv4: 5/254 allocated from 10.0.1.0/24, "
+    },
+    "ipv4-big-tcp": {
+      "maxGRO": 65536,
+      "maxGSO": 65536
+    },
+    "ipv6-big-tcp": {
+      "maxGRO": 65536,
+      "maxGSO": 65536
+    },
+    "kube-proxy-replacement": {
+      "deviceList": [
+        {
+          "ip": [
+            "",
+            "",
+            "91.217.196.183",
+            "fe80::be24:11ff:fe70:1081"
+          ],
+          "name": "ens18"
+        }
+      ],
+      "devices": [
+        "ens18"
+      ],
+      "directRoutingDevice": "ens18",
+      "features": {
+        "annotations": [
+          "service.cilium.io/node",
+          "service.cilium.io/node-selector",
+          "service.cilium.io/proxy-delegation",
+          "service.cilium.io/src-ranges-policy",
+          "service.cilium.io/type"
+        ],
+        "externalIPs": {
+          "enabled": true
+        },
+        "hostPort": {
+          "enabled": true
+        },
+        "nat46X64": {},
+        "nodePort": {
+          "acceleration": "Disabled",
+          "algorithm": "Random",
+          "dsrMode": "IP Option/Extension",
+          "enabled": true,
+          "mode": "SNAT",
+          "portMax": 32767,
+          "portMin": 30000
+        },
+        "sessionAffinity": {
+          "enabled": true
+        },
+        "socketLB": {
+          "enabled": true
+        },
+        "socketLBTracing": {
+          "enabled": true
+        }
+      },
+      "mode": "True"
+    },
+    "kubernetes": {
+      "k8s-api-versions": [
+        "EndpointSliceOrEndpoint",
+        "cilium/v2::CiliumCIDRGroup",
+        "cilium/v2::CiliumClusterwideNetworkPolicy",
+        "cilium/v2::CiliumEndpoint",
+        "cilium/v2::CiliumNetworkPolicy",
+        "cilium/v2::CiliumNode",
+        "core/v1::Pods",
+        "networking.k8s.io/v1::NetworkPolicy"
+      ],
+      "msg": "1.32 (v1.32.7) [linux/amd64]",
+      "state": "Ok"
+    },
+    "kvstore": {
+      "state": "Disabled"
+    },
+    "masquerading": {
+      "enabled": true,
+      "enabledProtocols": {
+        "ipv4": true
+      },
+      "mode": "iptables",
+      "snat-exclusion-cidr": "10.0.0.0/16",
+      "snat-exclusion-cidr-v4": "10.0.0.0/16"
+    },
+    "nodeMonitor": {
+      "cpus": 10,
+      "npages": 64,
+      "pagesize": 4096
+    },
+    "proxy": {
+      "envoy-deployment-mode": "external",
+      "ip": "10.0.1.138",
+      "port-range": "10000-20000",
+      "redirects": null,
+      "total-ports": 1
+    },
+    "routing": {
+      "inter-host-routing-mode": "Tunnel",
+      "intra-host-routing-mode": "Legacy",
+      "tunnel-protocol": "vxlan"
+    },
+    "srv6": {
+      "srv6EncapMode": "reduced"
+    }
+  },
+  "cilium-version": "1.18.0 274205f0 2025-07-28T15:22:50+02:00 go version go1.24.5 linux/amd64",
+  "encryption": {},
+  "endpoint-list": [
+    {
+      "id": 482,
+      "spec": {
+        "label-configuration": {},
+        "options": {
+          "ConntrackAccounting": "Disabled",
+          "Debug": "Disabled",
+          "DebugLB": "Disabled",
+          "DebugPolicy": "Disabled",
+          "DropNotification": "Enabled",
+          "MonitorAggregationLevel": "Medium",
+          "PolicyAccounting": "Enabled",
+          "PolicyAuditMode": "Disabled",
+          "PolicyVerdictNotification": "Enabled",
+          "SourceIPVerification": "Enabled",
+          "TraceNotification": "Enabled"
+        }
+      },
+      "status": {
+        "controllers": [
+          {
+            "configuration": {
+              "error-retry": true,
+              "error-retry-base": "2s",
+              "interval": "1s"
+            },
+            "name": "endpoint-482-regeneration-recovery",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "0001-01-01T00:00:00.000Z"
+            },
+            "uuid": "696e201d-4d4f-4a72-be9d-a234e884f2e6"
+          },
+          {
+            "configuration": {
+              "error-retry": true
+            },
+            "name": "resolve-labels-kube-system/coredns-54558b56c7-tsmph",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:22:15.795Z",
+              "success-count": 2
+            },
+            "uuid": "5248236d-d740-4377-ac73-64e4fa1c1980"
+          },
+          {
+            "configuration": {
+              "error-retry": true
+            },
+            "name": "restoring-ep-identity (482)",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:22:07.164Z",
+              "success-count": 1
+            },
+            "uuid": "b87619bc-a179-4707-88a6-fad07d57e7fd"
+          },
+          {
+            "configuration": {
+              "error-retry": true,
+              "interval": "15m0s"
+            },
+            "name": "sync-policymap-482",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:22:15.661Z",
+              "success-count": 1
+            },
+            "uuid": "68a4f8cf-1b1f-4a4e-a1b0-5bfbc2288d3b"
+          },
+          {
+            "configuration": {
+              "error-retry": true,
+              "interval": "10s"
+            },
+            "name": "sync-to-k8s-ciliumendpoint (482)",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:24:57.183Z",
+              "success-count": 18
+            },
+            "uuid": "6cff4d1a-eeb7-4a88-bad0-ce7c34b6b0bd"
+          },
+          {
+            "configuration": {
+              "error-retry": true
+            },
+            "name": "waiting-initial-global-identities-ep (482)",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:22:07.164Z",
+              "success-count": 1
+            },
+            "uuid": "f5fc6d39-2b27-4e13-91ab-ef3042c3b78d"
+          }
+        ],
+        "external-identifiers": {
+          "cni-attachment-id": "1560205b37e722c487bef9a32a488f0eacf984a7dfb446fef1b0aad32385bfa7:eth0",
+          "container-id": "1560205b37e722c487bef9a32a488f0eacf984a7dfb446fef1b0aad32385bfa7",
+          "k8s-namespace": "kube-system",
+          "k8s-pod-name": "coredns-54558b56c7-tsmph",
+          "pod-name": "kube-system/coredns-54558b56c7-tsmph"
+        },
+        "health": {
+          "bpf": "OK",
+          "connected": true,
+          "overallHealth": "OK",
+          "policy": "OK"
+        },
+        "identity": {
+          "id": 24121,
+          "labels": [
+            "k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=kube-system",
+            "k8s:io.cilium.k8s.policy.cluster=default",
+            "k8s:io.cilium.k8s.policy.serviceaccount=coredns",
+            "k8s:io.kubernetes.pod.namespace=kube-system",
+            "k8s:k8s-app=kube-dns"
+          ]
+        },
+        "labels": {
+          "derived": [
+            "k8s:pod-template-hash=54558b56c7"
+          ],
+          "realized": {},
+          "security-relevant": [
+            "k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=kube-system",
+            "k8s:io.cilium.k8s.policy.cluster=default",
+            "k8s:io.cilium.k8s.policy.serviceaccount=coredns",
+            "k8s:io.kubernetes.pod.namespace=kube-system",
+            "k8s:k8s-app=kube-dns"
+          ]
+        },
+        "log": [
+          {
+            "code": "OK",
+            "message": "Successfully regenerated endpoint program (Reason: periodic endpoint regeneration)",
+            "state": "ready",
+            "timestamp": "2025-08-03T14:24:05Z"
+          }
+        ],
+        "namedPorts": [
+          {
+            "name": "dns",
+            "port": 53,
+            "protocol": "UDP"
+          },
+          {
+            "name": "dns-tcp",
+            "port": 53,
+            "protocol": "TCP"
+          },
+          {
+            "name": "metrics",
+            "port": 9153,
+            "protocol": "TCP"
+          }
+        ],
+        "networking": {
+          "addressing": [
+            {
+              "ipv4": "10.0.1.184",
+              "ipv4-pool-name": "default"
+            }
+          ],
+          "container-interface-name": "eth0",
+          "host-mac": "0a:f4:f4:a7:f1:cc",
+          "interface-index": 92,
+          "interface-name": "lxc9f888d020df3",
+          "mac": "22:b2:68:ca:d6:e9"
+        },
+        "policy": {
+          "proxy-policy-revision": 1,
+          "proxy-statistics": [],
+          "realized": {
+            "allowed-egress-identities": [
+              0
+            ],
+            "allowed-ingress-identities": [
+              0,
+              1
+            ],
+            "build": 1,
+            "denied-egress-identities": null,
+            "denied-ingress-identities": null,
+            "id": 24121,
+            "l4": {
+              "egress": [],
+              "ingress": []
+            },
+            "policy-enabled": "none",
+            "policy-revision": 1
+          },
+          "spec": {
+            "allowed-egress-identities": [
+              0
+            ],
+            "allowed-ingress-identities": [
+              0,
+              1
+            ],
+            "build": 1,
+            "denied-egress-identities": null,
+            "denied-ingress-identities": null,
+            "id": 24121,
+            "l4": {
+              "egress": [],
+              "ingress": []
+            },
+            "policy-enabled": "none",
+            "policy-revision": 1
+          }
+        },
+        "realized": {
+          "label-configuration": {},
+          "options": {
+            "ConntrackAccounting": "Disabled",
+            "Debug": "Disabled",
+            "DebugLB": "Disabled",
+            "DebugPolicy": "Disabled",
+            "DropNotification": "Enabled",
+            "MonitorAggregationLevel": "Medium",
+            "PolicyAccounting": "Enabled",
+            "PolicyAuditMode": "Disabled",
+            "PolicyVerdictNotification": "Enabled",
+            "SourceIPVerification": "Enabled",
+            "TraceNotification": "Enabled"
+          }
+        },
+        "state": "ready"
+      }
+    },
+    {
+      "id": 1178,
+      "spec": {
+        "label-configuration": {},
+        "options": {
+          "ConntrackAccounting": "Disabled",
+          "Debug": "Disabled",
+          "DebugLB": "Disabled",
+          "DebugPolicy": "Disabled",
+          "DropNotification": "Enabled",
+          "MonitorAggregationLevel": "Medium",
+          "PolicyAccounting": "Enabled",
+          "PolicyAuditMode": "Disabled",
+          "PolicyVerdictNotification": "Enabled",
+          "SourceIPVerification": "Enabled",
+          "TraceNotification": "Enabled"
+        }
+      },
+      "status": {
+        "controllers": [
+          {
+            "configuration": {
+              "error-retry": true,
+              "error-retry-base": "2s",
+              "interval": "1s"
+            },
+            "name": "endpoint-1178-regeneration-recovery",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "0001-01-01T00:00:00.000Z"
+            },
+            "uuid": "cd32e06c-7513-4788-a05a-635fa8004437"
+          },
+          {
+            "configuration": {
+              "error-retry": true
+            },
+            "name": "resolve-labels-kube-system/hubble-ui-655f947f96-bdmvs",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:22:15.919Z",
+              "success-count": 2
+            },
+            "uuid": "301c286b-f8de-4398-83a1-826ce0ae6098"
+          },
+          {
+            "configuration": {
+              "error-retry": true
+            },
+            "name": "restoring-ep-identity (1178)",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:22:07.164Z",
+              "success-count": 1
+            },
+            "uuid": "b6809102-50a8-4410-a465-c257d3e9dd0b"
+          },
+          {
+            "configuration": {
+              "error-retry": true,
+              "interval": "15m0s"
+            },
+            "name": "sync-policymap-1178",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:22:15.796Z",
+              "success-count": 1
+            },
+            "uuid": "6f5a87b4-f96d-4d77-8631-f4f330be956c"
+          },
+          {
+            "configuration": {
+              "error-retry": true,
+              "interval": "10s"
+            },
+            "name": "sync-to-k8s-ciliumendpoint (1178)",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:24:57.183Z",
+              "success-count": 18
+            },
+            "uuid": "fa20d595-a337-4868-a4ae-65b806a3ae09"
+          },
+          {
+            "configuration": {
+              "error-retry": true
+            },
+            "name": "waiting-initial-global-identities-ep (1178)",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:22:07.164Z",
+              "success-count": 1
+            },
+            "uuid": "3e408d7a-69b1-4c55-908b-8a825af083f8"
+          }
+        ],
+        "external-identifiers": {
+          "cni-attachment-id": "f8e6ef29dd4fef0fe6ae4acb4061aa0ae5d20e2cd052db130bc5dcab99254efd:eth0",
+          "container-id": "f8e6ef29dd4fef0fe6ae4acb4061aa0ae5d20e2cd052db130bc5dcab99254efd",
+          "k8s-namespace": "kube-system",
+          "k8s-pod-name": "hubble-ui-655f947f96-bdmvs",
+          "pod-name": "kube-system/hubble-ui-655f947f96-bdmvs"
+        },
+        "health": {
+          "bpf": "OK",
+          "connected": true,
+          "overallHealth": "OK",
+          "policy": "OK"
+        },
+        "identity": {
+          "id": 2284,
+          "labels": [
+            "k8s:app.kubernetes.io/name=hubble-ui",
+            "k8s:app.kubernetes.io/part-of=cilium",
+            "k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=kube-system",
+            "k8s:io.cilium.k8s.policy.cluster=default",
+            "k8s:io.cilium.k8s.policy.serviceaccount=hubble-ui",
+            "k8s:io.kubernetes.pod.namespace=kube-system",
+            "k8s:k8s-app=hubble-ui"
+          ]
+        },
+        "labels": {
+          "derived": [
+            "k8s:pod-template-hash=655f947f96"
+          ],
+          "realized": {},
+          "security-relevant": [
+            "k8s:app.kubernetes.io/name=hubble-ui",
+            "k8s:app.kubernetes.io/part-of=cilium",
+            "k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=kube-system",
+            "k8s:io.cilium.k8s.policy.cluster=default",
+            "k8s:io.cilium.k8s.policy.serviceaccount=hubble-ui",
+            "k8s:io.kubernetes.pod.namespace=kube-system",
+            "k8s:k8s-app=hubble-ui"
+          ]
+        },
+        "log": [
+          {
+            "code": "OK",
+            "message": "Successfully regenerated endpoint program (Reason: periodic endpoint regeneration)",
+            "state": "ready",
+            "timestamp": "2025-08-03T14:24:05Z"
+          }
+        ],
+        "namedPorts": [
+          {
+            "name": "grpc",
+            "port": 8090,
+            "protocol": "TCP"
+          },
+          {
+            "name": "http",
+            "port": 8081,
+            "protocol": "TCP"
+          }
+        ],
+        "networking": {
+          "addressing": [
+            {
+              "ipv4": "10.0.1.78",
+              "ipv4-pool-name": "default"
+            }
+          ],
+          "container-interface-name": "eth0",
+          "host-mac": "fa:54:30:02:7f:19",
+          "interface-index": 88,
+          "interface-name": "lxc1a9e66ab2e3d",
+          "mac": "66:0e:21:74:33:51"
+        },
+        "policy": {
+          "proxy-policy-revision": 1,
+          "proxy-statistics": [],
+          "realized": {
+            "allowed-egress-identities": [
+              0
+            ],
+            "allowed-ingress-identities": [
+              0,
+              1
+            ],
+            "build": 1,
+            "denied-egress-identities": null,
+            "denied-ingress-identities": null,
+            "id": 2284,
+            "l4": {
+              "egress": [],
+              "ingress": []
+            },
+            "policy-enabled": "none",
+            "policy-revision": 1
+          },
+          "spec": {
+            "allowed-egress-identities": [
+              0
+            ],
+            "allowed-ingress-identities": [
+              0,
+              1
+            ],
+            "build": 1,
+            "denied-egress-identities": null,
+            "denied-ingress-identities": null,
+            "id": 2284,
+            "l4": {
+              "egress": [],
+              "ingress": []
+            },
+            "policy-enabled": "none",
+            "policy-revision": 1
+          }
+        },
+        "realized": {
+          "label-configuration": {},
+          "options": {
+            "ConntrackAccounting": "Disabled",
+            "Debug": "Disabled",
+            "DebugLB": "Disabled",
+            "DebugPolicy": "Disabled",
+            "DropNotification": "Enabled",
+            "MonitorAggregationLevel": "Medium",
+            "PolicyAccounting": "Enabled",
+            "PolicyAuditMode": "Disabled",
+            "PolicyVerdictNotification": "Enabled",
+            "SourceIPVerification": "Enabled",
+            "TraceNotification": "Enabled"
+          }
+        },
+        "state": "ready"
+      }
+    },
+    {
+      "id": 3132,
+      "spec": {
+        "label-configuration": {},
+        "options": {
+          "ConntrackAccounting": "Disabled",
+          "Debug": "Disabled",
+          "DebugLB": "Disabled",
+          "DebugPolicy": "Disabled",
+          "DropNotification": "Enabled",
+          "MonitorAggregationLevel": "Medium",
+          "PolicyAccounting": "Enabled",
+          "PolicyAuditMode": "Disabled",
+          "PolicyVerdictNotification": "Enabled",
+          "SourceIPVerification": "Enabled",
+          "TraceNotification": "Enabled"
+        }
+      },
+      "status": {
+        "controllers": [
+          {
+            "configuration": {
+              "error-retry": true,
+              "error-retry-base": "2s",
+              "interval": "1s"
+            },
+            "name": "endpoint-3132-regeneration-recovery",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "0001-01-01T00:00:00.000Z"
+            },
+            "uuid": "944407b0-5cb9-47d8-bab6-45c67c23c249"
+          },
+          {
+            "configuration": {
+              "error-retry": true
+            },
+            "name": "resolve-labels-kube-system/metrics-server-7f4c46496-hwgxn",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:22:15.919Z",
+              "success-count": 2
+            },
+            "uuid": "da7bb3d7-30d8-4282-91a4-0f64047b03a5"
+          },
+          {
+            "configuration": {
+              "error-retry": true
+            },
+            "name": "restoring-ep-identity (3132)",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:22:07.164Z",
+              "success-count": 1
+            },
+            "uuid": "7c38999a-02cd-45f0-8d1b-37f715009cf2"
+          },
+          {
+            "configuration": {
+              "error-retry": true,
+              "interval": "15m0s"
+            },
+            "name": "sync-policymap-3132",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:22:15.795Z",
+              "success-count": 1
+            },
+            "uuid": "7f9f4935-c741-491b-9c18-d153f98549fc"
+          },
+          {
+            "configuration": {
+              "error-retry": true,
+              "interval": "10s"
+            },
+            "name": "sync-to-k8s-ciliumendpoint (3132)",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:24:57.183Z",
+              "success-count": 18
+            },
+            "uuid": "72876174-0de6-44ee-815c-d4d4deceda84"
+          },
+          {
+            "configuration": {
+              "error-retry": true
+            },
+            "name": "waiting-initial-global-identities-ep (3132)",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:22:07.164Z",
+              "success-count": 1
+            },
+            "uuid": "9f8619ba-e740-4c69-9376-2a99ca22f784"
+          }
+        ],
+        "external-identifiers": {
+          "cni-attachment-id": "6a4461c1dc02ad357d5ac1ddf3cff298d0df8f963cf3c718dd9df95a328ce981:eth0",
+          "container-id": "6a4461c1dc02ad357d5ac1ddf3cff298d0df8f963cf3c718dd9df95a328ce981",
+          "k8s-namespace": "kube-system",
+          "k8s-pod-name": "metrics-server-7f4c46496-hwgxn",
+          "pod-name": "kube-system/metrics-server-7f4c46496-hwgxn"
+        },
+        "health": {
+          "bpf": "OK",
+          "connected": true,
+          "overallHealth": "OK",
+          "policy": "OK"
+        },
+        "identity": {
+          "id": 45704,
+          "labels": [
+            "k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=kube-system",
+            "k8s:io.cilium.k8s.policy.cluster=default",
+            "k8s:io.cilium.k8s.policy.serviceaccount=metrics-server",
+            "k8s:io.kubernetes.pod.namespace=kube-system",
+            "k8s:k8s-app=metrics-server"
+          ]
+        },
+        "labels": {
+          "derived": [
+            "k8s:pod-template-hash=7f4c46496"
+          ],
+          "realized": {},
+          "security-relevant": [
+            "k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=kube-system",
+            "k8s:io.cilium.k8s.policy.cluster=default",
+            "k8s:io.cilium.k8s.policy.serviceaccount=metrics-server",
+            "k8s:io.kubernetes.pod.namespace=kube-system",
+            "k8s:k8s-app=metrics-server"
+          ]
+        },
+        "log": [
+          {
+            "code": "OK",
+            "message": "Successfully regenerated endpoint program (Reason: periodic endpoint regeneration)",
+            "state": "ready",
+            "timestamp": "2025-08-03T14:24:05Z"
+          }
+        ],
+        "namedPorts": [
+          {
+            "name": "https",
+            "port": 10250,
+            "protocol": "TCP"
+          }
+        ],
+        "networking": {
+          "addressing": [
+            {
+              "ipv4": "10.0.1.156",
+              "ipv4-pool-name": "default"
+            }
+          ],
+          "container-interface-name": "eth0",
+          "host-mac": "7e:d0:45:7e:3f:c1",
+          "interface-index": 66,
+          "interface-name": "lxcb16c490a744c",
+          "mac": "7e:95:3f:3c:c8:59"
+        },
+        "policy": {
+          "proxy-policy-revision": 1,
+          "proxy-statistics": [],
+          "realized": {
+            "allowed-egress-identities": [
+              0
+            ],
+            "allowed-ingress-identities": [
+              0,
+              1
+            ],
+            "build": 1,
+            "denied-egress-identities": null,
+            "denied-ingress-identities": null,
+            "id": 45704,
+            "l4": {
+              "egress": [],
+              "ingress": []
+            },
+            "policy-enabled": "none",
+            "policy-revision": 1
+          },
+          "spec": {
+            "allowed-egress-identities": [
+              0
+            ],
+            "allowed-ingress-identities": [
+              0,
+              1
+            ],
+            "build": 1,
+            "denied-egress-identities": null,
+            "denied-ingress-identities": null,
+            "id": 45704,
+            "l4": {
+              "egress": [],
+              "ingress": []
+            },
+            "policy-enabled": "none",
+            "policy-revision": 1
+          }
+        },
+        "realized": {
+          "label-configuration": {},
+          "options": {
+            "ConntrackAccounting": "Disabled",
+            "Debug": "Disabled",
+            "DebugLB": "Disabled",
+            "DebugPolicy": "Disabled",
+            "DropNotification": "Enabled",
+            "MonitorAggregationLevel": "Medium",
+            "PolicyAccounting": "Enabled",
+            "PolicyAuditMode": "Disabled",
+            "PolicyVerdictNotification": "Enabled",
+            "SourceIPVerification": "Enabled",
+            "TraceNotification": "Enabled"
+          }
+        },
+        "state": "ready"
+      }
+    },
+    {
+      "id": 3788,
+      "spec": {
+        "label-configuration": {
+          "user": [
+            "k8s:node-role.kubernetes.io/worker"
+          ]
+        },
+        "options": {
+          "ConntrackAccounting": "Disabled",
+          "Debug": "Disabled",
+          "DebugLB": "Disabled",
+          "DebugPolicy": "Disabled",
+          "DropNotification": "Enabled",
+          "MonitorAggregationLevel": "Medium",
+          "PolicyAccounting": "Enabled",
+          "PolicyAuditMode": "Disabled",
+          "PolicyVerdictNotification": "Enabled",
+          "SourceIPVerification": "Enabled",
+          "TraceNotification": "Enabled"
+        }
+      },
+      "status": {
+        "controllers": [
+          {
+            "configuration": {
+              "error-retry": true,
+              "error-retry-base": "2s",
+              "interval": "1s"
+            },
+            "name": "endpoint-3788-regeneration-recovery",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "0001-01-01T00:00:00.000Z"
+            },
+            "uuid": "aa70ce8e-a3fb-4cf6-8fcc-ae5ae0aa393f"
+          },
+          {
+            "configuration": {
+              "error-retry": true
+            },
+            "name": "resolve-labels-/",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:22:07.551Z",
+              "success-count": 1
+            },
+            "uuid": "1825a19a-888e-4271-8c21-fc096bf94510"
+          },
+          {
+            "configuration": {
+              "error-retry": true
+            },
+            "name": "restoring-ep-identity (3788)",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:22:07.163Z",
+              "success-count": 1
+            },
+            "uuid": "b5a981b8-7d66-4725-b312-32c2244e2c27"
+          },
+          {
+            "configuration": {
+              "error-retry": true,
+              "interval": "15m0s"
+            },
+            "name": "sync-policymap-3788",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:22:19.307Z",
+              "success-count": 1
+            },
+            "uuid": "3a39de81-f790-4e23-b6bc-4d60d118573e"
+          }
+        ],
+        "external-identifiers": {
+          "pod-name": "/"
+        },
+        "health": {
+          "bpf": "OK",
+          "connected": true,
+          "overallHealth": "OK",
+          "policy": "OK"
+        },
+        "identity": {
+          "id": 1,
+          "labels": [
+            "reserved:host",
+            "k8s:k8slens-edit-resource-version=v1",
+            "k8s:node-role.kubernetes.io/worker"
+          ]
+        },
+        "labels": {
+          "derived": [
+            "k8s:k8slens-edit-resource-version=v1",
+            "k8s:node-role.kubernetes.io/worker",
+            "reserved:host"
+          ],
+          "realized": {
+            "user": [
+              "k8s:node-role.kubernetes.io/worker"
+            ]
+          },
+          "security-relevant": [
+            "k8s:k8slens-edit-resource-version=v1",
+            "k8s:node-role.kubernetes.io/worker",
+            "reserved:host"
+          ]
+        },
+        "log": [
+          {
+            "code": "OK",
+            "message": "Successfully regenerated endpoint program (Reason: periodic endpoint regeneration)",
+            "state": "ready",
+            "timestamp": "2025-08-03T14:24:05Z"
+          }
+        ],
+        "networking": {
+          "addressing": [
+            {}
+          ],
+          "host-mac": "26:e4:9d:a3:4e:a3",
+          "interface-index": 4,
+          "interface-name": "cilium_host",
+          "mac": "26:e4:9d:a3:4e:a3"
+        },
+        "policy": {
+          "proxy-statistics": [],
+          "realized": {
+            "allowed-egress-identities": [
+              0
+            ],
+            "allowed-ingress-identities": [
+              0
+            ],
+            "build": 1,
+            "denied-egress-identities": null,
+            "denied-ingress-identities": null,
+            "id": 1,
+            "l4": {
+              "egress": [],
+              "ingress": []
+            },
+            "policy-enabled": "none",
+            "policy-revision": 1
+          },
+          "spec": {
+            "allowed-egress-identities": [
+              0
+            ],
+            "allowed-ingress-identities": [
+              0
+            ],
+            "build": 1,
+            "denied-egress-identities": null,
+            "denied-ingress-identities": null,
+            "id": 1,
+            "l4": {
+              "egress": [],
+              "ingress": []
+            },
+            "policy-enabled": "none",
+            "policy-revision": 1
+          }
+        },
+        "realized": {
+          "label-configuration": {
+            "user": [
+              "k8s:node-role.kubernetes.io/worker"
+            ]
+          },
+          "options": {
+            "ConntrackAccounting": "Disabled",
+            "Debug": "Disabled",
+            "DebugLB": "Disabled",
+            "DebugPolicy": "Disabled",
+            "DropNotification": "Enabled",
+            "MonitorAggregationLevel": "Medium",
+            "PolicyAccounting": "Enabled",
+            "PolicyAuditMode": "Disabled",
+            "PolicyVerdictNotification": "Enabled",
+            "SourceIPVerification": "Enabled",
+            "TraceNotification": "Enabled"
+          }
+        },
+        "state": "ready"
+      }
+    },
+    {
+      "id": 3911,
+      "spec": {
+        "label-configuration": {},
+        "options": {
+          "ConntrackAccounting": "Disabled",
+          "Debug": "Disabled",
+          "DebugLB": "Disabled",
+          "DebugPolicy": "Disabled",
+          "DropNotification": "Enabled",
+          "MonitorAggregationLevel": "Medium",
+          "PolicyAccounting": "Enabled",
+          "PolicyAuditMode": "Disabled",
+          "PolicyVerdictNotification": "Enabled",
+          "SourceIPVerification": "Enabled",
+          "TraceNotification": "Enabled"
+        }
+      },
+      "status": {
+        "controllers": [
+          {
+            "configuration": {
+              "error-retry": true,
+              "error-retry-base": "2s",
+              "interval": "1s"
+            },
+            "name": "endpoint-3911-regeneration-recovery",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "0001-01-01T00:00:00.000Z"
+            },
+            "uuid": "1f7dbe4c-a54f-4b31-8e2b-ddd29ea4f7a1"
+          },
+          {
+            "configuration": {
+              "error-retry": true,
+              "interval": "5m0s"
+            },
+            "name": "resolve-identity-3911",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:22:08.288Z",
+              "success-count": 1
+            },
+            "uuid": "a5b74f12-e5b0-4f60-a21f-c8ce3683c2ca"
+          },
+          {
+            "configuration": {
+              "error-retry": true,
+              "interval": "15m0s"
+            },
+            "name": "sync-policymap-3911",
+            "status": {
+              "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+              "last-success-timestamp": "2025-08-03T14:22:15.795Z",
+              "success-count": 1
+            },
+            "uuid": "583f55f1-6343-4b48-a3cc-d3c0b3c7e530"
+          }
+        ],
+        "external-identifiers": {
+          "container-name": "cilium-health",
+          "pod-name": "/"
+        },
+        "health": {
+          "bpf": "OK",
+          "connected": true,
+          "overallHealth": "OK",
+          "policy": "OK"
+        },
+        "identity": {
+          "id": 4,
+          "labels": [
+            "reserved:health"
+          ]
+        },
+        "labels": {
+          "realized": {},
+          "security-relevant": [
+            "reserved:health"
+          ]
+        },
+        "log": [
+          {
+            "code": "OK",
+            "message": "Successfully regenerated endpoint program (Reason: periodic endpoint regeneration)",
+            "state": "ready",
+            "timestamp": "2025-08-03T14:24:05Z"
+          }
+        ],
+        "networking": {
+          "addressing": [
+            {
+              "ipv4": "10.0.1.237",
+              "ipv4-pool-name": "default"
+            }
+          ],
+          "host-mac": "52:be:14:18:05:34",
+          "interface-index": 94,
+          "interface-name": "lxc_health",
+          "mac": "de:ce:89:e9:cd:5e"
+        },
+        "policy": {
+          "proxy-policy-revision": 1,
+          "proxy-statistics": [],
+          "realized": {
+            "allowed-egress-identities": [
+              0
+            ],
+            "allowed-ingress-identities": [
+              0,
+              1
+            ],
+            "build": 1,
+            "denied-egress-identities": null,
+            "denied-ingress-identities": null,
+            "id": 4,
+            "l4": {
+              "egress": [],
+              "ingress": []
+            },
+            "policy-enabled": "none",
+            "policy-revision": 1
+          },
+          "spec": {
+            "allowed-egress-identities": [
+              0
+            ],
+            "allowed-ingress-identities": [
+              0,
+              1
+            ],
+            "build": 1,
+            "denied-egress-identities": null,
+            "denied-ingress-identities": null,
+            "id": 4,
+            "l4": {
+              "egress": [],
+              "ingress": []
+            },
+            "policy-enabled": "none",
+            "policy-revision": 1
+          }
+        },
+        "realized": {
+          "label-configuration": {},
+          "options": {
+            "ConntrackAccounting": "Disabled",
+            "Debug": "Disabled",
+            "DebugLB": "Disabled",
+            "DebugPolicy": "Disabled",
+            "DropNotification": "Enabled",
+            "MonitorAggregationLevel": "Medium",
+            "PolicyAccounting": "Enabled",
+            "PolicyAuditMode": "Disabled",
+            "PolicyVerdictNotification": "Enabled",
+            "SourceIPVerification": "Enabled",
+            "TraceNotification": "Enabled"
+          }
+        },
+        "state": "ready"
+      }
+    }
+  ],
+  "environment-variables": [
+    "hubble-monitor-events:",
+    "egress-multi-home-ip-rule-compat:false",
+    "dnsproxy-socket-linger-timeout:10",
+    "bpf-lb-rev-nat-map-max:0",
+    "tofqdns-dns-reject-response-code:refused",
+    "tofqdns-proxy-port:0",
+    "enable-ipv6-big-tcp:false",
+    "enable-ipv4-masquerade:true",
+    "envoy-log:",
+    "enable-tracing:false",
+    "ipv6-native-routing-cidr:",
+    "enable-host-legacy-routing:false",
+    "nat-map-stats-entries:32",
+    "trace-payloadlen:128",
+    "enable-ipsec-key-watcher:true",
+    "cluster-health-port:4240",
+    "envoy-config-timeout:2m0s",
+    "ipv4-range:auto",
+    "dns-policy-unload-on-shutdown:false",
+    "http-retry-timeout:0",
+    "local-router-ipv4:",
+    "direct-routing-skip-unreachable:false",
+    "log-system-load:false",
+    "connectivity-probe-frequency-ratio:0.5",
+    "k8s-require-ipv4-pod-cidr:false",
+    "enable-cilium-health-api-server-access:",
+    "egress-gateway-policy-map-max:16384",
+    "boot-id-file:/proc/sys/kernel/random/boot_id",
+    "k8s-api-server-urls:",
+    "hubble-metrics-server:",
+    "srv6-encap-mode:reduced",
+    "kube-proxy-replacement:true",
+    "enable-endpoint-routes:false",
+    "bpf-sock-rev-map-max:0",
+    "ipv4-node:auto",
+    "enable-bbr-hostns-only:false",
+    "enable-bpf-clock-probe:false",
+    "hubble-event-queue-size:0",
+    "k8s-client-connection-keep-alive:30s",
+    "enable-mke:false",
+    "envoy-policy-restore-timeout:3m0s",
+    "dnsproxy-concurrency-processing-grace-period:0s",
+    "bpf-conntrack-accounting:false",
+    "enable-host-firewall:false",
+    "health-check-icmp-failure-threshold:3",
+    "read-cni-conf:",
+    "bpf-ct-timeout-service-tcp:2h13m20s",
+    "enable-k8s:true",
+    "hubble-export-fieldmask:",
+    "bpf-lb-mode:snat",
+    "enable-source-ip-verification:true",
+    "enable-node-port:false",
+    "nodeport-addresses:",
+    "hubble-metrics:",
+    "enable-k8s-endpoint-slice:true",
+    "labels:",
+    "identity-restore-grace-period:30s",
+    "hubble-redact-http-urlquery:false",
+    "hubble-network-policy-correlation-enabled:true",
+    "api-rate-limit:",
+    "enable-icmp-rules:true",
+    "bpf-neigh-global-max:524288",
+    "pprof-port:6060",
+    "hubble-event-buffer-capacity:4095",
+    "tofqdns-endpoint-max-ip-per-hostname:1000",
+    "enable-identity-mark:true",
+    "proxy-idle-timeout-seconds:60",
+    "ipsec-key-file:",
+    "dnsproxy-enable-transparent-mode:true",
+    "k8s-sync-timeout:3m0s",
+    "tofqdns-idle-connection-grace-period:0s",
+    "encryption-strict-mode-allow-remote-node-identities:false",
+    "bpf-lb-sock:false",
+    "ipam-cilium-node-update-rate:15s",
+    "bpf-ct-global-any-max:262144",
+    "lib-dir:/var/lib/cilium",
+    "cni-log-file:/var/run/cilium/cilium-cni.log",
+    "hubble-tls-client-ca-files:/var/lib/cilium/tls/hubble/client-ca.crt",
+    "hubble-recorder-sink-queue-size:1024",
+    "bpf-lb-algorithm-annotation:false",
+    "max-connected-clusters:255",
+    "envoy-http-upstream-linger-timeout:-1",
+    "socket-path:/var/run/cilium/cilium.sock",
+    "default-lb-service-ipam:lbipam",
+    "enable-health-checking:true",
+    "container-ip-local-reserved-ports:auto",
+    "envoy-keep-cap-netbindservice:false",
+    "lb-state-file:",
+    "encrypt-node:false",
+    "k8s-namespace:kube-system",
+    "config-sources:[{\"kind\":\"config-map\",\"namespace\":\"kube-system\",\"name\":\"cilium-config\"}]",
+    "enable-ipip-termination:false",
+    "hubble-flowlogs-config-path:",
+    "version:false",
+    "ipv6-range:auto",
+    "l2-pod-announcements-interface:",
+    "config-sources-overrides:{\"allowConfigKeys\":[],\"denyConfigKeys\":[]}",
+    "bpf-lb-ipip-sock-mark:false",
+    "exclude-node-label-patterns:",
+    "l2-announcements-renew-deadline:5s",
+    "identity-heartbeat-timeout:30m0s",
+    "route-metric:0",
+    "auto-direct-node-routes:false",
+    "proxy-gid:1337",
+    "ipv4-service-range:auto",
+    "policy-trigger-interval:1s",
+    "nodes-gc-interval:5m0s",
+    "gateway-api-secrets-namespace:",
+    "ipv6-mcast-device:",
+    "bpf-auth-map-max:524288",
+    "config:",
+    "proxy-xff-num-trusted-hops-ingress:0",
+    "mke-cgroup-mount:",
+    "http-request-timeout:3600",
+    "allow-icmp-frag-needed:true",
+    "enable-stale-cilium-endpoint-cleanup:true",
+    "state-dir:/var/run/cilium",
+    "metrics-sampling-interval:5m",
+    "cilium-endpoint-gc-interval:5m0s",
+    "cluster-id:0",
+    "bpf-events-policy-verdict-enabled:true",
+    "hubble-drop-events-interval:2m0s",
+    "hubble-drop-events:false",
+    "enable-well-known-identities:false",
+    "bpf-lb-nat46x64:false",
+    "lb-pressure-metrics-interval:5m0s",
+    "kvstore-lease-ttl:15m0s",
+    "enable-endpoint-health-checking:true",
+    "enable-standalone-dns-proxy:false",
+    "enable-local-redirect-policy:true",
+    "status-collector-warning-threshold:15s",
+    "ipam:kubernetes",
+    "iptables-random-fully:false",
+    "ip-masq-agent-config-path:/etc/config/ip-masq-agent",
+    "clustermesh-sync-timeout:1m0s",
+    "egress-masquerade-interfaces:",
+    "status-collector-stackdump-path:/run/cilium/state/agent.stack.gz",
+    "bpf-ct-timeout-regular-tcp-syn:1m0s",
+    "vtep-cidr:",
+    "operator-api-serve-addr:127.0.0.1:9234",
+    "allocator-list-timeout:3m0s",
+    "ipam-default-ip-pool:default",
+    "egress-gateway-reconciliation-trigger-interval:1s",
+    "enable-ingress-controller:false",
+    "ipv4-service-loopback-address:169.254.42.1",
+    "enable-l2-neigh-discovery:false",
+    "keep-config:false",
+    "direct-routing-device:",
+    "bpf-lb-maglev-map-max:0",
+    "hubble-listen-address::4244",
+    "tofqdns-proxy-response-max-delay:100ms",
+    "enable-ipv6:false",
+    "identity-allocation-sync-interval:5m0s",
+    "enable-gops:true",
+    "http-idle-timeout:0",
+    "k8s-client-qps:10",
+    "wireguard-track-all-ips-fallback:false",
+    "disable-external-ip-mitigation:false",
+    "trace-sock:true",
+    "tofqdns-enable-dns-compression:true",
+    "ingress-secrets-namespace:",
+    "enable-sctp:false",
+    "enable-route-mtu-for-cni-chaining:false",
+    "node-port-mode:",
+    "identity-gc-interval:15m0s",
+    "kvstore-max-consecutive-quorum-errors:2",
+    "proxy-max-requests-per-connection:0",
+    "bpf-lb-affinity-map-max:0",
+    "local-max-addr-scope:252",
+    "disable-endpoint-crd:false",
+    "enable-bpf-masquerade:false",
+    "kvstore-opt:",
+    "proxy-xff-num-trusted-hops-egress:0",
+    "debug:false",
+    "k8s-client-burst:20",
+    "policy-default-local-cluster:false",
+    "hubble-metrics-server-tls-client-ca-files:",
+    "remove-cilium-node-taints:true",
+    "enable-health-check-loadbalancer-ip:false",
+    "tofqdns-min-ttl:0",
+    "mesh-auth-enabled:true",
+    "prepend-iptables-chains:true",
+    "endpoint-gc-interval:5m0s",
+    "http-stream-idle-timeout:300",
+    "clustermesh-enable-endpoint-sync:false",
+    "enable-nat46x64-gateway:false",
+    "enable-external-ips:false",
+    "clustermesh-enable-mcs-api:false",
+    "agent-health-require-k8s-connectivity:true",
+    "auto-create-cilium-node-resource:true",
+    "enable-ipv4-fragment-tracking:true",
+    "bpf-lb-external-clusterip:false",
+    "bpf-map-dynamic-size-ratio:0.0025",
+    "gops-port:9890",
+    "certificates-directory:/var/run/cilium/certs",
+    "routing-mode:tunnel",
+    "enable-masquerade-to-route-source:false",
+    "vtep-mask:",
+    "bpf-root:/sys/fs/bpf",
+    "monitor-aggregation-interval:5s",
+    "agent-not-ready-taint-key:node.cilium.io/agent-not-ready",
+    "identity-max-jitter:30s",
+    "debug-verbose:",
+    "service-no-backend-response:reject",
+    "use-full-tls-context:false",
+    "enable-recorder:false",
+    "enable-service-topology:false",
+    "bpf-map-event-buffers:",
+    "bpf-lb-mode-annotation:false",
+    "mesh-auth-rotated-identities-queue-size:1024",
+    "bpf-ct-timeout-regular-tcp-fin:10s",
+    "set-cilium-node-taints:true",
+    "enable-custom-calls:false",
+    "node-port-range:",
+    "dnsproxy-insecure-skip-transparent-mode-check:false",
+    "vlan-bpf-bypass:",
+    "pprof-address:localhost",
+    "envoy-access-log-buffer-size:4096",
+    "ipv4-native-routing-cidr:10.0.0.0/16",
+    "fqdn-regex-compile-lru-size:1024",
+    "mesh-auth-mutual-connect-timeout:5s",
+    "use-cilium-internal-ip-for-ipsec:false",
+    "enable-cilium-network-policy:true",
+    "write-cni-conf-when-ready:/host/etc/cni/net.d/05-cilium.conflist",
+    "multicast-enabled:false",
+    "enable-cilium-api-server-access:",
+    "node-encryption-opt-out-labels:node-role.kubernetes.io/control-plane",
+    "bpf-lb-maglev-table-size:16381",
+    "endpoint-regen-interval:2m0s",
+    "preallocate-bpf-maps:false",
+    "mesh-auth-mutual-listener-port:0",
+    "node-port-acceleration:disabled",
+    "cgroup-root:/run/cilium/cgroupv2",
+    "enable-ipv4:true",
+    "enable-envoy-config:false",
+    "node-labels:",
+    "policy-secrets-namespace:cilium-secrets",
+    "policy-audit-mode:false",
+    "bpf-policy-stats-map-max:65536",
+    "derive-masq-ip-addr-from-device:",
+    "hubble-metrics-server-tls-cert-file:",
+    "identity-change-grace-period:5s",
+    "ipam-multi-pool-pre-allocation:",
+    "hubble-drop-events-reasons:",
+    "devices:",
+    "log-opt:",
+    "http-max-grpc-timeout:0",
+    "bpf-lb-maglev-hash-seed:JLfvgnHc2kaSUFaI",
+    "bpf-lb-map-max:65536",
+    "cni-chaining-mode:none",
+    "enable-k8s-api-discovery:false",
+    "l2-announcements-lease-duration:15s",
+    "enable-ipsec:false",
+    "http-normalize-path:true",
+    "mesh-auth-spire-admin-socket:",
+    "enable-lb-ipam:true",
+    "bpf-lb-proto-diff:true",
+    "restore:true",
+    "tunnel-source-port-range:0-0",
+    "enable-srv6:false",
+    "cni-exclusive:true",
+    "identity-allocation-mode:crd",
+    "http-retry-count:3",
+    "enable-node-selector-labels:false",
+    "bpf-events-drop-enabled:true",
+    "enable-ipv4-egress-gateway:false",
+    "identity-management-mode:agent",
+    "dynamic-lifecycle-config:[]",
+    "pprof:false",
+    "nat-map-stats-interval:30s",
+    "vtep-mac:",
+    "monitor-aggregation-flags:all",
+    "hubble-export-file-max-size-mb:10",
+    "enable-non-default-deny-policies:true",
+    "enable-host-port:false",
+    "k8s-client-connection-timeout:30s",
+    "hubble-export-denylist:",
+    "restored-proxy-ports-age-limit:15",
+    "policy-accounting:true",
+    "operator-prometheus-serve-addr::9963",
+    "enable-wireguard:false",
+    "max-internal-timer-delay:0s",
+    "procfs:/host/proc",
+    "k8s-kubeconfig-path:",
+    "tofqdns-pre-cache:",
+    "enable-session-affinity:true",
+    "mesh-auth-spiffe-trust-domain:spiffe.cilium",
+    "iptables-lock-timeout:5s",
+    "enable-pmtu-discovery:false",
+    "enable-ipv4-big-tcp:false",
+    "annotate-k8s-node:false",
+    "synchronize-k8s-nodes:true",
+    "underlay-protocol:ipv4",
+    "fixed-identity-mapping:",
+    "trace-payloadlen-overlay:192",
+    "bpf-node-map-max:16384",
+    "bpf-ct-timeout-regular-any:1m0s",
+    "enable-bandwidth-manager:false",
+    "enable-ipsec-encrypted-overlay:false",
+    "enable-l2-pod-announcements:false",
+    "enable-bbr:false",
+    "enable-dynamic-config:true",
+    "enable-encryption-strict-mode:false",
+    "bpf-lb-source-range-map-max:0",
+    "bpf-policy-map-full-reconciliation-interval:15m0s",
+    "controller-group-metrics:",
+    "bgp-router-id-allocation-mode:default",
+    "policy-secrets-only-from-secrets-namespace:true",
+    "enable-bgp-control-plane:false",
+    "bpf-events-trace-enabled:true",
+    "bpf-lb-sock-hostns-only:false",
+    "bpf-ct-global-tcp-max:524288",
+    "bpf-fragments-map-max:8192",
+    "bpf-ct-timeout-regular-tcp:2h13m20s",
+    "bpf-distributed-lru:false",
+    "vtep-endpoint:",
+    "cni-external-routing:false",
+    "enable-endpoint-lockdown-on-policy-overflow:false",
+    "hubble-redact-http-headers-allow:",
+    "enable-l2-announcements:false",
+    "k8s-heartbeat-timeout:30s",
+    "cflags:",
+    "dnsproxy-concurrency-limit:0",
+    "local-router-ipv6:",
+    "identity-allocation-timeout:2m0s",
+    "enable-auto-protect-node-port-range:true",
+    "ipv6-pod-subnets:",
+    "agent-labels:",
+    "bpf-lb-rss-ipv4-src-cidr:",
+    "ipv6-cluster-alloc-cidr:f00d::/64",
+    "bpf-ct-timeout-service-tcp-grace:1m0s",
+    "enable-hubble:true",
+    "ipv6-node:auto",
+    "bpf-lb-service-map-max:0",
+    "set-cilium-is-up-condition:true",
+    "cluster-name:default",
+    "tofqdns-preallocate-identities:true",
+    "bpf-lb-rss-ipv6-src-cidr:",
+    "dnsproxy-lock-count:131",
+    "enable-l7-proxy:true",
+    "enable-policy:default",
+    "enable-internal-traffic-policy:true",
+    "hubble-export-allowlist:",
+    "hubble-redact-enabled:false",
+    "hubble-socket-path:/var/run/cilium/hubble.sock",
+    "envoy-secrets-namespace:",
+    "external-envoy-proxy:true",
+    "enable-ipsec-xfrm-state-caching:true",
+    "enable-active-connection-tracking:false",
+    "hubble-metrics-server-tls-key-file:",
+    "custom-cni-conf:false",
+    "hubble-export-file-compress:false",
+    "envoy-default-log-level:",
+    "enable-cilium-endpoint-slice:false",
+    "proxy-connect-timeout:2",
+    "status-collector-failure-threshold:1m0s",
+    "mesh-auth-gc-interval:5m0s",
+    "enable-local-node-route:true",
+    "policy-queue-size:100",
+    "enable-vtep:false",
+    "k8s-service-proxy-name:",
+    "l2-pod-announcements-interface-pattern:",
+    "agent-health-port:9879",
+    "max-controller-interval:0",
+    "hubble-redact-kafka-apikey:false",
+    "datapath-mode:veth",
+    "k8s-api-server:",
+    "config-dir:/tmp/cilium/config-map",
+    "mesh-auth-signal-backoff-duration:1s",
+    "ipv4-pod-subnets:",
+    "hubble-prefer-ipv6:false",
+    "encrypt-interface:",
+    "enable-svc-source-range-check:true",
+    "install-iptables-rules:true",
+    "bpf-events-default-burst-limit:0",
+    "log-driver:",
+    "bpf-lb-service-backend-map-max:0",
+    "prometheus-serve-addr:",
+    "unmanaged-pod-watcher-interval:15",
+    "enable-cilium-clusterwide-network-policy:true",
+    "lb-retry-backoff-min:50ms",
+    "allow-localhost:auto",
+    "bypass-ip-availability-upon-restore:false",
+    "bpf-filter-priority:1",
+    "hubble-tls-key-file:/var/lib/cilium/tls/hubble/server.key",
+    "proxy-prometheus-port:0",
+    "bpf-ct-timeout-service-any:1m0s",
+    "enable-policy-secrets-sync:true",
+    "mtu:0",
+    "proxy-initial-fetch-timeout:30",
+    "bpf-lb-sock-terminate-pod-connections:true",
+    "enable-hubble-open-metrics:false",
+    "l2-announcements-retry-period:2s",
+    "proxy-max-concurrent-retries:128",
+    "crd-wait-timeout:5m0s",
+    "bpf-lb-dsr-dispatch:opt",
+    "conntrack-gc-interval:0s",
+    "tunnel-port:0",
+    "enable-ip-masq-agent:false",
+    "enable-xdp-prefilter:false",
+    "policy-cidr-match-mode:",
+    "standalone-dns-proxy-server-port:40045",
+    "node-port-bind-protection:true",
+    "enable-monitor:true",
+    "agent-liveness-update-interval:1s",
+    "metrics:",
+    "status-collector-probe-check-timeout:5m0s",
+    "encryption-strict-mode-cidr:",
+    "node-port-algorithm:",
+    "lb-retry-backoff-max:50ms",
+    "cni-chaining-target:",
+    "envoy-config-retry-interval:15s",
+    "enable-hubble-recorder-api:true",
+    "hubble-redact-http-userinfo:true",
+    "force-device-detection:false",
+    "kvstore:",
+    "ipv6-service-range:auto",
+    "enable-dynamic-lifecycle-manager:false",
+    "enable-ipv6-ndp:false",
+    "bgp-router-id-allocation-ip-pool:",
+    "enable-xt-socket-fallback:true",
+    "hubble-skip-unknown-cgroup-ids:true",
+    "exclude-local-address:",
+    "proxy-portrange-max:20000",
+    "tofqdns-max-deferred-connection-deletes:10000",
+    "label-prefix-file:",
+    "monitor-queue-size:0",
+    "ignore-flags-drift-checker:",
+    "endpoint-bpf-prog-watchdog-interval:30s",
+    "install-no-conntrack-iptables-rules:false",
+    "bpf-lb-algorithm:random",
+    "enable-egress-gateway:false",
+    "enable-bpf-tproxy:false",
+    "disable-iptables-feeder-rules:",
+    "enable-metrics:true",
+    "mesh-auth-queue-size:1024",
+    "proxy-portrange-min:10000",
+    "bpf-events-default-rate-limit:0",
+    "enable-drift-checker:true",
+    "hubble-metrics-server-enable-tls:false",
+    "hubble-recorder-storage-path:/var/run/cilium/pcaps",
+    "k8s-require-ipv6-pod-cidr:false",
+    "proxy-max-connection-duration-seconds:0",
+    "hubble-dynamic-metrics-config-path:",
+    "hubble-export-file-max-backups:5",
+    "disable-envoy-version-check:false",
+    "cmdref:",
+    "enable-unreachable-routes:false",
+    "monitor-aggregation:medium",
+    "dns-max-ips-per-restored-rule:1000",
+    "status-collector-interval:5s",
+    "enable-health-check-nodeport:true",
+    "dnsproxy-lock-timeout:500ms",
+    "allow-unsafe-policy-skb-usage:false",
+    "hubble-export-file-path:",
+    "bpf-lb-acceleration:disabled",
+    "hubble-redact-http-headers-deny:",
+    "tunnel-protocol:vxlan",
+    "lb-state-file-interval:1s",
+    "bpf-policy-map-max:16384",
+    "enable-bgp-control-plane-status-report:true",
+    "static-cnp-path:",
+    "hubble-disable-tls:false",
+    "install-uplink-routes-for-delegated-ipam:false",
+    "enable-ipv6-masquerade:true",
+    "bpf-lb-source-range-all-types:false",
+    "lrp-address-matcher-cidrs:",
+    "hubble-tls-cert-file:/var/lib/cilium/tls/hubble/server.crt",
+    "enable-k8s-networkpolicy:true",
+    "envoy-base-id:0",
+    "kube-proxy-replacement-healthz-bind-address:",
+    "enable-tcx:true",
+    "proxy-admin-port:0",
+    "enable-ipv6-fragment-tracking:true",
+    "enable-gateway-api:false",
+    "bpf-nat-global-max:524288",
+    "conntrack-gc-max-interval:0s",
+    "endpoint-queue-size:25",
+    "ipsec-key-rotation-duration:5m0s",
+    "wireguard-persistent-keepalive:0s",
+    "clustermesh-config:/var/lib/cilium/clustermesh/"
+  ],
+  "kernel-version": "5.15.0",
+  "policy": {
+    "policy": "[]",
+    "revision": 1
+  },
+  "service-list": [
+    {
+      "spec": {
+        "backend-addresses": [
+          {
+            "ip": "91.217.196.189",
+            "port": 6443,
+            "preferred": true,
+            "protocol": "TCP",
+            "state": "active",
+            "weight": 100
+          }
+        ],
+        "flags": {
+          "extTrafficPolicy": "Cluster",
+          "intTrafficPolicy": "Cluster",
+          "name": "kubernetes",
+          "namespace": "default",
+          "trafficPolicy": "Cluster",
+          "type": "ClusterIP"
+        },
+        "frontend-address": {
+          "ip": "10.96.0.1",
+          "port": 443,
+          "protocol": "TCP",
+          "scope": "external"
+        },
+        "id": 1
+      },
+      "status": {
+        "realized": {
+          "backend-addresses": [
+            {
+              "ip": "91.217.196.189",
+              "port": 6443,
+              "preferred": true,
+              "protocol": "TCP",
+              "state": "active",
+              "weight": 100
+            }
+          ],
+          "flags": {
+            "extTrafficPolicy": "Cluster",
+            "intTrafficPolicy": "Cluster",
+            "name": "kubernetes",
+            "namespace": "default",
+            "trafficPolicy": "Cluster",
+            "type": "ClusterIP"
+          },
+          "frontend-address": {
+            "ip": "10.96.0.1",
+            "port": 443,
+            "protocol": "TCP",
+            "scope": "external"
+          },
+          "id": 1
+        }
+      }
+    },
+    {
+      "spec": {
+        "backend-addresses": [
+          {
+            "ip": "10.0.0.220",
+            "nodeName": "k8s-master-n1",
+            "port": 53,
+            "preferred": true,
+            "protocol": "TCP",
+            "state": "active",
+            "weight": 100
+          },
+          {
+            "ip": "10.0.1.184",
+            "nodeName": "k8s-worker-n1",
+            "port": 53,
+            "preferred": true,
+            "protocol": "TCP",
+            "state": "active",
+            "weight": 100
+          }
+        ],
+        "flags": {
+          "extTrafficPolicy": "Cluster",
+          "intTrafficPolicy": "Cluster",
+          "name": "kube-dns",
+          "namespace": "kube-system",
+          "trafficPolicy": "Cluster",
+          "type": "ClusterIP"
+        },
+        "frontend-address": {
+          "ip": "10.96.0.10",
+          "port": 53,
+          "protocol": "TCP",
+          "scope": "external"
+        },
+        "id": 5
+      },
+      "status": {
+        "realized": {
+          "backend-addresses": [
+            {
+              "ip": "10.0.0.220",
+              "nodeName": "k8s-master-n1",
+              "port": 53,
+              "preferred": true,
+              "protocol": "TCP",
+              "state": "active",
+              "weight": 100
+            },
+            {
+              "ip": "10.0.1.184",
+              "nodeName": "k8s-worker-n1",
+              "port": 53,
+              "preferred": true,
+              "protocol": "TCP",
+              "state": "active",
+              "weight": 100
+            }
+          ],
+          "flags": {
+            "extTrafficPolicy": "Cluster",
+            "intTrafficPolicy": "Cluster",
+            "name": "kube-dns",
+            "namespace": "kube-system",
+            "trafficPolicy": "Cluster",
+            "type": "ClusterIP"
+          },
+          "frontend-address": {
+            "ip": "10.96.0.10",
+            "port": 53,
+            "protocol": "TCP",
+            "scope": "external"
+          },
+          "id": 5
+        }
+      }
+    },
+    {
+      "spec": {
+        "backend-addresses": [
+          {
+            "ip": "10.0.0.220",
+            "nodeName": "k8s-master-n1",
+            "port": 53,
+            "preferred": true,
+            "protocol": "UDP",
+            "state": "active",
+            "weight": 100
+          },
+          {
+            "ip": "10.0.1.184",
+            "nodeName": "k8s-worker-n1",
+            "port": 53,
+            "preferred": true,
+            "protocol": "UDP",
+            "state": "active",
+            "weight": 100
+          }
+        ],
+        "flags": {
+          "extTrafficPolicy": "Cluster",
+          "intTrafficPolicy": "Cluster",
+          "name": "kube-dns",
+          "namespace": "kube-system",
+          "trafficPolicy": "Cluster",
+          "type": "ClusterIP"
+        },
+        "frontend-address": {
+          "ip": "10.96.0.10",
+          "port": 53,
+          "protocol": "UDP",
+          "scope": "external"
+        },
+        "id": 7
+      },
+      "status": {
+        "realized": {
+          "backend-addresses": [
+            {
+              "ip": "10.0.0.220",
+              "nodeName": "k8s-master-n1",
+              "port": 53,
+              "preferred": true,
+              "protocol": "UDP",
+              "state": "active",
+              "weight": 100
+            },
+            {
+              "ip": "10.0.1.184",
+              "nodeName": "k8s-worker-n1",
+              "port": 53,
+              "preferred": true,
+              "protocol": "UDP",
+              "state": "active",
+              "weight": 100
+            }
+          ],
+          "flags": {
+            "extTrafficPolicy": "Cluster",
+            "intTrafficPolicy": "Cluster",
+            "name": "kube-dns",
+            "namespace": "kube-system",
+            "trafficPolicy": "Cluster",
+            "type": "ClusterIP"
+          },
+          "frontend-address": {
+            "ip": "10.96.0.10",
+            "port": 53,
+            "protocol": "UDP",
+            "scope": "external"
+          },
+          "id": 7
+        }
+      }
+    },
+    {
+      "spec": {
+        "backend-addresses": [
+          {
+            "ip": "10.0.0.220",
+            "nodeName": "k8s-master-n1",
+            "port": 9153,
+            "preferred": true,
+            "protocol": "TCP",
+            "state": "active",
+            "weight": 100
+          },
+          {
+            "ip": "10.0.1.184",
+            "nodeName": "k8s-worker-n1",
+            "port": 9153,
+            "preferred": true,
+            "protocol": "TCP",
+            "state": "active",
+            "weight": 100
+          }
+        ],
+        "flags": {
+          "extTrafficPolicy": "Cluster",
+          "intTrafficPolicy": "Cluster",
+          "name": "kube-dns",
+          "namespace": "kube-system",
+          "trafficPolicy": "Cluster",
+          "type": "ClusterIP"
+        },
+        "frontend-address": {
+          "ip": "10.96.0.10",
+          "port": 9153,
+          "protocol": "TCP",
+          "scope": "external"
+        },
+        "id": 6
+      },
+      "status": {
+        "realized": {
+          "backend-addresses": [
+            {
+              "ip": "10.0.0.220",
+              "nodeName": "k8s-master-n1",
+              "port": 9153,
+              "preferred": true,
+              "protocol": "TCP",
+              "state": "active",
+              "weight": 100
+            },
+            {
+              "ip": "10.0.1.184",
+              "nodeName": "k8s-worker-n1",
+              "port": 9153,
+              "preferred": true,
+              "protocol": "TCP",
+              "state": "active",
+              "weight": 100
+            }
+          ],
+          "flags": {
+            "extTrafficPolicy": "Cluster",
+            "intTrafficPolicy": "Cluster",
+            "name": "kube-dns",
+            "namespace": "kube-system",
+            "trafficPolicy": "Cluster",
+            "type": "ClusterIP"
+          },
+          "frontend-address": {
+            "ip": "10.96.0.10",
+            "port": 9153,
+            "protocol": "TCP",
+            "scope": "external"
+          },
+          "id": 6
+        }
+      }
+    },
+    {
+      "spec": {
+        "backend-addresses": [
+          {
+            "ip": "10.0.1.78",
+            "nodeName": "k8s-worker-n1",
+            "port": 8081,
+            "preferred": true,
+            "protocol": "TCP",
+            "state": "active",
+            "weight": 100
+          }
+        ],
+        "flags": {
+          "extTrafficPolicy": "Cluster",
+          "intTrafficPolicy": "Cluster",
+          "name": "hubble-ui",
+          "namespace": "kube-system",
+          "trafficPolicy": "Cluster",
+          "type": "ClusterIP"
+        },
+        "frontend-address": {
+          "ip": "10.96.196.29",
+          "port": 80,
+          "protocol": "TCP",
+          "scope": "external"
+        },
+        "id": 13
+      },
+      "status": {
+        "realized": {
+          "backend-addresses": [
+            {
+              "ip": "10.0.1.78",
+              "nodeName": "k8s-worker-n1",
+              "port": 8081,
+              "preferred": true,
+              "protocol": "TCP",
+              "state": "active",
+              "weight": 100
+            }
+          ],
+          "flags": {
+            "extTrafficPolicy": "Cluster",
+            "intTrafficPolicy": "Cluster",
+            "name": "hubble-ui",
+            "namespace": "kube-system",
+            "trafficPolicy": "Cluster",
+            "type": "ClusterIP"
+          },
+          "frontend-address": {
+            "ip": "10.96.196.29",
+            "port": 80,
+            "protocol": "TCP",
+            "scope": "external"
+          },
+          "id": 13
+        }
+      }
+    },
+    {
+      "spec": {
+        "backend-addresses": [
+          {
+            "ip": "10.0.0.43",
+            "nodeName": "k8s-master-n1",
+            "port": 4245,
+            "preferred": true,
+            "protocol": "TCP",
+            "state": "active",
+            "weight": 100
+          }
+        ],
+        "flags": {
+          "extTrafficPolicy": "Cluster",
+          "intTrafficPolicy": "Cluster",
+          "name": "hubble-relay",
+          "namespace": "kube-system",
+          "trafficPolicy": "Cluster",
+          "type": "ClusterIP"
+        },
+        "frontend-address": {
+          "ip": "10.100.166.190",
+          "port": 80,
+          "protocol": "TCP",
+          "scope": "external"
+        },
+        "id": 12
+      },
+      "status": {
+        "realized": {
+          "backend-addresses": [
+            {
+              "ip": "10.0.0.43",
+              "nodeName": "k8s-master-n1",
+              "port": 4245,
+              "preferred": true,
+              "protocol": "TCP",
+              "state": "active",
+              "weight": 100
+            }
+          ],
+          "flags": {
+            "extTrafficPolicy": "Cluster",
+            "intTrafficPolicy": "Cluster",
+            "name": "hubble-relay",
+            "namespace": "kube-system",
+            "trafficPolicy": "Cluster",
+            "type": "ClusterIP"
+          },
+          "frontend-address": {
+            "ip": "10.100.166.190",
+            "port": 80,
+            "protocol": "TCP",
+            "scope": "external"
+          },
+          "id": 12
+        }
+      }
+    },
+    {
+      "spec": {
+        "backend-addresses": [
+          {
+            "ip": "10.0.1.156",
+            "nodeName": "k8s-worker-n1",
+            "port": 10250,
+            "preferred": true,
+            "protocol": "TCP",
+            "state": "active",
+            "weight": 100
+          }
+        ],
+        "flags": {
+          "extTrafficPolicy": "Cluster",
+          "intTrafficPolicy": "Cluster",
+          "name": "metrics-server",
+          "namespace": "kube-system",
+          "trafficPolicy": "Cluster",
+          "type": "ClusterIP"
+        },
+        "frontend-address": {
+          "ip": "10.105.233.177",
+          "port": 443,
+          "protocol": "TCP",
+          "scope": "external"
+        },
+        "id": 11
+      },
+      "status": {
+        "realized": {
+          "backend-addresses": [
+            {
+              "ip": "10.0.1.156",
+              "nodeName": "k8s-worker-n1",
+              "port": 10250,
+              "preferred": true,
+              "protocol": "TCP",
+              "state": "active",
+              "weight": 100
+            }
+          ],
+          "flags": {
+            "extTrafficPolicy": "Cluster",
+            "intTrafficPolicy": "Cluster",
+            "name": "metrics-server",
+            "namespace": "kube-system",
+            "trafficPolicy": "Cluster",
+            "type": "ClusterIP"
+          },
+          "frontend-address": {
+            "ip": "10.105.233.177",
+            "port": 443,
+            "protocol": "TCP",
+            "scope": "external"
+          },
+          "id": 11
+        }
+      }
+    },
+    {
+      "spec": {
+        "backend-addresses": [
+          {
+            "ip": "91.217.196.183",
+            "nodeName": "k8s-worker-n1",
+            "port": 4244,
+            "preferred": true,
+            "protocol": "TCP",
+            "state": "active",
+            "weight": 100
+          }
+        ],
+        "flags": {
+          "extTrafficPolicy": "Cluster",
+          "intTrafficPolicy": "Local",
+          "name": "hubble-peer",
+          "namespace": "kube-system",
+          "trafficPolicy": "Cluster",
+          "type": "ClusterIP"
+        },
+        "frontend-address": {
+          "ip": "10.111.74.126",
+          "port": 443,
+          "protocol": "TCP",
+          "scope": "external"
+        },
+        "id": 14
+      },
+      "status": {
+        "realized": {
+          "backend-addresses": [
+            {
+              "ip": "91.217.196.183",
+              "nodeName": "k8s-worker-n1",
+              "port": 4244,
+              "preferred": true,
+              "protocol": "TCP",
+              "state": "active",
+              "weight": 100
+            }
+          ],
+          "flags": {
+            "extTrafficPolicy": "Cluster",
+            "intTrafficPolicy": "Local",
+            "name": "hubble-peer",
+            "namespace": "kube-system",
+            "trafficPolicy": "Cluster",
+            "type": "ClusterIP"
+          },
+          "frontend-address": {
+            "ip": "10.111.74.126",
+            "port": 443,
+            "protocol": "TCP",
+            "scope": "external"
+          },
+          "id": 14
+        }
+      }
+    }
+  ],
+  "subsystem": {
+    "ipam": "(string) (len=6) \"owners\"\n(map[ipam.Pool]map[string]string) (len=1) {\n (ipam.Pool) (len=7) default: (map[string]string) (len=5) {\n  (string) (len=10) \"10.0.1.184\": (string) (len=47) \"kube-system/coredns-54558b56c7-tsmph [restored]\",\n  (string) (len=9) \"10.0.1.78\": (string) (len=49) \"kube-system/hubble-ui-655f947f96-bdmvs [restored]\",\n  (string) (len=10) \"10.0.1.156\": (string) (len=53) \"kube-system/metrics-server-7f4c46496-hwgxn [restored]\",\n  (string) (len=10) \"10.0.1.138\": (string) (len=6) \"router\",\n  (string) (len=10) \"10.0.1.237\": (string) (len=6) \"health\"\n }\n}\n(string) (len=17) \"expiration timers\"\n(map[ipam.timerKey]ipam.expirationTimer) {\n}\n(string) (len=12) \"excluded ips\"\n(map[string]string) (len=1) {\n (string) (len=22) \"default:91.217.196.183\": (string) (len=7) \"node-ip\"\n}\n",
+    "kvstore-locks": "(map[string]kvstore.lockOwner) {\n}\n",
+    "ongoing-endpoint-creations": ""
+  }
+}

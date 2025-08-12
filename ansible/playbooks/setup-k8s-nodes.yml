@@ -1,0 +1,187 @@
+---
+- name: Setup Kubernetes cluster with containerd
+  hosts: all  # Применяется ко всем нодам (master, worker, observer)
+  become: true
+  vars:
+    pod_network_cidr: "192.168.0.0/24" # CIDR для подов
+    api_server_address: "192.168.39.146" # IP-адрес API сервера
+
+  tasks:
+    # 1. Отключаем swap
+    - name: Disable swap
+      shell: |
+        swapoff -a
+        sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+
+    # 2. Устанавливаем зависимости
+    - name: Install dependencies
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - gnupg
+          - lsb-release
+        state: present
+        update_cache: yes
+
+    # 3. Устанавливаем containerd
+    - name: Install containerd
+      apt:
+        name: containerd
+        state: present
+        update_cache: yes
+    # 5. Устанавливаем kubelet, kubeadm, kubectl (последние версии)
+    - name: Install kubelet, kubeadm, kubectl
+      apt:
+        name:
+          - kubelet
+          - kubeadm
+          - kubectl
+        state: present
+        update_cache: yes
+
+    # 4. Настраиваем containerd (SystemdCgroup)
+    - name: Check if containerd is installed
+      command: which containerd
+      register: containerd_check
+      ignore_errors: yes
+
+    - name: Установка containerd (явно)
+      apt:
+        name: containerd.io
+        state: present
+        update_cache: yes
+
+    - name: Создание директории для конфига
+      file:
+        path: /etc/containerd
+        state: directory
+        mode: 0755
+
+    - name: Генерация дефолтного конфига
+      command: containerd config default > /etc/containerd/config.toml
+      args:
+        creates: /etc/containerd/config.toml  # Не выполнять, если файл уже есть
+      become: yes
+
+    - name: Включение SystemdCgroup
+      replace:
+        path: /etc/containerd/config.toml
+        regexp: 'SystemdCgroup = false'
+        replace: 'SystemdCgroup = true'
+      become: yes
+    
+    - name: Присвоение прав chmod -R 777 на /var/run/containerd
+
+
+    - name: Рестарт containerd
+      systemd:
+        name: containerd
+        state: restarted
+        enabled: yes
+
+    - name: Установка runc
+      block:
+        - name: Скачивание runc
+          command: curl -LO https://github.com/opencontainers/runc/releases/download/v1.1.12/runc.amd64
+          args:
+            chdir: /tmp
+          register: download_runc
+
+        - name: Установка runc
+          command: install -m 755 /tmp/runc.amd64 /usr/local/sbin/runc
+          become: yes
+          when: download_runc.rc == 0
+      
+      when: containerd_check.rc == 0
+      tags: runc
+
+    - name: Установка cni plugin
+      block:
+        - name: Скачивание CNI plugins
+          command: curl -LO https://github.com/containernetworking/plugins/releases/download/v1.5.0/cni-plugins-linux-amd64-v1.5.0.tgz
+          args:
+            chdir: /tmp
+          register: download_cni
+
+        - name: Создание директории для CNI
+          file:
+            path: /opt/cni/bin
+            state: directory
+            mode: 0755
+          become: yes
+
+        - name: Распаковка CNI plugins
+          unarchive:
+            src: /tmp/cni-plugins-linux-amd64-v1.5.0.tgz
+            dest: /opt/cni/bin
+            remote_src: yes
+            extra_opts: [--strip-components=1]
+          become: yes
+          when: download_cni.rc == 0
+          
+      when: containerd_check.rc == 0
+      tags: cni
+
+    - name: Prevent auto-update of Kubernetes packages
+      command: apt-mark hold kubelet kubeadm kubectl
+
+    # 6. Настраиваем sysctl и модули ядра
+    - name: Enable kernel modules
+      modprobe:
+        name:
+          - br_netfilter
+          - overlay
+        state: present
+
+    - name: Configure sysctl
+      sysctl:
+        name: "{{ item.key }}"
+        value: "{{ item.value }}"
+        state: present
+        reload: yes
+      with_items:
+        - { key: "net.bridge.bridge-nf-call-iptables", value: "1" }
+        - { key: "net.bridge.bridge-nf-call-ip6tables", value: "1" }
+        - { key: "net.ipv4.ip_forward", value: "1" }
+
+    # 7. (Только на master) Инициализация кластера
+    - name: Initialize Kubernetes master
+      command: |
+        kubeadm init \
+          --apiserver-advertise-address={{ api_server_address }} \
+          --pod-network-cidr={{ pod_network_cidr }} \
+          --upload-certs \
+      when: "'master' in group_names"
+      register: kubeadm_init
+
+    - name: Save kubeadm join command (для worker-нод)
+      copy:
+        content: "{{ kubeadm_init.stdout }}"
+        dest: /root/kubeadm_join_command.sh
+        mode: '0700'
+      when: "'master' in group_names"
+
+    # 8. (Только на worker) Присоединение к кластеру
+    - name: Join worker nodes to cluster
+      command: sh /root/kubeadm_join_command.sh
+      when: "'worker' in group_names"
+    
+        # Добавление ролей для worker-нод (только на master-узле)
+    - name: Получение списка worker-нод
+      command: kubectl get nodes --no-headers -o custom-columns=NAME:.metadata.name
+      when: "'master' in group_names"
+      register: nodes_list
+      environment:
+        KUBECONFIG: "/etc/kubernetes/admin.conf"
+
+    - name: Добавление роли worker к нодам
+      command: |
+        kubectl label node {{ item }} node-role.kubernetes.io/worker=
+      with_items: "{{ nodes_list.stdout_lines }}"
+      when: 
+        - "'worker' in group_names"  # Добавляем только для worker-нод
+      environment:
+        KUBECONFIG: "/etc/kubernetes/admin.conf"
+      

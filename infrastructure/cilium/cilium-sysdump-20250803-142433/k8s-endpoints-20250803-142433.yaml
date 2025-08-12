@@ -1,0 +1,308 @@
+apiVersion: v1
+items:
+- metadata:
+    creationTimestamp: "2025-08-02T11:51:59Z"
+    labels:
+      endpointslice.kubernetes.io/skip-mirror: "true"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:endpointslice.kubernetes.io/skip-mirror: {}
+        f:subsets: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-08-02T11:51:59Z"
+    name: kubernetes
+    namespace: default
+    resourceVersion: "233"
+    uid: bf3cfdd6-8507-4920-ab72-57f4210d8983
+  subsets:
+  - addresses:
+    - ip: 91.217.196.189
+    ports:
+    - name: https
+      port: 6443
+      protocol: TCP
+- metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-08-03T14:10:04Z"
+    creationTimestamp: "2025-08-03T13:49:40Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: cilium-envoy
+      app.kubernetes.io/part-of: cilium
+      io.cilium/app: proxy
+      k8s-app: cilium-envoy
+      service.kubernetes.io/headless: ""
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:io.cilium/app: {}
+            f:k8s-app: {}
+            f:service.kubernetes.io/headless: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-08-03T14:10:04Z"
+    name: cilium-envoy
+    namespace: kube-system
+    resourceVersion: "188101"
+    uid: 5c715e50-313b-429f-83c6-18cf8b2b071c
+  subsets:
+  - addresses:
+    - ip: 91.217.196.183
+      nodeName: k8s-worker-n1
+      targetRef:
+        kind: Pod
+        name: cilium-envoy-rwbsf
+        namespace: kube-system
+        uid: 4b9c30db-9b98-42e7-a5cf-d012c0baaef4
+    - ip: 91.217.196.189
+      nodeName: k8s-master-n1
+      targetRef:
+        kind: Pod
+        name: cilium-envoy-rrgx6
+        namespace: kube-system
+        uid: 4771fb02-f200-4c27-aeb4-526c00690401
+    ports:
+    - name: envoy-metrics
+      port: 9964
+      protocol: TCP
+- metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-08-03T14:22:10Z"
+    creationTimestamp: "2025-08-03T13:49:40Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: hubble-peer
+      app.kubernetes.io/part-of: cilium
+      k8s-app: cilium
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:k8s-app: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-08-03T14:22:10Z"
+    name: hubble-peer
+    namespace: kube-system
+    resourceVersion: "189672"
+    uid: 8804a085-0a7d-438c-a560-bbe1465a6533
+  subsets:
+  - addresses:
+    - ip: 91.217.196.183
+      nodeName: k8s-worker-n1
+      targetRef:
+        kind: Pod
+        name: cilium-vb6cb
+        namespace: kube-system
+        uid: 0fa3b2b0-04ca-40e5-aecb-8e6d519bc870
+    - ip: 91.217.196.189
+      nodeName: k8s-master-n1
+      targetRef:
+        kind: Pod
+        name: cilium-bc6n4
+        namespace: kube-system
+        uid: 1a3e0fe1-c520-4de5-baa9-58dfecf2e694
+    ports:
+    - name: peer-service
+      port: 4244
+      protocol: TCP
+- metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-08-03T14:22:49Z"
+    creationTimestamp: "2025-08-03T13:49:40Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: hubble-relay
+      app.kubernetes.io/part-of: cilium
+      k8s-app: hubble-relay
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:k8s-app: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-08-03T14:22:49Z"
+    name: hubble-relay
+    namespace: kube-system
+    resourceVersion: "189759"
+    uid: b578ae18-2ecb-4080-96d3-673b4dda3c8e
+  subsets:
+  - addresses:
+    - ip: 10.0.0.43
+      nodeName: k8s-master-n1
+      targetRef:
+        kind: Pod
+        name: hubble-relay-6b7b5877f4-vfr4c
+        namespace: kube-system
+        uid: 6678686c-9821-4022-bd18-239c984e187a
+    ports:
+    - port: 4245
+      protocol: TCP
+- metadata:
+    creationTimestamp: "2025-08-03T13:49:40Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: hubble-ui
+      app.kubernetes.io/part-of: cilium
+      k8s-app: hubble-ui
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:k8s-app: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-08-03T14:09:44Z"
+    name: hubble-ui
+    namespace: kube-system
+    resourceVersion: "188017"
+    uid: 7a482a1c-c78f-40ba-8d96-129037990ea4
+  subsets:
+  - addresses:
+    - ip: 10.0.1.78
+      nodeName: k8s-worker-n1
+      targetRef:
+        kind: Pod
+        name: hubble-ui-655f947f96-bdmvs
+        namespace: kube-system
+        uid: 77da1804-ffec-4f8f-8cf4-b7a8c47e6790
+    ports:
+    - name: http
+      port: 8081
+      protocol: TCP
+- metadata:
+    creationTimestamp: "2025-08-02T11:52:05Z"
+    labels:
+      k8s-app: kube-dns
+      k8slens-edit-resource-version: v1
+      kubernetes.io/cluster-service: "true"
+      kubernetes.io/name: CoreDNS
+      type: ClusterIp
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:k8s-app: {}
+            f:k8slens-edit-resource-version: {}
+            f:kubernetes.io/cluster-service: {}
+            f:kubernetes.io/name: {}
+            f:type: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-08-03T14:09:47Z"
+    name: kube-dns
+    namespace: kube-system
+    resourceVersion: "188051"
+    uid: f13839bc-bad2-40b1-b008-33d8e26bc14e
+  subsets:
+  - addresses:
+    - ip: 10.0.0.220
+      nodeName: k8s-master-n1
+      targetRef:
+        kind: Pod
+        name: coredns-54558b56c7-zth5g
+        namespace: kube-system
+        uid: ffad25fa-987f-4ff7-b637-8ab5ba2681e2
+    - ip: 10.0.1.184
+      nodeName: k8s-worker-n1
+      targetRef:
+        kind: Pod
+        name: coredns-54558b56c7-tsmph
+        namespace: kube-system
+        uid: 5c296c83-a595-4cfc-b8d8-158cf9a53989
+    ports:
+    - name: dns-tcp
+      port: 53
+      protocol: TCP
+    - name: dns
+      port: 53
+      protocol: UDP
+    - name: metrics
+      port: 9153
+      protocol: TCP
+- metadata:
+    creationTimestamp: "2025-08-03T12:50:47Z"
+    labels:
+      k8s-app: metrics-server
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:k8s-app: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-08-03T14:09:43Z"
+    name: metrics-server
+    namespace: kube-system
+    resourceVersion: "188004"
+    uid: b594d811-dcee-4e4b-befc-db3d445e4be8
+  subsets:
+  - addresses:
+    - ip: 10.0.1.156
+      nodeName: k8s-worker-n1
+      targetRef:
+        kind: Pod
+        name: metrics-server-7f4c46496-hwgxn
+        namespace: kube-system
+        uid: b9f15bf7-74eb-48ec-9be9-381806bd73fa
+    ports:
+    - appProtocol: https
+      name: https
+      port: 10250
+      protocol: TCP
+kind: EndpointsList
+metadata:
+  resourceVersion: "190021"

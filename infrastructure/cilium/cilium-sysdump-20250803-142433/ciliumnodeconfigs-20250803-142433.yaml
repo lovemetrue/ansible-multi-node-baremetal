@@ -1,0 +1,5 @@
+apiVersion: cilium.io/v2alpha1
+items: []
+kind: CiliumNodeConfigList
+metadata:
+  resourceVersion: "190021"

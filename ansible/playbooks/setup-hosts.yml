@@ -1,0 +1,5 @@
+- name: Добавление записей в /etc/hosts
+  hosts: all
+  become: true
+  roles:
+    - hosts-setup

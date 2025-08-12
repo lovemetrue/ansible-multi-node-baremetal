@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hubble-ui
+  namespace: kube-system
+  uid: 06dee9df-2ceb-4678-876c-a070792802be
+  resourceVersion: '115649'
+  creationTimestamp: '2025-07-29T06:12:26Z'
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: hubble-ui
+    app.kubernetes.io/part-of: cilium
+    k8s-app: hubble-ui
+  annotations:
+    meta.helm.sh/release-name: cilium
+    meta.helm.sh/release-namespace: kube-system
+  selfLink: /api/v1/namespaces/kube-system/services/hubble-ui
+status:
+  loadBalancer: {}
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8081
+  selector:
+    k8s-app: hubble-ui
+  clusterIP: 172.16.80.75
+  clusterIPs:
+    - 172.16.80.75
+  type: ClusterIP
+  sessionAffinity: None
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  internalTrafficPolicy: Cluster
+
+

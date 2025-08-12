@@ -1,0 +1,30 @@
+alloc: 54.69MB (57347384 bytes)
+total-alloc: 242.63MB (254415616 bytes)
+sys: 92.23MB (96713926 bytes)
+lookups: 0
+mallocs: 3426939
+frees: 3045034
+heap-alloc: 54.69MB (57347384 bytes)
+heap-sys: 79.69MB (83558400 bytes)
+heap-idle: 13.46MB (14114816 bytes)
+heap-in-use: 66.23MB (69443584 bytes)
+heap-released: 2.12MB (2228224 bytes)
+heap-objects: 381905
+stack-in-use: 4.31MB (4521984 bytes)
+stack-sys: 4.31MB (4521984 bytes)
+stack-mspan-inuse: 974.84KB (998240 bytes)
+stack-mspan-sys: 1.07MB (1126080 bytes)
+stack-mcache-inuse: 9.44KB (9664 bytes)
+stack-mcache-sys: 15.34KB (15704 bytes)
+other-sys: 1.24MB (1297966 bytes)
+gc-sys: 4.30MB (4511848 bytes)
+next-gc: when heap-alloc >= 78.27MB (82074730 bytes)
+last-gc: 2025-08-03 14:24:15.140578647 +0000 UTC
+gc-pause-total: 1.970094ms
+gc-pause: 155966
+gc-pause-end: 1754231055140578647
+num-gc: 12
+num-forced-gc: 0
+gc-cpu-fraction: 0.00012813083591105718
+enable-gc: true
+debug-gc: false

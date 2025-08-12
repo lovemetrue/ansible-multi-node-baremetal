@@ -1,0 +1,217 @@
+apiVersion: cilium.io/v2
+items:
+- apiVersion: cilium.io/v2
+  kind: CiliumIdentity
+  metadata:
+    creationTimestamp: "2025-08-02T11:54:08Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/name: hubble-relay
+      app.kubernetes.io/part-of: cilium
+      io.cilium.k8s.policy.cluster: default
+      io.cilium.k8s.policy.serviceaccount: hubble-relay
+      io.kubernetes.pod.namespace: kube-system
+      k8s-app: hubble-relay
+    managedFields:
+    - apiVersion: cilium.io/v2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:io.cilium.k8s.policy.cluster: {}
+            f:io.cilium.k8s.policy.serviceaccount: {}
+            f:io.kubernetes.pod.namespace: {}
+            f:k8s-app: {}
+        f:security-labels:
+          .: {}
+          f:k8s:app.kubernetes.io/name: {}
+          f:k8s:app.kubernetes.io/part-of: {}
+          f:k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name: {}
+          f:k8s:io.cilium.k8s.policy.cluster: {}
+          f:k8s:io.cilium.k8s.policy.serviceaccount: {}
+          f:k8s:io.kubernetes.pod.namespace: {}
+          f:k8s:k8s-app: {}
+      manager: cilium-agent
+      operation: Update
+      time: "2025-08-02T11:54:08Z"
+    name: "17157"
+    resourceVersion: "947"
+    uid: 2296f9ee-f681-41e5-935f-df6f3c53559a
+  security-labels:
+    k8s:app.kubernetes.io/name: hubble-relay
+    k8s:app.kubernetes.io/part-of: cilium
+    k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name: kube-system
+    k8s:io.cilium.k8s.policy.cluster: default
+    k8s:io.cilium.k8s.policy.serviceaccount: hubble-relay
+    k8s:io.kubernetes.pod.namespace: kube-system
+    k8s:k8s-app: hubble-relay
+- apiVersion: cilium.io/v2
+  kind: CiliumIdentity
+  metadata:
+    creationTimestamp: "2025-08-02T11:54:08Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/name: hubble-ui
+      app.kubernetes.io/part-of: cilium
+      io.cilium.k8s.policy.cluster: default
+      io.cilium.k8s.policy.serviceaccount: hubble-ui
+      io.kubernetes.pod.namespace: kube-system
+      k8s-app: hubble-ui
+    managedFields:
+    - apiVersion: cilium.io/v2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:io.cilium.k8s.policy.cluster: {}
+            f:io.cilium.k8s.policy.serviceaccount: {}
+            f:io.kubernetes.pod.namespace: {}
+            f:k8s-app: {}
+        f:security-labels:
+          .: {}
+          f:k8s:app.kubernetes.io/name: {}
+          f:k8s:app.kubernetes.io/part-of: {}
+          f:k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name: {}
+          f:k8s:io.cilium.k8s.policy.cluster: {}
+          f:k8s:io.cilium.k8s.policy.serviceaccount: {}
+          f:k8s:io.kubernetes.pod.namespace: {}
+          f:k8s:k8s-app: {}
+      manager: cilium-agent
+      operation: Update
+      time: "2025-08-02T11:54:08Z"
+    name: "2284"
+    resourceVersion: "949"
+    uid: 8df8bb73-15ef-47d0-9517-84259eb958ee
+  security-labels:
+    k8s:app.kubernetes.io/name: hubble-ui
+    k8s:app.kubernetes.io/part-of: cilium
+    k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name: kube-system
+    k8s:io.cilium.k8s.policy.cluster: default
+    k8s:io.cilium.k8s.policy.serviceaccount: hubble-ui
+    k8s:io.kubernetes.pod.namespace: kube-system
+    k8s:k8s-app: hubble-ui
+- apiVersion: cilium.io/v2
+  kind: CiliumIdentity
+  metadata:
+    creationTimestamp: "2025-08-02T11:53:21Z"
+    generation: 1
+    labels:
+      io.cilium.k8s.policy.cluster: default
+      io.cilium.k8s.policy.serviceaccount: coredns
+      io.kubernetes.pod.namespace: kube-system
+      k8s-app: kube-dns
+    managedFields:
+    - apiVersion: cilium.io/v2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:io.cilium.k8s.policy.cluster: {}
+            f:io.cilium.k8s.policy.serviceaccount: {}
+            f:io.kubernetes.pod.namespace: {}
+            f:k8s-app: {}
+        f:security-labels:
+          .: {}
+          f:k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name: {}
+          f:k8s:io.cilium.k8s.policy.cluster: {}
+          f:k8s:io.cilium.k8s.policy.serviceaccount: {}
+          f:k8s:io.kubernetes.pod.namespace: {}
+          f:k8s:k8s-app: {}
+      manager: cilium-agent
+      operation: Update
+      time: "2025-08-02T11:53:21Z"
+    name: "24121"
+    resourceVersion: "816"
+    uid: 18129a8a-a73e-4388-9d2b-375f77fac2da
+  security-labels:
+    k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name: kube-system
+    k8s:io.cilium.k8s.policy.cluster: default
+    k8s:io.cilium.k8s.policy.serviceaccount: coredns
+    k8s:io.kubernetes.pod.namespace: kube-system
+    k8s:k8s-app: kube-dns
+- apiVersion: cilium.io/v2
+  kind: CiliumIdentity
+  metadata:
+    creationTimestamp: "2025-08-03T12:50:48Z"
+    generation: 1
+    labels:
+      io.cilium.k8s.policy.cluster: default
+      io.cilium.k8s.policy.serviceaccount: metrics-server
+      io.kubernetes.pod.namespace: kube-system
+      k8s-app: metrics-server
+    managedFields:
+    - apiVersion: cilium.io/v2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:io.cilium.k8s.policy.cluster: {}
+            f:io.cilium.k8s.policy.serviceaccount: {}
+            f:io.kubernetes.pod.namespace: {}
+            f:k8s-app: {}
+        f:security-labels:
+          .: {}
+          f:k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name: {}
+          f:k8s:io.cilium.k8s.policy.cluster: {}
+          f:k8s:io.cilium.k8s.policy.serviceaccount: {}
+          f:k8s:io.kubernetes.pod.namespace: {}
+          f:k8s:k8s-app: {}
+      manager: cilium-agent
+      operation: Update
+      time: "2025-08-03T12:50:48Z"
+    name: "45704"
+    resourceVersion: "176097"
+    uid: 2b718b70-ae0a-41f5-9c54-9e33f90f2944
+  security-labels:
+    k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name: kube-system
+    k8s:io.cilium.k8s.policy.cluster: default
+    k8s:io.cilium.k8s.policy.serviceaccount: metrics-server
+    k8s:io.kubernetes.pod.namespace: kube-system
+    k8s:k8s-app: metrics-server
+- apiVersion: cilium.io/v2
+  kind: CiliumIdentity
+  metadata:
+    creationTimestamp: "2025-08-02T12:01:50Z"
+    generation: 1
+    labels:
+      io.cilium.k8s.policy.cluster: default
+      io.cilium.k8s.policy.serviceaccount: default
+      io.kubernetes.pod.namespace: default
+    managedFields:
+    - apiVersion: cilium.io/v2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:io.cilium.k8s.policy.cluster: {}
+            f:io.cilium.k8s.policy.serviceaccount: {}
+            f:io.kubernetes.pod.namespace: {}
+        f:security-labels:
+          .: {}
+          f:k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name: {}
+          f:k8s:io.cilium.k8s.policy.cluster: {}
+          f:k8s:io.cilium.k8s.policy.serviceaccount: {}
+          f:k8s:io.kubernetes.pod.namespace: {}
+      manager: cilium-agent
+      operation: Update
+      time: "2025-08-02T12:01:50Z"
+    name: "64642"
+    resourceVersion: "2570"
+    uid: 9bb86ac4-feed-4919-8125-a59539e6f108
+  security-labels:
+    k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name: default
+    k8s:io.cilium.k8s.policy.cluster: default
+    k8s:io.cilium.k8s.policy.serviceaccount: default
+    k8s:io.kubernetes.pod.namespace: default
+kind: CiliumIdentityList
+metadata:
+  resourceVersion: "190021"

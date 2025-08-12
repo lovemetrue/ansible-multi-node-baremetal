@@ -1,0 +1,44 @@
+## Настройки ingress-nginx
+ingress-nginx:
+  controller:
+# Разрешение на использование аннотаций *-snippet
+    allowSnippetAnnotations: true
+## Используйте `DaemonSet` или `Deployment`
+    kind: DaemonSet
+## селекторы для запуска на определенных узлах
+    tolerations:
+      - key: "node-role.kubernetes.io/observer"
+        operator: "Exists"
+        effect: "NoSchedule"
+    hostNetwork: true
+    dnsPolicy: ClusterFirstWithHostNet
+    affinity: {}
+    nodeSelector:
+      kubernetes.io/os: linux
+## Дополнительные аннотации к веб-перехватчикам допуска.  
+    admissionWebhooks:
+      patch:
+## параметры подключения к приватному registry 
+        image:
+## адрес и путь для приватного registry
+          registry: hub.elma365.tech/docker/addons
+          image: ingress-nginx/kube-webhook-certgen
+          tag: v1.5.2
+          digest: ""
+## параметры подключения сбора метрик    
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: false
+        scrapeInterval: 30s
+## параметры подключения к приватному registry    
+    image:
+## адрес и путь для приватного registry
+      registry: hub.elma365.tech/docker/addons
+      image: ingress-nginx/controller
+      tag: "v1.11.5"
+      digest: ""
+      digestChroot: ""
+## секрет с правами доступа к приватному registry должен быть создан вручную, зашифрованный в Base64
+#   imagePullSecrets:
+#     - myRegistryKeySecretName

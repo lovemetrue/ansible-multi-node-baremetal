@@ -1,0 +1,1 @@
+version.Info{Major:"1", Minor:"32", EmulationMajor:"", EmulationMinor:"", MinCompatibilityMajor:"", MinCompatibilityMinor:"", GitVersion:"v1.32.7", GitCommit:"158eee9fac884b429a92465edd0d88a43f81de34", GitTreeState:"clean", BuildDate:"2025-07-15T18:00:33Z", GoVersion:"go1.23.10", Compiler:"gc", Platform:"linux/amd64"}

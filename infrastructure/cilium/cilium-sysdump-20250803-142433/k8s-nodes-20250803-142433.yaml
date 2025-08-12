@@ -1,0 +1,520 @@
+apiVersion: v1
+items:
+- metadata:
+    annotations:
+      kubeadm.alpha.kubernetes.io/cri-socket: unix:///var/run/containerd/containerd.sock
+      node.alpha.kubernetes.io/ttl: "0"
+      volumes.kubernetes.io/controller-managed-attach-detach: "true"
+    creationTimestamp: "2025-08-02T11:51:57Z"
+    labels:
+      beta.kubernetes.io/arch: amd64
+      beta.kubernetes.io/os: linux
+      k8slens-edit-resource-version: v1
+      kubernetes.io/arch: amd64
+      kubernetes.io/hostname: k8s-master-n1
+      kubernetes.io/os: linux
+      node-role.kubernetes.io/control-plane: ""
+      node.kubernetes.io/exclude-from-external-load-balancers: ""
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:volumes.kubernetes.io/controller-managed-attach-detach: {}
+          f:labels:
+            .: {}
+            f:beta.kubernetes.io/arch: {}
+            f:beta.kubernetes.io/os: {}
+            f:kubernetes.io/arch: {}
+            f:kubernetes.io/hostname: {}
+            f:kubernetes.io/os: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-08-02T11:51:57Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:kubeadm.alpha.kubernetes.io/cri-socket: {}
+          f:labels:
+            f:node-role.kubernetes.io/control-plane: {}
+            f:node.kubernetes.io/exclude-from-external-load-balancers: {}
+      manager: kubeadm
+      operation: Update
+      time: "2025-08-02T11:51:59Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:node.alpha.kubernetes.io/ttl: {}
+        f:spec:
+          f:podCIDR: {}
+          f:podCIDRs:
+            .: {}
+            v:"10.0.0.0/24": {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-08-02T11:53:16Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"NetworkUnavailable"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+      manager: cilium-operator-generic
+      operation: Update
+      subresource: status
+      time: "2025-08-02T11:53:20Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            f:k8slens-edit-resource-version: {}
+      manager: node-fetch
+      operation: Update
+      time: "2025-08-02T11:54:07Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"DiskPressure"}:
+              f:lastHeartbeatTime: {}
+            k:{"type":"MemoryPressure"}:
+              f:lastHeartbeatTime: {}
+            k:{"type":"PIDPressure"}:
+              f:lastHeartbeatTime: {}
+            k:{"type":"Ready"}:
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+          f:images: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-08-03T14:19:39Z"
+    name: k8s-master-n1
+    resourceVersion: "189669"
+    uid: bc55f9ed-85e0-4305-964e-f64f7cf9d085
+  spec:
+    podCIDR: 10.0.0.0/24
+    podCIDRs:
+    - 10.0.0.0/24
+  status:
+    addresses:
+    - address: 91.217.196.189
+      type: InternalIP
+    - address: k8s-master-n1
+      type: Hostname
+    allocatable:
+      cpu: "8"
+      ephemeral-storage: "95001823485"
+      hugepages-1Gi: "0"
+      hugepages-2Mi: "0"
+      memory: 12140872Ki
+      pods: "110"
+    capacity:
+      cpu: "8"
+      ephemeral-storage: 103083576Ki
+      hugepages-1Gi: "0"
+      hugepages-2Mi: "0"
+      memory: 12243272Ki
+      pods: "110"
+    conditions:
+    - lastHeartbeatTime: "2025-08-02T11:53:20Z"
+      lastTransitionTime: "2025-08-02T11:53:20Z"
+      message: Cilium is running on this node
+      reason: CiliumIsUp
+      status: "False"
+      type: NetworkUnavailable
+    - lastHeartbeatTime: "2025-08-03T14:19:39Z"
+      lastTransitionTime: "2025-08-02T11:51:55Z"
+      message: kubelet has sufficient memory available
+      reason: KubeletHasSufficientMemory
+      status: "False"
+      type: MemoryPressure
+    - lastHeartbeatTime: "2025-08-03T14:19:39Z"
+      lastTransitionTime: "2025-08-02T11:51:55Z"
+      message: kubelet has no disk pressure
+      reason: KubeletHasNoDiskPressure
+      status: "False"
+      type: DiskPressure
+    - lastHeartbeatTime: "2025-08-03T14:19:39Z"
+      lastTransitionTime: "2025-08-02T11:51:55Z"
+      message: kubelet has sufficient PID available
+      reason: KubeletHasSufficientPID
+      status: "False"
+      type: PIDPressure
+    - lastHeartbeatTime: "2025-08-03T14:19:39Z"
+      lastTransitionTime: "2025-08-02T11:53:16Z"
+      message: kubelet is posting ready status
+      reason: KubeletReady
+      status: "True"
+      type: Ready
+    daemonEndpoints:
+      kubeletEndpoint:
+        Port: 10250
+    images:
+    - names:
+      - quay.io/cilium/cilium@sha256:544de3d4fed7acba72758413812780a4972d47c39035f2a06d6145d8644a3353
+      sizeBytes: 271822645
+    - names:
+      - quay.io/cilium/cilium@sha256:dfea023972d06ec183cfa3c9e7809716f85daaff042e573ef366e9ec6a0c0ab2
+      sizeBytes: 264063880
+    - names:
+      - docker.io/nicolaka/netshoot@sha256:7f08c4aff13ff61a35d30e30c5c1ea8396eac6ab4ce19fd02d5a4b3b5d0d09a2
+      - docker.io/nicolaka/netshoot:latest
+      sizeBytes: 207893848
+    - names:
+      - quay.io/cilium/cilium-envoy@sha256:231b5bd9682dfc648ae97f33dcdc5225c5a526194dda08124f5eded833bf02bf
+      sizeBytes: 67854800
+    - names:
+      - quay.io/cilium/cilium-envoy@sha256:318eff387835ca2717baab42a84f35a83a5f9e7d519253df87269f80b9ff0171
+      sizeBytes: 66423752
+    - names:
+      - registry.k8s.io/etcd@sha256:c6a9d11cc5c04b114ccdef39a9265eeef818e3d02f5359be035ae784097fdec5
+      - registry.k8s.io/etcd:3.5.16-0
+      sizeBytes: 57680541
+    - names:
+      - registry.k8s.io/e2e-test-images/agnhost@sha256:7e8bdd271312fd25fc5ff5a8f04727be84044eb3d7d8d03611972a6752e2e11e
+      - registry.k8s.io/e2e-test-images/agnhost:2.39
+      sizeBytes: 51105200
+    - names:
+      - registry.k8s.io/dns/k8s-dns-node-cache@sha256:ec9b3f0511ff695f32b8abba690d075763196ca36f11f999bf143baf7a28ccb2
+      - registry.k8s.io/dns/k8s-dns-node-cache:1.22.28
+      sizeBytes: 34761701
+    - names:
+      - quay.io/cilium/operator-generic@sha256:91ac3bf7be7bed30e90218f219d4f3062a63377689ee7246062fa0cc3839d096
+      sizeBytes: 33693776
+    - names:
+      - quay.io/cilium/operator-generic@sha256:398378b4507b6e9db22be2f4455d8f8e509b189470061b0f813f0fabaf944f51
+      sizeBytes: 32890279
+    - names:
+      - registry.k8s.io/kube-proxy@sha256:8d589a18b5424f77a784ef2f00feffac0ef210414100822f1c120f0d7221def3
+      - registry.k8s.io/kube-proxy:v1.32.7
+      sizeBytes: 30894399
+    - names:
+      - quay.io/cilium/hubble-relay@sha256:7d17ec10b3d37341c18ca56165b2f29a715cb8ee81311fd07088d8bf68c01e60
+      sizeBytes: 29149253
+    - names:
+      - registry.k8s.io/kube-apiserver@sha256:e04f6223d52f8041c46ef4545ccaf07894b1ca5851506a9142706d4206911f64
+      - registry.k8s.io/kube-apiserver:v1.32.7
+      sizeBytes: 28796794
+    - names:
+      - quay.io/cilium/hubble-relay@sha256:c13679f22ed250457b7f3581189d97f035608fe13c87b51f57f8a755918e793a
+      sizeBytes: 27317907
+    - names:
+      - registry.k8s.io/kube-controller-manager@sha256:6c7f288ab0181e496606a43dbade954819af2b1e1c0552becf6903436e16ea75
+      - registry.k8s.io/kube-controller-manager:v1.32.7
+      sizeBytes: 26385470
+    - names:
+      - registry.k8s.io/kube-scheduler@sha256:1c35a970b4450b4285531495be82cda1f6549952f70d6e3de8db57c20a3da4ce
+      - registry.k8s.io/kube-scheduler:v1.32.7
+      sizeBytes: 20778773
+    - names:
+      - quay.io/cilium/hubble-ui-backend@sha256:a034b7e98e6ea796ed26df8f4e71f83fc16465a19d166eff67a03b822c0bfa15
+      sizeBytes: 20317203
+    - names:
+      - registry.k8s.io/coredns/coredns@sha256:9caabbf6238b189a65d0d6e6ac138de60d6a1c419e5a341fbbb7c78382559c6e
+      - registry.k8s.io/coredns/coredns:v1.11.3
+      sizeBytes: 18562039
+    - names:
+      - quay.io/cilium/hubble-ui@sha256:9e37c1296b802830834cc87342a9182ccbb71ffebb711971e849221bd9d59392
+      sizeBytes: 11129482
+    - names:
+      - docker.io/library/alpine@sha256:3be987e6cde1d07e873c012bf6cfe941e6e85d16ca5fc5b8bedc675451d2de67
+      - docker.io/library/alpine:3.19
+      sizeBytes: 3425208
+    - names:
+      - registry.k8s.io/pause@sha256:ee6521f290b2168b6e0935a181d4cff9be1ac3f505666ef0e3c98fae8199917a
+      - registry.k8s.io/pause:3.10
+      sizeBytes: 320368
+    - names:
+      - registry.k8s.io/pause@sha256:9001185023633d17a2f98ff69b6ff2615b8ea02a825adffa40422f51dfdcde9d
+      - registry.k8s.io/pause:3.8
+      sizeBytes: 311286
+    nodeInfo:
+      architecture: amd64
+      bootID: cdba2016-2543-4d9f-88f0-f23712108cd8
+      containerRuntimeVersion: containerd://1.7.27
+      kernelVersion: 5.15.0-142-generic
+      kubeProxyVersion: v1.32.7
+      kubeletVersion: v1.32.7
+      machineID: 11f0919a4f15480e96d80d1d5bcf916b
+      operatingSystem: linux
+      osImage: Ubuntu 22.04.5 LTS
+      systemUUID: f11c53ee-093a-489a-8464-8d858026ed2a
+- metadata:
+    annotations:
+      kubeadm.alpha.kubernetes.io/cri-socket: unix:///var/run/containerd/containerd.sock
+      node.alpha.kubernetes.io/ttl: "0"
+      volumes.kubernetes.io/controller-managed-attach-detach: "true"
+    creationTimestamp: "2025-08-02T11:52:13Z"
+    labels:
+      beta.kubernetes.io/arch: amd64
+      beta.kubernetes.io/os: linux
+      k8slens-edit-resource-version: v1
+      kubernetes.io/arch: amd64
+      kubernetes.io/hostname: k8s-worker-n1
+      kubernetes.io/os: linux
+      node-role.kubernetes.io/worker: ""
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:volumes.kubernetes.io/controller-managed-attach-detach: {}
+          f:labels:
+            .: {}
+            f:beta.kubernetes.io/arch: {}
+            f:beta.kubernetes.io/os: {}
+            f:kubernetes.io/arch: {}
+            f:kubernetes.io/hostname: {}
+            f:kubernetes.io/os: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-08-02T11:52:13Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:kubeadm.alpha.kubernetes.io/cri-socket: {}
+      manager: kubeadm
+      operation: Update
+      time: "2025-08-02T11:52:14Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"NetworkUnavailable"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+      manager: cilium-operator-generic
+      operation: Update
+      subresource: status
+      time: "2025-08-02T11:52:56Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            f:k8slens-edit-resource-version: {}
+      manager: node-fetch
+      operation: Update
+      time: "2025-08-02T11:59:41Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:node.alpha.kubernetes.io/ttl: {}
+        f:spec:
+          f:podCIDR: {}
+          f:podCIDRs:
+            .: {}
+            v:"10.0.1.0/24": {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-08-02T12:00:09Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            f:node-role.kubernetes.io/worker: {}
+      manager: kubectl-label
+      operation: Update
+      time: "2025-08-03T11:44:56Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"DiskPressure"}:
+              f:lastHeartbeatTime: {}
+            k:{"type":"MemoryPressure"}:
+              f:lastHeartbeatTime: {}
+            k:{"type":"PIDPressure"}:
+              f:lastHeartbeatTime: {}
+            k:{"type":"Ready"}:
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+          f:images: {}
+          f:nodeInfo:
+            f:bootID: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-08-03T14:19:55Z"
+    name: k8s-worker-n1
+    resourceVersion: "189674"
+    uid: a1e48a14-d9ea-4d46-b6db-472e788a7807
+  spec:
+    podCIDR: 10.0.1.0/24
+    podCIDRs:
+    - 10.0.1.0/24
+  status:
+    addresses:
+    - address: 91.217.196.183
+      type: InternalIP
+    - address: k8s-worker-n1
+      type: Hostname
+    allocatable:
+      cpu: "10"
+      ephemeral-storage: "114026006749"
+      hugepages-1Gi: "0"
+      hugepages-2Mi: "0"
+      memory: 16269120Ki
+      pods: "110"
+    capacity:
+      cpu: "10"
+      ephemeral-storage: 123726136Ki
+      hugepages-1Gi: "0"
+      hugepages-2Mi: "0"
+      memory: 16371520Ki
+      pods: "110"
+    conditions:
+    - lastHeartbeatTime: "2025-08-02T11:52:56Z"
+      lastTransitionTime: "2025-08-02T11:52:56Z"
+      message: Cilium is running on this node
+      reason: CiliumIsUp
+      status: "False"
+      type: NetworkUnavailable
+    - lastHeartbeatTime: "2025-08-03T14:19:55Z"
+      lastTransitionTime: "2025-08-02T11:52:13Z"
+      message: kubelet has sufficient memory available
+      reason: KubeletHasSufficientMemory
+      status: "False"
+      type: MemoryPressure
+    - lastHeartbeatTime: "2025-08-03T14:19:55Z"
+      lastTransitionTime: "2025-08-02T11:52:13Z"
+      message: kubelet has no disk pressure
+      reason: KubeletHasNoDiskPressure
+      status: "False"
+      type: DiskPressure
+    - lastHeartbeatTime: "2025-08-03T14:19:55Z"
+      lastTransitionTime: "2025-08-02T11:52:13Z"
+      message: kubelet has sufficient PID available
+      reason: KubeletHasSufficientPID
+      status: "False"
+      type: PIDPressure
+    - lastHeartbeatTime: "2025-08-03T14:19:55Z"
+      lastTransitionTime: "2025-08-02T12:00:07Z"
+      message: kubelet is posting ready status
+      reason: KubeletReady
+      status: "True"
+      type: Ready
+    daemonEndpoints:
+      kubeletEndpoint:
+        Port: 10250
+    images:
+    - names:
+      - quay.io/cilium/cilium@sha256:544de3d4fed7acba72758413812780a4972d47c39035f2a06d6145d8644a3353
+      sizeBytes: 271822645
+    - names:
+      - quay.io/cilium/cilium@sha256:dfea023972d06ec183cfa3c9e7809716f85daaff042e573ef366e9ec6a0c0ab2
+      sizeBytes: 264063880
+    - names:
+      - docker.io/nicolaka/netshoot@sha256:7f08c4aff13ff61a35d30e30c5c1ea8396eac6ab4ce19fd02d5a4b3b5d0d09a2
+      - docker.io/nicolaka/netshoot:latest
+      sizeBytes: 207893848
+    - names:
+      - quay.io/cilium/json-mock@sha256:5aad04835eda9025fe4561ad31be77fd55309af8158ca8663a72f6abb78c2603
+      sizeBytes: 85931432
+    - names:
+      - quay.io/cilium/cilium-envoy@sha256:231b5bd9682dfc648ae97f33dcdc5225c5a526194dda08124f5eded833bf02bf
+      sizeBytes: 67854800
+    - names:
+      - quay.io/cilium/cilium-envoy@sha256:318eff387835ca2717baab42a84f35a83a5f9e7d519253df87269f80b9ff0171
+      sizeBytes: 66423752
+    - names:
+      - registry.k8s.io/e2e-test-images/agnhost@sha256:7e8bdd271312fd25fc5ff5a8f04727be84044eb3d7d8d03611972a6752e2e11e
+      - registry.k8s.io/e2e-test-images/agnhost:2.39
+      sizeBytes: 51105200
+    - names:
+      - k8s.gcr.io/dns/k8s-dns-node-cache@sha256:ec9b3f0511ff695f32b8abba690d075763196ca36f11f999bf143baf7a28ccb2
+      - registry.k8s.io/dns/k8s-dns-node-cache@sha256:ec9b3f0511ff695f32b8abba690d075763196ca36f11f999bf143baf7a28ccb2
+      - k8s.gcr.io/dns/k8s-dns-node-cache:1.22.28
+      - registry.k8s.io/dns/k8s-dns-node-cache:1.22.28
+      sizeBytes: 34761701
+    - names:
+      - quay.io/cilium/operator-generic@sha256:91ac3bf7be7bed30e90218f219d4f3062a63377689ee7246062fa0cc3839d096
+      sizeBytes: 33693776
+    - names:
+      - quay.io/cilium/operator-generic@sha256:398378b4507b6e9db22be2f4455d8f8e509b189470061b0f813f0fabaf944f51
+      sizeBytes: 32890279
+    - names:
+      - registry.k8s.io/kube-proxy@sha256:8d589a18b5424f77a784ef2f00feffac0ef210414100822f1c120f0d7221def3
+      - registry.k8s.io/kube-proxy:v1.32.7
+      sizeBytes: 30894399
+    - names:
+      - quay.io/cilium/hubble-relay@sha256:7d17ec10b3d37341c18ca56165b2f29a715cb8ee81311fd07088d8bf68c01e60
+      sizeBytes: 29149253
+    - names:
+      - registry.k8s.io/metrics-server/metrics-server@sha256:89258156d0e9af60403eafd44da9676fd66f600c7934d468ccc17e42b199aee2
+      - registry.k8s.io/metrics-server/metrics-server:v0.8.0
+      sizeBytes: 22493802
+    - names:
+      - docker.io/coredns/coredns@sha256:40384aa1f5ea6bfdc77997d243aec73da05f27aed0c5e9d65bfa98933c519d97
+      sizeBytes: 20939036
+    - names:
+      - quay.io/cilium/hubble-ui-backend@sha256:a034b7e98e6ea796ed26df8f4e71f83fc16465a19d166eff67a03b822c0bfa15
+      sizeBytes: 20317203
+    - names:
+      - registry.k8s.io/coredns/coredns@sha256:9caabbf6238b189a65d0d6e6ac138de60d6a1c419e5a341fbbb7c78382559c6e
+      - registry.k8s.io/coredns/coredns:v1.11.3
+      sizeBytes: 18562039
+    - names:
+      - quay.io/cilium/hubble-ui@sha256:9e37c1296b802830834cc87342a9182ccbb71ffebb711971e849221bd9d59392
+      sizeBytes: 11129482
+    - names:
+      - quay.io/cilium/alpine-curl@sha256:913e8c9f3d960dde03882defa0edd3a919d529c2eb167caa7f54194528bde364
+      sizeBytes: 10971690
+    - names:
+      - docker.io/library/busybox@sha256:f9a104fddb33220ec80fc45a4e606c74aadf1ef7a3832eb0b05be9e90cd61f5f
+      - docker.io/library/busybox:latest
+      sizeBytes: 2156518
+    - names:
+      - registry.k8s.io/pause@sha256:9001185023633d17a2f98ff69b6ff2615b8ea02a825adffa40422f51dfdcde9d
+      - registry.k8s.io/pause:3.8
+      sizeBytes: 311286
+    nodeInfo:
+      architecture: amd64
+      bootID: 1e262991-7dc8-45ea-a143-ccdf7924d98a
+      containerRuntimeVersion: containerd://1.7.27
+      kernelVersion: 5.15.0-151-generic
+      kubeProxyVersion: v1.32.7
+      kubeletVersion: v1.32.7
+      machineID: 11f0919a4f15480e96d80d1d5bcf916b
+      operatingSystem: linux
+      osImage: Ubuntu 22.04.5 LTS
+      systemUUID: db9b0a78-aff4-4740-803c-dcbe3ac12150
+kind: NodeList
+metadata:
+  resourceVersion: "189959"

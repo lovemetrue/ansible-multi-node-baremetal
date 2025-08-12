@@ -1,0 +1,113 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: longhorn-ui
+  namespace: longhorn-system
+  uid: 4b103766-b386-45b3-9487-3470aa8a770a
+  resourceVersion: '271783'
+  generation: 1
+  creationTimestamp: '2025-07-29T19:47:43Z'
+  labels:
+    app: longhorn-ui
+    app.kubernetes.io/instance: longhorn
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: longhorn
+    app.kubernetes.io/version: v1.9.1
+    helm.sh/chart: longhorn-1.9.1
+  annotations:
+    deployment.kubernetes.io/revision: '1'
+    meta.helm.sh/release-name: longhorn
+    meta.helm.sh/release-namespace: longhorn-system
+  selfLink: /apis/apps/v1/namespaces/longhorn-system/deployments/longhorn-ui
+status:
+  observedGeneration: 1
+  replicas: 2
+  updatedReplicas: 2
+  readyReplicas: 2
+  availableReplicas: 2
+  conditions:
+    - type: Progressing
+      status: 'True'
+      lastUpdateTime: '2025-07-29T19:47:46Z'
+      lastTransitionTime: '2025-07-29T19:47:43Z'
+      reason: NewReplicaSetAvailable
+      message: ReplicaSet "longhorn-ui-8666455ff7" has successfully progressed.
+    - type: Available
+      status: 'True'
+      lastUpdateTime: '2025-07-30T10:42:26Z'
+      lastTransitionTime: '2025-07-30T10:42:26Z'
+      reason: MinimumReplicasAvailable
+      message: Deployment has minimum availability.
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: longhorn-ui
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: longhorn-ui
+        app.kubernetes.io/instance: longhorn
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: longhorn
+        app.kubernetes.io/version: v1.9.1
+        helm.sh/chart: longhorn-1.9.1
+    spec:
+      volumes:
+        - name: nginx-cache
+          emptyDir: {}
+        - name: nginx-config
+          emptyDir: {}
+        - name: var-run
+          emptyDir: {}
+      containers:
+        - name: longhorn-ui
+          image: longhornio/longhorn-ui:v1.9.1
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+          env:
+            - name: LONGHORN_MANAGER_IP
+              value: http://longhorn-backend:9500
+            - name: LONGHORN_UI_PORT
+              value: '8000'
+          resources: {}
+          volumeMounts:
+            - name: nginx-cache
+              mountPath: /var/cache/nginx/
+            - name: nginx-config
+              mountPath: /var/config/nginx/
+            - name: var-run
+              mountPath: /var/run/
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      serviceAccountName: longhorn-ui-service-account
+      serviceAccount: longhorn-ui-service-account
+      securityContext: {}
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - longhorn-ui
+                topologyKey: kubernetes.io/hostname
+      schedulerName: default-scheduler
+      priorityClassName: longhorn-critical
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600

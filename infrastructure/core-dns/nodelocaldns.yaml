@@ -1,0 +1,116 @@
+# 1. ServiceAccount
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: node-local-dns
+  namespace: kube-system
+
+---
+# 2. Service для upstream CoreDNS
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-dns-upstream
+  namespace: kube-system
+  labels:
+    k8s-app: kube-dns
+    kubernetes.io/name: "KubeDNSUpstream"
+spec:
+  ports:
+  - name: dns
+    port: 53
+    protocol: UDP
+    targetPort: 53
+  - name: dns-tcp
+    port: 53
+    protocol: TCP
+    targetPort: 53
+  selector:
+    k8s-app: kube-dns
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: node-local-dns
+  namespace: kube-system
+data:
+  Corefile: |
+    cluster.local:53 {
+        errors
+        cache {
+          success 9984 30
+          denial 9984 5
+        }
+        reload
+        loop
+        bind 169.254.25.10
+        forward . 10.96.0.10
+    }
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: node-local-dns
+  namespace: kube-system
+  labels:
+    k8s-app: node-local-dns
+spec:
+  selector:
+    matchLabels:
+      k8s-app: node-local-dns
+  template:
+    metadata:
+      labels:
+        k8s-app: node-local-dns
+    spec:
+      priorityClassName: system-node-critical
+      hostNetwork: true
+      dnsPolicy: Default
+      tolerations:
+      - operator: Exists
+      containers:
+      - name: node-cache
+        image: registry.k8s.io/dns/k8s-dns-node-cache:1.22.28
+        resources:
+          requests:
+            cpu: 25m
+            memory: 5Mi
+        args: [ "-localip", "169.254.25.10", "-conf", "/etc/Corefile", "-upstreamsvc", "kube-dns" ]
+        securityContext:
+          privileged: true
+        ports:
+        - containerPort: 53
+          name: dns-tcp
+          protocol: TCP
+        - containerPort: 53
+          name: dns
+          protocol: UDP
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 60
+          timeoutSeconds: 5
+          successThreshold: 1
+          failureThreshold: 5
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/Corefile
+          subPath: Corefile
+        - name: xtables-lock
+          mountPath: /run/xtables.lock
+        - name: kube-dns-config
+          mountPath: /etc/kube-dns
+      volumes:
+      - name: config-volume
+        configMap:
+          name: node-local-dns
+      - name: xtables-lock
+        hostPath:
+          path: /run/xtables.lock
+          type: FileOrCreate
+      - name: kube-dns-config
+        configMap:
+          name: coredns

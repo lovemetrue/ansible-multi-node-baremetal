@@ -1,0 +1,13 @@
+helm upgrade longhorn longhorn/longhorn -n longhorn-system \
+  --reuse-values \
+  --set ui.replicas=1 \
+  --set ui.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].labelSelector.matchExpressions[0].key="app" \
+  --set ui.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].labelSelector.matchExpressions[0].operator="In" \
+  --set ui.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].labelSelector.matchExpressions[0].values[0]="longhorn-ui" \
+  --set ui.affinity.podAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution[0].topologyKey="kubernetes.io/hostname" \
+  --set ui.tolerations[0].key="CriticalAddonsOnly" \
+  --set ui.tolerations[0].operator="Exists" \
+  --set ui.tolerations[1].key="node-role.kubernetes.io/master" \
+  --set ui.tolerations[1].effect="NoSchedule" \
+  --set ui.tolerations[2].key="node-role.kubernetes.io/control-plane" \
+  --set ui.tolerations[2].effect="NoSchedule"

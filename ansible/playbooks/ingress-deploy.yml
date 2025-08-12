@@ -1,0 +1,78 @@
+---
+- name: Deploy NGINX Ingress Controller
+  hosts: master # или все ноды, если kubectl установлен везде
+  become: false
+  vars:
+    ingress_namespace: "ingress-nginx"
+    ingress_version: "v1.8.1"  # Последняя стабильная версия
+    helm_repo_url: "https://kubernetes.github.io/ingress-nginx"
+    helm_release_name: "ingress-nginx"
+
+  tasks:
+    - name: Install required dependencies (helm)
+      become: true
+      apt:
+        name: helm
+        state: present
+        update_cache: yes
+      when: ansible_os_family == 'Debian'
+
+    - name: Add ingress-nginx helm repo
+      command: "helm repo add ingress-nginx {{ helm_repo_url }}"
+      args:
+        creates: "~/.config/helm/repositories.yaml"  # Проверяем, что repo уже добавлен
+
+    - name: Update helm repos
+      command: "helm repo update"
+
+    - name: Create ingress-nginx namespace
+      k8s:
+        api_version: v1
+        kind: Namespace
+        name: "{{ ingress_namespace }}"
+        state: present
+
+    - name: Deploy NGINX Ingress Controller
+      command: >
+        helm upgrade --install {{ helm_release_name }} ingress-nginx/ingress-nginx \
+        --namespace {{ ingress_namespace }} \
+        --version {{ ingress_version }} \
+        --set controller.service.type=LoadBalancer \
+        --set controller.service.externalTrafficPolicy=Local \
+        --set controller.ingressClassResource.default=true \
+        --set controller.watchIngressWithoutClass=true
+      register: helm_install
+      changed_when: "'STATUS: deployed' in helm_install.stdout"
+
+    - name: Verify ingress controller pods
+      k8s_info:
+        kind: Pod
+        namespace: "{{ ingress_namespace }}"
+        label_selectors:
+          - app.kubernetes.io/name=ingress-nginx
+      register: ingress_pods
+
+    - name: Print ingress controller status
+      debug:
+        msg: "Ingress controller pods: {{ ingress_pods | json_query('resources[*].metadata.name') }}"
+
+    - name: Wait for ingress controller to be ready
+      k8s_info:
+        kind: Pod
+        namespace: "{{ ingress_namespace }}"
+        label_selectors:
+          - app.kubernetes.io/name=ingress-nginx
+          - app.kubernetes.io/component=controller
+      register: pods
+      until: pods.resources | selectattr('status.phase', 'equalto', 'Running') | list | length == 1
+      retries: 10
+      delay: 10
+
+    - name: Get ingress controller service info
+      command: "kubectl get svc {{ helm_release_name }}-controller -n {{ ingress_namespace }}"
+      register: service_info
+      changed_when: false
+
+    - name: Print service info
+      debug:
+        msg: "Ingress Service: {{ service_info.stdout_lines }}"

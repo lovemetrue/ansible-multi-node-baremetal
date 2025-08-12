@@ -1,0 +1,385 @@
+goroutine 194 [running]:
+runtime/pprof.writeGoroutineStacks({0x7f5307b9b130, 0xc0009c2028})
+	/usr/local/go/src/runtime/pprof/pprof.go:764 +0x6a
+runtime/pprof.writeGoroutine({0x7f5307b9b130?, 0xc0009c2028?}, 0xc000497180?)
+	/usr/local/go/src/runtime/pprof/pprof.go:753 +0x25
+runtime/pprof.(*Profile).WriteTo(0x6c4cb70?, {0x7f5307b9b130?, 0xc0009c2028?}, 0xd?)
+	/usr/local/go/src/runtime/pprof/pprof.go:377 +0x14b
+github.com/google/gops/agent.handle({0x7f5307b9b108, 0xc0009c2028}, {0xc000f380e8?, 0x1?, 0x1?})
+	/go/src/github.com/cilium/cilium/vendor/github.com/google/gops/agent/agent.go:200 +0x28b2
+github.com/google/gops/agent.listen({0x4452140, 0xc0012ee980})
+	/go/src/github.com/cilium/cilium/vendor/github.com/google/gops/agent/agent.go:144 +0x1b4
+created by github.com/google/gops/agent.Listen in goroutine 1
+	/go/src/github.com/cilium/cilium/vendor/github.com/google/gops/agent/agent.go:122 +0x385
+
+goroutine 1 [select, 34 minutes]:
+github.com/cilium/hive.(*Hive).waitForSignalOrShutdown(0xc0006efa40, 0xc00049ce50)
+	/go/src/github.com/cilium/cilium/vendor/github.com/cilium/hive/hive.go:256 +0x170
+github.com/cilium/hive.(*Hive).Run(0xc0006efa40, 0xc00049ce50)
+	/go/src/github.com/cilium/cilium/vendor/github.com/cilium/hive/hive.go:240 +0x38b
+github.com/cilium/cilium/operator/cmd.NewOperatorCmd.func1(0xc00100d300?, {0x3ee128e?, 0x4?, 0x3ee11a6?})
+	/go/src/github.com/cilium/cilium/operator/cmd/root.go:343 +0xa9
+github.com/spf13/cobra.(*Command).execute(0xc000a38908, {0xc000130400, 0x2, 0x2})
+	/go/src/github.com/cilium/cilium/vendor/github.com/spf13/cobra/command.go:1019 +0xa91
+github.com/spf13/cobra.(*Command).ExecuteC(0xc000a38908)
+	/go/src/github.com/cilium/cilium/vendor/github.com/spf13/cobra/command.go:1148 +0x46f
+github.com/spf13/cobra.(*Command).Execute(...)
+	/go/src/github.com/cilium/cilium/vendor/github.com/spf13/cobra/command.go:1071
+github.com/cilium/cilium/operator/cmd.Execute(0xc0006efa40?)
+	/go/src/github.com/cilium/cilium/operator/cmd/root.go:381 +0x13
+main.main()
+	/go/src/github.com/cilium/cilium/operator/main.go:14 +0x57
+
+goroutine 86 [select, 34 minutes]:
+io.(*pipe).read(0xc00108f740, {0xc001132050, 0xffb0, 0x0?})
+	/usr/local/go/src/io/pipe.go:57 +0xa5
+io.(*PipeReader).Read(0x0?, {0xc001132050?, 0x0?, 0x0?})
+	/usr/local/go/src/io/pipe.go:134 +0x1a
+bufio.(*Scanner).Scan(0xc001147ee8)
+	/usr/local/go/src/bufio/scan.go:219 +0x81e
+github.com/cilium/cilium/pkg/logging.writerScanner(0xc0010a13d0, 0xc00017c7d0?, 0xc0010a1400, {0x0, 0x0, 0xc000478380?})
+	/go/src/github.com/cilium/cilium/pkg/logging/klog_bridge.go:156 +0x15b
+created by github.com/cilium/cilium/pkg/logging.severityOverrideWriter in goroutine 1
+	/go/src/github.com/cilium/cilium/pkg/logging/klog_bridge.go:117 +0x2bf
+
+goroutine 87 [select, 34 minutes]:
+io.(*pipe).read(0xc00108f7a0, {0xc001100000, 0x10000, 0x100000000000000?})
+	/usr/local/go/src/io/pipe.go:57 +0xa5
+io.(*PipeReader).Read(0x4211f6?, {0xc001100000?, 0xc00017d5b0?, 0x419990?})
+	/usr/local/go/src/io/pipe.go:134 +0x1a
+bufio.(*Scanner).Scan(0xc001114ee8)
+	/usr/local/go/src/bufio/scan.go:219 +0x81e
+github.com/cilium/cilium/pkg/logging.writerScanner(0xc0010a13d0, 0x0?, 0xc0010a1410, {0x0, 0x0, 0x0?})
+	/go/src/github.com/cilium/cilium/pkg/logging/klog_bridge.go:156 +0x15b
+created by github.com/cilium/cilium/pkg/logging.severityOverrideWriter in goroutine 1
+	/go/src/github.com/cilium/cilium/pkg/logging/klog_bridge.go:117 +0x2bf
+
+goroutine 88 [select, 34 minutes]:
+io.(*pipe).read(0xc00108f800, {0xc001118000, 0x10000, 0x10000?})
+	/usr/local/go/src/io/pipe.go:57 +0xa5
+io.(*PipeReader).Read(0xc001110ca0?, {0xc001118000?, 0xc001110db0?, 0xc001110db0?})
+	/usr/local/go/src/io/pipe.go:134 +0x1a
+bufio.(*Scanner).Scan(0xc001110ee8)
+	/usr/local/go/src/bufio/scan.go:219 +0x81e
+github.com/cilium/cilium/pkg/logging.writerScanner(0xc0010a13d0, 0x0?, 0xc0010a1420, {0x6cb7540, 0x1, 0x0?})
+	/go/src/github.com/cilium/cilium/pkg/logging/klog_bridge.go:156 +0x15b
+created by github.com/cilium/cilium/pkg/logging.severityOverrideWriter in goroutine 1
+	/go/src/github.com/cilium/cilium/pkg/logging/klog_bridge.go:117 +0x2bf
+
+goroutine 89 [select, 34 minutes]:
+io.(*pipe).read(0xc00108f860, {0xc001300000, 0x10000, 0x4189de?})
+	/usr/local/go/src/io/pipe.go:57 +0xa5
+io.(*PipeReader).Read(0xff00?, {0xc001300000?, 0x5?, 0xc0000af5b0?})
+	/usr/local/go/src/io/pipe.go:134 +0x1a
+bufio.(*Scanner).Scan(0xc001144ee8)
+	/usr/local/go/src/bufio/scan.go:219 +0x81e
+github.com/cilium/cilium/pkg/logging.writerScanner(0xc0010a13d0, 0x0?, 0xc0010a1440, {0x0, 0x0, 0x0?})
+	/go/src/github.com/cilium/cilium/pkg/logging/klog_bridge.go:156 +0x15b
+created by github.com/cilium/cilium/pkg/logging.severityOverrideWriter in goroutine 1
+	/go/src/github.com/cilium/cilium/pkg/logging/klog_bridge.go:117 +0x2bf
+
+goroutine 182 [select, 2 minutes]:
+github.com/cilium/cilium/pkg/rate.NewLimiter.func1()
+	/go/src/github.com/cilium/cilium/pkg/rate/limiter.go:47 +0x93
+created by github.com/cilium/cilium/pkg/rate.NewLimiter in goroutine 1
+	/go/src/github.com/cilium/cilium/pkg/rate/limiter.go:45 +0x127
+
+goroutine 226 [select]:
+github.com/cilium/cilium/pkg/rate.NewLimiter.func1()
+	/go/src/github.com/cilium/cilium/pkg/rate/limiter.go:47 +0x93
+created by github.com/cilium/cilium/pkg/rate.NewLimiter in goroutine 73
+	/go/src/github.com/cilium/cilium/pkg/rate/limiter.go:45 +0x127
+
+goroutine 188 [IO wait]:
+internal/poll.runtime_pollWait(0x7f5307f41690, 0x72)
+	/usr/local/go/src/runtime/netpoll.go:351 +0x85
+internal/poll.(*pollDesc).wait(0xc000497c80?, 0xc0013a6000?, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:84 +0x27
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc000497c80, {0xc0013a6000, 0x4800, 0x4800})
+	/usr/local/go/src/internal/poll/fd_unix.go:165 +0x27a
+net.(*netFD).Read(0xc000497c80, {0xc0013a6000?, 0xc?, 0xc001269968?})
+	/usr/local/go/src/net/fd_posix.go:55 +0x25
+net.(*conn).Read(0xc000cbae88, {0xc0013a6000?, 0x419374?, 0xc0013a605f?})
+	/usr/local/go/src/net/net.go:194 +0x45
+crypto/tls.(*atLeastReader).Read(0xc000b00738, {0xc0013a6000?, 0x47a1?, 0x0?})
+	/usr/local/go/src/crypto/tls/conn.go:809 +0x3b
+bytes.(*Buffer).ReadFrom(0xc000e637b8, {0x440b240, 0xc000b00738})
+	/usr/local/go/src/bytes/buffer.go:211 +0x98
+crypto/tls.(*Conn).readFromUntil(0xc000e63508, {0x7f5307b7b3b8, 0xc000d3a798}, 0x440894?)
+	/usr/local/go/src/crypto/tls/conn.go:831 +0xde
+crypto/tls.(*Conn).readRecordOrCCS(0xc000e63508, 0x0)
+	/usr/local/go/src/crypto/tls/conn.go:629 +0x3cf
+crypto/tls.(*Conn).readRecord(...)
+	/usr/local/go/src/crypto/tls/conn.go:591
+crypto/tls.(*Conn).Read(0xc000e63508, {0xc0012ac000, 0x1000, 0x41175e?})
+	/usr/local/go/src/crypto/tls/conn.go:1385 +0x145
+bufio.(*Reader).Read(0xc0012810e0, {0xc001284120, 0x9, 0x4117e0?})
+	/usr/local/go/src/bufio/bufio.go:245 +0x197
+io.ReadAtLeast({0x44078c0, 0xc0012810e0}, {0xc001284120, 0x9, 0x9}, 0x9)
+	/usr/local/go/src/io/io.go:335 +0x91
+io.ReadFull(...)
+	/usr/local/go/src/io/io.go:354
+golang.org/x/net/http2.readFrameHeader({0xc001284120, 0x9, 0xf98895?}, {0x44078c0?, 0xc0012810e0?})
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/net/http2/frame.go:242 +0x65
+golang.org/x/net/http2.(*Framer).ReadFrame(0xc0012840e0)
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/net/http2/frame.go:506 +0x7d
+golang.org/x/net/http2.(*clientConnReadLoop).run(0xc001269fa8)
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/net/http2/transport.go:2258 +0xda
+golang.org/x/net/http2.(*ClientConn).readLoop(0xc000782540)
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/net/http2/transport.go:2127 +0x79
+created by golang.org/x/net/http2.(*Transport).newClientConn in goroutine 187
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/net/http2/transport.go:912 +0xde5
+
+goroutine 195 [IO wait]:
+internal/poll.runtime_pollWait(0x7f5307f41460, 0x72)
+	/usr/local/go/src/runtime/netpoll.go:351 +0x85
+internal/poll.(*pollDesc).wait(0xc000636300?, 0x900000036?, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:84 +0x27
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Accept(0xc000636300)
+	/usr/local/go/src/internal/poll/fd_unix.go:620 +0x295
+net.(*netFD).accept(0xc000636300)
+	/usr/local/go/src/net/fd_unix.go:172 +0x29
+net.(*TCPListener).accept(0xc00081c480)
+	/usr/local/go/src/net/tcpsock_posix.go:159 +0x1b
+net.(*TCPListener).Accept(0xc00081c480)
+	/usr/local/go/src/net/tcpsock.go:380 +0x30
+net/http.(*Server).Serve(0xc0002ba3d8, {0x4452140, 0xc00081c480})
+	/usr/local/go/src/net/http/server.go:3424 +0x30c
+net/http.(*Server).ListenAndServe(0xc0002ba3d8)
+	/usr/local/go/src/net/http/server.go:3350 +0x71
+github.com/cilium/cilium/operator/metrics.(*metricsManager).Start.func1()
+	/go/src/github.com/cilium/cilium/operator/metrics/metrics.go:56 +0xcf
+created by github.com/cilium/cilium/operator/metrics.(*metricsManager).Start in goroutine 1
+	/go/src/github.com/cilium/cilium/operator/metrics/metrics.go:54 +0x1ca
+
+goroutine 196 [select, 34 minutes]:
+github.com/cilium/statedb.graveyardWorker(0xc001182b40, {0x446c0f0, 0xc000191310}, 0x3b9aca00?)
+	/go/src/github.com/cilium/cilium/vendor/github.com/cilium/statedb/graveyard.go:25 +0x17a
+created by github.com/cilium/statedb.(*DB).Start in goroutine 1
+	/go/src/github.com/cilium/cilium/vendor/github.com/cilium/statedb/db.go:276 +0x165
+
+goroutine 198 [select]:
+github.com/cilium/cilium/pkg/controller.(*controller).runController(0xc0006def20)
+	/go/src/github.com/cilium/cilium/pkg/controller/controller.go:405 +0x84e
+created by github.com/cilium/cilium/pkg/controller.(*Manager).createControllerLocked in goroutine 1
+	/go/src/github.com/cilium/cilium/pkg/controller/manager.go:124 +0x4ae
+
+goroutine 43 [chan receive, 34 minutes]:
+github.com/cilium/cilium/pkg/shell/server.shell.listener.func1()
+	/go/src/github.com/cilium/cilium/pkg/shell/server/shell_server.go:76 +0x3e
+created by github.com/cilium/cilium/pkg/shell/server.shell.listener in goroutine 204
+	/go/src/github.com/cilium/cilium/pkg/shell/server/shell_server.go:75 +0x2d6
+
+goroutine 202 [select, 34 minutes]:
+github.com/cilium/cilium/pkg/k8s/resource.(*resource[...]).startWhenNeeded(0x44c6500)
+	/go/src/github.com/cilium/cilium/pkg/k8s/resource/resource.go:313 +0x85
+created by github.com/cilium/cilium/pkg/k8s/resource.(*resource[...]).Start in goroutine 1
+	/go/src/github.com/cilium/cilium/pkg/k8s/resource/resource.go:300 +0x88
+
+goroutine 203 [select, 34 minutes]:
+github.com/cilium/cilium/pkg/dial.newServiceResolver.func2({0x446c0b8, 0xc000c2a210}, {0x4473e60, 0xc001312960})
+	/go/src/github.com/cilium/cilium/pkg/dial/resolver.go:53 +0xa6
+github.com/cilium/hive/job.(*jobOneShot).start(0xc0011a2960, {0x446c0b8, 0xc000c2a210}, 0x0?, {0x4473e60, 0xc0011a2540}, {{{0xc000876000, 0x1, 0x1}}, 0xc000c1c420, ...})
+	/go/src/github.com/cilium/cilium/vendor/github.com/cilium/hive/job/oneshot.go:138 +0x4fd
+created by github.com/cilium/hive/job.(*queuedJob).Start.func1 in goroutine 1
+	/go/src/github.com/cilium/cilium/vendor/github.com/cilium/hive/job/job.go:126 +0x16f
+
+goroutine 204 [IO wait, 34 minutes]:
+internal/poll.runtime_pollWait(0x7f5307f41348, 0x72)
+	/usr/local/go/src/runtime/netpoll.go:351 +0x85
+internal/poll.(*pollDesc).wait(0xc000637700?, 0x1?, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:84 +0x27
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Accept(0xc000637700)
+	/usr/local/go/src/internal/poll/fd_unix.go:620 +0x295
+net.(*netFD).accept(0xc000637700)
+	/usr/local/go/src/net/fd_unix.go:172 +0x29
+net.(*UnixListener).accept(0x1?)
+	/usr/local/go/src/net/unixsock_posix.go:172 +0x16
+net.(*UnixListener).Accept(0xc000c38360)
+	/usr/local/go/src/net/unixsock.go:260 +0x30
+github.com/cilium/cilium/pkg/shell/server.shell.listener({{0x443a420?, 0xc00083c630?}, 0xc000c1cf20?, 0xc0008deab0?}, {0x446c0b8, 0xc000c2a450}, {0x4473e60, 0xc00141c060})
+	/go/src/github.com/cilium/cilium/pkg/shell/server/shell_server.go:85 +0x3dc
+github.com/cilium/hive/job.(*jobOneShot).start(0xc0011a3aa0, {0x446c0b8, 0xc000c2a450}, 0x0?, {0x4473e60, 0xc0011a30e0}, {{{0xc0008774a0, 0x1, 0x1}}, 0xc000c1cf20, ...})
+	/go/src/github.com/cilium/cilium/vendor/github.com/cilium/hive/job/oneshot.go:138 +0x4fd
+created by github.com/cilium/hive/job.(*queuedJob).Start.func1 in goroutine 1
+	/go/src/github.com/cilium/cilium/vendor/github.com/cilium/hive/job/job.go:126 +0x16f
+
+goroutine 205 [IO wait]:
+internal/poll.runtime_pollWait(0x7f5307f41230, 0x72)
+	/usr/local/go/src/runtime/netpoll.go:351 +0x85
+internal/poll.(*pollDesc).wait(0xc000637780?, 0x900000036?, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:84 +0x27
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Accept(0xc000637780)
+	/usr/local/go/src/internal/poll/fd_unix.go:620 +0x295
+net.(*netFD).accept(0xc000637780)
+	/usr/local/go/src/net/fd_unix.go:172 +0x29
+net.(*TCPListener).accept(0xc00161c2c0)
+	/usr/local/go/src/net/tcpsock_posix.go:159 +0x1b
+net.(*TCPListener).Accept(0xc00161c2c0)
+	/usr/local/go/src/net/tcpsock.go:380 +0x30
+net/http.(*Server).Serve(0xc0004e4c00, {0x4452140, 0xc00161c2c0})
+	/usr/local/go/src/net/http/server.go:3424 +0x30c
+github.com/cilium/cilium/operator/api.(*server).Start.func2({{0xc001031170, 0xe}, {0x4452140, 0xc00161c2c0}, 0xc0004e4c00})
+	/go/src/github.com/cilium/cilium/operator/api/server.go:164 +0x65
+created by github.com/cilium/cilium/operator/api.(*server).Start in goroutine 1
+	/go/src/github.com/cilium/cilium/operator/api/server.go:163 +0xbe5
+
+goroutine 213 [select]:
+github.com/cilium/cilium/pkg/controller.(*controller).runController(0xc001501340)
+	/go/src/github.com/cilium/cilium/pkg/controller/controller.go:405 +0x84e
+created by github.com/cilium/cilium/pkg/controller.(*Manager).createControllerLocked in goroutine 1
+	/go/src/github.com/cilium/cilium/pkg/controller/manager.go:124 +0x4ae
+
+goroutine 211 [IO wait]:
+internal/poll.runtime_pollWait(0x7f5307f41118, 0x72)
+	/usr/local/go/src/runtime/netpoll.go:351 +0x85
+internal/poll.(*pollDesc).wait(0xc000637900?, 0xc0011f8000?, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:84 +0x27
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc000637900, {0xc0011f8000, 0x8000, 0x8000})
+	/usr/local/go/src/internal/poll/fd_unix.go:165 +0x27a
+net.(*netFD).Read(0xc000637900, {0xc0011f8000?, 0xc?, 0xc0014a1968?})
+	/usr/local/go/src/net/fd_posix.go:55 +0x25
+net.(*conn).Read(0xc000d13168, {0xc0011f8000?, 0x419374?, 0xc0011f8005?})
+	/usr/local/go/src/net/net.go:194 +0x45
+crypto/tls.(*atLeastReader).Read(0xc000b00480, {0xc0011f8000?, 0x7ffb?, 0xc0000f4dc8?})
+	/usr/local/go/src/crypto/tls/conn.go:809 +0x3b
+bytes.(*Buffer).ReadFrom(0xc00034beb8, {0x440b240, 0xc000b00480})
+	/usr/local/go/src/bytes/buffer.go:211 +0x98
+crypto/tls.(*Conn).readFromUntil(0xc00034bc08, {0x7f5307b7b3b8, 0xc0012098f0}, 0x440894?)
+	/usr/local/go/src/crypto/tls/conn.go:831 +0xde
+crypto/tls.(*Conn).readRecordOrCCS(0xc00034bc08, 0x0)
+	/usr/local/go/src/crypto/tls/conn.go:629 +0x3cf
+crypto/tls.(*Conn).readRecord(...)
+	/usr/local/go/src/crypto/tls/conn.go:591
+crypto/tls.(*Conn).Read(0xc00034bc08, {0xc000438000, 0x1000, 0x41175e?})
+	/usr/local/go/src/crypto/tls/conn.go:1385 +0x145
+bufio.(*Reader).Read(0xc00141cfc0, {0xc000000c80, 0x9, 0x4117e0?})
+	/usr/local/go/src/bufio/bufio.go:245 +0x197
+io.ReadAtLeast({0x44078c0, 0xc00141cfc0}, {0xc000000c80, 0x9, 0x9}, 0x9)
+	/usr/local/go/src/io/io.go:335 +0x91
+io.ReadFull(...)
+	/usr/local/go/src/io/io.go:354
+golang.org/x/net/http2.readFrameHeader({0xc000000c80, 0x9, 0xf98895?}, {0x44078c0?, 0xc00141cfc0?})
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/net/http2/frame.go:242 +0x65
+golang.org/x/net/http2.(*Framer).ReadFrame(0xc000000c40)
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/net/http2/frame.go:506 +0x7d
+golang.org/x/net/http2.(*clientConnReadLoop).run(0xc0014a1fa8)
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/net/http2/transport.go:2258 +0xda
+golang.org/x/net/http2.(*ClientConn).readLoop(0xc000802a80)
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/net/http2/transport.go:2127 +0x79
+created by golang.org/x/net/http2.(*Transport).newClientConn in goroutine 210
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/net/http2/transport.go:912 +0xde5
+
+goroutine 72 [select]:
+k8s.io/apimachinery/pkg/util/wait.BackoffUntilWithContext({0x446c320, 0xc0013407e0}, 0xc00150dba0, {0x44095e0, 0xc00096c300}, 0x1)
+	/go/src/github.com/cilium/cilium/vendor/k8s.io/apimachinery/pkg/util/wait/backoff.go:267 +0x185
+k8s.io/apimachinery/pkg/util/wait.BackoffUntil(0x0?, {0x44095e0?, 0xc00096c300?}, 0x90?, 0xc00150dbd0?)
+	/go/src/github.com/cilium/cilium/vendor/k8s.io/apimachinery/pkg/util/wait/backoff.go:233 +0x46
+k8s.io/apimachinery/pkg/util/wait.JitterUntil(0xc00150dc88, 0x77359400, 0x3ff3333333333333, 0x1, 0xc0013407e0)
+	/go/src/github.com/cilium/cilium/vendor/k8s.io/apimachinery/pkg/util/wait/backoff.go:210 +0x7f
+k8s.io/client-go/tools/leaderelection.(*LeaderElector).acquire(0xc00051da40, {0x446c0f0?, 0xc0006815e0?})
+	/go/src/github.com/cilium/cilium/vendor/k8s.io/client-go/tools/leaderelection/leaderelection.go:258 +0x1ff
+k8s.io/client-go/tools/leaderelection.(*LeaderElector).Run(0xc00051da40, {0x446c0f0, 0xc0006815e0})
+	/go/src/github.com/cilium/cilium/vendor/k8s.io/client-go/tools/leaderelection/leaderelection.go:215 +0x56
+k8s.io/client-go/tools/leaderelection.RunOrDie({0x446c0f0, 0xc0006815e0}, {{0x4479b20, 0xc000a8c480}, 0x37e11d600, 0x2540be400, 0x77359400, {0xc0009638c0, 0xc0009638f0, 0xc0008accc0}, ...})
+	/go/src/github.com/cilium/cilium/vendor/k8s.io/client-go/tools/leaderelection/leaderelection.go:235 +0x94
+github.com/cilium/cilium/operator/cmd.runOperator(0xc0012f4040, 0xc0008ea6f0, {0x44cf180, 0xc00074e680}, {0x4409120, 0xc0006efa40})
+	/go/src/github.com/cilium/cilium/operator/cmd/root.go:494 +0x785
+github.com/cilium/cilium/operator/cmd.registerOperatorHooks.func1.1()
+	/go/src/github.com/cilium/cilium/operator/cmd/root.go:393 +0x34
+created by github.com/cilium/cilium/operator/cmd.registerOperatorHooks.func1 in goroutine 1
+	/go/src/github.com/cilium/cilium/operator/cmd/root.go:392 +0xf1
+
+goroutine 73 [select, 34 minutes]:
+github.com/cilium/cilium/pkg/hive/health.publishJob({0x446c0b8, 0xc0008ff590}, {{{}}, 0xc001182ba0, {0x44c2268, 0xc000338080}, {0x443a420, 0xc0012b9050}, 0xc00081b640}, 0xc0012ee900)
+	/go/src/github.com/cilium/cilium/pkg/hive/health/metrics.go:120 +0x2c6
+github.com/cilium/cilium/pkg/hive/health.metricPublisher.func2({0x446c0b8?, 0xc0008ff590?}, {0x7?, 0xfffffffffffffffc?})
+	/go/src/github.com/cilium/cilium/pkg/hive/health/metrics.go:79 +0x39
+github.com/cilium/hive/job.(*jobOneShot).start(0xc0012e1ce0, {0x446c0b8, 0xc0008ff590}, 0xc00017d7d0?, {0x4473e60, 0xc0012e1c80}, {{{0xc000e70300, 0x1, 0x1}}, 0xc000bf1450, ...})
+	/go/src/github.com/cilium/cilium/vendor/github.com/cilium/hive/job/oneshot.go:138 +0x4fd
+created by github.com/cilium/hive/job.(*queuedJob).Start.func1 in goroutine 1
+	/go/src/github.com/cilium/cilium/vendor/github.com/cilium/hive/job/job.go:126 +0x16f
+
+goroutine 75 [syscall, 34 minutes]:
+os/signal.signal_recv()
+	/usr/local/go/src/runtime/sigqueue.go:152 +0x29
+os/signal.loop()
+	/usr/local/go/src/os/signal/signal_unix.go:23 +0x13
+created by os/signal.Notify.func1.1 in goroutine 1
+	/usr/local/go/src/os/signal/signal.go:152 +0x1f
+
+goroutine 234 [IO wait]:
+internal/poll.runtime_pollWait(0x7f5307f41000, 0x72)
+	/usr/local/go/src/runtime/netpoll.go:351 +0x85
+internal/poll.(*pollDesc).wait(0xc000497d00?, 0xc001200700?, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:84 +0x27
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc000497d00, {0xc001200700, 0x700, 0x700})
+	/usr/local/go/src/internal/poll/fd_unix.go:165 +0x27a
+net.(*netFD).Read(0xc000497d00, {0xc001200700?, 0xc00120075a?, 0x5?})
+	/usr/local/go/src/net/fd_posix.go:55 +0x25
+net.(*conn).Read(0xc000d500a0, {0xc001200700?, 0x7f5307f0c2f8?, 0x7f534eb46a78?})
+	/usr/local/go/src/net/net.go:194 +0x45
+crypto/tls.(*atLeastReader).Read(0xc00161aab0, {0xc001200700?, 0x6a1?, 0x2?})
+	/usr/local/go/src/crypto/tls/conn.go:809 +0x3b
+bytes.(*Buffer).ReadFrom(0xc00054b0b8, {0x440b240, 0xc00161aab0})
+	/usr/local/go/src/bytes/buffer.go:211 +0x98
+crypto/tls.(*Conn).readFromUntil(0xc00054ae08, {0x44098c0, 0xc000d500a0}, 0x440894?)
+	/usr/local/go/src/crypto/tls/conn.go:831 +0xde
+crypto/tls.(*Conn).readRecordOrCCS(0xc00054ae08, 0x0)
+	/usr/local/go/src/crypto/tls/conn.go:629 +0x3cf
+crypto/tls.(*Conn).readRecord(...)
+	/usr/local/go/src/crypto/tls/conn.go:591
+crypto/tls.(*Conn).Read(0xc00054ae08, {0xc000df6000, 0x1000, 0x41175e?})
+	/usr/local/go/src/crypto/tls/conn.go:1385 +0x145
+bufio.(*Reader).Read(0xc0004dbbc0, {0xc0005463c0, 0x9, 0x4117e0?})
+	/usr/local/go/src/bufio/bufio.go:245 +0x197
+io.ReadAtLeast({0x44078c0, 0xc0004dbbc0}, {0xc0005463c0, 0x9, 0x9}, 0x9)
+	/usr/local/go/src/io/io.go:335 +0x91
+io.ReadFull(...)
+	/usr/local/go/src/io/io.go:354
+golang.org/x/net/http2.readFrameHeader({0xc0005463c0, 0x9, 0xf98895?}, {0x44078c0?, 0xc0004dbbc0?})
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/net/http2/frame.go:242 +0x65
+golang.org/x/net/http2.(*Framer).ReadFrame(0xc000546380)
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/net/http2/frame.go:506 +0x7d
+golang.org/x/net/http2.(*clientConnReadLoop).run(0xc001148fa8)
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/net/http2/transport.go:2258 +0xda
+golang.org/x/net/http2.(*ClientConn).readLoop(0xc000483a40)
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/net/http2/transport.go:2127 +0x79
+created by golang.org/x/net/http2.(*Transport).newClientConn in goroutine 233
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/net/http2/transport.go:912 +0xde5
+
+goroutine 3792 [IO wait]:
+internal/poll.runtime_pollWait(0x7f5307f40ee8, 0x72)
+	/usr/local/go/src/runtime/netpoll.go:351 +0x85
+internal/poll.(*pollDesc).wait(0xc00148ec80?, 0xc000c82000?, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:84 +0x27
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc00148ec80, {0xc000c82000, 0x1000, 0x1000})
+	/usr/local/go/src/internal/poll/fd_unix.go:165 +0x27a
+net.(*netFD).Read(0xc00148ec80, {0xc000c82000?, 0xc00150fad0?, 0x4ffb65?})
+	/usr/local/go/src/net/fd_posix.go:55 +0x25
+net.(*conn).Read(0xc000d50110, {0xc000c82000?, 0x0?, 0x0?})
+	/usr/local/go/src/net/net.go:194 +0x45
+net/http.(*connReader).Read(0xc000a79560, {0xc000c82000, 0x1000, 0x1000})
+	/usr/local/go/src/net/http/server.go:798 +0x159
+bufio.(*Reader).fill(0xc0012fe3c0)
+	/usr/local/go/src/bufio/bufio.go:113 +0x103
+bufio.(*Reader).Peek(0xc0012fe3c0, 0x4)
+	/usr/local/go/src/bufio/bufio.go:152 +0x53
+net/http.(*conn).serve(0xc0006c8ab0, {0x446c0b8, 0xc0008d4de0})
+	/usr/local/go/src/net/http/server.go:2137 +0x785
+created by net/http.(*Server).Serve in goroutine 195
+	/usr/local/go/src/net/http/server.go:3454 +0x485

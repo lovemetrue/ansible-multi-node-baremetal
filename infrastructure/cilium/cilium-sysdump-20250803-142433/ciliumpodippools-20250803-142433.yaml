@@ -1,0 +1,5 @@
+apiVersion: cilium.io/v2alpha1
+items: []
+kind: CiliumPodIPPoolList
+metadata:
+  resourceVersion: "190021"

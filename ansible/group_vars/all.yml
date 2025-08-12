@@ -1,0 +1,7 @@
+# group_vars/all.yml
+
+hosts_entries:
+  - { ip: "192.168.39.146", hostname: "k8s-master-n1.elewise.local" }
+  - { ip: "192.168.39.17", hostname: "k8s-worker-n1.elewise.local" }
+  - { ip: "192.168.39.147", hostname: "k8s-worker-n2.elewise.local" }
+  - { ip: "192.168.39.58", hostname: "k8s-observer.elewise.local" }

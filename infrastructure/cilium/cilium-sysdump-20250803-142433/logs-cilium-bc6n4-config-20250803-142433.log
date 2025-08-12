@@ -1,0 +1,12 @@
+2025-08-03T14:21:58.316156924Z time=2025-08-03T14:21:58.315864066Z level=info msg=Running subsys=cilium-dbg
+2025-08-03T14:21:58.318187889Z time=2025-08-03T14:21:58.318084561Z level=info msg="Starting hive" subsys=cilium-dbg
+2025-08-03T14:21:58.318348777Z time=2025-08-03T14:21:58.318265729Z level=info msg="Establishing connection to apiserver" subsys=cilium-dbg module=k8s-client ipAddr=https://10.96.0.1:443
+2025-08-03T14:21:58.332610396Z time=2025-08-03T14:21:58.332455282Z level=info msg="Connected to apiserver" subsys=cilium-dbg module=k8s-client
+2025-08-03T14:21:58.333937260Z time=2025-08-03T14:21:58.333787391Z level=info msg="Reading configuration from source" subsys=cilium-dbg module=build-config configSource="{Kind:config-map Namespace:kube-system Name:cilium-config}"
+2025-08-03T14:21:58.336644602Z time=2025-08-03T14:21:58.336492223Z level=info msg="Got configuration source" subsys=cilium-dbg module=build-config lenConfigPairs=144 configSource="{Kind:config-map Namespace:kube-system Name:cilium-config}"
+2025-08-03T14:21:58.336659707Z time=2025-08-03T14:21:58.336580465Z level=info msg="Reading configuration from source" subsys=cilium-dbg module=build-config configSource="{Kind:cilium-node-config Namespace:kube-system Name:}"
+2025-08-03T14:21:58.342329269Z time=2025-08-03T14:21:58.342111227Z level=info msg="\"Warning: cilium.io/v2alpha1 CiliumNodeConfig will be deprecated in cilium v1.16; use cilium.io/v2 CiliumNodeConfig\"" subsys=klog
+2025-08-03T14:21:58.342423326Z time=2025-08-03T14:21:58.342335187Z level=info msg="Got configuration source" subsys=cilium-dbg module=build-config lenConfigPairs=0 configSource="{Kind:cilium-node-config Namespace:kube-system Name:}"
+2025-08-03T14:21:58.351088674Z time=2025-08-03T14:21:58.350902447Z level=info msg="Started hive" subsys=cilium-dbg duration=32.722386ms
+2025-08-03T14:21:58.351378110Z time=2025-08-03T14:21:58.35123331Z level=info msg="Stopping hive" subsys=cilium-dbg
+2025-08-03T14:21:58.351689061Z time=2025-08-03T14:21:58.351571513Z level=info msg="Stopped hive" subsys=cilium-dbg duration=233.347µs

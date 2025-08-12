@@ -1,0 +1,22 @@
+- name: Add Helm repo for Cilium
+  community.kubernetes.helm_repository:
+    name: cilium
+    repo_url: https://helm.cilium.io/
+
+- name: Install or upgrade Cilium Helm chart
+  community.kubernetes.helm:
+    name: cilium
+    chart_ref: cilium/cilium
+    chart_version: "1.17.6"
+    release_namespace: kube-system
+    values:
+      kubeProxyReplacement: true
+      ipam:
+        mode: kubernetes
+      ipv4NativeRoutingCIDR: "{{ cilium_pod_cidr }}"
+      nodeinit:
+        enabled: true
+        reconfigureKubelet: true
+      cni:
+        install: true
+        exclusive: true

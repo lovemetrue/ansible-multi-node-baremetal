@@ -1,0 +1,169 @@
+apiVersion: cilium.io/v2
+items:
+- apiVersion: cilium.io/v2
+  kind: CiliumNode
+  metadata:
+    creationTimestamp: "2025-08-02T11:53:18Z"
+    generation: 1
+    labels:
+      beta.kubernetes.io/arch: amd64
+      beta.kubernetes.io/os: linux
+      k8slens-edit-resource-version: v1
+      kubernetes.io/arch: amd64
+      kubernetes.io/hostname: k8s-master-n1
+      kubernetes.io/os: linux
+      node-role.kubernetes.io/control-plane: ""
+      node.kubernetes.io/exclude-from-external-load-balancers: ""
+    managedFields:
+    - apiVersion: cilium.io/v2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:beta.kubernetes.io/arch: {}
+            f:beta.kubernetes.io/os: {}
+            f:k8slens-edit-resource-version: {}
+            f:kubernetes.io/arch: {}
+            f:kubernetes.io/hostname: {}
+            f:kubernetes.io/os: {}
+            f:node-role.kubernetes.io/control-plane: {}
+            f:node.kubernetes.io/exclude-from-external-load-balancers: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"bc55f9ed-85e0-4305-964e-f64f7cf9d085"}: {}
+        f:spec:
+          .: {}
+          f:addresses: {}
+          f:alibaba-cloud: {}
+          f:azure: {}
+          f:bootid: {}
+          f:encryption: {}
+          f:eni: {}
+          f:health:
+            .: {}
+            f:ipv4: {}
+          f:ingress: {}
+          f:ipam:
+            .: {}
+            f:podCIDRs: {}
+            f:pools: {}
+      manager: cilium-agent
+      operation: Update
+      time: "2025-08-02T11:54:07Z"
+    name: k8s-master-n1
+    ownerReferences:
+    - apiVersion: v1
+      kind: Node
+      name: k8s-master-n1
+      uid: bc55f9ed-85e0-4305-964e-f64f7cf9d085
+    resourceVersion: "942"
+    uid: 7f0d5b00-c486-4060-9297-f8cb030ef53c
+  spec:
+    addresses:
+    - ip: 91.217.196.189
+      type: InternalIP
+    - ip: 10.0.0.124
+      type: CiliumInternalIP
+    alibaba-cloud: {}
+    azure: {}
+    bootid: cdba2016-2543-4d9f-88f0-f23712108cd8
+    encryption: {}
+    eni: {}
+    health:
+      ipv4: 10.0.0.203
+    ingress: {}
+    ipam:
+      podCIDRs:
+      - 10.0.0.0/24
+      pools: {}
+  status:
+    alibaba-cloud: {}
+    azure: {}
+    eni: {}
+    ipam:
+      operator-status: {}
+- apiVersion: cilium.io/v2
+  kind: CiliumNode
+  metadata:
+    creationTimestamp: "2025-08-02T11:52:56Z"
+    generation: 2
+    labels:
+      beta.kubernetes.io/arch: amd64
+      beta.kubernetes.io/os: linux
+      k8slens-edit-resource-version: v1
+      kubernetes.io/arch: amd64
+      kubernetes.io/hostname: k8s-worker-n1
+      kubernetes.io/os: linux
+      node-role.kubernetes.io/worker: ""
+    managedFields:
+    - apiVersion: cilium.io/v2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:beta.kubernetes.io/arch: {}
+            f:beta.kubernetes.io/os: {}
+            f:k8slens-edit-resource-version: {}
+            f:kubernetes.io/arch: {}
+            f:kubernetes.io/hostname: {}
+            f:kubernetes.io/os: {}
+            f:node-role.kubernetes.io/worker: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"a1e48a14-d9ea-4d46-b6db-472e788a7807"}: {}
+        f:spec:
+          .: {}
+          f:addresses: {}
+          f:alibaba-cloud: {}
+          f:azure: {}
+          f:bootid: {}
+          f:encryption: {}
+          f:eni: {}
+          f:health:
+            .: {}
+            f:ipv4: {}
+          f:ingress: {}
+          f:ipam:
+            .: {}
+            f:podCIDRs: {}
+            f:pools: {}
+      manager: cilium-agent
+      operation: Update
+      time: "2025-08-03T11:44:56Z"
+    name: k8s-worker-n1
+    ownerReferences:
+    - apiVersion: v1
+      kind: Node
+      name: k8s-worker-n1
+      uid: a1e48a14-d9ea-4d46-b6db-472e788a7807
+    resourceVersion: "167969"
+    uid: 75834bd2-c096-4d8c-9df9-17d1cda6fe76
+  spec:
+    addresses:
+    - ip: 91.217.196.183
+      type: InternalIP
+    - ip: 10.0.1.138
+      type: CiliumInternalIP
+    alibaba-cloud: {}
+    azure: {}
+    bootid: 1e262991-7dc8-45ea-a143-ccdf7924d98a
+    encryption: {}
+    eni: {}
+    health:
+      ipv4: 10.0.1.237
+    ingress: {}
+    ipam:
+      podCIDRs:
+      - 10.0.1.0/24
+      pools: {}
+  status:
+    alibaba-cloud: {}
+    azure: {}
+    eni: {}
+    ipam:
+      operator-status: {}
+kind: CiliumNodeList
+metadata:
+  resourceVersion: "190021"

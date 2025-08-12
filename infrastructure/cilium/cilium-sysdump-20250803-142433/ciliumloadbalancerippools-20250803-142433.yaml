@@ -1,0 +1,6 @@
+apiVersion: cilium.io/v2
+items: []
+kind: CiliumLoadBalancerIPPoolList
+metadata:
+  continue: ""
+  resourceVersion: "190035"

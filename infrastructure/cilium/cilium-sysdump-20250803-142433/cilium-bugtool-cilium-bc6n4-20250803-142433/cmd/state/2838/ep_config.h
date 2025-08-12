@@ -1,0 +1,35 @@
+/*
+ * This file is not using during compilation of endpoint programs.
+ * The line below is retained for backwards compatibility only.
+ * CILIUM_BASE64_IjEuMTguMCAyNzQyMDVmMCAyMDI1LTA3LTI4VDE1OjIyOjUwKzAyOjAwIGdvIHZlcnNpb24gZ28xLjI0LjUgbGludXgvYW1kNjQi:eyJJRCI6MjgzOCwiQ29udGFpbmVyTmFtZSI6ImNpbGl1bS1oZWFsdGgiLCJEb2NrZXJOZXR3b3JrSUQiOiIiLCJEb2NrZXJFbmRwb2ludElEIjoiIiwiSWZOYW1lIjoibHhjX2hlYWx0aCIsIklmSW5kZXgiOjk2LCJQYXJlbnRJZkluZGV4IjowLCJDb250YWluZXJJZk5hbWUiOiIiLCJEaXNhYmxlTGVnYWN5SWRlbnRpZmllcnMiOmZhbHNlLCJPcExhYmVscyI6eyJDdXN0b20iOnt9LCJPcmNoZXN0cmF0aW9uSWRlbnRpdHkiOnsiaGVhbHRoIjp7ImtleSI6ImhlYWx0aCIsInNvdXJjZSI6InJlc2VydmVkIn19LCJEaXNhYmxlZCI6e30sIk9yY2hlc3RyYXRpb25JbmZvIjp7fX0sIkxYQ01BQyI6Ijg2OjIxOjczOjA4OjQ2OjNkIiwiSVB2NiI6IiIsIklQdjZJUEFNUG9vbCI6IiIsIklQdjQiOiIxMC4wLjAuMjAzIiwiSVB2NElQQU1Qb29sIjoiZGVmYXVsdCIsIk5vZGVNQUMiOiI0Njo0NzoyNTpmYToxODo1OCIsIlNlY0xhYmVsIjp7ImlkIjo0LCJsYWJlbHMiOnsiaGVhbHRoIjp7ImtleSI6ImhlYWx0aCIsInNvdXJjZSI6InJlc2VydmVkIn19fSwiT3B0aW9ucyI6eyJtYXAiOnsiQ29ubnRyYWNrQWNjb3VudGluZyI6MCwiRGVidWciOjAsIkRlYnVnTEIiOjAsIkRlYnVnUG9saWN5IjowLCJEcm9wTm90aWZpY2F0aW9uIjoxLCJNb25pdG9yQWdncmVnYXRpb25MZXZlbCI6MywiUG9saWN5QWNjb3VudGluZyI6MSwiUG9saWN5QXVkaXRNb2RlIjowLCJQb2xpY3lWZXJkaWN0Tm90aWZpY2F0aW9uIjoxLCJTb3VyY2VJUFZlcmlmaWNhdGlvbiI6MSwiVHJhY2VOb3RpZmljYXRpb24iOjF9fSwiRE5TUnVsZXMiOnt9LCJETlNSdWxlc1YyIjp7fSwiRE5TSGlzdG9yeSI6W10sIkROU1pvbWJpZXMiOnt9LCJLOHNQb2ROYW1lIjoiIiwiSzhzTmFtZXNwYWNlIjoiIiwiSzhzVUlEIjoiIiwiRGF0YXBhdGhDb25maWd1cmF0aW9uIjp7fSwiQ2lsaXVtRW5kcG9pbnRVSUQiOiIiLCJQcm9wZXJ0aWVzIjp7fSwiTmV0bnNDb29raWUiOjB9
+ * 
+ * Docker Network ID: 
+ * Docker Endpoint ID: 
+ * IPv4 address: 10.0.0.203
+ * Identity: 4
+ * PolicyMap: cilium_policy_v2_02838
+ * NodeMAC: 46:47:25:fa:18:58
+ */
+
+/*
+ * Labels:
+ * - reserved:health
+ */
+
+#include "lib/utils.h"
+
+#define ENABLE_ROUTING 1
+#define HOST_EP_ID 342
+#define ENABLE_ARP_RESPONDER 1
+#define LOCAL_DELIVERY_METRICS 1
+#undef CONNTRACK_ACCOUNTING
+#undef DEBUG
+#undef LB_DEBUG
+#undef POLICY_DEBUG
+#define DROP_NOTIFY 1
+#define MONITOR_AGGREGATION 3
+#define POLICY_ACCOUNTING 1
+#undef POLICY_AUDIT_MODE
+#define POLICY_VERDICT_NOTIFY 1
+#define ENABLE_SIP_VERIFICATION 1
+#define TRACE_NOTIFY 1

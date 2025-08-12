@@ -1,0 +1,14 @@
+- name: Deploy local-path-provisioner
+  kubernetes.core.k8s:
+    state: present
+    src: https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml
+
+- name: Patch default StorageClass annotation
+  kubernetes.core.k8s:
+    kind: StorageClass
+    api_version: storage.k8s.io/v1
+    name: local-path
+    definition:
+      metadata:
+        annotations:
+          storageclass.kubernetes.io/is-default-class: "true"

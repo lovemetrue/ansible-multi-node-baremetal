@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metrics</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        tr { border-bottom: 1px solid #ddd; }
+        th, td { padding: 8px; text-align: left; }
+        tr.clickable:hover { background-color: #f5f5f5; cursor: pointer; }
+        .hidden { display: none; }
+        .search-header {  position: fixed; bottom: 4px; right: 4px; z-index: 99; }
+        .selected { background-color: #e9e9e9; border: 0px; }
+        .ratebox { position: relative; z-index: 99; float: left; }
+    </style>
+</head>
+<body>
+<div class="search-header">
+  <input id="search-input" type="text" placeholder="search name"/>
+</div>
+<table id="metrics-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Labels</th>
+            <th>Latest</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<script>
+
+const samples = [
+
+  {"name":"cilium_act_processing_time_seconds","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_bpf_map_capacity","labels":"map_group=cilium_auth_map","gaugeOrCounter":{"samples":[524288,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"524.3k"},
+
+  {"name":"cilium_bpf_map_capacity","labels":"map_group=cilium_call_policy","gaugeOrCounter":{"samples":[65535,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"65.53k"},
+
+  {"name":"cilium_bpf_map_capacity","labels":"map_group=cilium_ct4_global","gaugeOrCounter":{"samples":[131072,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"131.1k"},
+
+  {"name":"cilium_bpf_map_capacity","labels":"map_group=cilium_egresscall_policy","gaugeOrCounter":{"samples":[65535,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"65.53k"},
+
+  {"name":"cilium_bpf_map_capacity","labels":"map_group=cilium_events","gaugeOrCounter":{"samples":[8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"8"},
+
+  {"name":"cilium_bpf_map_capacity","labels":"map_group=cilium_ipcache_v2","gaugeOrCounter":{"samples":[512000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"512k"},
+
+  {"name":"cilium_bpf_map_capacity","labels":"map_group=cilium_ipv4_frag_datagrams","gaugeOrCounter":{"samples":[8192,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"8.192k"},
+
+  {"name":"cilium_bpf_map_capacity","labels":"map_group=cilium_lxc","gaugeOrCounter":{"samples":[65535,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"65.53k"},
+
+  {"name":"cilium_bpf_map_capacity","labels":"map_group=cilium_metrics","gaugeOrCounter":{"samples":[1024,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1.024k"},
+
+  {"name":"cilium_bpf_map_capacity","labels":"map_group=cilium_node_map_v2","gaugeOrCounter":{"samples":[16384,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"16.38k"},
+
+  {"name":"cilium_bpf_map_capacity","labels":"map_group=cilium_nodeport_neigh4","gaugeOrCounter":{"samples":[131072,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"131.1k"},
+
+  {"name":"cilium_bpf_map_capacity","labels":"map_group=cilium_ratelimit","gaugeOrCounter":{"samples":[1024,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1.024k"},
+
+  {"name":"cilium_bpf_map_capacity","labels":"map_group=cilium_ratelimit_metrics","gaugeOrCounter":{"samples":[64,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"64"},
+
+  {"name":"cilium_bpf_map_capacity","labels":"map_group=cilium_runtime_config","gaugeOrCounter":{"samples":[256,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"256"},
+
+  {"name":"cilium_bpf_map_capacity","labels":"map_group=cilium_signals","gaugeOrCounter":{"samples":[8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"8"},
+
+  {"name":"cilium_bpf_map_capacity","labels":"map_group=cilium_skip_lb4","gaugeOrCounter":{"samples":[100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"100"},
+
+  {"name":"cilium_bpf_map_capacity","labels":"map_group=cilium_snat_v4_alloc_retries","gaugeOrCounter":{"samples":[33,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"33"},
+
+  {"name":"cilium_bpf_map_capacity","labels":"map_group=cilium_snat_v4_external","gaugeOrCounter":{"samples":[131072,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"131.1k"},
+
+  {"name":"cilium_bpf_map_capacity","labels":"map_group=default","gaugeOrCounter":{"samples":[65536,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"65.54k"},
+
+  {"name":"cilium_bpf_map_ops_total","labels":"map_name=ipcache_v2 operation=update outcome=success","gaugeOrCounter":{"samples":[6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"6"},
+
+  {"name":"cilium_bpf_map_pressure","labels":"map_name=ipcache_v2","gaugeOrCounter":{"samples":[0.00001171875,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"11.72µ"},
+
+  {"name":"cilium_ciliumenvoyconfig_controller_duration_seconds","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_controllers_runs_duration_seconds","labels":"status=success","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_controllers_runs_total","labels":"status=success","gaugeOrCounter":{"samples":[6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"6"},
+
+  {"name":"cilium_drift_checker_config_delta","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_drop_bytes_total","labels":"direction=EGRESS reason=Unsupported L3 protocol","gaugeOrCounter":{"samples":[29826,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"29.83k"},
+
+  {"name":"cilium_drop_count_total","labels":"direction=EGRESS reason=Unsupported L3 protocol","gaugeOrCounter":{"samples":[397,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"397"},
+
+  {"name":"cilium_endpoint","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_endpoint_max_ifindex","gaugeOrCounter":{"samples":[94,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"94"},
+
+  {"name":"cilium_endpoint_regenerations_total","labels":"outcome=fail","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_endpoint_regenerations_total","labels":"outcome=success","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_endpoint_state","labels":"endpoint_state=restoring","gaugeOrCounter":{"samples":[4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"4"},
+
+  {"name":"cilium_errors_warnings_total","labels":"level=ERROR subsystem=init","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_errors_warnings_total","labels":"level=WARN subsystem=init","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_forward_bytes_total","labels":"direction=EGRESS","gaugeOrCounter":{"samples":[325323260,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"325.3M"},
+
+  {"name":"cilium_forward_bytes_total","labels":"direction=INGRESS","gaugeOrCounter":{"samples":[1066909440,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1.067G"},
+
+  {"name":"cilium_forward_count_total","labels":"direction=EGRESS","gaugeOrCounter":{"samples":[1089504,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1.09M"},
+
+  {"name":"cilium_forward_count_total","labels":"direction=INGRESS","gaugeOrCounter":{"samples":[3898556,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"3.899M"},
+
+  {"name":"cilium_fqdn_gc_deletions_total","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_fqdn_selectors","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_fqdn_semaphore_rejected_total","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_identity","labels":"type=reserved","gaugeOrCounter":{"samples":[10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"10"},
+
+  {"name":"cilium_identity_label_sources","labels":"source=reserved","gaugeOrCounter":{"samples":[10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"10"},
+
+  {"name":"cilium_identity_updater_timer_trigger_folds","labels":"name=id-alloc-update-policy-maps","histogram":{"p50":[0.75,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.95,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.995,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"750m / 950m / 995m"},
+
+  {"name":"cilium_ipam_capacity","labels":"family=ipv4","gaugeOrCounter":{"samples":[254,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"254"},
+
+  {"name":"cilium_ipam_events_total","labels":"action=allocate family=ipv4","gaugeOrCounter":{"samples":[5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"5"},
+
+  {"name":"cilium_ipcache_errors_total","labels":"error=cannot_overwrite_by_source type=upsert","gaugeOrCounter":{"samples":[3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"3"},
+
+  {"name":"cilium_ipcache_events_total","labels":"type=upsert","gaugeOrCounter":{"samples":[6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"6"},
+
+  {"name":"cilium_k8s_client_api_calls_total","labels":"host=10.96.0.1:443 method=GET return_code=200","gaugeOrCounter":{"samples":[24,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"24"},
+
+  {"name":"cilium_k8s_client_api_calls_total","labels":"host=10.96.0.1:443 method=PUT return_code=200","gaugeOrCounter":{"samples":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1"},
+
+  {"name":"cilium_k8s_client_api_latency_time_seconds","labels":"method=GET path=/api/v1/namespaces","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_api_latency_time_seconds","labels":"method=GET path=/api/v1/namespaces/{name}","histogram":{"p50":[0.0075,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0095,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00995,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"7.5ms / 9.5ms / 9.95ms"},
+
+  {"name":"cilium_k8s_client_api_latency_time_seconds","labels":"method=GET path=/api/v1/nodes","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_api_latency_time_seconds","labels":"method=GET path=/api/v1/pods","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_api_latency_time_seconds","labels":"method=GET path=/api/v1/services","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_api_latency_time_seconds","labels":"method=GET path=/apis/apiextensions.k8s.io/v1/customresourcedefinitions","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_api_latency_time_seconds","labels":"method=GET path=/apis/cilium.io/v2/ciliumendpoints","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_api_latency_time_seconds","labels":"method=GET path=/apis/cilium.io/v2/ciliumnodes","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_api_latency_time_seconds","labels":"method=GET path=/apis/discovery.k8s.io/v1/endpointslices","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_api_latency_time_seconds","labels":"method=GET path=/version","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_api_latency_time_seconds","labels":"method=PUT path=/apis/cilium.io/v2/ciliumnodes/{name}","histogram":{"p50":[0.0075,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0095,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00995,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"7.5ms / 9.5ms / 9.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=GET path=/api/v1/namespaces","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=GET path=/api/v1/namespaces/{namespace}/configmaps","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=GET path=/api/v1/namespaces/{namespace}/secrets","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=GET path=/api/v1/namespaces/{name}","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=GET path=/api/v1/nodes","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=GET path=/api/v1/pods","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=GET path=/api/v1/services","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=GET path=/apis/apiextensions.k8s.io/v1/customresourcedefinitions","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=GET path=/apis/cilium.io/v2/ciliumcidrgroups","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=GET path=/apis/cilium.io/v2/ciliumclusterwidenetworkpolicies","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=GET path=/apis/cilium.io/v2/ciliumendpoints","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=GET path=/apis/cilium.io/v2/ciliumidentities","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=GET path=/apis/cilium.io/v2/ciliumlocalredirectpolicies","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=GET path=/apis/cilium.io/v2/ciliumnetworkpolicies","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=GET path=/apis/cilium.io/v2/ciliumnodes","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=GET path=/apis/coordination.k8s.io/v1/namespaces/{namespace}/leases","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=GET path=/apis/discovery.k8s.io/v1/endpointslices","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=GET path=/apis/networking.k8s.io/v1/networkpolicies","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=GET path=/version","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_client_rate_limiter_duration_seconds","labels":"method=PUT path=/apis/cilium.io/v2/ciliumnodes/{name}","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_k8s_event_lag_seconds","labels":"source=k8s","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_k8s_terminating_endpoints_events_total","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_kubernetes_events_received_total","labels":"action=update equal=false scope=CiliumEndpoint valid=true","gaugeOrCounter":{"samples":[6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"6"},
+
+  {"name":"cilium_kubernetes_events_received_total","labels":"action=update equal=false scope=CiliumNode valid=true","gaugeOrCounter":{"samples":[3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"3"},
+
+  {"name":"cilium_kubernetes_events_received_total","labels":"action=update equal=false scope=Endpoint valid=true","gaugeOrCounter":{"samples":[7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"7"},
+
+  {"name":"cilium_kubernetes_events_received_total","labels":"action=update equal=false scope=Node valid=true","gaugeOrCounter":{"samples":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1"},
+
+  {"name":"cilium_kubernetes_events_received_total","labels":"action=update equal=false scope=Pod valid=true","gaugeOrCounter":{"samples":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1"},
+
+  {"name":"cilium_kubernetes_events_received_total","labels":"action=update equal=false scope=Service valid=true","gaugeOrCounter":{"samples":[7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"7"},
+
+  {"name":"cilium_kubernetes_events_total","labels":"action=update scope=CiliumEndpoint status=success","gaugeOrCounter":{"samples":[6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"6"},
+
+  {"name":"cilium_kubernetes_events_total","labels":"action=update scope=CiliumNode status=success","gaugeOrCounter":{"samples":[3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"3"},
+
+  {"name":"cilium_kubernetes_events_total","labels":"action=update scope=Endpoint status=success","gaugeOrCounter":{"samples":[15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"15"},
+
+  {"name":"cilium_kubernetes_events_total","labels":"action=update scope=Node status=success","gaugeOrCounter":{"samples":[3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"3"},
+
+  {"name":"cilium_kubernetes_events_total","labels":"action=update scope=Service status=success","gaugeOrCounter":{"samples":[8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"8"},
+
+  {"name":"cilium_localredirectpolicy_controller_duration_seconds","histogram":{"p50":[0.00025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.00045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.000495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"250µs / 450µs / 495µs"},
+
+  {"name":"cilium_nat_endpoint_max_connection","labels":"family=ipv4","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_nat_endpoint_max_connection","labels":"family=ipv6","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_neighbor_entry_delete_count","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_neighbor_entry_insert_count","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_neighbor_entry_refresh_count","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_neighbor_nexthop_lookup_count","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_nodes_all_datapath_validations_total","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_nodes_all_events_received_total","labels":"event_type=add source=custom-resource","gaugeOrCounter":{"samples":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1"},
+
+  {"name":"cilium_nodes_all_events_received_total","labels":"event_type=add source=local","gaugeOrCounter":{"samples":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1"},
+
+  {"name":"cilium_nodes_all_events_received_total","labels":"event_type=delete source=restored","gaugeOrCounter":{"samples":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1"},
+
+  {"name":"cilium_nodes_all_num","gaugeOrCounter":{"samples":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1"},
+
+  {"name":"cilium_policy","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_policy_change_total","labels":"outcome=failure","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_policy_change_total","labels":"outcome=success","gaugeOrCounter":{"samples":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1"},
+
+  {"name":"cilium_policy_implementation_delay","labels":"source=api","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0 / 0 / 0"},
+
+  {"name":"cilium_policy_implementation_delay","labels":"source=custom-resource","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0 / 0 / 0"},
+
+  {"name":"cilium_policy_implementation_delay","labels":"source=k8s","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0 / 0 / 0"},
+
+  {"name":"cilium_policy_l7_total","labels":"proxy_type=envoy rule=denied","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_policy_l7_total","labels":"proxy_type=envoy rule=forwarded","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_policy_l7_total","labels":"proxy_type=envoy rule=parse_errors","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_policy_l7_total","labels":"proxy_type=envoy rule=received","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_policy_l7_total","labels":"proxy_type=fqdn rule=denied","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_policy_l7_total","labels":"proxy_type=fqdn rule=forwarded","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_policy_l7_total","labels":"proxy_type=fqdn rule=parse_errors","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_policy_l7_total","labels":"proxy_type=fqdn rule=received","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_policy_max_revision","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_policy_selector_match_count_max","labels":"class=cluster","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_policy_selector_match_count_max","labels":"class=fqdn","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_policy_selector_match_count_max","labels":"class=other","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_policy_selector_match_count_max","labels":"class=world","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_process_cpu_seconds_total","gaugeOrCounter":{"samples":[1.19,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1.19"},
+
+  {"name":"cilium_process_max_fds","gaugeOrCounter":{"samples":[1048576,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1.049M"},
+
+  {"name":"cilium_process_network_receive_bytes_total","gaugeOrCounter":{"samples":[5460169000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"5.46G"},
+
+  {"name":"cilium_process_network_transmit_bytes_total","gaugeOrCounter":{"samples":[4345402000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"4.345G"},
+
+  {"name":"cilium_process_open_fds","gaugeOrCounter":{"samples":[68,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"68"},
+
+  {"name":"cilium_process_resident_memory_bytes","gaugeOrCounter":{"samples":[156237820,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"156.2M"},
+
+  {"name":"cilium_process_start_time_seconds","gaugeOrCounter":{"samples":[1754230900,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1.754G"},
+
+  {"name":"cilium_process_virtual_memory_bytes","gaugeOrCounter":{"samples":[1393287200,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1.393G"},
+
+  {"name":"cilium_process_virtual_memory_max_bytes","gaugeOrCounter":{"samples":[18446744000000000000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1.845e+07T"},
+
+  {"name":"cilium_proxy_datapath_update_timeout_total","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_reconciler_count","labels":"module_id=agent.datapath.sysctl","gaugeOrCounter":{"samples":[27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"27"},
+
+  {"name":"cilium_reconciler_duration_seconds","labels":"module_id=agent.datapath.sysctl op=update","histogram":{"p50":[0.00025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.00045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.000495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"250µs / 450µs / 495µs"},
+
+  {"name":"cilium_reconciler_errors_current","labels":"module_id=agent.datapath.iptables.ipset","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_reconciler_errors_current","labels":"module_id=agent.datapath.sysctl","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_reconciler_prune_count","labels":"module_id=agent.datapath.iptables.ipset","gaugeOrCounter":{"samples":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1"},
+
+  {"name":"cilium_reconciler_prune_duration_seconds","labels":"module_id=agent.controlplane.dynamic-lifecycle-manager","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_reconciler_prune_duration_seconds","labels":"module_id=agent.datapath.iptables.ipset","histogram":{"p50":[0.0025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.5ms / 4.5ms / 4.95ms"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=bgp-control-plane table=devices","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=bgp-control-plane table=routes","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=cilium-agent-dynamic-config table=cilium-configs","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=ciliumenvoyconfig table=ciliumenvoyconfigs","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=ciliumenvoyconfig table=envoy-resources","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=devices-controller table=devices","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=devices-controller table=neighbors","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=devices-controller table=routes","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=dynamic-lifecycle-manager table=dynamic-features","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=health table=health","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=ipset table=ipsets","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=k8s-reflector table=k8s-pods","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=k8s-tables table=k8s-namespaces","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=k8s-tables table=k8s-pods","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=k8s-watcher table=k8s-pods","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=loadbalancer-healthserver table=frontends","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=loadbalancer-writer table=backends","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=loadbalancer-writer table=desired-skiplbmap","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=loadbalancer-writer table=frontends","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=loadbalancer-writer table=services","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=local-redirect-policies table=desired-skiplbmap","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=local-redirect-policies table=localredirectpolicies","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=mtu table=mtu","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=node-address table=devices","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=node-address table=node-addresses","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=policy-k8s-watcher table=backends","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=policy-k8s-watcher table=services","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=socket-termination table=backends","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_contention_seconds","labels":"handle=sysctl table=sysctl","histogram":{"p50":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0s / 0s / 0s"},
+
+  {"name":"cilium_statedb_table_delete_trackers","labels":"table=backends","gaugeOrCounter":{"samples":[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2"},
+
+  {"name":"cilium_statedb_table_delete_trackers","labels":"table=desired-skiplbmap","gaugeOrCounter":{"samples":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1"},
+
+  {"name":"cilium_statedb_table_delete_trackers","labels":"table=devices","gaugeOrCounter":{"samples":[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2"},
+
+  {"name":"cilium_statedb_table_delete_trackers","labels":"table=dynamic-features","gaugeOrCounter":{"samples":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1"},
+
+  {"name":"cilium_statedb_table_delete_trackers","labels":"table=envoy-resources","gaugeOrCounter":{"samples":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1"},
+
+  {"name":"cilium_statedb_table_delete_trackers","labels":"table=frontends","gaugeOrCounter":{"samples":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1"},
+
+  {"name":"cilium_statedb_table_delete_trackers","labels":"table=ipsets","gaugeOrCounter":{"samples":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1"},
+
+  {"name":"cilium_statedb_table_delete_trackers","labels":"table=k8s-pods","gaugeOrCounter":{"samples":[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2"},
+
+  {"name":"cilium_statedb_table_delete_trackers","labels":"table=routes","gaugeOrCounter":{"samples":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1"},
+
+  {"name":"cilium_statedb_table_delete_trackers","labels":"table=services","gaugeOrCounter":{"samples":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1"},
+
+  {"name":"cilium_statedb_table_delete_trackers","labels":"table=sysctl","gaugeOrCounter":{"samples":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1"},
+
+  {"name":"cilium_statedb_table_graveyard_objects","labels":"table=backends","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_graveyard_objects","labels":"table=cilium-configs","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_graveyard_objects","labels":"table=desired-skiplbmap","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_graveyard_objects","labels":"table=devices","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_graveyard_objects","labels":"table=frontends","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_graveyard_objects","labels":"table=health","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_graveyard_objects","labels":"table=ipsets","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_graveyard_objects","labels":"table=k8s-namespaces","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_graveyard_objects","labels":"table=k8s-pods","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_graveyard_objects","labels":"table=localredirectpolicies","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_graveyard_objects","labels":"table=mtu","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_graveyard_objects","labels":"table=neighbors","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_graveyard_objects","labels":"table=node-addresses","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_graveyard_objects","labels":"table=routes","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_graveyard_objects","labels":"table=services","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_graveyard_objects","labels":"table=sysctl","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_objects","labels":"table=backends","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_objects","labels":"table=cilium-configs","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_objects","labels":"table=desired-skiplbmap","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_objects","labels":"table=devices","gaugeOrCounter":{"samples":[8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"8"},
+
+  {"name":"cilium_statedb_table_objects","labels":"table=frontends","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_objects","labels":"table=health","gaugeOrCounter":{"samples":[38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"38"},
+
+  {"name":"cilium_statedb_table_objects","labels":"table=ipsets","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_objects","labels":"table=k8s-namespaces","gaugeOrCounter":{"samples":[5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"5"},
+
+  {"name":"cilium_statedb_table_objects","labels":"table=k8s-pods","gaugeOrCounter":{"samples":[10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"10"},
+
+  {"name":"cilium_statedb_table_objects","labels":"table=localredirectpolicies","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_objects","labels":"table=mtu","gaugeOrCounter":{"samples":[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2"},
+
+  {"name":"cilium_statedb_table_objects","labels":"table=neighbors","gaugeOrCounter":{"samples":[3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"3"},
+
+  {"name":"cilium_statedb_table_objects","labels":"table=node-addresses","gaugeOrCounter":{"samples":[5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"5"},
+
+  {"name":"cilium_statedb_table_objects","labels":"table=routes","gaugeOrCounter":{"samples":[39,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"39"},
+
+  {"name":"cilium_statedb_table_objects","labels":"table=services","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_objects","labels":"table=sysctl","gaugeOrCounter":{"samples":[14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"14"},
+
+  {"name":"cilium_statedb_table_revision","labels":"table=backends","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_revision","labels":"table=cilium-configs","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_revision","labels":"table=desired-skiplbmap","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_revision","labels":"table=devices","gaugeOrCounter":{"samples":[8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"8"},
+
+  {"name":"cilium_statedb_table_revision","labels":"table=frontends","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_revision","labels":"table=health","gaugeOrCounter":{"samples":[73,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"73"},
+
+  {"name":"cilium_statedb_table_revision","labels":"table=ipsets","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_revision","labels":"table=k8s-namespaces","gaugeOrCounter":{"samples":[5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"5"},
+
+  {"name":"cilium_statedb_table_revision","labels":"table=k8s-pods","gaugeOrCounter":{"samples":[11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"11"},
+
+  {"name":"cilium_statedb_table_revision","labels":"table=localredirectpolicies","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_revision","labels":"table=mtu","gaugeOrCounter":{"samples":[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2"},
+
+  {"name":"cilium_statedb_table_revision","labels":"table=neighbors","gaugeOrCounter":{"samples":[3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"3"},
+
+  {"name":"cilium_statedb_table_revision","labels":"table=node-addresses","gaugeOrCounter":{"samples":[9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"9"},
+
+  {"name":"cilium_statedb_table_revision","labels":"table=routes","gaugeOrCounter":{"samples":[39,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"39"},
+
+  {"name":"cilium_statedb_table_revision","labels":"table=services","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"cilium_statedb_table_revision","labels":"table=sysctl","gaugeOrCounter":{"samples":[36,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"36"},
+
+  {"name":"cilium_statedb_write_txn_duration_seconds","labels":"handle=bgp-control-plane","histogram":{"p50":[0.00025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.00045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.000495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"250µs / 450µs / 495µs"},
+
+  {"name":"cilium_statedb_write_txn_duration_seconds","labels":"handle=cilium-agent-dynamic-config","histogram":{"p50":[0.00025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.00045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.000495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"250µs / 450µs / 495µs"},
+
+  {"name":"cilium_statedb_write_txn_duration_seconds","labels":"handle=devices-controller","histogram":{"p50":[0.00025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.00045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.000495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"250µs / 450µs / 495µs"},
+
+  {"name":"cilium_statedb_write_txn_duration_seconds","labels":"handle=health","histogram":{"p50":[0.00025347222,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.00045625,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.000635,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"253.5µs / 456.3µs / 635µs"},
+
+  {"name":"cilium_statedb_write_txn_duration_seconds","labels":"handle=ipset","histogram":{"p50":[0.00025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.00045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.000495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"250µs / 450µs / 495µs"},
+
+  {"name":"cilium_statedb_write_txn_duration_seconds","labels":"handle=k8s-tables","histogram":{"p50":[0.00025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.00045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.000495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"250µs / 450µs / 495µs"},
+
+  {"name":"cilium_statedb_write_txn_duration_seconds","labels":"handle=k8s-watcher","histogram":{"p50":[0.00025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.00045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.000495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"250µs / 450µs / 495µs"},
+
+  {"name":"cilium_statedb_write_txn_duration_seconds","labels":"handle=loadbalancer-writer","histogram":{"p50":[0.00025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.00045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.000495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"250µs / 450µs / 495µs"},
+
+  {"name":"cilium_statedb_write_txn_duration_seconds","labels":"handle=local-redirect-policies","histogram":{"p50":[0.00025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.00045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.000495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"250µs / 450µs / 495µs"},
+
+  {"name":"cilium_statedb_write_txn_duration_seconds","labels":"handle=mtu","histogram":{"p50":[0.00025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.00045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.000495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"250µs / 450µs / 495µs"},
+
+  {"name":"cilium_statedb_write_txn_duration_seconds","labels":"handle=node-address","histogram":{"p50":[0.0003,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.0007,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.00097,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"300µs / 700µs / 970µs"},
+
+  {"name":"cilium_statedb_write_txn_duration_seconds","labels":"handle=sysctl","histogram":{"p50":[0.00025,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.00045,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.000495,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"250µs / 450µs / 495µs"},
+
+  {"name":"cilium_version","labels":"arch=linux/amd64 revision=274205f0 version=1.18.0","gaugeOrCounter":{"samples":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"0"},
+
+  {"name":"go_gc_duration_seconds","gaugeOrCounter":{"samples":[0.00016955362,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"169.6µ"},
+
+  {"name":"go_gc_gogc_percent","gaugeOrCounter":{"samples":[100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"100"},
+
+  {"name":"go_gc_gomemlimit_bytes","gaugeOrCounter":{"samples":[12432253000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"12.43G"},
+
+  {"name":"go_goroutines","gaugeOrCounter":{"samples":[387,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"387"},
+
+  {"name":"go_info","labels":"version=go1.24.5","gaugeOrCounter":{"samples":[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1"},
+
+  {"name":"go_memstats_alloc_bytes","gaugeOrCounter":{"samples":[46607730,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"46.61M"},
+
+  {"name":"go_memstats_alloc_bytes_total","gaugeOrCounter":{"samples":[133411460,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"133.4M"},
+
+  {"name":"go_memstats_buck_hash_sys_bytes","gaugeOrCounter":{"samples":[1629440,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1.629M"},
+
+  {"name":"go_memstats_frees_total","gaugeOrCounter":{"samples":[2253010,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.253M"},
+
+  {"name":"go_memstats_gc_sys_bytes","gaugeOrCounter":{"samples":[4403136,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"4.403M"},
+
+  {"name":"go_memstats_heap_alloc_bytes","gaugeOrCounter":{"samples":[46607730,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"46.61M"},
+
+  {"name":"go_memstats_heap_idle_bytes","gaugeOrCounter":{"samples":[4579328,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"4.579M"},
+
+  {"name":"go_memstats_heap_inuse_bytes","gaugeOrCounter":{"samples":[63184896,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"63.18M"},
+
+  {"name":"go_memstats_heap_objects","gaugeOrCounter":{"samples":[209891,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"209.9k"},
+
+  {"name":"go_memstats_heap_released_bytes","gaugeOrCounter":{"samples":[4579328,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"4.579M"},
+
+  {"name":"go_memstats_heap_sys_bytes","gaugeOrCounter":{"samples":[67764220,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"67.76M"},
+
+  {"name":"go_memstats_last_gc_time_seconds","gaugeOrCounter":{"samples":[1754230900,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1.754G"},
+
+  {"name":"go_memstats_mallocs_total","gaugeOrCounter":{"samples":[2462901,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"2.463M"},
+
+  {"name":"go_memstats_mcache_inuse_bytes","gaugeOrCounter":{"samples":[9664,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"9.664k"},
+
+  {"name":"go_memstats_mcache_sys_bytes","gaugeOrCounter":{"samples":[15704,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"15.7k"},
+
+  {"name":"go_memstats_mspan_inuse_bytes","gaugeOrCounter":{"samples":[797920,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"797.9k"},
+
+  {"name":"go_memstats_mspan_sys_bytes","gaugeOrCounter":{"samples":[799680,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"799.7k"},
+
+  {"name":"go_memstats_next_gc_bytes","gaugeOrCounter":{"samples":[58338030,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"58.34M"},
+
+  {"name":"go_memstats_other_sys_bytes","gaugeOrCounter":{"samples":[1523438,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"1.523M"},
+
+  {"name":"go_memstats_stack_inuse_bytes","gaugeOrCounter":{"samples":[3538944,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"3.539M"},
+
+  {"name":"go_memstats_stack_sys_bytes","gaugeOrCounter":{"samples":[3538944,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"3.539M"},
+
+  {"name":"go_memstats_sys_bytes","gaugeOrCounter":{"samples":[79674570,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"79.67M"},
+
+  {"name":"go_sched_gomaxprocs_threads","gaugeOrCounter":{"samples":[8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"8"},
+
+  {"name":"go_sched_latencies_seconds","histogram":{"p50":[4.1812637e-8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p90":[0.000038580958,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"p99":[0.0007856796,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"41.81ns / 38.58µs / 785.7µs"},
+
+  {"name":"go_threads","gaugeOrCounter":{"samples":[19,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]},"latest":"19"},
+
+];
+
+const timespanMinutes =  300  / 60;
+let timeline = [];
+for (let i = 0; i <  24 ; i++) {
+    let minutes = Math.round(100.0*( 24 -i)*timespanMinutes)/100.0;
+    timeline.push(
+        "-" + minutes + "min",
+    ); 
+}
+
+function plot(idx) {
+    const sample = samples[idx];
+    var data = [], layout = {};
+    if (sample['histogram']) {
+        data = [
+            { name: 'p50', x: timeline, y: [...sample['histogram'].p50].reverse(), type: 'scatter', mode: 'lines', line: { color:'#97e3c2' }},
+            { name: 'p90', x: timeline, y: [...sample['histogram'].p90].reverse(), type: 'scatter', mode: 'lines', line: { color:'#aad2ec' }},
+            { name: 'p99', x: timeline, y: [...sample['histogram'].p99].reverse(), type: 'scatter', mode: 'lines', line: { color:'#f69c9e' }},
+        ];
+    } else {
+        var ys = [...sample['gaugeOrCounter'].samples].reverse();
+        var tl = [...timeline];
+        const rateChecked = document.getElementById(idx + "-rate").checked;
+        if (rateChecked) {
+            var prev = ys[0];
+            for (let i = 1; i < ys.length; i++) {
+                const rate = (ys[i] - prev) /  300 ;
+                prev = ys[i];
+                ys[i] = rate;
+            }
+            ys.shift(); tl.shift();
+        }
+        data = [{ x: tl, y: ys, type: 'bar', marker: { color:'#aad2ec' }}];
+        layout = {xaxis: { tickangle: -45}, barmode: 'group'}
+    }
+    Plotly.newPlot(idx + '-plot', data, layout, {staticPlot: true});
+}
+
+function togglePlot(row, idx) {
+    const nextRow = row.nextElementSibling;
+    if (nextRow.classList.contains('hidden')) {
+        nextRow.classList.remove('hidden');
+        row.classList.add('selected');
+        nextRow.classList.add('selected');
+        plot(idx);
+    } else {
+        nextRow.classList.add('hidden');
+        row.classList.remove('selected');
+        nextRow.classList.remove('selected');
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+   const metricsTable = document.getElementById("metrics-table").getElementsByTagName("tbody")[0];
+   for (let i = 0; i < samples.length; ++i) {
+     const sample = samples[i];
+     if (!sample) continue;
+     const row = document.createElement("tr");
+     row.className = "clickable"; 
+     row.setAttribute("onclick", "togglePlot(this, " + i + ")");
+     var cell = document.createElement("td");
+     cell.textContent = sample.name;
+     row.appendChild(cell);
+     cell = document.createElement("td");
+     cell.textContent = sample.labels;
+     row.appendChild(cell);
+     cell = document.createElement("td");
+     cell.textContent = sample.latest;
+     cell.style = "width: 15em";
+     row.appendChild(cell);
+     metricsTable.appendChild(row);
+     const plotRow = document.createElement("tr");
+     plotRow.className = "hidden";
+     cell = document.createElement("td");
+     cell.colSpan = 3;
+     if (sample['gaugeOrCounter']) {
+         const rateDiv = document.createElement("div");
+         rateDiv.className = "ratebox";
+         const rateBox = document.createElement("input");
+         rateBox.id = i + "-rate";
+         rateBox.setAttribute("onclick", "plot(" + i + ")");
+         rateBox.type = "checkbox";
+         const rateLabel = document.createElement("label");
+         rateLabel.textContent = "rate/s"
+         rateLabel.htmlFor = rateBox.id;
+         rateDiv.appendChild(rateBox);
+         rateDiv.appendChild(rateLabel);
+         cell.appendChild(rateDiv);
+     }
+     const plotDiv = document.createElement("div");
+     plotDiv.id = i + '-plot';
+     cell.appendChild(plotDiv);
+     plotRow.appendChild(cell);
+     metricsTable.appendChild(plotRow);
+   }
+});
+
+document.getElementById('search-input').addEventListener('keyup', function() {
+   const input = document.getElementById("search-input");
+   const filter = input.value.toUpperCase();
+   const table = document.getElementById("metrics-table");
+   const tr = table.getElementsByTagName("tr");
+   for (i = 1; i < tr.length; i+=2) {
+     const td = tr[i].getElementsByTagName("td");
+     const txtValue = td[0].textContent || td[0].innerText;
+     if (txtValue.toUpperCase().indexOf(filter) < 0) {
+       tr[i].style.display = "none";
+     } else {
+       tr[i].style.display = "";
+     }
+     tr[i+1].className = "hidden";  
+   }
+});
+
+</script>
+
+</body>
+</html>
+
+

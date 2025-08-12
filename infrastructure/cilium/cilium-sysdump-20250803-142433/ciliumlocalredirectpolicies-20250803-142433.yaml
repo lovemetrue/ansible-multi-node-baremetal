@@ -1,0 +1,62 @@
+apiVersion: cilium.io/v2
+items:
+- apiVersion: cilium.io/v2
+  kind: CiliumLocalRedirectPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"cilium.io/v2","kind":"CiliumLocalRedirectPolicy","metadata":{"annotations":{},"name":"lrp-kube-dns-udp","namespace":"default"},"spec":{"redirectBackend":{"localEndpointSelector":{"matchLabels":{"k8s-app":"kube-dns"}},"toPorts":[{"port":"53","protocol":"UDP"},{"port":"53","protocol":"TCP"}]},"redirectFrontend":{"addressMatcher":{"ip":"10.96.0.10","toPorts":[{"port":"53","protocol":"UDP"}]}}}}
+    creationTimestamp: "2025-08-03T14:07:12Z"
+    generation: 1
+    managedFields:
+    - apiVersion: cilium.io/v2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          .: {}
+          f:redirectBackend:
+            .: {}
+            f:localEndpointSelector: {}
+            f:toPorts: {}
+          f:redirectFrontend:
+            .: {}
+            f:addressMatcher:
+              .: {}
+              f:ip: {}
+              f:toPorts: {}
+          f:skipRedirectFromBackend: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2025-08-03T14:07:12Z"
+    name: lrp-kube-dns-udp
+    namespace: default
+    resourceVersion: "187355"
+    uid: c0f96e86-a560-4d6f-9cd3-d82c55c32421
+  spec:
+    redirectBackend:
+      localEndpointSelector:
+        matchLabels:
+          k8s-app: kube-dns
+      toPorts:
+      - name: ""
+        port: "53"
+        protocol: UDP
+      - name: ""
+        port: "53"
+        protocol: TCP
+    redirectFrontend:
+      addressMatcher:
+        ip: 10.96.0.10
+        toPorts:
+        - name: ""
+          port: "53"
+          protocol: UDP
+    skipRedirectFromBackend: false
+  status: {}
+kind: CiliumLocalRedirectPolicyList
+metadata:
+  resourceVersion: "190021"

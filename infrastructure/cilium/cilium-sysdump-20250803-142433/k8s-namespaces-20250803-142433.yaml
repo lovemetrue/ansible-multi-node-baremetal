@@ -1,0 +1,131 @@
+apiVersion: v1
+items:
+- metadata:
+    annotations:
+      meta.helm.sh/release-name: cilium
+      meta.helm.sh/release-namespace: kube-system
+    creationTimestamp: "2025-08-03T13:49:40Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/part-of: cilium
+      kubernetes.io/metadata.name: cilium-secrets
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/part-of: {}
+            f:kubernetes.io/metadata.name: {}
+      manager: helm
+      operation: Update
+      time: "2025-08-03T13:49:40Z"
+    name: cilium-secrets
+    resourceVersion: "184848"
+    uid: 9bec9a36-d654-4832-ae99-13e50b21b2ea
+  spec:
+    finalizers:
+    - kubernetes
+  status:
+    phase: Active
+- metadata:
+    creationTimestamp: "2025-08-02T11:51:57Z"
+    labels:
+      kubernetes.io/metadata.name: default
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:kubernetes.io/metadata.name: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-08-02T11:51:57Z"
+    name: default
+    resourceVersion: "33"
+    uid: 5afcec79-bef8-4cba-be18-837d20400f6d
+  spec:
+    finalizers:
+    - kubernetes
+  status:
+    phase: Active
+- metadata:
+    creationTimestamp: "2025-08-02T11:51:57Z"
+    labels:
+      kubernetes.io/metadata.name: kube-node-lease
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:kubernetes.io/metadata.name: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-08-02T11:51:57Z"
+    name: kube-node-lease
+    resourceVersion: "35"
+    uid: 6f40b7fb-2bae-4594-809d-32981013c424
+  spec:
+    finalizers:
+    - kubernetes
+  status:
+    phase: Active
+- metadata:
+    creationTimestamp: "2025-08-02T11:51:57Z"
+    labels:
+      kubernetes.io/metadata.name: kube-public
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:kubernetes.io/metadata.name: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-08-02T11:51:57Z"
+    name: kube-public
+    resourceVersion: "31"
+    uid: cefeb30a-9910-413f-987e-f30bdb565f8a
+  spec:
+    finalizers:
+    - kubernetes
+  status:
+    phase: Active
+- metadata:
+    creationTimestamp: "2025-08-02T11:51:57Z"
+    labels:
+      kubernetes.io/metadata.name: kube-system
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:kubernetes.io/metadata.name: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-08-02T11:51:57Z"
+    name: kube-system
+    resourceVersion: "9"
+    uid: 023bc854-d9af-4808-975a-0997d275fa0b
+  spec:
+    finalizers:
+    - kubernetes
+  status:
+    phase: Active
+kind: NamespaceList
+metadata:
+  resourceVersion: "190021"

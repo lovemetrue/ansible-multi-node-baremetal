@@ -1,0 +1,389 @@
+2025-08-03T13:49:46.970936053Z time=2025-08-03T13:49:46.970504327Z level=info msg="  --agent-not-ready-taint-key='node.cilium.io/agent-not-ready'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971121985Z time=2025-08-03T13:49:46.97062849Z level=info msg="  --auto-create-cilium-pod-ip-pools=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971142304Z time=2025-08-03T13:49:46.97064155Z level=info msg="  --auto-direct-node-routes='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971161215Z time=2025-08-03T13:49:46.970650013Z level=info msg="  --bpf-distributed-lru='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971171816Z time=2025-08-03T13:49:46.970657693Z level=info msg="  --bpf-events-drop-enabled='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971181292Z time=2025-08-03T13:49:46.970665448Z level=info msg="  --bpf-events-policy-verdict-enabled='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971189993Z time=2025-08-03T13:49:46.970673035Z level=info msg="  --bpf-events-trace-enabled='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971220695Z time=2025-08-03T13:49:46.970681255Z level=info msg="  --bpf-lb-acceleration='disabled'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971229243Z time=2025-08-03T13:49:46.970695208Z level=info msg="  --bpf-lb-algorithm-annotation='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971234423Z time=2025-08-03T13:49:46.970703257Z level=info msg="  --bpf-lb-external-clusterip='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971243309Z time=2025-08-03T13:49:46.970719843Z level=info msg="  --bpf-lb-map-max='65536'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971253797Z time=2025-08-03T13:49:46.970732089Z level=info msg="  --bpf-lb-mode-annotation='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971263629Z time=2025-08-03T13:49:46.970741173Z level=info msg="  --bpf-lb-proto-diff='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971273067Z time=2025-08-03T13:49:46.97074881Z level=info msg="  --bpf-lb-sock='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971283775Z time=2025-08-03T13:49:46.970756569Z level=info msg="  --bpf-lb-source-range-all-types='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971292583Z time=2025-08-03T13:49:46.970764255Z level=info msg="  --bpf-map-dynamic-size-ratio='0.0025'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971301908Z time=2025-08-03T13:49:46.970771815Z level=info msg="  --bpf-policy-map-max='16384'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971310739Z time=2025-08-03T13:49:46.970779216Z level=info msg="  --bpf-policy-stats-map-max='65536'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971337693Z time=2025-08-03T13:49:46.970793644Z level=info msg="  --bpf-root='/sys/fs/bpf'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971352659Z time=2025-08-03T13:49:46.970805317Z level=info msg="  --ces-max-ciliumendpoints-per-ces='100'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971363418Z time=2025-08-03T13:49:46.970814871Z level=info msg="  --ces-rate-limits='[{\"nodes\":0,\"limit\":10,\"burst\":20}]'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971373272Z time=2025-08-03T13:49:46.970823778Z level=info msg="  --ces-slice-mode='fcfs'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971383231Z time=2025-08-03T13:49:46.970832297Z level=info msg="  --cgroup-root='/run/cilium/cgroupv2'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971485340Z time=2025-08-03T13:49:46.970840937Z level=info msg="  --cilium-endpoint-gc-interval='5m0s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971504184Z time=2025-08-03T13:49:46.970849215Z level=info msg="  --cilium-pod-labels='k8s-app=cilium'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971515190Z time=2025-08-03T13:49:46.970859685Z level=info msg="  --cilium-pod-namespace=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971597163Z time=2025-08-03T13:49:46.970868193Z level=info msg="  --cluster-id='0'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971610753Z time=2025-08-03T13:49:46.970876692Z level=info msg="  --cluster-name='default'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971628763Z time=2025-08-03T13:49:46.970909764Z level=info msg="  --cluster-pool-ipv4-cidr=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971639347Z time=2025-08-03T13:49:46.970931253Z level=info msg="  --cluster-pool-ipv4-mask-size='24'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971648323Z time=2025-08-03T13:49:46.970960595Z level=info msg="  --cluster-pool-ipv6-cidr=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971657258Z time=2025-08-03T13:49:46.97097233Z level=info msg="  --cluster-pool-ipv6-mask-size='112'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971707260Z time=2025-08-03T13:49:46.970983185Z level=info msg="  --clustermesh-concurrent-service-endpoint-syncs='5'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971720480Z time=2025-08-03T13:49:46.970994576Z level=info msg="  --clustermesh-config=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971734562Z time=2025-08-03T13:49:46.971003228Z level=info msg="  --clustermesh-enable-endpoint-sync='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971744597Z time=2025-08-03T13:49:46.971012017Z level=info msg="  --clustermesh-enable-mcs-api='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971755125Z time=2025-08-03T13:49:46.971021617Z level=info msg="  --clustermesh-endpoint-updates-batch-period='500ms'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971764020Z time=2025-08-03T13:49:46.971030736Z level=info msg="  --clustermesh-endpoints-per-slice='100'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971800113Z time=2025-08-03T13:49:46.971040387Z level=info msg="  --clustermesh-sync-timeout='1m0s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971813961Z time=2025-08-03T13:49:46.97105312Z level=info msg="  --cmdref=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971824033Z time=2025-08-03T13:49:46.97106493Z level=info msg="  --cni-exclusive='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971834028Z time=2025-08-03T13:49:46.971084161Z level=info msg="  --cni-log-file='/var/run/cilium/cilium-cni.log'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971843574Z time=2025-08-03T13:49:46.97112488Z level=info msg="  --config=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971852806Z time=2025-08-03T13:49:46.971146901Z level=info msg="  --config-dir='/tmp/cilium/config-map'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971862289Z time=2025-08-03T13:49:46.971207495Z level=info msg="  --controller-group-metrics=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971871622Z time=2025-08-03T13:49:46.971249837Z level=info msg="  --custom-cni-conf='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971881502Z time=2025-08-03T13:49:46.971269177Z level=info msg="  --datapath-mode='veth'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971890809Z time=2025-08-03T13:49:46.971286552Z level=info msg="  --debug='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971900354Z time=2025-08-03T13:49:46.971316751Z level=info msg="  --debug-verbose=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971908756Z time=2025-08-03T13:49:46.971344119Z level=info msg="  --default-lb-service-ipam='lbipam'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971924854Z time=2025-08-03T13:49:46.971355249Z level=info msg="  --direct-routing-skip-unreachable='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971936253Z time=2025-08-03T13:49:46.971364807Z level=info msg="  --disable-endpoint-crd='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971960909Z time=2025-08-03T13:49:46.971378761Z level=info msg="  --dnsproxy-enable-transparent-mode='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971975528Z time=2025-08-03T13:49:46.971401457Z level=info msg="  --dnsproxy-socket-linger-timeout='10'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971986149Z time=2025-08-03T13:49:46.971423051Z level=info msg="  --double-write-metric-reporter-interval='1m0s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.971995933Z time=2025-08-03T13:49:46.971440585Z level=info msg="  --egress-gateway-reconciliation-trigger-interval='1s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972004650Z time=2025-08-03T13:49:46.971456839Z level=info msg="  --enable-auto-protect-node-port-range='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972013887Z time=2025-08-03T13:49:46.97148283Z level=info msg="  --enable-bpf-clock-probe='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972023210Z time=2025-08-03T13:49:46.971506834Z level=info msg="  --enable-cilium-clusterwide-network-policy='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972033882Z time=2025-08-03T13:49:46.971527336Z level=info msg="  --enable-cilium-endpoint-slice='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972047400Z time=2025-08-03T13:49:46.971546743Z level=info msg="  --enable-cilium-network-policy='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972070013Z time=2025-08-03T13:49:46.971650219Z level=info msg="  --enable-cilium-operator-server-access='*'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972082035Z time=2025-08-03T13:49:46.971695274Z level=info msg="  --enable-egress-gateway='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972104993Z time=2025-08-03T13:49:46.971716009Z level=info msg="  --enable-endpoint-health-checking='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972118659Z time=2025-08-03T13:49:46.971734825Z level=info msg="  --enable-endpoint-lockdown-on-policy-overflow='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972129760Z time=2025-08-03T13:49:46.971756467Z level=info msg="  --enable-gateway-api-alpn='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972139963Z time=2025-08-03T13:49:46.971775203Z level=info msg="  --enable-gateway-api-app-protocol='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972203783Z time=2025-08-03T13:49:46.971795071Z level=info msg="  --enable-gateway-api-proxy-protocol='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972220701Z time=2025-08-03T13:49:46.971821329Z level=info msg="  --enable-gateway-api-secrets-sync='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972233155Z time=2025-08-03T13:49:46.971843661Z level=info msg="  --enable-gops='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972243881Z time=2025-08-03T13:49:46.971863035Z level=info msg="  --enable-health-check-loadbalancer-ip='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972277225Z time=2025-08-03T13:49:46.971886515Z level=info msg="  --enable-health-check-nodeport='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972291761Z time=2025-08-03T13:49:46.971920269Z level=info msg="  --enable-health-checking='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972303007Z time=2025-08-03T13:49:46.971944388Z level=info msg="  --enable-hubble='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972312984Z time=2025-08-03T13:49:46.971964507Z level=info msg="  --enable-icmp-rules='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972330852Z time=2025-08-03T13:49:46.971985189Z level=info msg="  --enable-ingress-controller='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972343680Z time=2025-08-03T13:49:46.972008199Z level=info msg="  --enable-ingress-proxy-protocol='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972370161Z time=2025-08-03T13:49:46.972027029Z level=info msg="  --enable-ingress-secrets-sync='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972381806Z time=2025-08-03T13:49:46.97204611Z level=info msg="  --enable-internal-traffic-policy='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972391789Z time=2025-08-03T13:49:46.972065918Z level=info msg="  --enable-ipv4='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972401009Z time=2025-08-03T13:49:46.972082524Z level=info msg="  --enable-ipv4-big-tcp='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972410170Z time=2025-08-03T13:49:46.972099039Z level=info msg="  --enable-ipv4-egress-gateway='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972448247Z time=2025-08-03T13:49:46.972122444Z level=info msg="  --enable-ipv4-masquerade='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972462249Z time=2025-08-03T13:49:46.972145155Z level=info msg="  --enable-ipv6='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972472543Z time=2025-08-03T13:49:46.972169013Z level=info msg="  --enable-ipv6-big-tcp='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972482539Z time=2025-08-03T13:49:46.972185398Z level=info msg="  --enable-ipv6-masquerade='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972514872Z time=2025-08-03T13:49:46.97220424Z level=info msg="  --enable-k8s='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972532927Z time=2025-08-03T13:49:46.972218939Z level=info msg="  --enable-k8s-api-discovery='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972544451Z time=2025-08-03T13:49:46.972233679Z level=info msg="  --enable-k8s-endpoint-slice='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972554372Z time=2025-08-03T13:49:46.972248898Z level=info msg="  --enable-k8s-networkpolicy='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972563706Z time=2025-08-03T13:49:46.972264294Z level=info msg="  --enable-l2-neigh-discovery='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972577876Z time=2025-08-03T13:49:46.972281599Z level=info msg="  --enable-l7-proxy='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972588208Z time=2025-08-03T13:49:46.972299459Z level=info msg="  --enable-lb-ipam='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972598850Z time=2025-08-03T13:49:46.972340669Z level=info msg="  --enable-local-redirect-policy='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972608821Z time=2025-08-03T13:49:46.972361856Z level=info msg="  --enable-masquerade-to-route-source='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972618656Z time=2025-08-03T13:49:46.972381605Z level=info msg="  --enable-metrics='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972629638Z time=2025-08-03T13:49:46.972407777Z level=info msg="  --enable-node-ipam='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972824832Z time=2025-08-03T13:49:46.972425824Z level=info msg="  --enable-node-port='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972853194Z time=2025-08-03T13:49:46.972453572Z level=info msg="  --enable-node-selector-labels='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972938332Z time=2025-08-03T13:49:46.972472709Z level=info msg="  --enable-non-default-deny-policies='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.972992956Z time=2025-08-03T13:49:46.972507849Z level=info msg="  --enable-policy='default'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.973014886Z time=2025-08-03T13:49:46.972541255Z level=info msg="  --enable-policy-secrets-sync='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.973030025Z time=2025-08-03T13:49:46.972562702Z level=info msg="  --enable-sctp='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.973060217Z time=2025-08-03T13:49:46.972580784Z level=info msg="  --enable-source-ip-verification='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974024928Z time=2025-08-03T13:49:46.972598853Z level=info msg="  --enable-srv6='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974053020Z time=2025-08-03T13:49:46.972615031Z level=info msg="  --enable-svc-source-range-check='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974075334Z time=2025-08-03T13:49:46.972625097Z level=info msg="  --enable-tcx='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974089583Z time=2025-08-03T13:49:46.972632878Z level=info msg="  --enable-vtep='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974102493Z time=2025-08-03T13:49:46.972640474Z level=info msg="  --enable-well-known-identities='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974115705Z time=2025-08-03T13:49:46.972654331Z level=info msg="  --enable-xt-socket-fallback='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974127421Z time=2025-08-03T13:49:46.972676646Z level=info msg="  --enforce-ingress-https='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974140532Z time=2025-08-03T13:49:46.97270052Z level=info msg="  --envoy-access-log-buffer-size='4096'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974155382Z time=2025-08-03T13:49:46.972718504Z level=info msg="  --envoy-base-id='0'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974169146Z time=2025-08-03T13:49:46.972734694Z level=info msg="  --envoy-keep-cap-netbindservice='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974182191Z time=2025-08-03T13:49:46.972757669Z level=info msg="  --external-envoy-proxy='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974195400Z time=2025-08-03T13:49:46.972777628Z level=info msg="  --gateway-api-hostnetwork-enabled='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974207840Z time=2025-08-03T13:49:46.972803431Z level=info msg="  --gateway-api-hostnetwork-nodelabelselector=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974222035Z time=2025-08-03T13:49:46.972826389Z level=info msg="  --gateway-api-secrets-namespace='cilium-secrets'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974236055Z time=2025-08-03T13:49:46.972845334Z level=info msg="  --gateway-api-service-externaltrafficpolicy='Cluster'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974257544Z time=2025-08-03T13:49:46.972864976Z level=info msg="  --gateway-api-xff-num-trusted-hops='0'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974271223Z time=2025-08-03T13:49:46.972887279Z level=info msg="  --gops-port='9891'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974283765Z time=2025-08-03T13:49:46.97290884Z level=info msg="  --health-check-icmp-failure-threshold='3'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974295631Z time=2025-08-03T13:49:46.972925436Z level=info msg="  --http-retry-count='3'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974350576Z time=2025-08-03T13:49:46.972941706Z level=info msg="  --hubble-disable-tls='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974369223Z time=2025-08-03T13:49:46.972957098Z level=info msg="  --hubble-listen-address=':4244'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974407311Z time=2025-08-03T13:49:46.97297376Z level=info msg="  --hubble-network-policy-correlation-enabled='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974426143Z time=2025-08-03T13:49:46.972991709Z level=info msg="  --hubble-socket-path='/var/run/cilium/hubble.sock'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974440726Z time=2025-08-03T13:49:46.973009006Z level=info msg="  --hubble-tls-cert-file='/var/lib/cilium/tls/hubble/server.crt'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974471804Z time=2025-08-03T13:49:46.973027155Z level=info msg="  --hubble-tls-client-ca-files='/var/lib/cilium/tls/hubble/client-ca.crt'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974488508Z time=2025-08-03T13:49:46.97304625Z level=info msg="  --hubble-tls-key-file='/var/lib/cilium/tls/hubble/server.key'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974501993Z time=2025-08-03T13:49:46.973063249Z level=info msg="  --identity-allocation-mode='crd'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974516077Z time=2025-08-03T13:49:46.973081441Z level=info msg="  --identity-gc-interval='15m0s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974528902Z time=2025-08-03T13:49:46.973103891Z level=info msg="  --identity-gc-rate-interval='1m0s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974541602Z time=2025-08-03T13:49:46.973129165Z level=info msg="  --identity-gc-rate-limit='2500'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974554520Z time=2025-08-03T13:49:46.973149087Z level=info msg="  --identity-heartbeat-timeout='30m0s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974568270Z time=2025-08-03T13:49:46.973164717Z level=info msg="  --identity-management-mode='agent'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974583290Z time=2025-08-03T13:49:46.973175412Z level=info msg="  --ingress-default-lb-mode='dedicated'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974595332Z time=2025-08-03T13:49:46.97320499Z level=info msg="  --ingress-default-request-timeout='0s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974608494Z time=2025-08-03T13:49:46.973234226Z level=info msg="  --ingress-default-secret-name=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974619696Z time=2025-08-03T13:49:46.973256129Z level=info msg="  --ingress-default-secret-namespace=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974632479Z time=2025-08-03T13:49:46.973277644Z level=info msg="  --ingress-default-xff-num-trusted-hops='0'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974645853Z time=2025-08-03T13:49:46.973298241Z level=info msg="  --ingress-hostnetwork-enabled='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974655616Z time=2025-08-03T13:49:46.973313271Z level=info msg="  --ingress-hostnetwork-nodelabelselector=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974668324Z time=2025-08-03T13:49:46.973340804Z level=info msg="  --ingress-hostnetwork-shared-listener-port='0'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974686031Z time=2025-08-03T13:49:46.973428277Z level=info msg="  --ingress-lb-annotation-prefixes='lbipam.cilium.io,service.beta.kubernetes.io,service.kubernetes.io,cloud.google.com'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974713873Z time=2025-08-03T13:49:46.973505203Z level=info msg="  --ingress-secrets-namespace='cilium-secrets'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974730081Z time=2025-08-03T13:49:46.973524317Z level=info msg="  --ingress-shared-lb-service-name='cilium-ingress'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974743858Z time=2025-08-03T13:49:46.973533543Z level=info msg="  --install-no-conntrack-iptables-rules='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974757193Z time=2025-08-03T13:49:46.973546111Z level=info msg="  --instance-tags-filter=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974770374Z time=2025-08-03T13:49:46.973554652Z level=info msg="  --ipam='kubernetes'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974784057Z time=2025-08-03T13:49:46.973569152Z level=info msg="  --ipam-cilium-node-update-rate='15s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974798575Z time=2025-08-03T13:49:46.973586299Z level=info msg="  --iptables-random-fully='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974837971Z time=2025-08-03T13:49:46.97360516Z level=info msg="  --ipv4-native-routing-cidr='10.0.0.0/16'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974853094Z time=2025-08-03T13:49:46.973629655Z level=info msg="  --k8s-api-server=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974866125Z time=2025-08-03T13:49:46.973702339Z level=info msg="  --k8s-api-server-urls=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974879295Z time=2025-08-03T13:49:46.973722168Z level=info msg="  --k8s-client-connection-keep-alive='30s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974933775Z time=2025-08-03T13:49:46.973732077Z level=info msg="  --k8s-client-connection-timeout='30s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.974985381Z time=2025-08-03T13:49:46.973751808Z level=info msg="  --k8s-heartbeat-timeout='30s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975000665Z time=2025-08-03T13:49:46.973763979Z level=info msg="  --k8s-kubeconfig-path=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975014120Z time=2025-08-03T13:49:46.973772944Z level=info msg="  --k8s-namespace='kube-system'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975027923Z time=2025-08-03T13:49:46.973780413Z level=info msg="  --k8s-require-ipv4-pod-cidr='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975038634Z time=2025-08-03T13:49:46.973788009Z level=info msg="  --k8s-require-ipv6-pod-cidr='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975050141Z time=2025-08-03T13:49:46.973814021Z level=info msg="  --k8s-service-proxy-name=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975061947Z time=2025-08-03T13:49:46.973825231Z level=info msg="  --kube-proxy-replacement='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975071808Z time=2025-08-03T13:49:46.973843502Z level=info msg="  --kube-proxy-replacement-healthz-bind-address=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975082584Z time=2025-08-03T13:49:46.973880707Z level=info msg="  --kvstore=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975093087Z time=2025-08-03T13:49:46.973927405Z level=info msg="  --kvstore-lease-ttl='15m0s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975107986Z time=2025-08-03T13:49:46.973949873Z level=info msg="  --kvstore-max-consecutive-quorum-errors='2'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975170717Z time=2025-08-03T13:49:46.974023187Z level=info msg="  --kvstore-opt=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975187830Z time=2025-08-03T13:49:46.974061188Z level=info msg="  --leader-election-lease-duration='15s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975193438Z time=2025-08-03T13:49:46.974077775Z level=info msg="  --leader-election-renew-deadline='10s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975198076Z time=2025-08-03T13:49:46.974092213Z level=info msg="  --leader-election-retry-period='2s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975202598Z time=2025-08-03T13:49:46.974110477Z level=info msg="  --limit-ipam-api-burst='20'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975207049Z time=2025-08-03T13:49:46.974131552Z level=info msg="  --limit-ipam-api-qps='4'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975211768Z time=2025-08-03T13:49:46.974169515Z level=info msg="  --loadbalancer-l7=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975216282Z time=2025-08-03T13:49:46.974200943Z level=info msg="  --loadbalancer-l7-algorithm='round_robin'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975220699Z time=2025-08-03T13:49:46.974258836Z level=info msg="  --loadbalancer-l7-ports=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975224965Z time=2025-08-03T13:49:46.974361433Z level=info msg="  --log-driver=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975229291Z time=2025-08-03T13:49:46.974389888Z level=info msg="  --log-opt=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975271638Z time=2025-08-03T13:49:46.974411123Z level=info msg="  --max-connected-clusters='255'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975278958Z time=2025-08-03T13:49:46.974430164Z level=info msg="  --mesh-auth-enabled='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975283436Z time=2025-08-03T13:49:46.974452115Z level=info msg="  --mesh-auth-gc-interval='5m0s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975287843Z time=2025-08-03T13:49:46.974471769Z level=info msg="  --mesh-auth-mutual-enabled='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975292159Z time=2025-08-03T13:49:46.974488743Z level=info msg="  --mesh-auth-queue-size='1024'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975297199Z time=2025-08-03T13:49:46.974508904Z level=info msg="  --mesh-auth-rotated-identities-queue-size='1024'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975301502Z time=2025-08-03T13:49:46.974529333Z level=info msg="  --mesh-auth-spiffe-trust-domain='spiffe.cilium'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975308170Z time=2025-08-03T13:49:46.974547572Z level=info msg="  --mesh-auth-spire-agent-socket='/run/spire/sockets/agent/agent.sock'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975317485Z time=2025-08-03T13:49:46.974588833Z level=info msg="  --mesh-auth-spire-server-address='spire-server.spire.svc:8081'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975345455Z time=2025-08-03T13:49:46.974621213Z level=info msg="  --mesh-auth-spire-server-connection-timeout='10s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975357188Z time=2025-08-03T13:49:46.974641525Z level=info msg="  --metrics-sampling-interval='5m'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975366835Z time=2025-08-03T13:49:46.974659651Z level=info msg="  --monitor-aggregation='medium'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975376900Z time=2025-08-03T13:49:46.974685754Z level=info msg="  --monitor-aggregation-flags='all'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975387095Z time=2025-08-03T13:49:46.974703361Z level=info msg="  --monitor-aggregation-interval='5s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975396103Z time=2025-08-03T13:49:46.974721205Z level=info msg="  --nat-map-stats-entries='32'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975404203Z time=2025-08-03T13:49:46.97473844Z level=info msg="  --nat-map-stats-interval='30s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975412420Z time=2025-08-03T13:49:46.974758958Z level=info msg="  --node-port-bind-protection='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975417695Z time=2025-08-03T13:49:46.974777555Z level=info msg="  --nodeport-addresses=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975422023Z time=2025-08-03T13:49:46.974796308Z level=info msg="  --nodes-gc-interval='5m0s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975426323Z time=2025-08-03T13:49:46.97481424Z level=info msg="  --operator-api-serve-addr='127.0.0.1:9234'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975430535Z time=2025-08-03T13:49:46.974835362Z level=info msg="  --operator-k8s-client-burst='200'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975438782Z time=2025-08-03T13:49:46.974856687Z level=info msg="  --operator-k8s-client-qps='100'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975443457Z time=2025-08-03T13:49:46.974875373Z level=info msg="  --operator-pprof='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975478423Z time=2025-08-03T13:49:46.974894198Z level=info msg="  --operator-pprof-address='localhost'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975492543Z time=2025-08-03T13:49:46.974913808Z level=info msg="  --operator-pprof-port='6061'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975516948Z time=2025-08-03T13:49:46.974932505Z level=info msg="  --operator-prometheus-serve-addr=':9963'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975526887Z time=2025-08-03T13:49:46.974951494Z level=info msg="  --parallel-alloc-workers='50'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975531862Z time=2025-08-03T13:49:46.974974838Z level=info msg="  --pod-restart-selector='k8s-app=kube-dns'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975536169Z time=2025-08-03T13:49:46.974994894Z level=info msg="  --policy-cidr-match-mode=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975540429Z time=2025-08-03T13:49:46.975022579Z level=info msg="  --policy-default-local-cluster='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975545105Z time=2025-08-03T13:49:46.975043126Z level=info msg="  --policy-secrets-namespace='cilium-secrets'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975557002Z time=2025-08-03T13:49:46.975060822Z level=info msg="  --policy-secrets-only-from-secrets-namespace='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975572628Z time=2025-08-03T13:49:46.975086707Z level=info msg="  --preallocate-bpf-maps='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975585896Z time=2025-08-03T13:49:46.975104337Z level=info msg="  --procfs='/host/proc'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975595367Z time=2025-08-03T13:49:46.975120541Z level=info msg="  --proxy-connect-timeout='2'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975605327Z time=2025-08-03T13:49:46.975136592Z level=info msg="  --proxy-idle-timeout-seconds='60'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975657767Z time=2025-08-03T13:49:46.97515333Z level=info msg="  --proxy-initial-fetch-timeout='30'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975674422Z time=2025-08-03T13:49:46.975179216Z level=info msg="  --proxy-max-concurrent-retries='128'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975683707Z time=2025-08-03T13:49:46.975197525Z level=info msg="  --proxy-max-connection-duration-seconds='0'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975692718Z time=2025-08-03T13:49:46.975219806Z level=info msg="  --proxy-max-requests-per-connection='0'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975702476Z time=2025-08-03T13:49:46.975237467Z level=info msg="  --proxy-xff-num-trusted-hops-egress='0'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975711954Z time=2025-08-03T13:49:46.975254923Z level=info msg="  --proxy-xff-num-trusted-hops-ingress='0'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975722950Z time=2025-08-03T13:49:46.975275085Z level=info msg="  --remove-cilium-node-taints='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975731731Z time=2025-08-03T13:49:46.97529211Z level=info msg="  --routing-mode='tunnel'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975739770Z time=2025-08-03T13:49:46.975308332Z level=info msg="  --service-no-backend-response='reject'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975751856Z time=2025-08-03T13:49:46.975350312Z level=info msg="  --set-cilium-is-up-condition='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975771232Z time=2025-08-03T13:49:46.975371357Z level=info msg="  --set-cilium-node-taints='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975789440Z time=2025-08-03T13:49:46.975390912Z level=info msg="  --skip-crd-creation='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975819082Z time=2025-08-03T13:49:46.97545581Z level=info msg="  --subnet-ids-filter=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975827397Z time=2025-08-03T13:49:46.975489057Z level=info msg="  --subnet-tags-filter=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975845655Z time=2025-08-03T13:49:46.975508665Z level=info msg="  --synchronize-k8s-nodes='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975855695Z time=2025-08-03T13:49:46.97552757Z level=info msg="  --synchronize-k8s-services='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975864812Z time=2025-08-03T13:49:46.975556474Z level=info msg="  --taint-sync-workers='10'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975873340Z time=2025-08-03T13:49:46.975574964Z level=info msg="  --tofqdns-dns-reject-response-code='refused'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975878322Z time=2025-08-03T13:49:46.975592579Z level=info msg="  --tofqdns-enable-dns-compression='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975882789Z time=2025-08-03T13:49:46.975619215Z level=info msg="  --tofqdns-endpoint-max-ip-per-hostname='1000'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975894747Z time=2025-08-03T13:49:46.975638659Z level=info msg="  --tofqdns-idle-connection-grace-period='0s'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975900262Z time=2025-08-03T13:49:46.975656195Z level=info msg="  --tofqdns-max-deferred-connection-deletes='10000'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975907815Z time=2025-08-03T13:49:46.975681754Z level=info msg="  --tofqdns-preallocate-identities='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975915853Z time=2025-08-03T13:49:46.975699834Z level=info msg="  --tofqdns-proxy-response-max-delay='100ms'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975927184Z time=2025-08-03T13:49:46.975717367Z level=info msg="  --tunnel-protocol='vxlan'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975938764Z time=2025-08-03T13:49:46.975732035Z level=info msg="  --tunnel-source-port-range='0-0'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975948404Z time=2025-08-03T13:49:46.975749846Z level=info msg="  --unmanaged-pod-watcher-interval='15'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975958097Z time=2025-08-03T13:49:46.975776749Z level=info msg="  --validate-network-policy='true'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975989872Z time=2025-08-03T13:49:46.975796902Z level=info msg="  --version='false'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.975998478Z time=2025-08-03T13:49:46.975825396Z level=info msg="  --vtep-cidr=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.976003034Z time=2025-08-03T13:49:46.975846949Z level=info msg="  --vtep-endpoint=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.976015917Z time=2025-08-03T13:49:46.975866791Z level=info msg="  --vtep-mac=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.976034691Z time=2025-08-03T13:49:46.975887625Z level=info msg="  --vtep-mask=''" subsys=cilium-operator-generic
+2025-08-03T13:49:46.976043864Z time=2025-08-03T13:49:46.975905726Z level=info msg="  --write-cni-conf-when-ready='/host/etc/cni/net.d/05-cilium.conflist'" subsys=cilium-operator-generic
+2025-08-03T13:49:46.976060493Z time=2025-08-03T13:49:46.975930713Z level=info msg="Cilium Operator" subsys=cilium-operator-generic version="1.18.0 274205f0 2025-07-28T15:22:50+02:00 go version go1.24.5 linux/amd64"
+2025-08-03T13:49:47.043027502Z time=2025-08-03T13:49:47.042724158Z level=info msg="Setting up Secret synchronization" module=operator.operator-controlplane.leader-lifecycle.secret-sync registrations="[*v2.CiliumClusterwideNetworkPolicy -> \"cilium-secrets\" *v2.CiliumNetworkPolicy -> \"cilium-secrets\"]"
+2025-08-03T13:49:47.045519883Z time=2025-08-03T13:49:47.045313557Z level=info msg="Registering CNP / CCNP validator" module=operator.operator-controlplane.leader-lifecycle.network-policy-validator
+2025-08-03T13:49:47.046710877Z time=2025-08-03T13:49:47.04650135Z level=info msg="Starting hive"
+2025-08-03T13:49:47.046728060Z time=2025-08-03T13:49:47.04656671Z level=info msg="Started gops server" module=operator.operator-infra.gops address=127.0.0.1:9891
+2025-08-03T13:49:47.047781678Z time=2025-08-03T13:49:47.047570003Z level=info msg="Establishing connection to apiserver" module=operator.operator-infra.operator-k8s-client-builder.k8s-client-builder ipAddr=https://10.96.0.1:443
+2025-08-03T13:49:47.047800040Z time=2025-08-03T13:49:47.047614585Z level=info msg="Starting metrics server" module=operator.operator-infra.operator-metrics address=:9963
+2025-08-03T13:49:47.051474193Z time=2025-08-03T13:49:47.051155875Z level=info msg="Connected to apiserver" module=operator.operator-infra.operator-k8s-client-builder.k8s-client-builder
+2025-08-03T13:49:47.063992531Z time=2025-08-03T13:49:47.063543523Z level=warn msg="Unable to discover API groups and resources" module=operator.operator-infra.operator-k8s-client-builder.k8s-client-builder error="unable to retrieve the complete list of server APIs: metrics.k8s.io/v1beta1: stale GroupVersion discovery: metrics.k8s.io/v1beta1"
+2025-08-03T13:49:47.088619093Z time=2025-08-03T13:49:47.088246281Z level=info msg="Establishing connection to apiserver" module=operator.operator-infra.operator-k8s-client-builder.k8s-client-builder ipAddr=https://10.96.0.1:443
+2025-08-03T13:49:47.098298491Z time=2025-08-03T13:49:47.098025924Z level=info msg="Connected to apiserver" module=operator.operator-infra.operator-k8s-client-builder.k8s-client-builder
+2025-08-03T13:49:47.109825509Z time=2025-08-03T13:49:47.109540792Z level=warn msg="Unable to discover API groups and resources" module=operator.operator-infra.operator-k8s-client-builder.k8s-client-builder error="unable to retrieve the complete list of server APIs: metrics.k8s.io/v1beta1: stale GroupVersion discovery: metrics.k8s.io/v1beta1"
+2025-08-03T13:49:47.113195442Z time=2025-08-03T13:49:47.113022551Z level=info msg="Started hive" duration=66.486552ms
+2025-08-03T13:49:47.113694993Z time=2025-08-03T13:49:47.113524859Z level=info msg="Waiting for leader election" module=operator
+2025-08-03T13:49:47.113789347Z time=2025-08-03T13:49:47.113671924Z level=info msg="attempting to acquire leader lease kube-system/cilium-operator-resource-lock..." subsys=klog
+2025-08-03T13:49:47.123513353Z time=2025-08-03T13:49:47.123262043Z level=info msg="Leader re-election complete" module=operator newLeader=k8s-worker-n1-zzp9f82rj6 operatorID=k8s-worker-n1-zzp9f82rj6
+2025-08-03T13:50:02.151789954Z time=2025-08-03T13:50:02.151385227Z level=info msg="successfully acquired lease kube-system/cilium-operator-resource-lock" subsys=klog
+2025-08-03T13:50:02.151851702Z time=2025-08-03T13:50:02.151452823Z level=info msg="Leading the operator HA deployment" module=operator
+2025-08-03T13:50:02.161602011Z time=2025-08-03T13:50:02.161013058Z level=info msg="Updating CRD (CustomResourceDefinition)..." module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliuml2announcementpolicies.cilium.io
+2025-08-03T13:50:02.161801249Z time=2025-08-03T13:50:02.161676911Z level=info msg="Updating CRD (CustomResourceDefinition)..." module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumidentities.cilium.io
+2025-08-03T13:50:02.162140070Z time=2025-08-03T13:50:02.161918492Z level=info msg="Updating CRD (CustomResourceDefinition)..." module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumpodippools.cilium.io
+2025-08-03T13:50:02.162191574Z time=2025-08-03T13:50:02.162048234Z level=info msg="Updating CRD (CustomResourceDefinition)..." module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumnodeconfigs.cilium.io
+2025-08-03T13:50:02.164445525Z time=2025-08-03T13:50:02.163861019Z level=info msg="Updating CRD (CustomResourceDefinition)..." module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumcidrgroups.cilium.io
+2025-08-03T13:50:02.164719385Z time=2025-08-03T13:50:02.164518682Z level=info msg="Updating CRD (CustomResourceDefinition)..." module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumlocalredirectpolicies.cilium.io
+2025-08-03T13:50:02.164788468Z time=2025-08-03T13:50:02.164567952Z level=info msg="Updating CRD (CustomResourceDefinition)..." module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumloadbalancerippools.cilium.io
+2025-08-03T13:50:02.165525281Z time=2025-08-03T13:50:02.165305162Z level=info msg="Updating CRD (CustomResourceDefinition)..." module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumendpoints.cilium.io
+2025-08-03T13:50:02.171384994Z time=2025-08-03T13:50:02.170880554Z level=info msg="Updating CRD (CustomResourceDefinition)..." module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumnodes.cilium.io
+2025-08-03T13:50:02.263533129Z time=2025-08-03T13:50:02.263144841Z level=info msg="Updating CRD (CustomResourceDefinition)..." module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumnetworkpolicies.cilium.io
+2025-08-03T13:50:02.268896969Z time=2025-08-03T13:50:02.268457332Z level=info msg="Updating CRD (CustomResourceDefinition)..." module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumclusterwidenetworkpolicies.cilium.io
+2025-08-03T13:50:03.182929190Z time=2025-08-03T13:50:03.182463626Z level=info msg="CRD (CustomResourceDefinition) is installed and up-to-date" module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumidentities.cilium.io
+2025-08-03T13:50:03.189441950Z time=2025-08-03T13:50:03.188958416Z level=info msg="CRD (CustomResourceDefinition) is installed and up-to-date" module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumpodippools.cilium.io
+2025-08-03T13:50:03.196752328Z time=2025-08-03T13:50:03.196412943Z level=info msg="CRD (CustomResourceDefinition) is installed and up-to-date" module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumcidrgroups.cilium.io
+2025-08-03T13:50:03.196819249Z time=2025-08-03T13:50:03.196592344Z level=info msg="CRD (CustomResourceDefinition) is installed and up-to-date" module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumnodeconfigs.cilium.io
+2025-08-03T13:50:03.196917932Z time=2025-08-03T13:50:03.196687866Z level=info msg="CRD (CustomResourceDefinition) is installed and up-to-date" module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliuml2announcementpolicies.cilium.io
+2025-08-03T13:50:03.213452223Z time=2025-08-03T13:50:03.212956149Z level=info msg="CRD (CustomResourceDefinition) is installed and up-to-date" module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumloadbalancerippools.cilium.io
+2025-08-03T13:50:03.236932412Z time=2025-08-03T13:50:03.23653508Z level=info msg="CRD (CustomResourceDefinition) is installed and up-to-date" module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumendpoints.cilium.io
+2025-08-03T13:50:03.246480837Z time=2025-08-03T13:50:03.246019951Z level=info msg="CRD (CustomResourceDefinition) is installed and up-to-date" module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumlocalredirectpolicies.cilium.io
+2025-08-03T13:50:03.260766795Z time=2025-08-03T13:50:03.26047259Z level=info msg="CRD (CustomResourceDefinition) is installed and up-to-date" module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumnodes.cilium.io
+2025-08-03T13:50:03.502595816Z time=2025-08-03T13:50:03.502197358Z level=info msg="CRD (CustomResourceDefinition) is installed and up-to-date" module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumnetworkpolicies.cilium.io
+2025-08-03T13:50:03.506231131Z time=2025-08-03T13:50:03.50578938Z level=info msg="CRD (CustomResourceDefinition) is installed and up-to-date" module=operator.operator-controlplane.leader-lifecycle.create-crds name=ciliumclusterwidenetworkpolicies.cilium.io
+2025-08-03T13:50:03.506430094Z time=2025-08-03T13:50:03.505909151Z level=info msg="Start hook executed" module=operator function="apis.createCRDs.func1 (.../k8s/apis/cell.go:64)" duration=1.354081299s
+2025-08-03T13:50:03.506447267Z time=2025-08-03T13:50:03.506002012Z level=info msg="Start hook executed" module=operator function=*job.groupHooks.Start duration=4.882µs
+2025-08-03T13:50:03.506488337Z time=2025-08-03T13:50:03.506029139Z level=info msg="Start hook executed" module=operator function=*job.groupHooks.Start duration=1.002µs
+2025-08-03T13:50:03.506500705Z time=2025-08-03T13:50:03.506071012Z level=info msg="Start hook executed" module=operator function=*job.groupHooks.Start duration=2.048µs
+2025-08-03T13:50:03.506507236Z time=2025-08-03T13:50:03.506127142Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/apis/cilium.io/v2.CiliumBGPClusterConfig].Start duration=24.08µs
+2025-08-03T13:50:03.506511822Z time=2025-08-03T13:50:03.50619003Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/apis/cilium.io/v2.CiliumBGPNodeConfigOverride].Start duration=4.583µs
+2025-08-03T13:50:03.507068932Z time=2025-08-03T13:50:03.506261626Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/apis/cilium.io/v2.CiliumBGPNodeConfig].Start duration=33.732µs
+2025-08-03T13:50:03.507094956Z time=2025-08-03T13:50:03.506463519Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/apis/cilium.io/v2.CiliumBGPPeerConfig].Start duration=150.054µs
+2025-08-03T13:50:03.507112673Z time=2025-08-03T13:50:03.506504347Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/apis/cilium.io/v2.CiliumNode].Start duration=3.124µs
+2025-08-03T13:50:03.507126559Z time=2025-08-03T13:50:03.506532486Z level=info msg="Start hook executed" module=operator function=*job.groupHooks.Start duration=1.742µs
+2025-08-03T13:50:03.507136523Z time=2025-08-03T13:50:03.506567191Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/apis/cilium.io/v2.CiliumLoadBalancerIPPool].Start duration=3.934µs
+2025-08-03T13:50:03.507146150Z time=2025-08-03T13:50:03.506607619Z level=info msg="Start hook executed" module=operator function=*job.queuedJob.Start duration=11.753µs
+2025-08-03T13:50:03.507155150Z time=2025-08-03T13:50:03.506643282Z level=info msg="Start hook executed" module=operator function=*job.groupHooks.Start duration=1.732µs
+2025-08-03T13:50:03.507162394Z time=2025-08-03T13:50:03.506682579Z level=info msg="Start hook executed" module=operator function=*job.queuedJob.Start duration=4.783µs
+2025-08-03T13:50:03.507167201Z time=2025-08-03T13:50:03.506715589Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/apis/cilium.io/v2.CiliumIdentity].Start duration=3.13µs
+2025-08-03T13:50:03.507171743Z time=2025-08-03T13:50:03.506746339Z level=info msg="Start hook executed" module=operator function=*job.groupHooks.Start duration=1.513µs
+2025-08-03T13:50:03.507176244Z time=2025-08-03T13:50:03.506772Z level=info msg="Start hook executed" module=operator function=*job.groupHooks.Start duration=1.055µs
+2025-08-03T13:50:03.507186101Z time=2025-08-03T13:50:03.506804325Z level=info msg="Start hook executed" module=operator function=*resource.resource[*sigs.k8s.io/mcs-api/pkg/apis/v1alpha1.ServiceExport].Start duration=3.184µs
+2025-08-03T13:50:03.507200553Z time=2025-08-03T13:50:03.506832971Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s.Endpoints].Start duration=2.79µs
+2025-08-03T13:50:03.507249018Z time=2025-08-03T13:50:03.506863183Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/apis/cilium.io/v2alpha1.CiliumPodIPPool].Start duration=3.926µs
+2025-08-03T13:50:03.507262445Z time=2025-08-03T13:50:03.506896495Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/apis/cilium.io/v2.CiliumEndpoint].Start duration=6.311µs
+2025-08-03T13:50:03.507273367Z time=2025-08-03T13:50:03.506930842Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/apis/cilium.io/v2alpha1.CiliumEndpointSlice].Start duration=6.081µs
+2025-08-03T13:50:03.507283490Z time=2025-08-03T13:50:03.506964282Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/slim/k8s/api/core/v1.Pod].Start duration=4.574µs
+2025-08-03T13:50:03.507357398Z time=2025-08-03T13:50:03.507001345Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/slim/k8s/api/core/v1.Namespace].Start duration=2.626µs
+2025-08-03T13:50:03.507372341Z time=2025-08-03T13:50:03.507072243Z level=info msg="Initializing IPAM" module=operator.operator-controlplane.leader-lifecycle.legacy-cell mode=kubernetes
+2025-08-03T13:50:03.507395172Z time=2025-08-03T13:50:03.507105452Z level=info msg="Managing Cilium Node Taints or Setting Cilium Is Up Condition for Kubernetes Nodes" module=operator.operator-controlplane.leader-lifecycle.legacy-cell k8sNamespace=kube-system label-selector="k8s-app=cilium" remove-cilium-node-taints=true set-cilium-node-taints=true set-cilium-is-up-condition=true
+2025-08-03T13:50:03.507408383Z time=2025-08-03T13:50:03.507180555Z level=info msg="LB-IPAM initializing" module=operator.operator-controlplane.leader-lifecycle.lbipam
+2025-08-03T13:50:03.507988591Z time=2025-08-03T13:50:03.507698289Z level=info msg="Starting EventSource" module=operator.operator-controlplane.leader-lifecycle.controller-runtime controller=secret controllerGroup="" controllerKind=Secret source="kind source: *v2.CiliumNetworkPolicy"
+2025-08-03T13:50:03.508006065Z time=2025-08-03T13:50:03.507708144Z level=info msg="Starting EventSource" module=operator.operator-controlplane.leader-lifecycle.controller-runtime controller=secret controllerGroup="" controllerKind=Secret source="kind source: *v1.Secret"
+2025-08-03T13:50:03.508012001Z time=2025-08-03T13:50:03.507732237Z level=info msg="Starting EventSource" module=operator.operator-controlplane.leader-lifecycle.controller-runtime controller=secret controllerGroup="" controllerKind=Secret source="kind source: *v1.Secret"
+2025-08-03T13:50:03.508018940Z time=2025-08-03T13:50:03.507707347Z level=info msg="Starting EventSource" module=operator.operator-controlplane.leader-lifecycle.controller-runtime controller=secret controllerGroup="" controllerKind=Secret source="kind source: *v2.CiliumClusterwideNetworkPolicy"
+2025-08-03T13:50:03.622620361Z time=2025-08-03T13:50:03.622040924Z level=info msg="Starting Controller" module=operator.operator-controlplane.leader-lifecycle.controller-runtime controller=secret controllerGroup="" controllerKind=Secret
+2025-08-03T13:50:03.622663311Z time=2025-08-03T13:50:03.622381143Z level=info msg="Starting workers" module=operator.operator-controlplane.leader-lifecycle.controller-runtime controller=secret controllerGroup="" controllerKind=Secret "worker count"=1
+2025-08-03T13:50:03.709554737Z time=2025-08-03T13:50:03.709084873Z level=info msg="Cilium pod scheduled but not running for node; setting taint" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-master-n1
+2025-08-03T13:50:03.709612707Z time=2025-08-03T13:50:03.709116042Z level=info msg="Cilium pod scheduled but not running for node; setting taint" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-worker-n1
+2025-08-03T13:50:03.810480124Z time=2025-08-03T13:50:03.810195346Z level=info msg="Starting to synchronize CiliumNode custom resources" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.810535237Z time=2025-08-03T13:50:03.810313874Z level=info msg="Starting to garbage collect stale CiliumNode custom resources" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers
+2025-08-03T13:50:03.810561152Z time=2025-08-03T13:50:03.810415248Z level=info msg="Starting CNP derivative handler" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.810568043Z time=2025-08-03T13:50:03.810495227Z level=info msg="Starting CCNP derivative handler" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.811988838Z time=2025-08-03T13:50:03.810546809Z level=info msg="Parsing base label prefixes from default label list" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812025119Z time=2025-08-03T13:50:03.810811118Z level=info msg="Parsing node label prefixes from user inputs" module=operator.operator-controlplane.leader-lifecycle.legacy-cell prefix=[]
+2025-08-03T13:50:03.812037890Z time=2025-08-03T13:50:03.810845631Z level=info msg="Parsing additional label prefixes from user inputs" module=operator.operator-controlplane.leader-lifecycle.legacy-cell prefix=[]
+2025-08-03T13:50:03.812059118Z time=2025-08-03T13:50:03.810858996Z level=info msg="Final label prefixes to be used for identity evaluation:" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812072484Z time=2025-08-03T13:50:03.810875348Z level=info msg=" - reserved:.*" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812084919Z time=2025-08-03T13:50:03.810893823Z level=info msg=" - :io\\.kubernetes\\.pod\\.namespace" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812095037Z time=2025-08-03T13:50:03.810911869Z level=info msg=" - :io\\.cilium\\.k8s\\.namespace\\.labels" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812103641Z time=2025-08-03T13:50:03.810929033Z level=info msg=" - :app\\.kubernetes\\.io" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812114132Z time=2025-08-03T13:50:03.810945757Z level=info msg=" - :io\\.cilium\\.k8s\\.policy\\.cluster" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812123989Z time=2025-08-03T13:50:03.810958842Z level=info msg=" - :io\\.cilium\\.k8s\\.policy\\.serviceaccount" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812132625Z time=2025-08-03T13:50:03.810967404Z level=info msg=" - !:io\\.kubernetes" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812142193Z time=2025-08-03T13:50:03.810975342Z level=info msg=" - !:kubernetes\\.io" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812150787Z time=2025-08-03T13:50:03.810983051Z level=info msg=" - !:statefulset\\.kubernetes\\.io/pod-name" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812175991Z time=2025-08-03T13:50:03.810995151Z level=info msg=" - !:apps\\.kubernetes\\.io/pod-index" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812189027Z time=2025-08-03T13:50:03.811010325Z level=info msg=" - !:batch\\.kubernetes\\.io/job-completion-index" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812198155Z time=2025-08-03T13:50:03.81102699Z level=info msg=" - !:batch\\.kubernetes\\.io/controller-uid" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812242881Z time=2025-08-03T13:50:03.811039957Z level=info msg=" - !:.*beta\\.kubernetes\\.io" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812253793Z time=2025-08-03T13:50:03.811048174Z level=info msg=" - !:k8s\\.io" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812263129Z time=2025-08-03T13:50:03.811055449Z level=info msg=" - !:pod-template-generation" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812272598Z time=2025-08-03T13:50:03.811063076Z level=info msg=" - !:pod-template-hash" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812280718Z time=2025-08-03T13:50:03.811070959Z level=info msg=" - !:controller-revision-hash" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812289391Z time=2025-08-03T13:50:03.811078811Z level=info msg=" - !:controller-uid" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812298076Z time=2025-08-03T13:50:03.811086474Z level=info msg=" - !:annotation.*" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812306887Z time=2025-08-03T13:50:03.811093798Z level=info msg=" - !:etcd_node" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812315454Z time=2025-08-03T13:50:03.811101092Z level=info msg="Final node label prefixes to be used for identity evaluation:" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812333311Z time=2025-08-03T13:50:03.811110597Z level=info msg="Initialization complete" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:03.812370841Z time=2025-08-03T13:50:03.811122285Z level=info msg="Start hook executed" module=operator function=cmd.(*legacyOnLeader).onStart duration=304.062163ms
+2025-08-03T13:50:03.812383980Z time=2025-08-03T13:50:03.811181733Z level=info msg="Starting CRD identity garbage collector" module=operator.operator-controlplane.leader-lifecycle.k8s-identities-gc interval=15m0s
+2025-08-03T13:50:03.812393568Z time=2025-08-03T13:50:03.811213647Z level=info msg="Start hook executed" module=operator function="identitygc.registerGC.func1 (.../operator/identitygc/gc.go:120)" duration=54.753µs
+2025-08-03T13:50:03.812402876Z time=2025-08-03T13:50:03.811229956Z level=info msg="Start hook executed" module=operator function=*job.groupHooks.Start duration=1.12µs
+2025-08-03T13:50:03.812411915Z time=2025-08-03T13:50:03.811242817Z level=info msg="Start hook executed" module=operator function=*job.groupHooks.Start duration=628ns
+2025-08-03T13:50:03.812420273Z time=2025-08-03T13:50:03.811260729Z level=info msg="Starting to garbage collect stale CiliumEndpoint custom resources" module=operator.operator-controlplane.leader-lifecycle.k8s-endpoints-gc
+2025-08-03T13:50:03.812432517Z time=2025-08-03T13:50:03.811282884Z level=info msg="Start hook executed" module=operator function=*endpointgc.GC.Start duration=25.115µs
+2025-08-03T13:50:03.812440132Z time=2025-08-03T13:50:03.81129652Z level=info msg="Start hook executed" module=operator function=*job.groupHooks.Start duration=549ns
+2025-08-03T13:50:03.812447101Z time=2025-08-03T13:50:03.811310434Z level=info msg="Start hook executed" module=operator function=*job.groupHooks.Start duration=590ns
+2025-08-03T13:50:03.812454171Z time=2025-08-03T13:50:03.811334535Z level=info msg="Start hook executed" module=operator function=*job.groupHooks.Start duration=11.304µs
+2025-08-03T13:50:03.812461900Z time=2025-08-03T13:50:03.811361325Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/apis/cilium.io/v2.CiliumNetworkPolicy].Start duration=7.854µs
+2025-08-03T13:50:03.812489051Z time=2025-08-03T13:50:03.811379074Z level=info msg="Start hook executed" module=operator function=*resource.resource[*github.com/cilium/cilium/pkg/k8s/apis/cilium.io/v2.CiliumClusterwideNetworkPolicy].Start duration=1.632µs
+2025-08-03T13:50:03.812494814Z time=2025-08-03T13:50:03.811398454Z level=info msg="Start hook executed" module=operator function=*job.queuedJob.Start duration=6.722µs
+2025-08-03T13:50:03.812499427Z time=2025-08-03T13:50:03.811412584Z level=info msg="Start hook executed" module=operator function=*job.queuedJob.Start duration=1.92µs
+2025-08-03T13:50:03.812503919Z time=2025-08-03T13:50:03.811426967Z level=info msg="Start hook executed" module=operator function=*job.groupHooks.Start duration=565ns
+2025-08-03T13:50:03.812508319Z time=2025-08-03T13:50:03.811441491Z level=info msg="Start hook executed" module=operator function=*job.queuedJob.Start duration=2.222µs
+2025-08-03T13:50:03.911913079Z time=2025-08-03T13:50:03.911448496Z level=info msg="CiliumNodes caches synced with Kubernetes" module=operator.operator-controlplane.leader-lifecycle.legacy-cell
+2025-08-03T13:50:19.250417368Z time=2025-08-03T13:50:19.250192827Z level=info msg="Cilium pod running for node; marking accordingly" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-master-n1
+2025-08-03T13:50:25.332316006Z time=2025-08-03T13:50:25.331930883Z level=info msg="Cilium pod running for node; marking accordingly" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-worker-n1
+2025-08-03T13:52:44.475535362Z time=2025-08-03T13:52:44.475136253Z level=info msg="Cilium pod scheduled but not running for node; setting taint" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-master-n1
+2025-08-03T13:52:46.507110245Z time=2025-08-03T13:52:46.506755048Z level=info msg="Cilium pod running for node; marking accordingly" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-master-n1
+2025-08-03T13:52:49.661337223Z time=2025-08-03T13:52:49.660954369Z level=info msg="Cilium pod scheduled but not running for node; setting taint" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-worker-n1
+2025-08-03T13:52:51.702664268Z time=2025-08-03T13:52:51.702348662Z level=info msg="Cilium pod running for node; marking accordingly" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-worker-n1
+2025-08-03T14:08:53.863159148Z time=2025-08-03T14:08:53.862878144Z level=info msg="Cilium pod scheduled but not running for node; setting taint" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-master-n1
+2025-08-03T14:08:53.899766184Z time=2025-08-03T14:08:53.898864836Z level=info msg="Cilium pod scheduled but not running for node; setting taint" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-worker-n1
+2025-08-03T14:09:04.253707674Z time=2025-08-03T14:09:04.253384401Z level=info msg="Cilium pod running for node; marking accordingly" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-master-n1
+2025-08-03T14:09:06.283004408Z time=2025-08-03T14:09:06.282683444Z level=info msg="Cilium pod running for node; marking accordingly" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-worker-n1
+2025-08-03T14:09:30.100979827Z time=2025-08-03T14:09:30.100642774Z level=info msg="Cilium pod scheduled but not running for node; setting taint" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-master-n1
+2025-08-03T14:09:43.250406959Z time=2025-08-03T14:09:43.249680445Z level=info msg="Cilium pod scheduled but not running for node; setting taint" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-worker-n1
+2025-08-03T14:09:45.232156883Z time=2025-08-03T14:09:45.231824597Z level=info msg="Cilium pod running for node; marking accordingly" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-worker-n1
+2025-08-03T14:09:45.915501130Z time=2025-08-03T14:09:45.915137976Z level=info msg="Cilium pod running for node; marking accordingly" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-master-n1
+2025-08-03T14:21:57.749234083Z time=2025-08-03T14:21:57.748894279Z level=info msg="Cilium pod scheduled but not running for node; setting taint" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-master-n1
+2025-08-03T14:21:57.778186755Z time=2025-08-03T14:21:57.77782785Z level=info msg="Cilium pod scheduled but not running for node; setting taint" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-worker-n1
+2025-08-03T14:22:10.134482534Z time=2025-08-03T14:22:10.134165933Z level=info msg="Cilium pod running for node; marking accordingly" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-master-n1
+2025-08-03T14:22:10.169124419Z time=2025-08-03T14:22:10.16882029Z level=info msg="Cilium pod running for node; marking accordingly" module=operator.operator-controlplane.leader-lifecycle.legacy-cell subsys=watchers nodeName=k8s-worker-n1

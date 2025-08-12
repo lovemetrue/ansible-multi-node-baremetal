@@ -1,0 +1,23 @@
+CgroupPath
+ID       AttachType      AttachFlags     Name           
+/run/cilium/cgroupv2
+/run/cilium/cgroupv2/system.slice/systemd-networkd.service
+/run/cilium/cgroupv2/system.slice/systemd-udevd.service
+/run/cilium/cgroupv2/system.slice/systemd-journald.service
+/run/cilium/cgroupv2/system.slice/chrony.service
+/run/cilium/cgroupv2/system.slice/upower.service
+/run/cilium/cgroupv2/system.slice/systemd-resolved.service
+/run/cilium/cgroupv2/system.slice/systemd-logind.service
+/run/cilium/cgroupv2/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-podb9f15bf7_74eb_48ec_9be9_381806bd73fa.slice/cri-containerd-c131638f60c6d38655292f6b95a79bcaf8420e4784cdb7388878fb637946dede.scope
+/run/cilium/cgroupv2/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-podb9f15bf7_74eb_48ec_9be9_381806bd73fa.slice/cri-containerd-6a4461c1dc02ad357d5ac1ddf3cff298d0df8f963cf3c718dd9df95a328ce981.scope
+/run/cilium/cgroupv2/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-pod0fa3b2b0_04ca_40e5_aecb_8e6d519bc870.slice/cri-containerd-f2a8d072818002ef34cd6502bc2a3b97bcbe4c2c286e3f24a67f29cfb2bcec16.scope
+/run/cilium/cgroupv2/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-pod0fa3b2b0_04ca_40e5_aecb_8e6d519bc870.slice/cri-containerd-37455eb8e1398925aadaba9e58ff51a8db392a79f79dbd3991eab7591e622fe1.scope
+/run/cilium/cgroupv2/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-pod5c296c83_a595_4cfc_b8d8_158cf9a53989.slice/cri-containerd-1560205b37e722c487bef9a32a488f0eacf984a7dfb446fef1b0aad32385bfa7.scope
+/run/cilium/cgroupv2/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-pod5c296c83_a595_4cfc_b8d8_158cf9a53989.slice/cri-containerd-f656dd5471c332ef913ed159fa6c8b5bbec394115a8b4428fab407cc453b4e69.scope
+/run/cilium/cgroupv2/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod8aa9e879_8356_4493_87f8_347274653b1b.slice/cri-containerd-6fe64dc9e3b6056f24a408448bae37bd59f150492fa84578a6262f14a7d0c00c.scope
+/run/cilium/cgroupv2/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod8aa9e879_8356_4493_87f8_347274653b1b.slice/cri-containerd-b2afab111bcfaa0d303488f888f4cb6741fb2bcb7f77473c9178452f702494d8.scope
+/run/cilium/cgroupv2/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod4b9c30db_9b98_42e7_a5cf_d012c0baaef4.slice/cri-containerd-b1bba3ca88ddd270ae82b99002048d0717c300163cdc986b455985755300b3f6.scope
+/run/cilium/cgroupv2/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod4b9c30db_9b98_42e7_a5cf_d012c0baaef4.slice/cri-containerd-1c092d1dac51a375105d32c9dd64ab86a311241e5d262acd5fd34544a35725ee.scope
+/run/cilium/cgroupv2/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod77da1804_ffec_4f8f_8cf4_b7a8c47e6790.slice/cri-containerd-f8e6ef29dd4fef0fe6ae4acb4061aa0ae5d20e2cd052db130bc5dcab99254efd.scope
+/run/cilium/cgroupv2/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod77da1804_ffec_4f8f_8cf4_b7a8c47e6790.slice/cri-containerd-4cb2ba7f49a12f28ac27580adde699844827e1dd3c18647e30ec62804f84ee51.scope
+/run/cilium/cgroupv2/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod77da1804_ffec_4f8f_8cf4_b7a8c47e6790.slice/cri-containerd-4bbb016ed8433c3d2335f5c6a3c22b6a07c8e346b2da59fce8cfd41ed1086e39.scope

@@ -1,0 +1,7 @@
+2025-08-03T13:50:36.640133006Z time="2025-08-03T13:50:36Z" level=info msg="using fallback value for env var" fallback=false var=GOPS_ENABLED
+2025-08-03T13:50:36.640245338Z time="2025-08-03T13:50:36Z" level=info msg="using fallback value for env var" fallback=false var=TLS_TO_RELAY_ENABLED
+2025-08-03T13:50:36.640254181Z time="2025-08-03T13:50:36Z" level=info msg="TLS to hubble-relay is not enabled"
+2025-08-03T13:50:36.640259391Z time="2025-08-03T13:50:36Z" level=info msg="using fallback value for env var" fallback=false var=CORS_ENABLED
+2025-08-03T13:50:36.640263888Z time="2025-08-03T13:50:36Z" level=info msg="using fallback value for env var" fallback=false var=E2E_TEST_MODE
+2025-08-03T13:50:36.640268464Z time="2025-08-03T13:50:36Z" level=info msg="using fallback value for env var" fallback= var=E2E_LOGFILES_BASEPATH
+2025-08-03T13:50:36.641573159Z time="2025-08-03T13:50:36Z" level=info msg="running ListenAndServe" apipath=/api component=APIServer port=8090

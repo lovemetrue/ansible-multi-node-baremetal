@@ -1,0 +1,181 @@
+apiVersion: coordination.k8s.io/v1
+items:
+- apiVersion: coordination.k8s.io/v1
+  kind: Lease
+  metadata:
+    creationTimestamp: "2025-08-02T11:52:01Z"
+    managedFields:
+    - apiVersion: coordination.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"bc55f9ed-85e0-4305-964e-f64f7cf9d085"}: {}
+        f:spec:
+          f:holderIdentity: {}
+          f:leaseDurationSeconds: {}
+          f:renewTime: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-08-03T14:24:56Z"
+    name: k8s-master-n1
+    namespace: kube-node-lease
+    ownerReferences:
+    - apiVersion: v1
+      kind: Node
+      name: k8s-master-n1
+      uid: bc55f9ed-85e0-4305-964e-f64f7cf9d085
+    resourceVersion: "190006"
+    uid: ff416e61-ce4a-4c8f-9ed0-7e6168c16445
+  spec:
+    holderIdentity: k8s-master-n1
+    leaseDurationSeconds: 40
+    renewTime: "2025-08-03T14:24:56.479594Z"
+- apiVersion: coordination.k8s.io/v1
+  kind: Lease
+  metadata:
+    creationTimestamp: "2025-08-02T11:52:23Z"
+    managedFields:
+    - apiVersion: coordination.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"a1e48a14-d9ea-4d46-b6db-472e788a7807"}: {}
+        f:spec:
+          f:holderIdentity: {}
+          f:leaseDurationSeconds: {}
+          f:renewTime: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-08-03T14:24:57Z"
+    name: k8s-worker-n1
+    namespace: kube-node-lease
+    ownerReferences:
+    - apiVersion: v1
+      kind: Node
+      name: k8s-worker-n1
+      uid: a1e48a14-d9ea-4d46-b6db-472e788a7807
+    resourceVersion: "190010"
+    uid: 9a07e293-fe9d-4b5a-91ea-c7e29ec0ed95
+  spec:
+    holderIdentity: k8s-worker-n1
+    leaseDurationSeconds: 40
+    renewTime: "2025-08-03T14:24:57.785251Z"
+- apiVersion: coordination.k8s.io/v1
+  kind: Lease
+  metadata:
+    creationTimestamp: "2025-08-02T11:51:57Z"
+    labels:
+      apiserver.kubernetes.io/identity: kube-apiserver
+      kubernetes.io/hostname: k8s-master-n1
+    managedFields:
+    - apiVersion: coordination.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:apiserver.kubernetes.io/identity: {}
+            f:kubernetes.io/hostname: {}
+        f:spec:
+          f:holderIdentity: {}
+          f:leaseDurationSeconds: {}
+          f:renewTime: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-08-03T14:25:01Z"
+    name: apiserver-w5h6fjugtgfnz3gwvflwsw76ou
+    namespace: kube-system
+    resourceVersion: "190016"
+    uid: a30d5f64-392c-43c0-80b4-5d406211b404
+  spec:
+    holderIdentity: apiserver-w5h6fjugtgfnz3gwvflwsw76ou_1e64ffb8-1a8f-43ee-9fdf-2a3084045887
+    leaseDurationSeconds: 3600
+    renewTime: "2025-08-03T14:25:01.356338Z"
+- apiVersion: coordination.k8s.io/v1
+  kind: Lease
+  metadata:
+    creationTimestamp: "2025-08-02T11:52:46Z"
+    managedFields:
+    - apiVersion: coordination.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:acquireTime: {}
+          f:holderIdentity: {}
+          f:leaseDurationSeconds: {}
+          f:leaseTransitions: {}
+          f:renewTime: {}
+      manager: cilium-operator-generic
+      operation: Update
+      time: "2025-08-03T14:25:03Z"
+    name: cilium-operator-resource-lock
+    namespace: kube-system
+    resourceVersion: "190020"
+    uid: e6970c67-148d-4f96-aed0-849d2f7bd5c4
+  spec:
+    acquireTime: "2025-08-03T13:50:02.140762Z"
+    holderIdentity: k8s-worker-n1-zzp9f82rj6
+    leaseDurationSeconds: 15
+    leaseTransitions: 13
+    renewTime: "2025-08-03T14:25:03.107123Z"
+- apiVersion: coordination.k8s.io/v1
+  kind: Lease
+  metadata:
+    creationTimestamp: "2025-08-02T11:52:00Z"
+    managedFields:
+    - apiVersion: coordination.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:acquireTime: {}
+          f:holderIdentity: {}
+          f:leaseDurationSeconds: {}
+          f:leaseTransitions: {}
+          f:renewTime: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-08-03T14:25:02Z"
+    name: kube-controller-manager
+    namespace: kube-system
+    resourceVersion: "190019"
+    uid: 919b369f-3139-4d9c-a4a1-636dd8921b02
+  spec:
+    acquireTime: "2025-08-02T11:52:00.045841Z"
+    holderIdentity: k8s-master-n1_e4c871b4-8cfa-49a7-8c25-441b2e20e213
+    leaseDurationSeconds: 15
+    leaseTransitions: 0
+    renewTime: "2025-08-03T14:25:02.905268Z"
+- apiVersion: coordination.k8s.io/v1
+  kind: Lease
+  metadata:
+    creationTimestamp: "2025-08-02T11:52:01Z"
+    managedFields:
+    - apiVersion: coordination.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:acquireTime: {}
+          f:holderIdentity: {}
+          f:leaseDurationSeconds: {}
+          f:leaseTransitions: {}
+          f:renewTime: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2025-08-03T14:25:03Z"
+    name: kube-scheduler
+    namespace: kube-system
+    resourceVersion: "190021"
+    uid: 8cb3ceca-e894-48a9-971b-e73fe731b4b7
+  spec:
+    acquireTime: "2025-08-02T11:52:01.681664Z"
+    holderIdentity: k8s-master-n1_b0e2dc9e-0f7e-4194-8c96-81d2e97634c0
+    leaseDurationSeconds: 15
+    leaseTransitions: 0
+    renewTime: "2025-08-03T14:25:03.485721Z"
+kind: LeaseList
+metadata:
+  resourceVersion: "190021"

@@ -1,0 +1,493 @@
+apiVersion: cilium.io/v2
+items:
+- apiVersion: cilium.io/v2
+  kind: CiliumEndpoint
+  metadata:
+    creationTimestamp: "2025-08-03T11:54:23Z"
+    generation: 1
+    managedFields:
+    - apiVersion: cilium.io/v2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"1fd2ecd0-8143-4d0e-b956-c31c41d7b357"}: {}
+        f:status:
+          .: {}
+          f:encryption: {}
+          f:external-identifiers:
+            .: {}
+            f:cni-attachment-id: {}
+            f:container-id: {}
+            f:k8s-namespace: {}
+            f:k8s-pod-name: {}
+            f:pod-name: {}
+          f:id: {}
+          f:identity:
+            .: {}
+            f:id: {}
+            f:labels: {}
+          f:networking:
+            .: {}
+            f:addressing: {}
+            f:node: {}
+          f:state: {}
+      manager: cilium-agent
+      operation: Update
+      time: "2025-08-03T11:54:23Z"
+    name: dnsutils
+    namespace: default
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: dnsutils
+      uid: 1fd2ecd0-8143-4d0e-b956-c31c41d7b357
+    resourceVersion: "169301"
+    uid: bdf2a008-5fd9-4872-ad4a-c22cb6008cfa
+  status:
+    encryption: {}
+    external-identifiers:
+      cni-attachment-id: 404de15e19e0249e08a21a64ef9c9f678fc8d3d0826fe6a27c0d02ab422ad5c8:eth0
+      container-id: 404de15e19e0249e08a21a64ef9c9f678fc8d3d0826fe6a27c0d02ab422ad5c8
+      k8s-namespace: default
+      k8s-pod-name: dnsutils
+      pod-name: default/dnsutils
+    id: 398
+    identity:
+      id: 64642
+      labels:
+      - k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=default
+      - k8s:io.cilium.k8s.policy.cluster=default
+      - k8s:io.cilium.k8s.policy.serviceaccount=default
+      - k8s:io.kubernetes.pod.namespace=default
+    networking:
+      addressing:
+      - ipv4: 10.0.0.236
+      node: 91.217.196.189
+    state: ready
+- apiVersion: cilium.io/v2
+  kind: CiliumEndpoint
+  metadata:
+    creationTimestamp: "2025-08-03T14:09:12Z"
+    generation: 1
+    labels:
+      k8s-app: kube-dns
+      pod-template-hash: 54558b56c7
+    managedFields:
+    - apiVersion: cilium.io/v2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:k8s-app: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"5c296c83-a595-4cfc-b8d8-158cf9a53989"}: {}
+        f:status:
+          .: {}
+          f:encryption: {}
+          f:external-identifiers:
+            .: {}
+            f:cni-attachment-id: {}
+            f:container-id: {}
+            f:k8s-namespace: {}
+            f:k8s-pod-name: {}
+            f:pod-name: {}
+          f:id: {}
+          f:identity:
+            .: {}
+            f:id: {}
+            f:labels: {}
+          f:named-ports: {}
+          f:networking:
+            .: {}
+            f:addressing: {}
+            f:node: {}
+          f:state: {}
+      manager: cilium-agent
+      operation: Update
+      time: "2025-08-03T14:09:12Z"
+    name: coredns-54558b56c7-tsmph
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: coredns-54558b56c7-tsmph
+      uid: 5c296c83-a595-4cfc-b8d8-158cf9a53989
+    resourceVersion: "187815"
+    uid: e3a6439a-1919-4841-ae1d-a0e52fa099d5
+  status:
+    encryption: {}
+    external-identifiers:
+      cni-attachment-id: 1560205b37e722c487bef9a32a488f0eacf984a7dfb446fef1b0aad32385bfa7:eth0
+      container-id: 1560205b37e722c487bef9a32a488f0eacf984a7dfb446fef1b0aad32385bfa7
+      k8s-namespace: kube-system
+      k8s-pod-name: coredns-54558b56c7-tsmph
+      pod-name: kube-system/coredns-54558b56c7-tsmph
+    id: 482
+    identity:
+      id: 24121
+      labels:
+      - k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=kube-system
+      - k8s:io.cilium.k8s.policy.cluster=default
+      - k8s:io.cilium.k8s.policy.serviceaccount=coredns
+      - k8s:io.kubernetes.pod.namespace=kube-system
+      - k8s:k8s-app=kube-dns
+    named-ports:
+    - name: dns
+      port: 53
+      protocol: UDP
+    - name: dns-tcp
+      port: 53
+      protocol: TCP
+    - name: metrics
+      port: 9153
+      protocol: TCP
+    networking:
+      addressing:
+      - ipv4: 10.0.1.184
+      node: 91.217.196.183
+    state: ready
+- apiVersion: cilium.io/v2
+  kind: CiliumEndpoint
+  metadata:
+    creationTimestamp: "2025-08-03T14:09:29Z"
+    generation: 1
+    labels:
+      k8s-app: kube-dns
+      pod-template-hash: 54558b56c7
+    managedFields:
+    - apiVersion: cilium.io/v2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:k8s-app: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"ffad25fa-987f-4ff7-b637-8ab5ba2681e2"}: {}
+        f:status:
+          .: {}
+          f:encryption: {}
+          f:external-identifiers:
+            .: {}
+            f:cni-attachment-id: {}
+            f:container-id: {}
+            f:k8s-namespace: {}
+            f:k8s-pod-name: {}
+            f:pod-name: {}
+          f:id: {}
+          f:identity:
+            .: {}
+            f:id: {}
+            f:labels: {}
+          f:named-ports: {}
+          f:networking:
+            .: {}
+            f:addressing: {}
+            f:node: {}
+          f:state: {}
+      manager: cilium-agent
+      operation: Update
+      time: "2025-08-03T14:09:29Z"
+    name: coredns-54558b56c7-zth5g
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: coredns-54558b56c7-zth5g
+      uid: ffad25fa-987f-4ff7-b637-8ab5ba2681e2
+    resourceVersion: "187901"
+    uid: 65a72773-4202-4d3c-baad-fab9e3ed918e
+  status:
+    encryption: {}
+    external-identifiers:
+      cni-attachment-id: 3b8977b0dd99a56e2e4c8369822d02c50cbb6e8a2cbae8ee27ce399393445d10:eth0
+      container-id: 3b8977b0dd99a56e2e4c8369822d02c50cbb6e8a2cbae8ee27ce399393445d10
+      k8s-namespace: kube-system
+      k8s-pod-name: coredns-54558b56c7-zth5g
+      pod-name: kube-system/coredns-54558b56c7-zth5g
+    id: 33
+    identity:
+      id: 24121
+      labels:
+      - k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=kube-system
+      - k8s:io.cilium.k8s.policy.cluster=default
+      - k8s:io.cilium.k8s.policy.serviceaccount=coredns
+      - k8s:io.kubernetes.pod.namespace=kube-system
+      - k8s:k8s-app=kube-dns
+    named-ports:
+    - name: dns
+      port: 53
+      protocol: UDP
+    - name: dns-tcp
+      port: 53
+      protocol: TCP
+    - name: metrics
+      port: 9153
+      protocol: TCP
+    networking:
+      addressing:
+      - ipv4: 10.0.0.220
+      node: 91.217.196.189
+    state: ready
+- apiVersion: cilium.io/v2
+  kind: CiliumEndpoint
+  metadata:
+    creationTimestamp: "2025-08-03T13:50:28Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/name: hubble-relay
+      app.kubernetes.io/part-of: cilium
+      k8s-app: hubble-relay
+      pod-template-hash: 6b7b5877f4
+    managedFields:
+    - apiVersion: cilium.io/v2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:k8s-app: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"6678686c-9821-4022-bd18-239c984e187a"}: {}
+        f:status:
+          .: {}
+          f:encryption: {}
+          f:external-identifiers:
+            .: {}
+            f:cni-attachment-id: {}
+            f:container-id: {}
+            f:k8s-namespace: {}
+            f:k8s-pod-name: {}
+            f:pod-name: {}
+          f:id: {}
+          f:identity:
+            .: {}
+            f:id: {}
+            f:labels: {}
+          f:named-ports: {}
+          f:networking:
+            .: {}
+            f:addressing: {}
+            f:node: {}
+          f:state: {}
+      manager: cilium-agent
+      operation: Update
+      time: "2025-08-03T13:50:28Z"
+    name: hubble-relay-6b7b5877f4-vfr4c
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: hubble-relay-6b7b5877f4-vfr4c
+      uid: 6678686c-9821-4022-bd18-239c984e187a
+    resourceVersion: "185172"
+    uid: ca1f54cb-064b-4484-a9aa-ba4c7d0f79a4
+  status:
+    encryption: {}
+    external-identifiers:
+      cni-attachment-id: 321c54f7fe9e0e378913c1d36e18850ef301171369db90cf98a874f2d177d1ff:eth0
+      container-id: 321c54f7fe9e0e378913c1d36e18850ef301171369db90cf98a874f2d177d1ff
+      k8s-namespace: kube-system
+      k8s-pod-name: hubble-relay-6b7b5877f4-vfr4c
+      pod-name: kube-system/hubble-relay-6b7b5877f4-vfr4c
+    id: 274
+    identity:
+      id: 17157
+      labels:
+      - k8s:app.kubernetes.io/name=hubble-relay
+      - k8s:app.kubernetes.io/part-of=cilium
+      - k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=kube-system
+      - k8s:io.cilium.k8s.policy.cluster=default
+      - k8s:io.cilium.k8s.policy.serviceaccount=hubble-relay
+      - k8s:io.kubernetes.pod.namespace=kube-system
+      - k8s:k8s-app=hubble-relay
+    named-ports:
+    - name: grpc
+      port: 4245
+      protocol: TCP
+    networking:
+      addressing:
+      - ipv4: 10.0.0.43
+      node: 91.217.196.189
+    state: ready
+- apiVersion: cilium.io/v2
+  kind: CiliumEndpoint
+  metadata:
+    creationTimestamp: "2025-08-03T13:50:36Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/name: hubble-ui
+      app.kubernetes.io/part-of: cilium
+      k8s-app: hubble-ui
+      pod-template-hash: 655f947f96
+    managedFields:
+    - apiVersion: cilium.io/v2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:k8s-app: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"77da1804-ffec-4f8f-8cf4-b7a8c47e6790"}: {}
+        f:status:
+          .: {}
+          f:encryption: {}
+          f:external-identifiers:
+            .: {}
+            f:cni-attachment-id: {}
+            f:container-id: {}
+            f:k8s-namespace: {}
+            f:k8s-pod-name: {}
+            f:pod-name: {}
+          f:id: {}
+          f:identity:
+            .: {}
+            f:id: {}
+            f:labels: {}
+          f:named-ports: {}
+          f:networking:
+            .: {}
+            f:addressing: {}
+            f:node: {}
+          f:state: {}
+      manager: cilium-agent
+      operation: Update
+      time: "2025-08-03T13:50:36Z"
+    name: hubble-ui-655f947f96-bdmvs
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: hubble-ui-655f947f96-bdmvs
+      uid: 77da1804-ffec-4f8f-8cf4-b7a8c47e6790
+    resourceVersion: "185203"
+    uid: b2d2a371-4022-488d-bf8a-ad702687932c
+  status:
+    encryption: {}
+    external-identifiers:
+      cni-attachment-id: f8e6ef29dd4fef0fe6ae4acb4061aa0ae5d20e2cd052db130bc5dcab99254efd:eth0
+      container-id: f8e6ef29dd4fef0fe6ae4acb4061aa0ae5d20e2cd052db130bc5dcab99254efd
+      k8s-namespace: kube-system
+      k8s-pod-name: hubble-ui-655f947f96-bdmvs
+      pod-name: kube-system/hubble-ui-655f947f96-bdmvs
+    id: 1178
+    identity:
+      id: 2284
+      labels:
+      - k8s:app.kubernetes.io/name=hubble-ui
+      - k8s:app.kubernetes.io/part-of=cilium
+      - k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=kube-system
+      - k8s:io.cilium.k8s.policy.cluster=default
+      - k8s:io.cilium.k8s.policy.serviceaccount=hubble-ui
+      - k8s:io.kubernetes.pod.namespace=kube-system
+      - k8s:k8s-app=hubble-ui
+    named-ports:
+    - name: grpc
+      port: 8090
+      protocol: TCP
+    - name: http
+      port: 8081
+      protocol: TCP
+    networking:
+      addressing:
+      - ipv4: 10.0.1.78
+      node: 91.217.196.183
+    state: ready
+- apiVersion: cilium.io/v2
+  kind: CiliumEndpoint
+  metadata:
+    creationTimestamp: "2025-08-03T12:50:48Z"
+    generation: 1
+    labels:
+      k8s-app: metrics-server
+      pod-template-hash: 7f4c46496
+    managedFields:
+    - apiVersion: cilium.io/v2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:k8s-app: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"b9f15bf7-74eb-48ec-9be9-381806bd73fa"}: {}
+        f:status:
+          .: {}
+          f:encryption: {}
+          f:external-identifiers:
+            .: {}
+            f:cni-attachment-id: {}
+            f:container-id: {}
+            f:k8s-namespace: {}
+            f:k8s-pod-name: {}
+            f:pod-name: {}
+          f:id: {}
+          f:identity:
+            .: {}
+            f:id: {}
+            f:labels: {}
+          f:named-ports: {}
+          f:networking:
+            .: {}
+            f:addressing: {}
+            f:node: {}
+          f:state: {}
+      manager: cilium-agent
+      operation: Update
+      time: "2025-08-03T12:50:48Z"
+    name: metrics-server-7f4c46496-hwgxn
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      kind: Pod
+      name: metrics-server-7f4c46496-hwgxn
+      uid: b9f15bf7-74eb-48ec-9be9-381806bd73fa
+    resourceVersion: "176098"
+    uid: 7423051d-2104-479f-a7c2-11ad8661215b
+  status:
+    encryption: {}
+    external-identifiers:
+      cni-attachment-id: 6a4461c1dc02ad357d5ac1ddf3cff298d0df8f963cf3c718dd9df95a328ce981:eth0
+      container-id: 6a4461c1dc02ad357d5ac1ddf3cff298d0df8f963cf3c718dd9df95a328ce981
+      k8s-namespace: kube-system
+      k8s-pod-name: metrics-server-7f4c46496-hwgxn
+      pod-name: kube-system/metrics-server-7f4c46496-hwgxn
+    id: 3132
+    identity:
+      id: 45704
+      labels:
+      - k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=kube-system
+      - k8s:io.cilium.k8s.policy.cluster=default
+      - k8s:io.cilium.k8s.policy.serviceaccount=metrics-server
+      - k8s:io.kubernetes.pod.namespace=kube-system
+      - k8s:k8s-app=metrics-server
+    named-ports:
+    - name: https
+      port: 10250
+      protocol: TCP
+    networking:
+      addressing:
+      - ipv4: 10.0.1.156
+      node: 91.217.196.183
+    state: ready
+kind: CiliumEndpointList
+metadata:
+  resourceVersion: "190021"

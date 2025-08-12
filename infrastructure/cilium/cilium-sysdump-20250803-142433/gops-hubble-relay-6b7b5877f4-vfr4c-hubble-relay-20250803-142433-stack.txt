@@ -1,0 +1,333 @@
+goroutine 65 [running]:
+runtime/pprof.writeGoroutineStacks({0x7f0bc1f45198, 0xc000b8e000})
+	/usr/local/go/src/runtime/pprof/pprof.go:764 +0x6a
+runtime/pprof.writeGoroutine({0x7f0bc1f45198?, 0xc000b8e000?}, 0xc0003f5a80?)
+	/usr/local/go/src/runtime/pprof/pprof.go:753 +0x25
+runtime/pprof.(*Profile).WriteTo(0x538a390?, {0x7f0bc1f45198?, 0xc000b8e000?}, 0xd?)
+	/usr/local/go/src/runtime/pprof/pprof.go:377 +0x14b
+github.com/google/gops/agent.handle({0x7f0bc1f45170, 0xc000b8e000}, {0xc000626000?, 0x1?, 0x1?})
+	/go/src/github.com/cilium/cilium/vendor/github.com/google/gops/agent/agent.go:200 +0x28b2
+github.com/google/gops/agent.listen({0x3673860, 0xc000aee980})
+	/go/src/github.com/cilium/cilium/vendor/github.com/google/gops/agent/agent.go:144 +0x1b4
+created by github.com/google/gops/agent.Listen in goroutine 1
+	/go/src/github.com/cilium/cilium/vendor/github.com/google/gops/agent/agent.go:122 +0x385
+
+goroutine 1 [sync.WaitGroup.Wait, 13 minutes]:
+sync.runtime_SemacquireWaitGroup(0xc000886930?)
+	/usr/local/go/src/runtime/sema.go:110 +0x25
+sync.(*WaitGroup).Wait(0x2d3aa80?)
+	/usr/local/go/src/sync/waitgroup.go:118 +0x48
+golang.org/x/sync/errgroup.(*Group).Wait(0xc000aeea80)
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/sync/errgroup/errgroup.go:56 +0x1e
+github.com/cilium/cilium/pkg/hubble/relay/server.(*Server).Serve(0xc000af47e0)
+	/go/src/github.com/cilium/cilium/pkg/hubble/relay/server/server.go:186 +0x113
+github.com/cilium/cilium/hubble-relay/cmd/serve.runServe(0xc000b52300)
+	/go/src/github.com/cilium/cilium/hubble-relay/cmd/serve/serve.go:283 +0xf7c
+github.com/cilium/cilium/hubble-relay/cmd/serve.New.func1(0xc000252f00?, {0x31d2b0c?, 0x4?, 0x31d2b10?})
+	/go/src/github.com/cilium/cilium/hubble-relay/cmd/serve/serve.go:66 +0x17
+github.com/spf13/cobra.(*Command).execute(0xc000828c08, {0x593b1e0, 0x0, 0x0})
+	/go/src/github.com/cilium/cilium/vendor/github.com/spf13/cobra/command.go:1015 +0xaaa
+github.com/spf13/cobra.(*Command).ExecuteC(0xc000828608)
+	/go/src/github.com/cilium/cilium/vendor/github.com/spf13/cobra/command.go:1148 +0x46f
+github.com/spf13/cobra.(*Command).Execute(0xc000002380?)
+	/go/src/github.com/cilium/cilium/vendor/github.com/spf13/cobra/command.go:1071 +0x13
+main.main()
+	/go/src/github.com/cilium/cilium/hubble-relay/main.go:13 +0x18
+
+goroutine 36 [chan receive, 13 minutes]:
+github.com/cilium/cilium/pkg/hubble/relay/pool.(*PeerManager).watchNotifications.func1()
+	/go/src/github.com/cilium/cilium/pkg/hubble/relay/pool/manager.go:91 +0x26
+created by github.com/cilium/cilium/pkg/hubble/relay/pool.(*PeerManager).watchNotifications in goroutine 70
+	/go/src/github.com/cilium/cilium/pkg/hubble/relay/pool/manager.go:90 +0xc5
+
+goroutine 27 [select, 13 minutes]:
+io.(*pipe).read(0xc0008886c0, {0xc00085a000, 0x10000, 0x41895e?})
+	/usr/local/go/src/io/pipe.go:57 +0xa5
+io.(*PipeReader).Read(0xc000169558?, {0xc00085a000?, 0x593e2e0?, 0xc0001695b0?})
+	/usr/local/go/src/io/pipe.go:134 +0x1a
+bufio.(*Scanner).Scan(0xc0003e4ee8)
+	/usr/local/go/src/bufio/scan.go:219 +0x81e
+github.com/cilium/cilium/pkg/logging.writerScanner(0xc0008810b0, 0xc0001697d0?, 0xc0008810e0, {0x0, 0x0, 0xc0004a4000?})
+	/go/src/github.com/cilium/cilium/pkg/logging/klog_bridge.go:156 +0x15b
+created by github.com/cilium/cilium/pkg/logging.severityOverrideWriter in goroutine 1
+	/go/src/github.com/cilium/cilium/pkg/logging/klog_bridge.go:117 +0x2bf
+
+goroutine 28 [select, 13 minutes]:
+io.(*pipe).read(0xc000888720, {0xc0004b6000, 0x10000, 0x419d05?})
+	/usr/local/go/src/io/pipe.go:57 +0xa5
+io.(*PipeReader).Read(0xc0004c6000?, {0xc0004b6000?, 0xc0001635b0?, 0x4199fc?})
+	/usr/local/go/src/io/pipe.go:134 +0x1a
+bufio.(*Scanner).Scan(0xc0003b2ee8)
+	/usr/local/go/src/bufio/scan.go:219 +0x81e
+github.com/cilium/cilium/pkg/logging.writerScanner(0xc0008810b0, 0x0?, 0xc0008810f0, {0x0, 0x0, 0x0?})
+	/go/src/github.com/cilium/cilium/pkg/logging/klog_bridge.go:156 +0x15b
+created by github.com/cilium/cilium/pkg/logging.severityOverrideWriter in goroutine 1
+	/go/src/github.com/cilium/cilium/pkg/logging/klog_bridge.go:117 +0x2bf
+
+goroutine 29 [select, 13 minutes]:
+io.(*pipe).read(0xc000888780, {0xc00084a000, 0x10000, 0x419d05?})
+	/usr/local/go/src/io/pipe.go:57 +0xa5
+io.(*PipeReader).Read(0xc00085a000?, {0xc00084a000?, 0xc000163db0?, 0x4199fc?})
+	/usr/local/go/src/io/pipe.go:134 +0x1a
+bufio.(*Scanner).Scan(0xc0003aeee8)
+	/usr/local/go/src/bufio/scan.go:219 +0x81e
+github.com/cilium/cilium/pkg/logging.writerScanner(0xc0008810b0, 0x0?, 0xc000881100, {0x53d94f0, 0x1, 0x0?})
+	/go/src/github.com/cilium/cilium/pkg/logging/klog_bridge.go:156 +0x15b
+created by github.com/cilium/cilium/pkg/logging.severityOverrideWriter in goroutine 1
+	/go/src/github.com/cilium/cilium/pkg/logging/klog_bridge.go:117 +0x2bf
+
+goroutine 30 [select, 13 minutes]:
+io.(*pipe).read(0xc0008887e0, {0xc00086a000, 0x10000, 0x419d05?})
+	/usr/local/go/src/io/pipe.go:57 +0xa5
+io.(*PipeReader).Read(0xc00087a000?, {0xc00086a000?, 0xc0001645b0?, 0x4199fc?})
+	/usr/local/go/src/io/pipe.go:134 +0x1a
+bufio.(*Scanner).Scan(0xc0003b3ee8)
+	/usr/local/go/src/bufio/scan.go:219 +0x81e
+github.com/cilium/cilium/pkg/logging.writerScanner(0xc0008810b0, 0x0?, 0xc000881120, {0x0, 0x0, 0x0?})
+	/go/src/github.com/cilium/cilium/pkg/logging/klog_bridge.go:156 +0x15b
+created by github.com/cilium/cilium/pkg/logging.severityOverrideWriter in goroutine 1
+	/go/src/github.com/cilium/cilium/pkg/logging/klog_bridge.go:117 +0x2bf
+
+goroutine 31 [select]:
+github.com/cilium/cilium/pkg/fswatcher.(*Watcher).loop(0xc000b51c70)
+	/go/src/github.com/cilium/cilium/pkg/fswatcher/fswatcher.go:165 +0x9f
+created by github.com/cilium/cilium/pkg/fswatcher.New in goroutine 1
+	/go/src/github.com/cilium/cilium/pkg/fswatcher/fswatcher.go:151 +0x34c
+
+goroutine 32 [select, 13 minutes]:
+github.com/cilium/cilium/pkg/crypto/certloader.(*Watcher).Watch.func2()
+	/go/src/github.com/cilium/cilium/pkg/crypto/certloader/watcher.go:140 +0x17c
+created by github.com/cilium/cilium/pkg/crypto/certloader.(*Watcher).Watch in goroutine 1
+	/go/src/github.com/cilium/cilium/pkg/crypto/certloader/watcher.go:137 +0x205
+
+goroutine 67 [chan receive, 13 minutes]:
+github.com/cilium/cilium/hubble-relay/cmd/serve.runServe.func1()
+	/go/src/github.com/cilium/cilium/hubble-relay/cmd/serve/serve.go:270 +0x94
+created by github.com/cilium/cilium/hubble-relay/cmd/serve.runServe in goroutine 1
+	/go/src/github.com/cilium/cilium/hubble-relay/cmd/serve/serve.go:267 +0xf6f
+
+goroutine 68 [IO wait, 13 minutes]:
+internal/poll.runtime_pollWait(0x7f0bc20fbcd0, 0x72)
+	/usr/local/go/src/runtime/netpoll.go:351 +0x85
+internal/poll.(*pollDesc).wait(0xc000a7c480?, 0x20?, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:84 +0x27
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Accept(0xc000a7c480)
+	/usr/local/go/src/internal/poll/fd_unix.go:620 +0x295
+net.(*netFD).accept(0xc000a7c480)
+	/usr/local/go/src/net/fd_unix.go:172 +0x29
+net.(*TCPListener).accept(0xc000aeeb40)
+	/usr/local/go/src/net/tcpsock_posix.go:159 +0x1b
+net.(*TCPListener).Accept(0xc000aeeb40)
+	/usr/local/go/src/net/tcpsock.go:380 +0x30
+google.golang.org/grpc.(*Server).Serve(0xc0005c2000, {0x3673860, 0xc000aeeb40})
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/server.go:915 +0x473
+github.com/cilium/cilium/pkg/hubble/relay/server.(*Server).Serve.func2()
+	/go/src/github.com/cilium/cilium/pkg/hubble/relay/server/server.go:174 +0x1e7
+golang.org/x/sync/errgroup.(*Group).Go.func1()
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/sync/errgroup/errgroup.go:93 +0x50
+created by golang.org/x/sync/errgroup.(*Group).Go in goroutine 1
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/sync/errgroup/errgroup.go:78 +0x93
+
+goroutine 69 [IO wait]:
+internal/poll.runtime_pollWait(0x7f0bc20fbde8, 0x72)
+	/usr/local/go/src/runtime/netpoll.go:351 +0x85
+internal/poll.(*pollDesc).wait(0xc000a7c380?, 0x900000036?, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:84 +0x27
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Accept(0xc000a7c380)
+	/usr/local/go/src/internal/poll/fd_unix.go:620 +0x295
+net.(*netFD).accept(0xc000a7c380)
+	/usr/local/go/src/net/fd_unix.go:172 +0x29
+net.(*TCPListener).accept(0xc000aeeac0)
+	/usr/local/go/src/net/tcpsock_posix.go:159 +0x1b
+net.(*TCPListener).Accept(0xc000aeeac0)
+	/usr/local/go/src/net/tcpsock.go:380 +0x30
+google.golang.org/grpc.(*Server).Serve(0xc0005c2c00, {0x3673860, 0xc000aeeac0})
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/server.go:915 +0x473
+github.com/cilium/cilium/pkg/hubble/relay/server.(*Server).Serve.func3()
+	/go/src/github.com/cilium/cilium/pkg/hubble/relay/server/server.go:183 +0x179
+golang.org/x/sync/errgroup.(*Group).Go.func1()
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/sync/errgroup/errgroup.go:93 +0x50
+created by golang.org/x/sync/errgroup.(*Group).Go in goroutine 1
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/sync/errgroup/errgroup.go:78 +0x93
+
+goroutine 81 [syscall, 13 minutes]:
+os/signal.signal_recv()
+	/usr/local/go/src/runtime/sigqueue.go:152 +0x29
+os/signal.loop()
+	/usr/local/go/src/os/signal/signal_unix.go:23 +0x13
+created by os/signal.Notify.func1.1 in goroutine 67
+	/usr/local/go/src/os/signal/signal.go:152 +0x1f
+
+goroutine 70 [select, 3 minutes]:
+google.golang.org/grpc/internal/transport.(*recvBufferReader).readMessageHeaderClient(0xc000849040, {0xc0006ee7f0, 0x5, 0x5})
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/transport/transport.go:197 +0xa7
+google.golang.org/grpc/internal/transport.(*recvBufferReader).ReadMessageHeader(0xc000849040, {0xc0006ee7f0?, 0xc00096e6c8?, 0xc000848ff0?})
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/transport/transport.go:143 +0x45
+google.golang.org/grpc/internal/transport.(*transportReader).ReadMessageHeader(0xc00038b920, {0xc0006ee7f0?, 0x0?, 0x0?})
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/transport/transport.go:417 +0x25
+google.golang.org/grpc/internal/transport.(*Stream).ReadMessageHeader(0xc000478900, {0xc0006ee7f0, 0x5, 0x5})
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/transport/transport.go:360 +0x9e
+google.golang.org/grpc.(*parser).recvMsg(0xc0006ee7e0, 0x400000)
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/rpc_util.go:690 +0x3b
+google.golang.org/grpc.recvAndDecompress(0xc0006ee7e0, {0x364cf00, 0xc000848ff0}, {0x0, 0x0}, 0x400000, 0x0, {0x0, 0x0}, 0x0)
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/rpc_util.go:850 +0x97
+google.golang.org/grpc.recv(0xc000c51a50?, {0x7f0bc1e9cac8, 0x593b1e0}, {0x364cf00?, 0xc000848ff0?}, {0x0?, 0x0?}, {0x2faf0c0, 0xc000699080}, 0x400000, ...)
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/rpc_util.go:933 +0xab
+google.golang.org/grpc.(*csAttempt).recvMsg(0xc000b5b1e0, {0x2faf0c0, 0xc000699080}, 0xc00063dad0?)
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/stream.go:1136 +0x2e5
+google.golang.org/grpc.(*clientStream).RecvMsg.func1(0x5494b3?)
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/stream.go:976 +0x1f
+google.golang.org/grpc.(*clientStream).withRetry(0xc000b2c000, 0xc000c51ce0, 0xc000c51cd0)
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/stream.go:780 +0x3b0
+google.golang.org/grpc.(*clientStream).RecvMsg(0xc000b2c000, {0x2faf0c0?, 0xc000699080?})
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/stream.go:975 +0x155
+google.golang.org/grpc.(*GenericClientStream[...]).Recv(0x36aa8e0)
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/stream_interfaces.go:185 +0x4e
+github.com/cilium/cilium/pkg/hubble/relay/pool.(*PeerManager).watchNotifications(0xc000274370)
+	/go/src/github.com/cilium/cilium/pkg/hubble/relay/pool/manager.go:133 +0x6ad
+github.com/cilium/cilium/pkg/hubble/relay/pool.(*PeerManager).Start.func1()
+	/go/src/github.com/cilium/cilium/pkg/hubble/relay/pool/manager.go:75 +0x49
+created by github.com/cilium/cilium/pkg/hubble/relay/pool.(*PeerManager).Start in goroutine 68
+	/go/src/github.com/cilium/cilium/pkg/hubble/relay/pool/manager.go:73 +0x65
+
+goroutine 71 [select]:
+github.com/cilium/cilium/pkg/hubble/relay/pool.(*PeerManager).manageConnections(0xc000274370)
+	/go/src/github.com/cilium/cilium/pkg/hubble/relay/pool/manager.go:168 +0xd2
+github.com/cilium/cilium/pkg/hubble/relay/pool.(*PeerManager).Start.func2()
+	/go/src/github.com/cilium/cilium/pkg/hubble/relay/pool/manager.go:79 +0x49
+created by github.com/cilium/cilium/pkg/hubble/relay/pool.(*PeerManager).Start in goroutine 68
+	/go/src/github.com/cilium/cilium/pkg/hubble/relay/pool/manager.go:77 +0xa5
+
+goroutine 72 [select]:
+github.com/cilium/cilium/pkg/hubble/relay/pool.(*PeerManager).reportConnectionStatus(0xc000274370)
+	/go/src/github.com/cilium/cilium/pkg/hubble/relay/pool/manager.go:197 +0xca
+github.com/cilium/cilium/pkg/hubble/relay/pool.(*PeerManager).Start.func3()
+	/go/src/github.com/cilium/cilium/pkg/hubble/relay/pool/manager.go:83 +0x49
+created by github.com/cilium/cilium/pkg/hubble/relay/pool.(*PeerManager).Start in goroutine 68
+	/go/src/github.com/cilium/cilium/pkg/hubble/relay/pool/manager.go:81 +0xe5
+
+goroutine 73 [select]:
+github.com/cilium/cilium/pkg/hubble/relay/server.healthServer.start.func2()
+	/go/src/github.com/cilium/cilium/pkg/hubble/relay/server/health.go:56 +0x9b
+created by github.com/cilium/cilium/pkg/hubble/relay/server.healthServer.start in goroutine 68
+	/go/src/github.com/cilium/cilium/pkg/hubble/relay/server/health.go:53 +0xf9
+
+goroutine 716 [select, 3 minutes]:
+google.golang.org/grpc/internal/grpcsync.(*CallbackSerializer).run(0xc000790610, {0x368eb28, 0xc0004b2870})
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/grpcsync/callback_serializer.go:88 +0x10c
+created by google.golang.org/grpc/internal/grpcsync.NewCallbackSerializer in goroutine 70
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/grpcsync/callback_serializer.go:52 +0x11a
+
+goroutine 103 [select, 13 minutes]:
+google.golang.org/grpc/internal/grpcsync.(*CallbackSerializer).run(0xc0004314a0, {0x368eb28, 0xc000849860})
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/grpcsync/callback_serializer.go:88 +0x10c
+created by google.golang.org/grpc/internal/grpcsync.NewCallbackSerializer in goroutine 89
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/grpcsync/callback_serializer.go:52 +0x11a
+
+goroutine 811 [IO wait, 3 minutes]:
+internal/poll.runtime_pollWait(0x7f0bc20fbbb8, 0x72)
+	/usr/local/go/src/runtime/netpoll.go:351 +0x85
+internal/poll.(*pollDesc).wait(0xc000a7c980?, 0xc0002d2400?, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:84 +0x27
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc000a7c980, {0xc0002d2400, 0xc00, 0xc00})
+	/usr/local/go/src/internal/poll/fd_unix.go:165 +0x27a
+net.(*netFD).Read(0xc000a7c980, {0xc0002d2400?, 0xc0002d2400?, 0x5?})
+	/usr/local/go/src/net/fd_posix.go:55 +0x25
+net.(*conn).Read(0xc000b8e1d0, {0xc0002d2400?, 0x7f0c08d870d0?, 0x7f0c08d7e5c0?})
+	/usr/local/go/src/net/net.go:194 +0x45
+crypto/tls.(*atLeastReader).Read(0xc00000f0e0, {0xc0002d2400?, 0xbfb?, 0x50?})
+	/usr/local/go/src/crypto/tls/conn.go:809 +0x3b
+bytes.(*Buffer).ReadFrom(0xc00072e2b8, {0x364dce0, 0xc00000f0e0})
+	/usr/local/go/src/bytes/buffer.go:211 +0x98
+crypto/tls.(*Conn).readFromUntil(0xc00072e008, {0x364d480, 0xc000b8e1d0}, 0x440834?)
+	/usr/local/go/src/crypto/tls/conn.go:831 +0xde
+crypto/tls.(*Conn).readRecordOrCCS(0xc00072e008, 0x0)
+	/usr/local/go/src/crypto/tls/conn.go:629 +0x3cf
+crypto/tls.(*Conn).readRecord(...)
+	/usr/local/go/src/crypto/tls/conn.go:591
+crypto/tls.(*Conn).Read(0xc00072e008, {0xc000ca6000, 0x8000, 0x0?})
+	/usr/local/go/src/crypto/tls/conn.go:1385 +0x145
+bufio.(*Reader).Read(0xc000698fc0, {0xc00014a2e0, 0x9, 0x477259?})
+	/usr/local/go/src/bufio/bufio.go:245 +0x197
+io.ReadAtLeast({0x364c000, 0xc000698fc0}, {0xc00014a2e0, 0x9, 0x9}, 0x9)
+	/usr/local/go/src/io/io.go:335 +0x91
+io.ReadFull(...)
+	/usr/local/go/src/io/io.go:354
+golang.org/x/net/http2.readFrameHeader({0xc00014a2e0, 0x9, 0x56eebdb5a66c?}, {0x364c000?, 0xc000698fc0?})
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/net/http2/frame.go:242 +0x65
+golang.org/x/net/http2.(*Framer).ReadFrame(0xc00014a2a0)
+	/go/src/github.com/cilium/cilium/vendor/golang.org/x/net/http2/frame.go:506 +0x7d
+google.golang.org/grpc/internal/transport.(*http2Client).reader(0xc00096e6c8, 0xc0003375e0)
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/transport/http2_client.go:1656 +0x1d2
+created by google.golang.org/grpc/internal/transport.NewHTTP2Client in goroutine 778
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/transport/http2_client.go:411 +0x1e3e
+
+goroutine 717 [select, 3 minutes]:
+google.golang.org/grpc/internal/resolver/dns.(*dnsResolver).watcher(0xc000a7c600)
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/resolver/dns/dns_resolver.go:221 +0x24b
+created by google.golang.org/grpc/internal/resolver/dns.(*dnsBuilder).Build in goroutine 715
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/resolver/dns/dns_resolver.go:150 +0x2ce
+
+goroutine 101 [select, 13 minutes]:
+google.golang.org/grpc/internal/grpcsync.(*CallbackSerializer).run(0xc000431440, {0x368eb28, 0xc0008497c0})
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/grpcsync/callback_serializer.go:88 +0x10c
+created by google.golang.org/grpc/internal/grpcsync.NewCallbackSerializer in goroutine 89
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/grpcsync/callback_serializer.go:52 +0x11a
+
+goroutine 102 [select, 13 minutes]:
+google.golang.org/grpc/internal/grpcsync.(*CallbackSerializer).run(0xc000431470, {0x368eb28, 0xc000849810})
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/grpcsync/callback_serializer.go:88 +0x10c
+created by google.golang.org/grpc/internal/grpcsync.NewCallbackSerializer in goroutine 89
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/grpcsync/callback_serializer.go:52 +0x11a
+
+goroutine 91 [select, 13 minutes]:
+google.golang.org/grpc/internal/grpcsync.(*CallbackSerializer).run(0xc00007ccc0, {0x368eb28, 0xc0001d4ff0})
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/grpcsync/callback_serializer.go:88 +0x10c
+created by google.golang.org/grpc/internal/grpcsync.NewCallbackSerializer in goroutine 90
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/grpcsync/callback_serializer.go:52 +0x11a
+
+goroutine 92 [select, 13 minutes]:
+google.golang.org/grpc/internal/grpcsync.(*CallbackSerializer).run(0xc00007cd40, {0x368eb28, 0xc0001d5040})
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/grpcsync/callback_serializer.go:88 +0x10c
+created by google.golang.org/grpc/internal/grpcsync.NewCallbackSerializer in goroutine 90
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/grpcsync/callback_serializer.go:52 +0x11a
+
+goroutine 93 [select, 13 minutes]:
+google.golang.org/grpc/internal/grpcsync.(*CallbackSerializer).run(0xc00007ce30, {0x368eb28, 0xc0001d5090})
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/grpcsync/callback_serializer.go:88 +0x10c
+created by google.golang.org/grpc/internal/grpcsync.NewCallbackSerializer in goroutine 90
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/grpcsync/callback_serializer.go:52 +0x11a
+
+goroutine 715 [select, 3 minutes]:
+google.golang.org/grpc/internal/grpcsync.(*CallbackSerializer).run(0xc0007905e0, {0x368eb28, 0xc0004b2820})
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/grpcsync/callback_serializer.go:88 +0x10c
+created by google.golang.org/grpc/internal/grpcsync.NewCallbackSerializer in goroutine 70
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/grpcsync/callback_serializer.go:52 +0x11a
+
+goroutine 779 [select, 3 minutes]:
+google.golang.org/grpc/internal/transport.(*controlBuffer).get(0xc000b910c0, 0x1)
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/transport/controlbuf.go:425 +0x108
+google.golang.org/grpc/internal/transport.(*loopyWriter).run(0xc0003f5d00)
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/transport/controlbuf.go:590 +0x78
+google.golang.org/grpc/internal/transport.NewHTTP2Client.func6()
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/transport/http2_client.go:469 +0xd2
+created by google.golang.org/grpc/internal/transport.NewHTTP2Client in goroutine 778
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/transport/http2_client.go:467 +0x241e
+
+goroutine 780 [select, 3 minutes]:
+google.golang.org/grpc.newClientStreamWithParams.func4()
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/stream.go:398 +0x8c
+created by google.golang.org/grpc.newClientStreamWithParams in goroutine 70
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/stream.go:397 +0xe09
+
+goroutine 714 [select, 3 minutes]:
+google.golang.org/grpc/internal/grpcsync.(*CallbackSerializer).run(0xc0007905b0, {0x368eb28, 0xc0004b27d0})
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/grpcsync/callback_serializer.go:88 +0x10c
+created by google.golang.org/grpc/internal/grpcsync.NewCallbackSerializer in goroutine 70
+	/go/src/github.com/cilium/cilium/vendor/google.golang.org/grpc/internal/grpcsync/callback_serializer.go:52 +0x11a

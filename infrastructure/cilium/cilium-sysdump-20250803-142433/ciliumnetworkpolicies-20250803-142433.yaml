@@ -1,0 +1,5 @@
+apiVersion: cilium.io/v2
+items: []
+kind: CiliumNetworkPolicyList
+metadata:
+  resourceVersion: "190021"

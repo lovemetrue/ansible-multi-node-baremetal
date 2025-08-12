@@ -1,0 +1,474 @@
+apiVersion: discovery.k8s.io/v1
+items:
+- addressType: IPv4
+  endpoints:
+  - addresses:
+    - 91.217.196.189
+    conditions:
+      ready: true
+  metadata:
+    creationTimestamp: "2025-08-02T11:51:59Z"
+    generation: 1
+    labels:
+      kubernetes.io/service-name: kubernetes
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:labels:
+            .: {}
+            f:kubernetes.io/service-name: {}
+        f:ports: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-08-02T11:51:59Z"
+    name: kubernetes
+    namespace: default
+    resourceVersion: "234"
+    uid: d22d1bf5-d218-4bf4-b534-4450217cc15c
+  ports:
+  - name: https
+    port: 6443
+    protocol: TCP
+- addressType: IPv4
+  endpoints:
+  - addresses:
+    - 91.217.196.189
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: k8s-master-n1
+    targetRef:
+      kind: Pod
+      name: cilium-envoy-rrgx6
+      namespace: kube-system
+      uid: 4771fb02-f200-4c27-aeb4-526c00690401
+  - addresses:
+    - 91.217.196.183
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: k8s-worker-n1
+    targetRef:
+      kind: Pod
+      name: cilium-envoy-rwbsf
+      namespace: kube-system
+      uid: 4b9c30db-9b98-42e7-a5cf-d012c0baaef4
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-08-03T14:10:04Z"
+    creationTimestamp: "2025-08-03T13:49:40Z"
+    generateName: cilium-envoy-
+    generation: 21
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: cilium-envoy
+      app.kubernetes.io/part-of: cilium
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      io.cilium/app: proxy
+      k8s-app: cilium-envoy
+      kubernetes.io/service-name: cilium-envoy
+      service.kubernetes.io/headless: ""
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:io.cilium/app: {}
+            f:k8s-app: {}
+            f:kubernetes.io/service-name: {}
+            f:service.kubernetes.io/headless: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"9577067d-1b46-4e05-9261-889b2788669c"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-08-03T14:10:04Z"
+    name: cilium-envoy-vwzcg
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: cilium-envoy
+      uid: 9577067d-1b46-4e05-9261-889b2788669c
+    resourceVersion: "188102"
+    uid: 4a34c6fa-ac70-4ba5-9166-ab9a2a56f6b9
+  ports:
+  - name: envoy-metrics
+    port: 9964
+    protocol: TCP
+- addressType: IPv4
+  endpoints:
+  - addresses:
+    - 91.217.196.189
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: k8s-master-n1
+    targetRef:
+      kind: Pod
+      name: cilium-bc6n4
+      namespace: kube-system
+      uid: 1a3e0fe1-c520-4de5-baa9-58dfecf2e694
+  - addresses:
+    - 91.217.196.183
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: k8s-worker-n1
+    targetRef:
+      kind: Pod
+      name: cilium-vb6cb
+      namespace: kube-system
+      uid: 0fa3b2b0-04ca-40e5-aecb-8e6d519bc870
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-08-03T14:22:10Z"
+    creationTimestamp: "2025-08-03T13:49:40Z"
+    generateName: hubble-peer-
+    generation: 28
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: hubble-peer
+      app.kubernetes.io/part-of: cilium
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      k8s-app: cilium
+      kubernetes.io/service-name: hubble-peer
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:k8s-app: {}
+            f:kubernetes.io/service-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"127a4076-32ee-4b91-a89c-a46eda808b8c"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-08-03T14:22:10Z"
+    name: hubble-peer-vfm85
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: hubble-peer
+      uid: 127a4076-32ee-4b91-a89c-a46eda808b8c
+    resourceVersion: "189673"
+    uid: fb5c26b1-32fb-4b21-82e8-ff70787fb893
+  ports:
+  - name: peer-service
+    port: 4244
+    protocol: TCP
+- addressType: IPv4
+  endpoints:
+  - addresses:
+    - 10.0.0.43
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: k8s-master-n1
+    targetRef:
+      kind: Pod
+      name: hubble-relay-6b7b5877f4-vfr4c
+      namespace: kube-system
+      uid: 6678686c-9821-4022-bd18-239c984e187a
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-08-03T14:22:49Z"
+    creationTimestamp: "2025-08-03T13:49:40Z"
+    generateName: hubble-relay-
+    generation: 9
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: hubble-relay
+      app.kubernetes.io/part-of: cilium
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      k8s-app: hubble-relay
+      kubernetes.io/service-name: hubble-relay
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:k8s-app: {}
+            f:kubernetes.io/service-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"3954a635-7aa1-476c-a923-d8b8b9e4c1bc"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-08-03T14:22:49Z"
+    name: hubble-relay-m6t2d
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: hubble-relay
+      uid: 3954a635-7aa1-476c-a923-d8b8b9e4c1bc
+    resourceVersion: "189760"
+    uid: 2839ef88-4c6a-48a4-a14f-30c1e038a99c
+  ports:
+  - name: ""
+    port: 4245
+    protocol: TCP
+- addressType: IPv4
+  endpoints:
+  - addresses:
+    - 10.0.1.78
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: k8s-worker-n1
+    targetRef:
+      kind: Pod
+      name: hubble-ui-655f947f96-bdmvs
+      namespace: kube-system
+      uid: 77da1804-ffec-4f8f-8cf4-b7a8c47e6790
+  metadata:
+    creationTimestamp: "2025-08-03T13:49:40Z"
+    generateName: hubble-ui-
+    generation: 7
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: hubble-ui
+      app.kubernetes.io/part-of: cilium
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      k8s-app: hubble-ui
+      kubernetes.io/service-name: hubble-ui
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:k8s-app: {}
+            f:kubernetes.io/service-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"bfb63f0b-d8fb-4726-bc40-febef24ebeb1"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-08-03T14:09:44Z"
+    name: hubble-ui-w797p
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: hubble-ui
+      uid: bfb63f0b-d8fb-4726-bc40-febef24ebeb1
+    resourceVersion: "188018"
+    uid: aed41ae4-c021-4f07-9ade-50e1c32c17da
+  ports:
+  - name: http
+    port: 8081
+    protocol: TCP
+- addressType: IPv4
+  endpoints:
+  - addresses:
+    - 10.0.1.184
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: k8s-worker-n1
+    targetRef:
+      kind: Pod
+      name: coredns-54558b56c7-tsmph
+      namespace: kube-system
+      uid: 5c296c83-a595-4cfc-b8d8-158cf9a53989
+  - addresses:
+    - 10.0.0.220
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: k8s-master-n1
+    targetRef:
+      kind: Pod
+      name: coredns-54558b56c7-zth5g
+      namespace: kube-system
+      uid: ffad25fa-987f-4ff7-b637-8ab5ba2681e2
+  metadata:
+    creationTimestamp: "2025-08-02T11:52:05Z"
+    generateName: kube-dns-
+    generation: 265
+    labels:
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      k8s-app: kube-dns
+      k8slens-edit-resource-version: v1
+      kubernetes.io/cluster-service: "true"
+      kubernetes.io/name: CoreDNS
+      kubernetes.io/service-name: kube-dns
+      type: ClusterIp
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:k8s-app: {}
+            f:k8slens-edit-resource-version: {}
+            f:kubernetes.io/cluster-service: {}
+            f:kubernetes.io/name: {}
+            f:kubernetes.io/service-name: {}
+            f:type: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"af94a58b-c0ee-417f-94b8-f17f4b5cc977"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-08-03T14:09:47Z"
+    name: kube-dns-2fsns
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: kube-dns
+      uid: af94a58b-c0ee-417f-94b8-f17f4b5cc977
+    resourceVersion: "188050"
+    uid: d78d95dc-4283-4b91-89d6-01b3e5bf226d
+  ports:
+  - name: metrics
+    port: 9153
+    protocol: TCP
+  - name: dns
+    port: 53
+    protocol: UDP
+  - name: dns-tcp
+    port: 53
+    protocol: TCP
+- addressType: IPv4
+  endpoints:
+  - addresses:
+    - 10.0.1.156
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: k8s-worker-n1
+    targetRef:
+      kind: Pod
+      name: metrics-server-7f4c46496-hwgxn
+      namespace: kube-system
+      uid: b9f15bf7-74eb-48ec-9be9-381806bd73fa
+  metadata:
+    creationTimestamp: "2025-08-03T12:50:47Z"
+    generateName: metrics-server-
+    generation: 7
+    labels:
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      k8s-app: metrics-server
+      kubernetes.io/service-name: metrics-server
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:k8s-app: {}
+            f:kubernetes.io/service-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"8adec495-e456-4ee9-9367-7c7e0d87193e"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-08-03T14:09:43Z"
+    name: metrics-server-r6wr9
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: metrics-server
+      uid: 8adec495-e456-4ee9-9367-7c7e0d87193e
+    resourceVersion: "188005"
+    uid: c5ebaab5-be90-4e97-9ed8-22df5b0040a0
+  ports:
+  - appProtocol: https
+    name: https
+    port: 10250
+    protocol: TCP
+kind: EndpointSliceList
+metadata:
+  resourceVersion: "190021"

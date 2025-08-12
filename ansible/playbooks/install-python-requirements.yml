@@ -1,0 +1,16 @@
+- name: Install required python3 dependencies
+  hosts: k8s_cluster
+  become: true
+  tasks:
+    - name: Install pip for Python 3
+      apt:
+        name: python3-pip
+        state: present
+        update_cache: true
+
+    - name: Install Kubernetes python module
+      pip:
+        name:
+          - kubernetes
+          - openshift
+        executable: pip3

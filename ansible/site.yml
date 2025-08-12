@@ -1,0 +1,5 @@
+- name: Install Ingress NGINX on all nodes
+  hosts: k8s_cluster
+  become: true
+  roles:
+    - ingress-nginx

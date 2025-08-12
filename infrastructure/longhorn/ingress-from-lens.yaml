@@ -1,0 +1,37 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: longhorn-ingress
+  namespace: longhorn-system
+  uid: 8f02c691-3b99-48f1-8c0c-2cae3f301fc3
+  resourceVersion: '310035'
+  generation: 2
+  creationTimestamp: '2025-07-30T08:30:56Z'
+  labels:
+    k8slens-edit-resource-version: v1
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"kubernetes.io/ingress.class":"nginx","nginx.ingress.kubernetes.io/backend-protocol":"HTTP","nginx.ingress.kubernetes.io/ssl-redirect":"false"},"name":"longhorn-ingress","namespace":"longhorn-system"},"spec":{"rules":[{"host":"longhorn.sale.elewise.com","http":{"paths":[{"backend":{"service":{"name":"longhorn-frontend","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}]}}
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/backend-protocol: HTTP
+    nginx.ingress.kubernetes.io/ssl-redirect: 'false'
+  selfLink: >-
+    /apis/networking.k8s.io/v1/namespaces/longhorn-system/ingresses/longhorn-ingress
+status:
+  loadBalancer:
+    ingress:
+      - ip: 91.217.196.152
+      - ip: 91.217.196.183
+      - ip: 91.217.196.189
+spec:
+  rules:
+    - host: longhorn.sale.elewise.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: longhorn-frontend
+                port:
+                  number: 80

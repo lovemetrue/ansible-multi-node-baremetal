@@ -1,0 +1,9 @@
+- name: Добавить записи в /etc/hosts
+  become: true
+  lineinfile:
+    path: /etc/hosts
+    line: "{{ item.ip }} {{ item.hostname }}"
+    state: present
+    create: yes
+    insertafter: EOF
+  loop: "{{ hosts_entries }}"

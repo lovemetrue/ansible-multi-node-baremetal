@@ -1,0 +1,9 @@
+::1 dev lo proto kernel metric 256 pref medium
+fe80::/64 dev ens18 proto kernel metric 256 pref medium
+fe80::/64 dev cilium_net proto kernel metric 256 pref medium
+fe80::/64 dev cilium_host proto kernel metric 256 pref medium
+fe80::/64 dev cilium_vxlan proto kernel metric 256 pref medium
+fe80::/64 dev lxcb16c490a744c proto kernel metric 256 pref medium
+fe80::/64 dev lxc1a9e66ab2e3d proto kernel metric 256 pref medium
+fe80::/64 dev lxc9f888d020df3 proto kernel metric 256 pref medium
+fe80::/64 dev lxc_health proto kernel metric 256 pref medium

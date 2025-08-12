@@ -1,0 +1,2 @@
+time=2025-08-03T14:25:10.498Z level=DEBUG msg="connected to Hubble API" server=server
+time=2025-08-03T14:25:10.498Z level=DEBUG msg="Sending GetFlows request" req=number:10000

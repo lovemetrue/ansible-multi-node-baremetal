@@ -1,0 +1,100 @@
+🔍 Collecting sysdump with cilium-cli version: v0.18.5, args: [sysdump]
+🔮 Detected Cilium installation in namespace: "kube-system"
+🔮 Detected Cilium operator in namespace: "kube-system"
+ℹ️ Using default Cilium Helm release name: "cilium"
+ℹ️ Using default Tetragon Helm release name: "tetragon"
+ℹ️ Failed to detect Cilium SPIRE installation - using Cilium namespace as Cilium SPIRE namespace: "kube-system"
+🔍 Collecting Kubernetes nodes
+🔮 Detected Cilium features: map[bpf-lb-external-clusterip:Disabled cidr-match-nodes:Disabled clustermesh-enable-endpoint-sync:Disabled cni-chaining:Disabled:none enable-bgp-control-plane:Disabled enable-egress-gateway:Disabled enable-encryption-strict-mode:Disabled enable-envoy-config:Disabled enable-gateway-api:Disabled enable-ipsec:Disabled enable-local-redirect-policy:Enabled enable-policy-secrets-sync:Enabled endpoint-routes:Disabled ingress-controller:Disabled ipam:Disabled:kubernetes ipv4:Enabled ipv6:Disabled loadbalancer-l7:Disabled multicast-enabled:Disabled mutual-auth-spiffe:Disabled policy-default-local-cluster:Disabled policy-secrets-only-from-secrets-namespace:Enabled tunnel:Enabled:vxlan tunnel-port:Disabled:8472 wireguard-encapsulate:Disabled]
+🔍 Collecting profiling data from Cilium pods
+🔍 Collecting tracing data from Cilium pods
+🔍 Collect Kubernetes nodes
+🔍 Collecting Kubernetes events
+🔍 Collecting Kubernetes pods
+🔍 Collecting Kubernetes namespaces
+🔍 Collecting Kubernetes services
+🔍 Collecting Kubernetes pods summary
+🔍 Collecting crashed test pod logs
+🔍 Collecting Kubernetes metrics
+🔍 Collecting Cilium cluster-wide network policies
+🔍 Collecting Cilium network policies
+🔍 Collecting Kubernetes endpointslices
+🔍 Collecting Kubernetes endpoints
+🔍 Collecting Kubernetes network policies
+🔍 Collecting Kubernetes leases
+🔍 Collecting Cilium CIDR Groups
+🔍 Collecting Cilium Egress Gateway policies
+🔍 Collecting Cilium endpoints
+🔍 Collect Kubernetes version
+🔍 Collecting Cilium local redirect policies
+🔍 Collecting Cilium endpoint slices
+🔍 Collecting Cilium identities
+🔍 Collecting Cilium nodes
+🔍 Collecting Cilium Node Configs
+🔍 Collecting Ingresses
+🔍 Collecting IngressClasses
+🔍 Collecting Cilium Pod IP Pools
+🔍 Checking if cilium-etcd-secrets exists in kube-system namespace
+🔍 Collecting the Cilium configuration
+🔍 Collecting the Cilium daemonset(s)
+🔍 Collecting the Cilium Node Init daemonset
+🔍 Collecting the Cilium Envoy configuration
+🔍 Collecting the Cilium Envoy daemonset
+Secret "cilium-etcd-secrets" not found in namespace "kube-system" - this is expected when using the CRD KVStore
+🔍 Collecting the Hubble daemonset
+🔍 Collecting the Hubble Relay configuration
+🔍 Collecting the Hubble UI deployment
+🔍 Collecting the Hubble cert-manager certificates
+🔍 Collecting the Hubble generate certs cronjob
+🔍 Collecting the Hubble Relay deployment
+🔍 Collecting the Hubble generate certs pod logs
+🔍 Collecting the Cilium operator deployment
+⚠️ Daemonset "cilium-node-init" not found in namespace "kube-system" - this is expected if Node Init DaemonSet is not enabled
+🔍 Collecting the Cilium operator metrics
+🔍 Collecting the clustermesh debug information, metrics and gops stats
+⚠️ cronjob "hubble-generate-certs" not found in namespace "kube-system" - this is expected if auto TLS is not enabled or if not using hubble.auto.tls.method=cronjob
+🔍 Collecting the CNI configuration files from Cilium pods
+🔍 Collecting the 'clustermesh-apiserver' deployment
+🔍 Collecting the CNI configmap
+🔍 Collecting gops stats from Cilium pods
+🔍 Collecting gops stats from Cilium-operator pods
+🔍 Collecting gops stats from Hubble pods
+⚠️ Deployment "clustermesh-apiserver" not found in namespace "kube-system" - this is expected if 'clustermesh-apiserver' isn't enabled
+🔍 Collecting gops stats from Hubble Relay pods
+🔍 Collecting bugtool output from Cilium pods
+🔍 Collecting profiling data from Cilium Operator pods
+🔍 Collecting logs from Cilium pods
+🔍 Collecting logs from crashing Cilium pods
+🔍 Collecting logs from Cilium Envoy pods
+🔍 Collecting logs from Cilium Node Init pods
+🔍 Collecting logs from Cilium operator pods
+🔍 Collecting logs from 'clustermesh-apiserver' pods
+🔍 Collecting logs from Hubble pods
+🔍 Collecting logs from Hubble Relay pods
+🔍 Collecting logs from Hubble UI pods
+🔍 Collecting platform-specific data
+🔍 Collecting kvstore data
+🔍 Collecting Hubble flows from Cilium pods
+🔍 Collecting Cilium LoadBalancer IP Pools
+🔍 Collecting logs from Tetragon pods
+🔍 Collecting logs from Tetragon operator pods
+🔍 Collecting bugtool output from Tetragon pods
+🔍 Collecting Tetragon PodInfo custom resources
+🔍 Collecting Tetragon configmap
+🔍 Collecting Tetragon namespaced tracing policies
+🔍 Collecting Tetragon tracing policies
+🔍 Collecting Helm metadata from the Cilium release
+🔍 Collecting Helm metadata from the Tetragon release
+🔍 Collecting Helm values from the Cilium release
+🔍 Collecting Helm values from the Tetragon release
+⚠️ The following tasks failed, the sysdump may be incomplete:
+⚠️ [15] Collecting Cilium Egress Gateway policies: failed to collect Cilium Egress Gateway policies: the server could not find the requested resource (get ciliumegressgatewaypolicies.cilium.io)
+⚠️ [16] Collecting Cilium CIDR Groups: failed to write Cilium CIDR Groups to file: missing apiVersion or kind and cannot assign it; no kind is registered for the type v2alpha1.CiliumCIDRGroupList in scheme "k8s.io/client-go/kubernetes/scheme/register.go:84"
+⚠️ [19] Collecting Cilium endpoint slices: failed to collect Cilium endpoint slices: the server could not find the requested resource (get ciliumendpointslices.cilium.io)
+⚠️ [38] Collecting the Hubble cert-manager certificates: failed to collect certificates (v1): the server could not find the requested resource
+⚠️ [68] Collecting Tetragon PodInfo custom resources: failed to collect podinfo (v1alpha1): the server could not find the requested resource
+⚠️ [69] Collecting Tetragon tracing policies: failed to collect tracingpolicies (v1alpha1): the server could not find the requested resource
+⚠️ [70] Collecting Tetragon namespaced tracing policies: failed to collect tracingpoliciesnamespaced (v1alpha1): the server could not find the requested resource
+⚠️ [72] Collecting Helm metadata from the Tetragon release: failed to get the helm metadata from the release: unable to retrieve helm meta from release tetragon: release: not found
+⚠️ [74] Collecting Helm values from the Tetragon release: failed to get the helm values from the release: unable to retrieve helm value from release tetragon: release: not found
+⚠️ Please note that depending on your Cilium version and installation options, this may be expected

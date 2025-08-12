@@ -1,0 +1,59 @@
+---
+- name: Установка и настройка Cilium в Kubernetes
+  hosts: all
+  become: true
+  vars:
+    cilium_version: "v1.17.6"
+    pod_network_cidr: "10.0.0.0/16"
+    service_cidr: "172.16.0.0/16"
+    control_plane_endpoint: "91.217.196.189"
+    api_server_address: "91.217.196.189"
+
+  tasks:
+    # 1. Установка Cilium CLI
+    - name: Скачивание Cilium CLI
+      get_url:
+        url: "https://github.com/cilium/cilium-cli/releases/latest/download/cilium-linux-amd64.tar.gz"
+        dest: "/tmp/cilium-linux-amd64.tar.gz"
+        mode: '0755'
+
+    - name: Распаковка Cilium CLI
+      unarchive:
+        src: "/tmp/cilium-linux-amd64.tar.gz"
+        dest: "/usr/local/bin"
+        remote_src: yes
+        extra_opts: [--strip-components=1]
+        creates: "/usr/local/bin/cilium"
+
+    # 2. Установка Cilium в кластер (только на master-узле)
+    - name: Установка Cilium с настройками
+      command: |
+        cilium install \
+          --version {{ cilium_version }} \
+          --helm-set securityContext.appArmorProfile.type=runtimeDefault \
+          --helm-set ipam.operator.clusterPoolIPv4PodCIDRList[0]="{{ pod_network_cidr }}" \
+          --helm-set tunnel=disabled \
+          --helm-set routingMode=native \
+          --helm-set kubeProxyReplacement=strict \
+          --helm-set k8sServiceHost="{{ control_plane_endpoint }}" \
+          --helm-set k8sServicePort=6443 \
+          --helm-set ipv4NativeRoutingCIDR="{{ pod_network_cidr }}" \
+          --helm-set loadBalancer.mode=dsr
+      when: "'master' in group_names"
+      environment:
+        KUBECONFIG: "/etc/kubernetes/admin.conf"
+
+
+    # 3. Проверка статуса Cilium (только на master-узле)
+    - name: Проверка состояния Cilium
+      command: cilium status --wait
+      when: "'master' in group_names"
+      register: cilium_status
+      changed_when: false
+      environment:
+        KUBECONFIG: "/etc/kubernetes/admin.conf"
+
+    - name: Вывод статуса Cilium
+      debug:
+        var: cilium_status.stdout
+      when: "'master' in group_names"

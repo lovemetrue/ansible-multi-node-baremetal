@@ -1,0 +1,17 @@
+NAMESPACE     NAME                                    READY   STATUS    RESTARTS      AGE    IP               NODE            NOMINATED NODE   READINESS GATES
+default       dnsutils                                1/1     Running   0             150m   10.0.0.236       k8s-master-n1   <none>           <none>
+kube-system   cilium-bc6n4                            1/1     Running   0             3m6s   91.217.196.189   k8s-master-n1   <none>           <none>
+kube-system   cilium-envoy-rrgx6                      1/1     Running   0             16m    91.217.196.189   k8s-master-n1   <none>           <none>
+kube-system   cilium-envoy-rwbsf                      1/1     Running   0             16m    91.217.196.183   k8s-worker-n1   <none>           <none>
+kube-system   cilium-operator-64ddb69dfd-rq4tf        1/1     Running   0             35m    91.217.196.189   k8s-master-n1   <none>           <none>
+kube-system   cilium-operator-64ddb69dfd-slbxs        1/1     Running   0             35m    91.217.196.183   k8s-worker-n1   <none>           <none>
+kube-system   cilium-vb6cb                            1/1     Running   0             3m6s   91.217.196.183   k8s-worker-n1   <none>           <none>
+kube-system   coredns-54558b56c7-tsmph                1/1     Running   0             16m    10.0.1.184       k8s-worker-n1   <none>           <none>
+kube-system   coredns-54558b56c7-zth5g                1/1     Running   0             16m    10.0.0.220       k8s-master-n1   <none>           <none>
+kube-system   etcd-k8s-master-n1                      1/1     Running   3             26h    91.217.196.189   k8s-master-n1   <none>           <none>
+kube-system   hubble-relay-6b7b5877f4-vfr4c           1/1     Running   3 (13m ago)   35m    10.0.0.43        k8s-master-n1   <none>           <none>
+kube-system   hubble-ui-655f947f96-bdmvs              2/2     Running   0             35m    10.0.1.78        k8s-worker-n1   <none>           <none>
+kube-system   kube-apiserver-k8s-master-n1            1/1     Running   8             26h    91.217.196.189   k8s-master-n1   <none>           <none>
+kube-system   kube-controller-manager-k8s-master-n1   1/1     Running   2             26h    91.217.196.189   k8s-master-n1   <none>           <none>
+kube-system   kube-scheduler-k8s-master-n1            1/1     Running   3             26h    91.217.196.189   k8s-master-n1   <none>           <none>
+kube-system   metrics-server-7f4c46496-hwgxn          1/1     Running   0             94m    10.0.1.156       k8s-worker-n1   <none>           <none>
