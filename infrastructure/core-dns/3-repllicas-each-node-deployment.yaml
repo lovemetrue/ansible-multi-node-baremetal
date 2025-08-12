@@ -117,16 +117,6 @@ spec:
       serviceAccountName: coredns
       serviceAccount: coredns
       securityContext: {}
-      tolerations:
-        - key: CriticalAddonsOnly
-          operator: Exists
-        - key: node-role.kubernetes.io/control-plane
-          effect: NoSchedule
-        - key: node-role.kubernetes.io/master
-          effect: NoSchedule
-        - key: node-role.kubernetes.io/observer
-          operator: Exists
-          effect: NoSchedule
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
@@ -137,6 +127,17 @@ spec:
                 values:
                 - kube-dns
             topologyKey: kubernetes.io/hostname
+      tolerations:
+        - key: node-role.kubernetes.io/control-plane
+          operator: Exists
+          effect: NoSchedule
+        - key: node-role.kubernetes.io/master
+          operator: Exists
+          effect: NoSchedule
+        - key: node-role.kubernetes.io/observer
+          operator: Exists
+          effect: NoSchedule
+
       priorityClassName: system-cluster-critical
       schedulerName: default-scheduler
       affinity:
